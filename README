@@ -10,7 +10,7 @@ http://www.biodiversitylibrary.org/getapikey.aspx
 
 
 Put your API in your .Rprofile file using e.g., 
-options(BHLApiKey = "YOURBHLAPIKEY"), 
+options(BioHerLibKey = "YOURBHLAPIKEY"), 
 and the functions within this package will be able to use your API key without you having to enter it every time you run a search. 
 
 
