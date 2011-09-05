@@ -6,7 +6,7 @@ GetItemByIdentifier <-
 #   value: the identifier value (character)
 #   format: json or xml (character)
 # Examples: 
-#   GetItemByIdentifier('ia', 'animalkingdomarr03cuvi', 'xml')
+#   GetItemByIdentifier('ia', 'animalkingdomarr03cuvi', 'json')
 
 function(type = NA, value = NA, format = NA,
   url = 'http://www.biodiversitylibrary.org/api2/httpquery.ashx',
