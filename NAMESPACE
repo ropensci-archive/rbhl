@@ -1,5 +1,6 @@
 import(RCurl)
 import(XML)
 import(RJSONIO)
+import(plyr)
 
 export(GetPageMetadata, GetPageOcrText, GetPageNames, GetItemMetadata, GetItemByIdentifier, GetItemPages, GetUnpublishedItems, GetTitleMetadata, GetTitleItems, GetTitleByIdentifier, TitleSearchSimple, GetTitleBibTex, GetTitleEndNote, GetUnpublishedTitles, SubjectSearch, GetSubjectTitles, AuthorSearch, GetAuthorTitles, NameCount, NameList, NameGetDetail, NameSearch, GetCollections, GetLanguages)

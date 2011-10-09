@@ -1,28 +1,26 @@
-# GetTitleMetadata.R
+# GetTitleBibTex.R
 
-GetTitleMetadata <- 
+GetTitleBibTex <- 
 # Args:
 #   titleid: the identifier of an individual title (numeric)
-#   items: "t" or "true" to return the title's items (TRUE/FALSE)
+#   justresult: just print result? (TRUE/FALSE)
 # Examples: 
-#   GetTitleMetadata(1726, TRUE)
-
-function(titleid = NA, items = FALSE,
+#   GetTitleBibTex("1726")
+#   GetTitleBibTex("1726", TRUE)
+function(titleid = NA, justresult = FALSE,
   url = 'http://www.biodiversitylibrary.org/api2/httpquery.ashx',
   key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")),
   ..., 
   curl = getCurlHandle(),
   format = 'json' ) {
-
-  args <- list(op = 'GetTitleMetadata', apikey = key, format = format)
+    
+  args <- list(op = 'GetTitleBibTex', apikey = key, format = format)
   if(!is.na(titleid))
     args$titleid <- titleid
-  if(items == 'TRUE') {args$items <- 't'} else
-    if(items == 'FALSE') {args$items <- NULL}
   tt <- getForm(url, 
     .params = args, 
     ..., 
     curl = curl)
-  outprod <- fromJSON(I(tt))
-  return(outprod)
+  temp <- fromJSON(I(tt))
+  if(!justresult == TRUE) {temp} else {temp$Result}
 }

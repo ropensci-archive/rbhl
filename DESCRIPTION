@@ -6,4 +6,4 @@ Version: 0.0-1
 License: BSD
 Author: Scott Chamberlain
 Maintainer: Scott Chamberlain <myrmecocystus@gmail.com> 
-Imports: RCurl, XML, RJSONIO
+Imports: RCurl, XML, RJSONIO, plyr
