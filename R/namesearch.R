@@ -1,39 +1,31 @@
-# namesearch.R
+# NameSearch.R
 
-namesearch <- 
+NameSearch <- 
 # Args:
-#   species: species name (character)
-#   format: json or xml (character)
+#   name: species name (character)
 # Examples: 
-#   namesearch(species = "poa annua", format = "json")
-#   namesearch(species = "helianthus annuus", format = "json")
-
-function(species = NA, format = NA,
-  method = 'NameSearch', 
+#   NameSearch("poa annua")
+#   NameSearch("helianthus annuus")
+function(name = NA,
   url = 'http://www.biodiversitylibrary.org/api2/httpquery.ashx',
   key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")),
   ..., 
-  curl = getCurlHandle()) 
+  curl = getCurlHandle(),
+  format = 'json') 
 {
-#   args <- list(op = 'NameSearch', apikey = key)
-#   if(!is.na(species))
-#     args$name <- gsub(" ", "+", species)
-#   if(!is.na(format))
-#     args$format <- format
-  speciess <- gsub(" ", "+", species)
-  url2 <- paste(url, "?op=", method, "&name=", speciess, "&apikey=", key, "&format=", format, sep = "")
-  tt <- getURLContent(url2)
-#   tt <- getForm(url, 
-#     .params = args, 
-#     ..., 
-#     curl = curl)
-  if(format == 'json') {outprod <- fromJSON(I(tt))} else
-      if(format == 'xml') {outprod <- xmlTreeParse(I(tt))}
+  args <- list(op = 'NameSearch', apikey = key, format = format)
+  if(!is.na(name))
+    args$name <- name
+  tt <- getForm(url, 
+    .params = args, 
+    ..., 
+    curl = curl)
+  outprod <- fromJSON(I(tt))
   getit <- function(x) {
     if(is.null(x[[1]]) == TRUE) x[[1]] <- paste("nonamebankID")
     t(ldply(x))[2,]
   }
   outdf <- ldply(outprod[3][[1]], getit)
   names(outdf) <- c("NameBankID", "NameConfirmed")
-  return(outdf)
+  outdf
 }
