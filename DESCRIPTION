@@ -1,0 +1,45 @@
+Package: rbhl
+Type: Package
+Title: Interface to Biodiversity Heritage Library API methods
+Version: 0.0.1
+License: C00
+Date: 2012-04-17
+Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
+    email = "myrmecocystus@gmail.com"),
+    person("Karthik", "Ram", role = "aut",
+    email = "karthik.ram@gmail.com"))
+Description: A programmatic interface to the
+    Web Service methods provided by the Biodiversity Heritage Library.
+URL: https://github.com/ropensci/rbhl
+Imports:
+    RCurl,
+    XML,
+    RJSONIO,
+    plyr
+Collate:
+    'authorsearch.R'
+    'booksearch.R'
+    'getauthortitles.R'
+    'getcollections.R'
+    'getitembyidentifier.R'
+    'getitemmetadata.R'
+    'getitempages.R'
+    'getlanguages.R'
+    'getpagemetadata.R'
+    'getpagenames.R'
+    'getpageocrtext.R'
+    'getsubjecttitles.R'
+    'gettitlebibtex.R'
+    'gettitlebyidentifier.R'
+    'gettitleendnote.R'
+    'gettitleitems.R'
+    'gettitlemetadata.R'
+    'getunpublisheditems.R'
+    'getunpublishedtitles.R'
+    'namecount.R'
+    'namegetdetail.R'
+    'namelist.R'
+    'subjectsearch.R'
+    'titlesearchsimple.R'
+    'bioherlib.R'
+    'namesearch.R'
