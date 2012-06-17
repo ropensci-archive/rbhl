@@ -9,10 +9,11 @@
 #' @param ... optional additional curl options (debugging tools mostly)
 #' @param curl If using in a loop, call getCurlHandle() first and pass 
 #'  the returned value in here (avoids unnecessary footprint)
-#' @export
+#' @seealso \code{\link{getcollections}}
 #' @examples \dontrun{
 #' authorsearch('dimmock')
 #' }
+#' @export
 authorsearch <- function(name = NA, format = "json",
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx", 
   key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")), 

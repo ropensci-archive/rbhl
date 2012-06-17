@@ -1,6 +1,7 @@
 \name{getcollections}
 \alias{getcollections}
-\title{getcollections}
+\title{Get a list of collections which are used to group titles and items. A single
+   collection may contain either titles or items, but not both.}
 \usage{
   getcollections(pretty = FALSE, format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -8,7 +9,7 @@
     ..., curl = getCurlHandle())
 }
 \arguments{
-  \item{pretty}{print pretty, as data.frame (TRUE/FALSE)}
+  \item{pretty}{Print pretty as a data.frame (TRUE/FALSE).}
 
   \item{format}{either XML ("xml") or JSON ("json") format}
 
@@ -26,7 +27,9 @@
   unnecessary footprint)}
 }
 \description{
-  getcollections
+  Get a list of collections which are used to group titles
+  and items. A single collection may contain either titles
+  or items, but not both.
 }
 \examples{
 \dontrun{
