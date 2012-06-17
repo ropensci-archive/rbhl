@@ -1,6 +1,7 @@
 \name{authorsearch}
 \alias{authorsearch}
-\title{authorsearch}
+\title{Return a list of authors that match (fully or partially) the specified
+   search string.}
 \usage{
   authorsearch(name = NA, format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -28,7 +29,8 @@
   unnecessary footprint)}
 }
 \description{
-  authorsearch
+  The namessearched are those contained in MARC 100a, 110a,
+  111a, 700a, 710a, and 711a library records.
 }
 \examples{
 \dontrun{

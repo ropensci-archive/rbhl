@@ -4,7 +4,6 @@
 #' @examples \dontrun{
 #' message(query2message(args))
 #' } 
-#' @export
 query2message <- function(x) {
   mylist <- list()
   for(i in 1:length(x)) {

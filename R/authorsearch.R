@@ -1,4 +1,8 @@
-#' authorsearch
+#' Return a list of authors that match (fully or partially) the specified 
+#'    search string. 
+#'    
+#' The namessearched are those contained in MARC 100a, 110a, 111a, 700a, 
+#'    710a, and 711a library records.
 #'
 #' @import RCurl RJSONIO
 #' @param name full or partial name of the author for which to search
