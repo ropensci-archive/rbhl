@@ -43,3 +43,4 @@ Collate:
     'titlesearchsimple.R'
     'bioherlib.R'
     'namesearch.R'
+    'zzz.R'

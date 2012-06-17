@@ -1,14 +1,14 @@
-#' bioherlib
+#' Search BHL across many API methods. 
 #'
 #' @import RCurl RJSONIO XML
 #' @param ocrtext return ocr text of the page (TRUE/FALSE)
 #' @param names return the names that appear on the page (TRUE/FALSE)
 #' @inheritParams authorsearch
-#' @export
 #' @examples \dontrun{
 #' bioherlib('GetPageMetadata', '1328690', 'TRUE', 'TRUE', 'json')
 #' bioherlib('GetPageNames', '1328690', 'TRUE', 'TRUE', 'json')
 #' }
+#' @export
 bioherlib <- function(method = list('GetPageMetadata', 'GetPageOcrText', 'GetPageNames',
   'GetItemMetadata', 'GetItemByIdentifier', 'GetItemPages', 'GetUnpublishedItems',
   'GetTitleMetadata', 'GetTitleItems', 'GetTitleByIdentifier', 'TitleSearchSimple',
@@ -38,6 +38,7 @@ bioherlib <- function(method = list('GetPageMetadata', 'GetPageOcrText', 'GetPag
     } else if (names == "FALSE") {
         args$names <- NULL
     }
+    message(query2message(args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     if (format == "json") {
         outprod <- fromJSON(I(tt))

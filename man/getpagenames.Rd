@@ -1,6 +1,6 @@
 \name{getpagenames}
 \alias{getpagenames}
-\title{getpagenames}
+\title{Return a list of names that appear on a page.}
 \usage{
   getpagenames(page = NA, format = NA,
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -26,7 +26,7 @@
   unnecessary footprint)}
 }
 \description{
-  getpagenames
+  Return a list of names that appear on a page.
 }
 \examples{
 \dontrun{

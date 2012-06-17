@@ -35,7 +35,4 @@
 authorsearch('dimmock')
 }
 }
-\seealso{
-  \code{\link{getcollections}}
-}
 

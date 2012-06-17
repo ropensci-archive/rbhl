@@ -1,6 +1,6 @@
 \name{getitembyidentifier}
 \alias{getitembyidentifier}
-\title{getitembyidentifier}
+\title{Find and return metadata about an item or items that match a specific identifier.}
 \usage{
   getitembyidentifier(type = NA, value = NA, format = NA,
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -29,7 +29,8 @@
   unnecessary footprint)}
 }
 \description{
-  getitembyidentifier
+  If you know the Internet Archive identifier for an item,
+  use this method to look up the equivalent item in BHL.
 }
 \examples{
 \dontrun{

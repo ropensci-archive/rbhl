@@ -1,6 +1,6 @@
 \name{getauthortitles}
 \alias{getauthortitles}
-\title{getauthortitles}
+\title{Return a list of titles associated with a given BHL author identifier.}
 \usage{
   getauthortitles(creatorid = NA, format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -27,7 +27,9 @@
   unnecessary footprint)}
 }
 \description{
-  getauthortitles
+  Unless the identifier for a particular BHL author record
+  is known in advance, this method should be used in
+  combination with the AuthorSearch method.
 }
 \examples{
 \dontrun{

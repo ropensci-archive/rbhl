@@ -1,6 +1,6 @@
 \name{gettitlebyidentifier}
 \alias{gettitlebyidentifier}
-\title{gettitlebyidentifier}
+\title{Find and return metadata about a title or titles that match a specific identifier.}
 \usage{
   gettitlebyidentifier(type = NA, value, format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -29,7 +29,8 @@
   unnecessary footprint)}
 }
 \description{
-  gettitlebyidentifier
+  Find and return metadata about a title or titles that
+  match a specific identifier.
 }
 \examples{
 \dontrun{

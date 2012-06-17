@@ -1,6 +1,6 @@
 \name{namegetdetail}
 \alias{namegetdetail}
-\title{namegetdetail}
+\title{Get basic title, item, and page metadata for each page on which the specified name appears.}
 \usage{
   namegetdetail(namebankid = NA, name = NA,
     format = "json",
@@ -31,7 +31,8 @@
   unnecessary footprint)}
 }
 \description{
-  namegetdetail
+  Get basic title, item, and page metadata for each page on
+  which the specified name appears.
 }
 \examples{
 \dontrun{

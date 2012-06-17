@@ -1,6 +1,6 @@
 \name{getunpublisheditems}
 \alias{getunpublisheditems}
-\title{getunpublisheditems}
+\title{Return a list of the identifiers of all unpublished items.}
 \usage{
   getunpublisheditems(format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -24,7 +24,8 @@
   unnecessary footprint)}
 }
 \description{
-  getunpublisheditems
+  Return a list of the identifiers of all unpublished
+  items.
 }
 \examples{
 \dontrun{

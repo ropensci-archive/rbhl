@@ -9,7 +9,6 @@
 #' @param ... optional additional curl options (debugging tools mostly)
 #' @param curl If using in a loop, call getCurlHandle() first and pass 
 #'  the returned value in here (avoids unnecessary footprint)
-#' @seealso \code{\link{getcollections}}
 #' @examples \dontrun{
 #' authorsearch('dimmock')
 #' }
@@ -22,6 +21,7 @@ authorsearch <- function(name = NA, format = "json",
   args <- list(op = "AuthorSearch", apikey = key, format = format)
   if (!is.na(name)) 
     args$name <- name
+  message(query2message(args))
   tt <- getForm(url, .params = args, ..., curl = curl)
   fromJSON(I(tt))
 }

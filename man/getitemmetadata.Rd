@@ -1,6 +1,6 @@
 \name{getitemmetadata}
 \alias{getitemmetadata}
-\title{getitemmetadata}
+\title{Return metadata about an item.}
 \usage{
   getitemmetadata(itemid = NA, format = NA, pages = TRUE,
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -28,7 +28,7 @@
   unnecessary footprint)}
 }
 \description{
-  getitemmetadata
+  You may choose to include a list of the item's pages.
 }
 \examples{
 \dontrun{

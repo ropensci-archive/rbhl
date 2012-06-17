@@ -1,6 +1,7 @@
 \name{subjectsearch}
 \alias{subjectsearch}
-\title{subjectsearch}
+\title{Return a list of subjects that match (fully or partially) the specified
+   search string.}
 \usage{
   subjectsearch(subject = NA, format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -27,7 +28,8 @@
   unnecessary footprint)}
 }
 \description{
-  subjectsearch
+  Return a list of subjects that match (fully or partially)
+  the specified search string.
 }
 \examples{
 \dontrun{

@@ -1,6 +1,6 @@
 \name{getitempages}
 \alias{getitempages}
-\title{getitempages}
+\title{Return a list of an item's pages.}
 \usage{
   getitempages(itemid = NA, format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -26,7 +26,7 @@
   unnecessary footprint)}
 }
 \description{
-  getitempages
+  Return a list of an item's pages.
 }
 \examples{
 \dontrun{

@@ -1,4 +1,11 @@
-#' booksearch
+#' Search for titles and items in BHL. 
+#' 
+#' Search criteria includes title, author last name, volume, edition, year of 
+#'    publication, subject, language code, and collection identifier. Valid 
+#'    language codes and collection identifiers can be obtained from the 
+#'    getlanguages and getcollections functions. If year of publication is 
+#'    specified, it should be a 4-digit year. To execute a search, you must 
+#'    supply at least a title, author last name, or collection identifier.
 #'
 #' @import RCurl RJSONIO
 #' @param title string to search for in the title (character)
@@ -9,12 +16,13 @@
 #' @param collectionid collection identifier to search for (numeric)
 #' @param language language to search for (character)
 #' @inheritParams authorsearch
-#' @export
+#' @seealso \code{\link{getcollections}, \link{getlanguages}}
 #' @examples \dontrun{
-#' booksearch('Selborne', 'White', 2, 'new', 1825, 4, 'eng')
+#' booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825, collectionid=4, language='eng')
 #' out <- booksearch('evolution')
-#' # Note  --Use GetCollections() or GetLanguages() to get acceptable terms
+#' # Note  --Use getcollections() or getlanguages() to get acceptable terms
 #' }
+#' @export
 booksearch <- function(title = NA, lname = NA, volume = NA, 
     edition = NA, year = NA, collectionid = NA, language = NA, format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx", 
@@ -36,6 +44,7 @@ booksearch <- function(title = NA, lname = NA, volume = NA,
         args$collectionid <- collectionid
     if (!is.na(language)) 
         args$language <- language
+    message(query2message(args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     fromJSON(I(tt))
 }

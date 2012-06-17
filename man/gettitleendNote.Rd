@@ -1,6 +1,6 @@
 \name{gettitleendNote}
 \alias{gettitleendNote}
-\title{gettitleendNote}
+\title{Return a citation for a title, using the EndNote format.}
 \usage{
   gettitleendNote(titleid = NA, justresult = FALSE,
     format = "json",
@@ -30,7 +30,7 @@
   unnecessary footprint)}
 }
 \description{
-  gettitleendNote
+  Return a citation for a title, using the EndNote format.
 }
 \examples{
 \dontrun{

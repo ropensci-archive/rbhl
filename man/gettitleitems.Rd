@@ -1,6 +1,6 @@
 \name{gettitleitems}
 \alias{gettitleitems}
-\title{gettitleitems}
+\title{Return a list of a title's items (books).}
 \usage{
   gettitleitems(titleid = NA, format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -27,7 +27,7 @@
   unnecessary footprint)}
 }
 \description{
-  gettitleitems
+  Return a list of a title's items (books).
 }
 \examples{
 \dontrun{

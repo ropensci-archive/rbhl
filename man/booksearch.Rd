@@ -1,6 +1,6 @@
 \name{booksearch}
 \alias{booksearch}
-\title{booksearch}
+\title{Search for titles and items in BHL.}
 \usage{
   booksearch(title = NA, lname = NA, volume = NA,
     edition = NA, year = NA, collectionid = NA,
@@ -43,13 +43,23 @@
   unnecessary footprint)}
 }
 \description{
-  booksearch
+  Search criteria includes title, author last name, volume,
+  edition, year of publication, subject, language code, and
+  collection identifier. Valid language codes and
+  collection identifiers can be obtained from the
+  getlanguages and getcollections functions. If year of
+  publication is specified, it should be a 4-digit year. To
+  execute a search, you must supply at least a title,
+  author last name, or collection identifier.
 }
 \examples{
 \dontrun{
-booksearch('Selborne', 'White', 2, 'new', 1825, 4, 'eng')
+booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825, collectionid=4, language='eng')
 out <- booksearch('evolution')
-# Note  --Use GetCollections() or GetLanguages() to get acceptable terms
+# Note  --Use getcollections() or getlanguages() to get acceptable terms
 }
+}
+\seealso{
+  \code{\link{getcollections}, \link{getlanguages}}
 }
 

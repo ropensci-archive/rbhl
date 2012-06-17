@@ -1,14 +1,16 @@
-#' getpagemetadata
+#' Return metadata about a page. 
+#' 
+#' You may choose to include the OCR text and a list of names found on the page.
 #'
 #' @import RCurl RJSONIO XML
 #' @param page page number to get
 #' @param ocrtext return ocr text of the page (TRUE/FALSE)
 #' @param names return the names that appear on the page (TRUE/FALSE)
 #' @inheritParams authorsearch
-#' @export
 #' @examples \dontrun{
 #' getpagemetadata('1328690', FALSE, FALSE, 'json')
 #' }
+#' @export
 getpagemetadata <- function(page = NA, ocrtext = FALSE, 
     names = FALSE, format = NA, url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx", 
     key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")), 
@@ -29,6 +31,7 @@ getpagemetadata <- function(page = NA, ocrtext = FALSE,
     } else if (names == "FALSE") {
         args$names <- NULL
     }
+    message(query2message(args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     if (format == "json") {
         outprod <- fromJSON(I(tt))

@@ -1,6 +1,6 @@
 \name{gettitlebibTex}
 \alias{gettitlebibTex}
-\title{gettitlebibTex}
+\title{Return a citation for a title, using the BibTeX format.}
 \usage{
   gettitlebibTex(titleid = NA, justresult = FALSE,
     format = "json",
@@ -30,7 +30,7 @@
   unnecessary footprint)}
 }
 \description{
-  gettitlebibTex
+  Return a citation for a title, using the BibTeX format.
 }
 \examples{
 \dontrun{

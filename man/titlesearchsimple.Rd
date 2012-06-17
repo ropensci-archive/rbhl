@@ -1,6 +1,6 @@
 \name{titlesearchsimple}
 \alias{titlesearchsimple}
-\title{titlesearchsimple}
+\title{Perform a simple title search.}
 \usage{
   titlesearchsimple(title = NA, format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -31,7 +31,10 @@
   unnecessary footprint)}
 }
 \description{
-  titlesearchsimple
+  The full title (as specified in MARC 245a and MARC 245b
+  library records) is searched for the specified string.
+  Basic metadata for all full and partial matches is
+  returned.
 }
 \examples{
 \dontrun{

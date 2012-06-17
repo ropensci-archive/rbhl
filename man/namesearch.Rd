@@ -1,6 +1,6 @@
 \name{namesearch}
 \alias{namesearch}
-\title{namesearch}
+\title{Search for a particular name.}
 \usage{
   namesearch(name = NA, format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -26,7 +26,8 @@
   unnecessary footprint)}
 }
 \description{
-  namesearch
+  Names both with and without NameBank identifiers are
+  returned.
 }
 \examples{
 \dontrun{

@@ -1,12 +1,12 @@
-#' getpagenames
+#' Return a list of names that appear on a page.
 #'
 #' @import RCurl RJSONIO XML
 #' @param page page number to get
 #' @inheritParams authorsearch
-#' @export
 #' @examples \dontrun{
 #' getpagenames('1328690', 'json')
 #' }
+#' @export
 getpagenames <- function(page = NA, format = NA, 
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx", 
   key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")), 
@@ -17,6 +17,7 @@ getpagenames <- function(page = NA, format = NA,
         args$pageid <- page
     if (!is.na(format)) 
         args$format <- format
+    message(query2message(args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     if (format == "json") {
         outprod <- fromJSON(I(tt))

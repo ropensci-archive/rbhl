@@ -1,6 +1,6 @@
 \name{namecount}
 \alias{namecount}
-\title{namecount}
+\title{Return the number of unique names found on pages in BHL.}
 \usage{
   namecount(startdate = NA, enddate = NA, format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -30,7 +30,8 @@
   unnecessary footprint)}
 }
 \description{
-  namecount
+  Names both with and without NameBank identifiers are
+  counted.
 }
 \examples{
 \dontrun{

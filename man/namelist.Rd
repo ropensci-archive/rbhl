@@ -1,6 +1,6 @@
 \name{namelist}
 \alias{namelist}
-\title{namelist}
+\title{List the unique names.}
 \usage{
   namelist(startrow = NA, batchsize = NA, startdate = NA,
     enddate = NA, format = "json",
@@ -36,7 +36,10 @@
   unnecessary footprint)}
 }
 \description{
-  namelist
+  By using the startrow and batchsize parameters
+  appropriately, you can pull the list all at once, or in
+  batches (i.e. 1000 names at a time).  Names both with and
+  without NameBank identifiers are returned.
 }
 \examples{
 \dontrun{

@@ -1,6 +1,6 @@
 \name{getpagemetadata}
 \alias{getpagemetadata}
-\title{getpagemetadata}
+\title{Return metadata about a page.}
 \usage{
   getpagemetadata(page = NA, ocrtext = FALSE,
     names = FALSE, format = NA,
@@ -32,7 +32,8 @@
   unnecessary footprint)}
 }
 \description{
-  getpagemetadata
+  You may choose to include the OCR text and a list of
+  names found on the page.
 }
 \examples{
 \dontrun{

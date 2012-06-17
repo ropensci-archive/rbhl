@@ -1,6 +1,6 @@
 \name{getunpublishedtitles}
 \alias{getunpublishedtitles}
-\title{getunpublishedtitles}
+\title{Return a list of the identifiers of all unpublished titles.}
 \usage{
   getunpublishedtitles(format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -24,7 +24,8 @@
   unnecessary footprint)}
 }
 \description{
-  getunpublishedtitles
+  Return a list of the identifiers of all unpublished
+  titles.
 }
 \examples{
 \dontrun{

@@ -1,6 +1,7 @@
 \name{gettitlemetadata}
 \alias{gettitlemetadata}
-\title{gettitlemetadata}
+\title{Return metadata about a title. You may choose to include a list of
+   the items (books) associated  with the title.}
 \usage{
   gettitlemetadata(titleid = NA, items = FALSE,
     format = "json",
@@ -30,7 +31,8 @@
   unnecessary footprint)}
 }
 \description{
-  gettitlemetadata
+  Return metadata about a title. You may choose to include
+  a list of the items (books) associated with the title.
 }
 \examples{
 \dontrun{

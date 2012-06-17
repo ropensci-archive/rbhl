@@ -1,6 +1,6 @@
 \name{getsubjecttitles}
 \alias{getsubjecttitles}
-\title{getsubjecttitles}
+\title{Return a list of titles associated with a subject.}
 \usage{
   getsubjecttitles(subject = NA, format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -27,7 +27,7 @@
   unnecessary footprint)}
 }
 \description{
-  getsubjecttitles
+  Return a list of titles associated with a subject.
 }
 \examples{
 \dontrun{

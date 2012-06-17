@@ -1,13 +1,15 @@
-#' namecount
+#' Return the number of unique names found on pages in BHL. 
+#' 
+#' Names both with and without NameBank  identifiers are counted.
 #'
 #' @import RCurl RJSONIO
 #' @param startdate start date of range between which to count names (optional)
 #' @param enddate end date of range between which to count names (optional)
 #' @inheritParams authorsearch
-#' @export
 #' @examples \dontrun{
 #' namecount(startdate = '10/15/2009', enddate = '10/17/2009')
 #' }
+#' @export
 namecount <- function(startdate = NA, enddate = NA, format = "json",
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx", 
   key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")), 
@@ -18,6 +20,7 @@ namecount <- function(startdate = NA, enddate = NA, format = "json",
       args$startdate <- startdate
   if (!is.na(enddate)) 
       args$enddate <- enddate
+  message(query2message(args))
   tt <- getForm(url, .params = args, ..., curl = curl)
   fromJSON(I(tt))
 }

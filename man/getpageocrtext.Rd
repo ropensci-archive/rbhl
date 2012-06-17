@@ -1,6 +1,6 @@
 \name{getpageocrtext}
 \alias{getpageocrtext}
-\title{getpageocrtext}
+\title{Return the OCR-generated text of a page.}
 \usage{
   getpageocrtext(page = NA, ocrtext = FALSE, names = FALSE,
     format = NA,
@@ -32,7 +32,7 @@
   unnecessary footprint)}
 }
 \description{
-  getpageocrtext
+  Return the OCR-generated text of a page.
 }
 \examples{
 \dontrun{

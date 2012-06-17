@@ -1,6 +1,6 @@
 \name{bioherlib}
 \alias{bioherlib}
-\title{bioherlib}
+\title{Search BHL across many API methods.}
 \usage{
   bioherlib(method = list("GetPageMetadata", "GetPageOcrText", "GetPageNames", "GetItemMetadata", "GetItemByIdentifier", "GetItemPages", "GetUnpublishedItems", "GetTitleMetadata", "GetTitleItems", "GetTitleByIdentifier", "TitleSearchSimple", "GetTitleBibTex", "GetTitleEndNote", "GetUnpublishedTitles", "SubjectSearch", "GetSubjectTitles", "AuthorSearch", "GetAuthorTitles", "NameCount", "NameList", "NameGetDetail", "NameSearch", "GetCollections", "GetLanguages"),
     page = NA, ocrtext = FALSE, names = FALSE, format = NA,
@@ -30,7 +30,7 @@
   unnecessary footprint)}
 }
 \description{
-  bioherlib
+  Search BHL across many API methods.
 }
 \examples{
 \dontrun{

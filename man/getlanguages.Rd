@@ -1,6 +1,6 @@
 \name{getlanguages}
 \alias{getlanguages}
-\title{getlanguages}
+\title{Get a list of languages in which materials in BHL have been written.}
 \usage{
   getlanguages(pretty = FALSE, format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
@@ -26,7 +26,8 @@
   unnecessary footprint)}
 }
 \description{
-  getlanguages
+  Get a list of languages in which materials in BHL have
+  been written.
 }
 \examples{
 \dontrun{
