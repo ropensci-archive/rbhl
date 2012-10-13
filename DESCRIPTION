@@ -1,7 +1,7 @@
 Package: rbhl
 Type: Package
 Title: Interface to Biodiversity Heritage Library API methods
-Version: 0.0.1
+Version: 0.0.3
 License: C00
 Date: 2012-10-13
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
