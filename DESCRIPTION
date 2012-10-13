@@ -3,7 +3,7 @@ Type: Package
 Title: Interface to Biodiversity Heritage Library API methods
 Version: 0.0.1
 License: C00
-Date: 2012-04-17
+Date: 2012-10-13
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com"),
     person("Karthik", "Ram", role = "aut",
@@ -44,3 +44,4 @@ Collate:
     'bioherlib.R'
     'namesearch.R'
     'zzz.R'
+    'rbhlmethods.R'

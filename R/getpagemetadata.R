@@ -31,7 +31,7 @@ getpagemetadata <- function(page = NA, ocrtext = FALSE,
     } else if (names == "FALSE") {
         args$names <- NULL
     }
-    message(query2message(args))
+    message(query2message(url, args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     if (format == "json") {
         outprod <- fromJSON(I(tt))

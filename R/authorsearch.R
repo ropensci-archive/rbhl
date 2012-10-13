@@ -14,7 +14,7 @@
 #' @param curl If using in a loop, call getCurlHandle() first and pass 
 #'  the returned value in here (avoids unnecessary footprint)
 #' @examples \dontrun{
-#' authorsearch('dimmock')
+#' authorsearch(name='dimmock')
 #' }
 #' @export
 authorsearch <- function(name = NA, format = "json",
@@ -25,7 +25,16 @@ authorsearch <- function(name = NA, format = "json",
   args <- list(op = "AuthorSearch", apikey = key, format = format)
   if (!is.na(name)) 
     args$name <- name
-  message(query2message(args))
-  tt <- getForm(url, .params = args, ..., curl = curl)
-  fromJSON(I(tt))
+  message(query2message(url, args))
+  tt <- getForm(url, 
+  							.params = args, 
+  							..., 
+  							curl = curl)
+  bbb <- fromJSON(I(tt))$Result
+  temp <- do.call(rbind, llply(bbb, function(x) t(ldply(x))))
+	row.names(temp) <- NULL
+  df <- data.frame(temp)
+ 	df2 <- df[!df$X1 %in% "CreatorID", ]
+  names(df2) <- names(bbb[[1]][!sapply(bbb[[1]], is.null)])
+ 	df2
 }

@@ -1,10 +1,14 @@
 #' Internal function to convert API query to message printed in the console.
-#'
+#' 
+#' @param url The base url for the API.
 #' @param x List of named parameters to be used in API call. 
-#' @examples \dontrun{
-#' message(query2message(args))
+#' @examples \donttest{
+#' url <- "http://ropensci.org/"
+#' args <- list(species='frog',author='joe')
+#' message(query2message(url, args))
 #' } 
-query2message <- function(x) {
+#' @export
+query2message <- function(url, x) {
   mylist <- list()
   for(i in 1:length(x)) {
     mylist[i] <- paste(names(x[i]), '=', x[i][[1]], sep='')

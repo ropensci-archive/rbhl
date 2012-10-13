@@ -17,7 +17,7 @@ gettitlebibTex <- function(titleid = NA, justresult = FALSE, format = "json",
     args <- list(op = "GetTitleBibTex", apikey = key, format = format)
     if (!is.na(titleid)) 
         args$titleid <- titleid
-    message(query2message(args))
+    message(query2message(url, args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     temp <- fromJSON(I(tt))
     if (!justresult == TRUE) {

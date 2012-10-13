@@ -15,7 +15,7 @@ getsubjecttitles <- function(subject = NA, format = "json",
     args <- list(op = "GetSubjectTitles", apikey = key, format = format)
     if (!is.na(subject)) 
         args$subject <- subject
-    message(query2message(args))
+    message(query2message(url, args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     fromJSON(I(tt))
 }

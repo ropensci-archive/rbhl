@@ -12,7 +12,7 @@ getunpublisheditems <- function(format = "json",
   ..., curl = getCurlHandle()) 
 {
   args <- list(op = "GetUnpublishedItems", apikey = key, format = format)
-  message(query2message(args))
+  message(query2message(url, args))
   tt <- getForm(url, .params = args, ..., curl = curl)
   fromJSON(I(tt))
 }

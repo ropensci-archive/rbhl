@@ -15,7 +15,7 @@ getcollections <- function(pretty = FALSE, format = "json",
     ..., curl = getCurlHandle()) 
 {
     args <- list(op = "GetCollections", apikey = key, format = format)
-    message(query2message(args))
+    message(query2message(url, args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     temp <- fromJSON(I(tt))
     if (!pretty == TRUE) {

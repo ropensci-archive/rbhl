@@ -8,10 +8,6 @@
     ..., curl = getCurlHandle())
 }
 \arguments{
-  \item{'BioHerLibKey'}{API Key}
-
-  \item{URL}{Internal use}
-
   \item{title}{full or partial title for which to search
   (character)}
 

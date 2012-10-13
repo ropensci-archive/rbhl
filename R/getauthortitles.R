@@ -19,7 +19,7 @@ getauthortitles <- function(creatorid = NA, format = "json",
   args <- list(op = "GetAuthorTitles", apikey = key, format = format)
   if (!is.na(creatorid)) 
       args$creatorid <- creatorid
-  message(query2message(args))
+  message(query2message(url, args))
   tt <- getForm(url, .params = args, ..., curl = curl)
   fromJSON(I(tt))
 }

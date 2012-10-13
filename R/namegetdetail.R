@@ -19,7 +19,7 @@ namegetdetail <- function(namebankid = NA, name = NA, format = "json",
         args$namebankid <- namebankid
     if (!is.na(name)) 
         args$name <- name
-    message(query2message(args))
+    message(query2message(url, args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     fromJSON(I(tt))
 }

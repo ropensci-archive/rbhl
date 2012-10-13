@@ -44,7 +44,7 @@ booksearch <- function(title = NA, lname = NA, volume = NA,
         args$collectionid <- collectionid
     if (!is.na(language)) 
         args$language <- language
-    message(query2message(args))
+    message(query2message(url, args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     fromJSON(I(tt))
 }

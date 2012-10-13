@@ -34,7 +34,7 @@
 }
 \examples{
 \dontrun{
-authorsearch('dimmock')
+authorsearch(name='dimmock')
 }
 }
 

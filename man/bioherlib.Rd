@@ -14,6 +14,11 @@
   \item{names}{return the names that appear on the page
   (TRUE/FALSE)}
 
+  \item{method}{The API method to use.}
+
+  \item{page}{The identifier of an individual page in a
+  scanned book.}
+
   \item{format}{either XML ("xml") or JSON ("json") format}
 
   \item{url}{the BHL API url for the function (should be
@@ -34,7 +39,7 @@
 }
 \examples{
 \dontrun{
-bioherlib('GetPageMetadata', '1328690', 'TRUE', 'TRUE', 'json')
+bioherlib(method='GetPageMetadata', page='1328690', ocrtext=TRUE, names=TRUE, format='json')
 bioherlib('GetPageNames', '1328690', 'TRUE', 'TRUE', 'json')
 }
 }

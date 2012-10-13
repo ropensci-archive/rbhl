@@ -18,7 +18,7 @@ namesearch <- function(name = NA, format = "json",
     args <- list(op = "NameSearch", apikey = key, format = format)
     if (!is.na(name)) 
         args$name <- name
-    message(query2message(args))
+    message(query2message(url, args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     outprod <- fromJSON(I(tt))
     getit <- function(x) {

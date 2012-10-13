@@ -18,7 +18,7 @@ gettitlebyidentifier <- function(type = NA, value, format = "json",
         args$type <- type
     if (!is.na(value)) 
         args$value <- value
-    message(query2message(args))
+    message(query2message(url, args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     fromJSON(I(tt))
 }

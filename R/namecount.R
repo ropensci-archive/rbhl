@@ -20,7 +20,7 @@ namecount <- function(startdate = NA, enddate = NA, format = "json",
       args$startdate <- startdate
   if (!is.na(enddate)) 
       args$enddate <- enddate
-  message(query2message(args))
+  message(query2message(url, args))
   tt <- getForm(url, .params = args, ..., curl = curl)
   fromJSON(I(tt))
 }

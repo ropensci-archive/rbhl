@@ -5,8 +5,6 @@
 #'    partial matches is returned.
 #'
 #' @import RCurl RJSONIO
-#' @param 'BioHerLibKey' API Key
-#' @param  URL Internal use
 #' @param  title full or partial title for which to search (character)
 #' @inheritParams authorsearch
 #' @examples \dontrun{
@@ -22,7 +20,7 @@ titlesearchsimple <- function(title = NA, format = "json",
     args <- list(op = "TitleSearchSimple", apikey = key, format = format)
     if (!is.na(title)) 
         args$title <- title
-    message(query2message(args))
+    message(query2message(url, args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     fromJSON(I(tt))
 }

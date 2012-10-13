@@ -15,7 +15,7 @@ getitempages <- function(itemid = NA, format = "json",
     args <- list(op = "GetItemPages", apikey = key, format = format)
     if (!is.na(itemid)) 
         args$itemid <- itemid
-    message(query2message(args))
+    message(query2message(url, args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     outprod <- fromJSON(I(tt))
     outprod

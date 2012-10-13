@@ -22,7 +22,7 @@ gettitlemetadata <- function(titleid = NA, items = FALSE, format = "json",
     } else if (items == "FALSE") {
         args$items <- NULL
     }
-    message(query2message(args))
+    message(query2message(url, args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     fromJSON(I(tt))
 }

@@ -24,7 +24,7 @@ getitemmetadata <- function(itemid = NA, format = NA,
         args$itemid <- itemid
     if (!is.na(format)) 
         args$format <- format
-    message(query2message(args))
+    message(query2message(url, args))
     tt <- getForm(url, .params = args, ..., curl = curl)
     if (format == "json") {
         outprod <- fromJSON(I(tt))

@@ -2,8 +2,7 @@
 \alias{gettitleendNote}
 \title{Return a citation for a title, using the EndNote format.}
 \usage{
-  gettitleendNote(titleid = NA, justresult = FALSE,
-    format = "json",
+  gettitleendNote(titleid = NA, format = "json",
     url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
     key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")),
     ..., curl = getCurlHandle())
@@ -11,8 +10,6 @@
 \arguments{
   \item{titleid}{the identifier of an individual title
   (numeric)}
-
-  \item{justresult}{just print result? (TRUE/FALSE)}
 
   \item{format}{either XML ("xml") or JSON ("json") format}
 
@@ -35,7 +32,6 @@
 \examples{
 \dontrun{
 gettitleendNote('1726')
-gettitleendNote('1726', TRUE)
 }
 }
 
