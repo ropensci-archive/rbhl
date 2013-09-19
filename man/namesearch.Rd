@@ -32,7 +32,7 @@
 \examples{
 \dontrun{
 namesearch('poa annua')
-namesearch('helianthus annuus')
+namesearch(name='helianthus annuus')
 }
 }
 

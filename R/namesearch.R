@@ -7,7 +7,7 @@
 #' @inheritParams authorsearch
 #' @examples \dontrun{
 #' namesearch('poa annua')
-#' namesearch('helianthus annuus')
+#' namesearch(name='helianthus annuus')
 #' }
 #' @export
 namesearch <- function(name = NA, format = "json",
@@ -15,18 +15,15 @@ namesearch <- function(name = NA, format = "json",
   key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")), 
   ..., curl = getCurlHandle()) 
 {
-    args <- list(op = "NameSearch", apikey = key, format = format)
-    if (!is.na(name)) 
-        args$name <- name
-    message(query2message(url, args))
-    tt <- getForm(url, .params = args, ..., curl = curl)
-    outprod <- fromJSON(I(tt))
-    getit <- function(x) {
-        if (is.null(x[[1]]) == TRUE) 
-            x[[1]] <- paste("nonamebankID")
-        t(ldply(x))[2, ]
-    }
-    outdf <- ldply(outprod[3][[1]], getit)
-    names(outdf) <- c("NameBankID", "NameConfirmed")
-    outdf
+  args <- list(op = "NameSearch", apikey = key, format = format)
+  if (!is.na(name)) 
+    args$name <- name
+  message(query2message(url, args))
+  tt <- getForm(url, .params = args, ..., curl = curl)
+  outprod <- fromJSON(I(tt))$Result
+  getit <- function(x) {
+    x[sapply(x, is.null)] <- "none"
+    data.frame(x)
+  }
+  ldply(outprod, getit)
 }
