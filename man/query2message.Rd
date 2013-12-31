@@ -2,7 +2,7 @@
 \alias{query2message}
 \title{Internal function to convert API query to message printed in the console.}
 \usage{
-  query2message(url, x)
+query2message(url, x)
 }
 \arguments{
   \item{url}{The base url for the API.}
@@ -11,8 +11,8 @@
   call.}
 }
 \description{
-  Internal function to convert API query to message printed
-  in the console.
+Internal function to convert API query to message printed
+in the console.
 }
 \examples{
 \donttest{

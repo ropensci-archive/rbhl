@@ -1,9 +1,11 @@
 Package: rbhl
 Type: Package
-Title: Interface to Biodiversity Heritage Library API methods
+Title: Interface to Biodiversity Heritage Library (BHL) API methods. BHL
+    is a repository of digitized literature on biodiversity studies,
+    including floras, research papers, and more.
 Version: 0.0.3
 License: C00
-Date: 2012-10-13
+Date: 2013-12-31
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com"),
     person("Karthik", "Ram", role = "aut",
@@ -16,33 +18,3 @@ Imports:
     XML,
     RJSONIO,
     plyr
-Collate:
-    'authorsearch.R'
-    'booksearch.R'
-    'getauthortitles.R'
-    'getcollections.R'
-    'getitembyidentifier.R'
-    'getitemmetadata.R'
-    'getitempages.R'
-    'getlanguages.R'
-    'getpagemetadata.R'
-    'getpagenames.R'
-    'getpageocrtext.R'
-    'getsubjecttitles.R'
-    'gettitlebibtex.R'
-    'gettitlebyidentifier.R'
-    'gettitleendnote.R'
-    'gettitleitems.R'
-    'gettitlemetadata.R'
-    'getunpublisheditems.R'
-    'getunpublishedtitles.R'
-    'namecount.R'
-    'namegetdetail.R'
-    'namelist.R'
-    'subjectsearch.R'
-    'titlesearchsimple.R'
-    'bioherlib.R'
-    'namesearch.R'
-    'zzz.R'
-    'rbhlmethods.R'
-    'openurl.R'
