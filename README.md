@@ -20,3 +20,35 @@ require(devtools)
 install_github("rbhl", "ropensci")
 require(rbhl)
 ```
+
+### Meta
+
+Please report any issues or bugs](https://github.com/ropensci/rbhl/issues).
+
+License: CC0
+
+This package is part of the [rOpenSci](http://ropensci.org/packages) project.
+
+To cite package `rbhl` in publications use:
+
+```coffee
+To cite package ‘rbhl’ in publications use:
+
+  Scott Chamberlain and Karthik Ram (2013). rbhl: R interface to the
+  Biodiversity Heritage Library.. R package version 0.0.6.
+  https://github.com/ropensci/rbhl
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {rbhl: R interface to the Biodiversity Heritage Library.},
+    author = {Scott Chamberlain and Karthik Ram},
+    year = {2013},
+    note = {R package version 0.0.6},
+    url = {https://github.com/ropensci/rbhl},
+  }
+```
+
+Get citation information for `rbhl` in R doing `citation(package = 'rbhl')`
+
+[![](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
