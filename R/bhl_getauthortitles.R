@@ -4,22 +4,34 @@
 #'    advance, this method should be used in combination	with the AuthorSearch 
 #'    method.
 #'
-#' @import RCurl RJSONIO
+#' @import httr
+#' @importFrom plyr compact 
 #' @param creatorid BHL identifier for a particular author (numeric)
 #' @inheritParams bhl_authorsearch
+#' @export
 #' @examples \dontrun{
 #' bhl_getauthortitles(1970)
+#' bhl_getauthortitles(1970, output='raw')
+#' bhl_getauthortitles(1970, output='raw', format='xml')
 #' }
-#' @export
-bhl_getauthortitles <- function(creatorid = NA, format = "json",
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx", 
-  key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")), 
-  ..., curl = getCurlHandle()) 
+bhl_getauthortitles <- function(creatorid = NA, format = "json", output='list',
+  key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
+  callopts=list()) 
 {
-  args <- list(op = "GetAuthorTitles", apikey = key, format = format)
-  if (!is.na(creatorid)) 
-      args$creatorid <- creatorid
-  message(query2message(url, args))
-  tt <- getForm(url, .params = args, ..., curl = curl)
-  fromJSON(I(tt))
+  if(output=='list') format='json'
+  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
+  args <- compact(list(op = "GetAuthorTitles", apikey = key, format = format, 
+                       creatorid=creatorid))
+  out <- GET(url, query = args, callopts)
+  stop_for_status(out)
+  tt <- content(out, as="text")
+  if(output=='raw'){
+    return( tt )
+  } else if(output=='list')
+  {
+    return( fromJSON(I(tt)) )
+  } else
+  {
+    if(format=="json"){ return(fromJSON(I(tt))) } else{ return(xmlTreeParse(I(tt))) }
+  }
 }

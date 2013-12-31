@@ -3,29 +3,22 @@
 \title{Get a list of collections which are used to group titles and items. A single
    collection may contain either titles or items, but not both.}
 \usage{
-bhl_getcollections(pretty = FALSE, format = "json",
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
-  key = getOption("BioHerLibKey",
-  stop("need an API key for the Biod Her Library")), ...,
-  curl = getCurlHandle())
+bhl_getcollections(format = "json", output = "list",
+  key = getOption("BioHerLibKey", stop("need an API key for the BHL")),
+  callopts = list())
 }
 \arguments{
-  \item{pretty}{Print pretty as a data.frame (TRUE/FALSE).}
+  \item{asdf}{Print results as a data.frame (logical).}
 
   \item{format}{either XML ("xml") or JSON ("json") format}
 
-  \item{url}{the BHL API url for the function (should be
-  left to default)}
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
 
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
 
-  \item{...}{optional additional curl options (debugging
-  tools mostly)}
-
-  \item{curl}{If using in a loop, call getCurlHandle()
-  first and pass the returned value in here (avoids
-  unnecessary footprint)}
+  \item{callopts}{Call options passed on to httr::GET.}
 }
 \description{
 Get a list of collections which are used to group titles
@@ -35,7 +28,7 @@ items, but not both.
 \examples{
 \dontrun{
 bhl_getcollections()
-bhl_getcollections(pretty = T)
+bhl_getcollections(out = 'raw')
 }
 }
 

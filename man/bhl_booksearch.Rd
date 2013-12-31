@@ -2,12 +2,10 @@
 \alias{bhl_booksearch}
 \title{Search for titles and items in BHL.}
 \usage{
-bhl_booksearch(title = NA, lname = NA, volume = NA, edition = NA,
-  year = NA, collectionid = NA, language = NA, format = "json",
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
-  key = getOption("BioHerLibKey",
-  stop("need an API key for the Biod Her Library")), ...,
-  curl = getCurlHandle())
+bhl_booksearch(title = NULL, lname = NULL, volume = NULL,
+  edition = NULL, year = NULL, collectionid = NULL, language = NULL,
+  format = "json", output = "list", key = getOption("BioHerLibKey",
+  stop("need an API key for the BHL")), callopts = list())
 }
 \arguments{
   \item{title}{string to search for in the title
@@ -29,18 +27,13 @@ bhl_booksearch(title = NA, lname = NA, volume = NA, edition = NA,
 
   \item{format}{either XML ("xml") or JSON ("json") format}
 
-  \item{url}{the BHL API url for the function (should be
-  left to default)}
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
 
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
 
-  \item{...}{optional additional curl options (debugging
-  tools mostly)}
-
-  \item{curl}{If using in a loop, call getCurlHandle()
-  first and pass the returned value in here (avoids
-  unnecessary footprint)}
+  \item{callopts}{Call options passed on to httr::GET.}
 }
 \description{
 Search criteria includes title, author last name, volume,
@@ -52,14 +45,17 @@ specified, it should be a 4-digit year. To execute a
 search, you must supply at least a title, author last name,
 or collection identifier.
 }
+\note{
+Use \code{\link{bhl_getcollections}} or
+\code{\link{bhl_getlanguages}} to get acceptable terms
+}
 \examples{
 \dontrun{
-bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825, collectionid=4, language='eng')
-out <- bhl_booksearch('evolution')
-# Note  --Use getcollections() or getlanguages() to get acceptable terms
+bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825,
+   collectionid=4, language='eng')
+bhl_booksearch('evolution', year=2000, output='raw')
+bhl_booksearch('evolution', year=2000, output='raw', format='xml')
+bhl_booksearch('evolution', year=2000, output='parsed', format="xml")
 }
-}
-\seealso{
-\code{\link{getcollections}, \link{getlanguages}}
 }
 

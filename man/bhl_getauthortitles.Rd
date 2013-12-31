@@ -2,11 +2,9 @@
 \alias{bhl_getauthortitles}
 \title{Return a list of titles associated with a given BHL author identifier.}
 \usage{
-bhl_getauthortitles(creatorid = NA, format = "json",
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
-  key = getOption("BioHerLibKey",
-  stop("need an API key for the Biod Her Library")), ...,
-  curl = getCurlHandle())
+bhl_getauthortitles(creatorid = NA, format = "json", output = "list",
+  key = getOption("BioHerLibKey", stop("need an API key for the BHL")),
+  callopts = list())
 }
 \arguments{
   \item{creatorid}{BHL identifier for a particular author
@@ -14,18 +12,13 @@ bhl_getauthortitles(creatorid = NA, format = "json",
 
   \item{format}{either XML ("xml") or JSON ("json") format}
 
-  \item{url}{the BHL API url for the function (should be
-  left to default)}
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
 
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
 
-  \item{...}{optional additional curl options (debugging
-  tools mostly)}
-
-  \item{curl}{If using in a loop, call getCurlHandle()
-  first and pass the returned value in here (avoids
-  unnecessary footprint)}
+  \item{callopts}{Call options passed on to httr::GET.}
 }
 \description{
 Unless the identifier for a particular BHL author record is
@@ -35,6 +28,8 @@ with the AuthorSearch method.
 \examples{
 \dontrun{
 bhl_getauthortitles(1970)
+bhl_getauthortitles(1970, output='raw')
+bhl_getauthortitles(1970, output='raw', format='xml')
 }
 }
 

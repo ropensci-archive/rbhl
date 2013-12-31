@@ -2,52 +2,40 @@
 \alias{bhl_bioherlib}
 \title{Search BHL across many API methods.}
 \usage{
-bhl_bioherlib(method = list("GetPageMetadata", "GetPageOcrText",
-  "GetPageNames", "GetItemMetadata", "GetItemByIdentifier", "GetItemPages",
-  "GetUnpublishedItems", "GetTitleMetadata", "GetTitleItems",
-  "GetTitleByIdentifier", "TitleSearchSimple", "GetTitleBibTex",
-  "GetTitleEndNote", "GetUnpublishedTitles", "SubjectSearch",
-  "GetSubjectTitles", "AuthorSearch", "GetAuthorTitles", "NameCount",
-  "NameList", "NameGetDetail", "NameSearch", "GetCollections", "GetLanguages"),
-  page = NA, ocrtext = FALSE, names = FALSE, format = NA,
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
-  key = getOption("BioHerLibKey",
-  stop("need an API key for the Biod Her Library")), ...,
-  curl = getCurlHandle())
+bhl_bioherlib(method = "GetPageMetadata", pageid = NULL, ocr = FALSE,
+  names = FALSE, format = "json", key = getOption("BioHerLibKey",
+  stop("need an API key for the BHL")), output = "list", callopts = list())
 }
 \arguments{
-  \item{ocrtext}{return ocr text of the page (TRUE/FALSE)}
-
-  \item{names}{return the names that appear on the page
-  (TRUE/FALSE)}
-
   \item{method}{The API method to use.}
 
-  \item{page}{The identifier of an individual page in a
+  \item{pageid}{The identifier of an individual page in a
   scanned book.}
 
-  \item{format}{either XML ("xml") or JSON ("json") format}
+  \item{ocr}{return ocr text of the page (logical).
+  Default: FALSE}
 
-  \item{url}{the BHL API url for the function (should be
-  left to default)}
+  \item{names}{return the names that appear on the page
+  (logical). Default: FALSE}
+
+  \item{format}{either XML ("xml") or JSON ("json") format}
 
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
 
-  \item{...}{optional additional curl options (debugging
-  tools mostly)}
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
 
-  \item{curl}{If using in a loop, call getCurlHandle()
-  first and pass the returned value in here (avoids
-  unnecessary footprint)}
+  \item{callopts}{Call options passed on to httr::GET.}
 }
 \description{
 Search BHL across many API methods.
 }
 \examples{
 \dontrun{
-bhl_bioherlib(method='GetPageMetadata', page='1328690', ocrtext=TRUE, names=TRUE, format='json')
-bhl_bioherlib('GetPageNames', '1328690', 'TRUE', 'TRUE', 'json')
+bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE)
+bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, format="xml")
+bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, raw=TRUE)
 }
 }
 

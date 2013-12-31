@@ -3,7 +3,7 @@
 \title{Return a list of authors that match (fully or partially) the specified
    search string.}
 \usage{
-bhl_authorsearch(name = NULL, format = "json",
+bhl_authorsearch(name = NULL, format = "json", output = "list",
   key = getOption("BioHerLibKey", stop("need an API key for the BHL")),
   callopts = list())
 }
@@ -14,18 +14,13 @@ bhl_authorsearch(name = NULL, format = "json",
 
   \item{format}{either XML ("xml") or JSON ("json") format}
 
-  \item{url}{the BHL API url for the function (should be
-  left to default)}
-
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
 
-  \item{...}{optional additional curl options (debugging
-  tools mostly)}
+  \item{callopts}{Call options passed on to httr::GET.}
 
-  \item{curl}{If using in a loop, call getCurlHandle()
-  first and pass the returned value in here (avoids
-  unnecessary footprint)}
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
 }
 \description{
 The namessearched are those contained in MARC 100a, 110a,
@@ -34,6 +29,7 @@ The namessearched are those contained in MARC 100a, 110a,
 \examples{
 \dontrun{
 bhl_authorsearch(name='dimmock')
+bhl_authorsearch(name='Jones')
 }
 }
 

@@ -4,35 +4,40 @@
 #' The namessearched are those contained in MARC 100a, 110a, 111a, 700a, 
 #'    710a, and 711a library records.
 #'
-#' @import RCurl RJSONIO
+#' @import httr 
+#' @importFrom plyr compact
 #' @param name full or partial name of the author for which to search
 #'     (last name listed first, i.e. 'Darwin, Charles') (character)
 #' @param format either XML ("xml") or JSON ("json") format
-#' @param url the BHL API url for the function (should be left to default)
 #' @param key your BHL API key, either enter, or loads from .Rprofile
-#' @param ... optional additional curl options (debugging tools mostly)
-#' @param curl If using in a loop, call getCurlHandle() first and pass 
-#'  the returned value in here (avoids unnecessary footprint)
+#' @param callopts Call options passed on to httr::GET.
+#' @param output Return a list, raw json or xml, or parsed data (character). 
+#'    Default: 'list'
 #' @export
 #' @examples \dontrun{
 #' bhl_authorsearch(name='dimmock')
+#' bhl_authorsearch(name='Jones')
 #' }
-bhl_authorsearch <- function(name = NULL, format = "json", 
+bhl_authorsearch <- function(name = NULL, format = "json", output='list',
   key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
-  callopts=list()) 
+  callopts=list())
 {
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op="AuthorSearch", name=name, apikey=key, format=format))
-  message(query2message(url, args))
-  tt <- getForm(url, 
-  							.params = args, 
-  							..., 
-  							curl = curl)
-  bbb <- fromJSON(I(tt))$Result
-  temp <- do.call(rbind, llply(bbb, function(x) t(ldply(x))))
-	row.names(temp) <- NULL
-  df <- data.frame(temp)
- 	df2 <- df[!df$X1 %in% "CreatorID", ]
-  names(df2) <- names(bbb[[1]][!sapply(bbb[[1]], is.null)])
- 	df2
+  out <- GET(url, query=args, callopts)
+  stop_for_status(out)
+  tt <- content(out, as="text")
+  if(output=='raw'){
+    return( tt )
+  } else if(output=='list'){
+    return( fromJSON(I(tt)) )
+  } else
+  {
+    return( if(format=="json"){ return(fromJSON(I(tt))) } else{ return(xmlTreeParse(I(tt))) } )
+  }
+#   tt <- lapply(tt, function(x){
+#     x[sapply(x, is.null)] <- ""
+#     x
+#   })
+#   return( data.frame(rbindlist(tt)) )
 }
