@@ -1,0 +1,19 @@
+\name{return_results}
+\alias{return_results}
+\title{Internal function to parse results from functions}
+\usage{
+return_results(x, y, z)
+}
+\arguments{
+  \item{x}{Raw json or xml data object}
+
+  \item{y}{Output format, one of 'raw', 'list', or
+  'parsed'}
+
+  \item{z}{Format, one of 'json' or 'xml'}
+}
+\description{
+Internal function to parse results from functions
+}
+\keyword{internal}
+

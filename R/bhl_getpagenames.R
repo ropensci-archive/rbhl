@@ -1,28 +1,25 @@
 #' Return a list of names that appear on a page.
 #'
-#' @import RCurl RJSONIO XML
+#' @import httr XML RJSONIO
+#' @importFrom plyr compact
+#' @importFrom XML xmlTreeParse
 #' @param page page number to get
 #' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
-#' bhl_getpagenames('1328690', 'json')
+#' bhl_getpagenames('1328690')
+#' bhl_getpagenames('1328690', 'xml', 'raw')
+#' bhl_getpagenames('1328690', 'xml', 'parsed')
 #' }
 #' @export
-bhl_getpagenames <- function(page = NA, format = NA, 
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx", 
-  key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")), 
-  ..., curl = getCurlHandle()) 
+bhl_getpagenames <- function(page = NULL, format = 'json', output='list',
+  key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
+  callopts = list()) 
 {
-    args <- list(op = "GetPageNames", apikey = key)
-    if (!is.na(page)) 
-        args$pageid <- page
-    if (!is.na(format)) 
-        args$format <- format
-    message(query2message(url, args))
-    tt <- getForm(url, .params = args, ..., curl = curl)
-    if (format == "json") {
-        outprod <- fromJSON(I(tt))
-    } else if (format == "xml") {
-        outprod <- xmlTreeParse(I(tt))
-    }
-    outprod
+  if(output=='list') format='json'
+  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
+  args <- compact(list(op = "GetPageNames", apikey=key, format=format, pageid=page))
+  out <- GET(url, query = args, callopts)
+  stop_for_status(out)
+  tt <- content(out, as="text")
+  return_results(tt, output, format)
 }

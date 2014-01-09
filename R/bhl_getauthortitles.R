@@ -25,13 +25,5 @@ bhl_getauthortitles <- function(creatorid = NA, format = "json", output='list',
   out <- GET(url, query = args, callopts)
   stop_for_status(out)
   tt <- content(out, as="text")
-  if(output=='raw'){
-    return( tt )
-  } else if(output=='list')
-  {
-    return( fromJSON(I(tt)) )
-  } else
-  {
-    if(format=="json"){ return(fromJSON(I(tt))) } else{ return(xmlTreeParse(I(tt))) }
-  }
+  return_results(tt, output, format)
 }

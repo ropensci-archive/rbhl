@@ -1,40 +1,28 @@
 #' Return the OCR-generated text of a page.
 #'
-#' @import RCurl RJSONIO XML
+#' @import httr XML RJSONIO
+#' @importFrom plyr compact
+#' @importFrom XML xmlTreeParse
 #' @param page page number to get
-#' @param ocrtext return ocr text of the page (TRUE/FALSE)
+#' @param ocr return ocr text of the page (TRUE/FALSE)
 #' @param names return the names that appear on the page (TRUE/FALSE)
 #' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
-#' bhl_getpageocrtext('1328690', FALSE, FALSE, 'json')
+#' bhl_getpageocrtext(1328690, FALSE, FALSE, 'json')
+#' bhl_getpageocrtext(1328690, FALSE, FALSE, 'xml', 'raw')
+#' bhl_getpageocrtext(1328690, FALSE, FALSE, 'xml', 'parsed')
 #' }
 #' @export
-bhl_getpageocrtext <- function(page = NA, ocrtext = FALSE, names = FALSE, format = NA, 
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx", 
-  key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")), 
-  ..., curl = getCurlHandle()) 
+bhl_getpageocrtext <- function(page = NULL, ocr = FALSE, names = FALSE, format = 'json', 
+  output = 'list', key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
+  callopts = list()) 
 {
-    args <- list(op = "GetPageOcrText", apikey = key)
-    if (!is.na(page)) 
-        args$pageid <- page
-    if (!is.na(format)) 
-        args$format <- format
-    if (ocrtext == "TRUE") {
-        args$ocr <- "t"
-    } else if (ocrtext == "FALSE") {
-        args$ocr <- NULL
-    }
-    if (names == "TRUE") {
-        args$names <- "t"
-    } else if (names == "FALSE") {
-        args$names <- NULL
-    }
-    message(query2message(url, args))
-    tt <- getForm(url, .params = args, ..., curl = curl)
-    if (format == "json") {
-        outprod <- fromJSON(I(tt))
-    } else if (format == "xml") {
-        outprod <- xmlTreeParse(I(tt))
-    }
-    outprod
+  if(output=='list') format='json'
+  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
+  args <- compact(list(op = "GetPageOcrText", apikey = key, format=format, pageid=page,
+                       ocr=if(ocr) 't' else NULL, names=if(names) 't' else NULL))
+  out <- GET(url, query = args, callopts)
+  stop_for_status(out)
+  tt <- content(out, as="text")
+  return_results(tt, output, format)
 } 

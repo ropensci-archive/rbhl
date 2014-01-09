@@ -2,19 +2,20 @@
 \alias{bhl_getlanguages}
 \title{Get a list of languages in which materials in BHL have been written.}
 \usage{
-bhl_getlanguages(pretty = FALSE, format = "json",
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
-  key = getOption("BioHerLibKey",
-  stop("need an API key for the Biod Her Library")), ...,
-  curl = getCurlHandle())
+bhl_getlanguages(format = "json", output = "list",
+  key = getOption("BioHerLibKey", stop("need an API key for the BHL")),
+  callopts = list())
 }
 \arguments{
-  \item{pretty}{print pretty, as data.frame (TRUE/FALSE)}
-
   \item{format}{either XML ("xml") or JSON ("json") format}
+
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
 
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
+
+  \item{callopts}{Call options passed on to httr::GET.}
 }
 \description{
 Get a list of languages in which materials in BHL have been
@@ -23,7 +24,9 @@ written.
 \examples{
 \dontrun{
 bhl_getlanguages()
-bhl_getlanguages(pretty = T)
+bhl_getlanguages(output='parsed')
+bhl_getlanguages(output='raw')
+bhl_getlanguages(output='raw', format='xml')
 }
 }
 

@@ -2,11 +2,9 @@
 \alias{bhl_getitemmetadata}
 \title{Return metadata about an item.}
 \usage{
-bhl_getitemmetadata(itemid = NA, format = NA, pages = TRUE,
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
-  key = getOption("BioHerLibKey",
-  stop("need an API key for the Biod Her Library")), ...,
-  curl = getCurlHandle())
+bhl_getitemmetadata(itemid = NULL, pages = TRUE, format = "json",
+  output = "list", key = getOption("BioHerLibKey",
+  stop("need an API key for the BHL")), callopts = list())
 }
 \arguments{
   \item{itemid}{item id (character)}
@@ -15,15 +13,23 @@ bhl_getitemmetadata(itemid = NA, format = NA, pages = TRUE,
 
   \item{format}{either XML ("xml") or JSON ("json") format}
 
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
+
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
+
+  \item{callopts}{Call options passed on to httr::GET.}
 }
 \description{
 You may choose to include a list of the item's pages.
 }
 \examples{
 \dontrun{
-bhl_getitemmetadata('16800', 'json', TRUE)
+bhl_getitemmetadata('16800', TRUE)
+bhl_getitemmetadata('16800', TRUE, 'xml', 'parsed')
+bhl_getitemmetadata('16800', TRUE, 'json', 'raw')
+bhl_getitemmetadata('16800', TRUE, 'xml', 'raw')
 }
 }
 

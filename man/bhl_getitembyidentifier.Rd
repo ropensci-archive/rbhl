@@ -2,11 +2,9 @@
 \alias{bhl_getitembyidentifier}
 \title{Find and return metadata about an item or items that match a specific identifier.}
 \usage{
-bhl_getitembyidentifier(type = NA, value = NA, format = NA,
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
-  key = getOption("BioHerLibKey",
-  stop("need an API key for the Biod Her Library")), ...,
-  curl = getCurlHandle())
+bhl_getitembyidentifier(type = NULL, value = NULL, format = "json",
+  output = "list", key = getOption("BioHerLibKey",
+  stop("need an API key for the BHL")), callopts = list())
 }
 \arguments{
   \item{type}{the type of identifier (barcode or ia)
@@ -16,8 +14,13 @@ bhl_getitembyidentifier(type = NA, value = NA, format = NA,
 
   \item{format}{either XML ("xml") or JSON ("json") format}
 
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
+
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
+
+  \item{callopts}{Call options passed on to httr::GET.}
 }
 \description{
 If you know the Internet Archive identifier for an item,
@@ -25,7 +28,10 @@ use this method to look up the equivalent item in BHL.
 }
 \examples{
 \dontrun{
-bhl_getitembyidentifier('ia', 'animalkingdomarr03cuvi', 'json')
+bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi')
+bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', format='xml')
+bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', format='xml', output='raw')
+bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', format='xml', output='parsed')
 }
 }
 

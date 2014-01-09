@@ -6,6 +6,7 @@
 #'
 #' @import httr 
 #' @importFrom plyr compact
+#' @importFrom XML xmlTreeParse
 #' @param name full or partial name of the author for which to search
 #'     (last name listed first, i.e. 'Darwin, Charles') (character)
 #' @param format either XML ("xml") or JSON ("json") format
@@ -27,17 +28,5 @@ bhl_authorsearch <- function(name = NULL, format = "json", output='list',
   out <- GET(url, query=args, callopts)
   stop_for_status(out)
   tt <- content(out, as="text")
-  if(output=='raw'){
-    return( tt )
-  } else if(output=='list'){
-    return( fromJSON(I(tt)) )
-  } else
-  {
-    return( if(format=="json"){ return(fromJSON(I(tt))) } else{ return(xmlTreeParse(I(tt))) } )
-  }
-#   tt <- lapply(tt, function(x){
-#     x[sapply(x, is.null)] <- ""
-#     x
-#   })
-#   return( data.frame(rbindlist(tt)) )
+  return_results(tt, output, format)
 }

@@ -1,22 +1,26 @@
 #' Return a list of an item's pages.
 #'
-#' @import RCurl RJSONIO
+#' @import httr XML RJSONIO
+#' @importFrom plyr compact
+#' @importFrom XML xmlTreeParse
 #' @param itemid the item id (character)
 #' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
 #' bhl_getitempages('16800')
+#' bhl_getitempages('16800', 'xml', 'raw')
+#' bhl_getitempages('16800', 'xml', 'parsed')
 #' }
 #' @export
-bhl_getitempages <- function(itemid = NA, format = "json",
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx", 
-  key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")), 
-  ..., curl = getCurlHandle()) 
+bhl_getitempages <- function(itemid = NA, format = "json", output='list',
+  key = getOption("BioHerLibKey", stop("need an API key for the BHL")),
+  callopts = list()) 
 {
-    args <- list(op = "GetItemPages", apikey = key, format = format)
-    if (!is.na(itemid)) 
-        args$itemid <- itemid
-    message(query2message(url, args))
-    tt <- getForm(url, .params = args, ..., curl = curl)
-    outprod <- fromJSON(I(tt))
-    outprod
-} 
+  if(output=='list') format='json'
+  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
+  args <- compact(list(op = "GetItemPages", apikey = key, format = format, 
+                       itemid=itemid))
+  out <- GET(url, query = args, callopts)
+  stop_for_status(out)
+  tt <- content(out, as="text")
+  return_results(tt, output, format)
+}

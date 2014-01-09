@@ -15,3 +15,21 @@ query2message <- function(url, x) {
   }
   paste('API call:\n', paste(url, "?", paste(mylist, collapse="&"), sep=''))
 }
+
+#' Internal function to parse results from functions
+#' @param x Raw json or xml data object
+#' @param y Output format, one of 'raw', 'list', or 'parsed'
+#' @param z Format, one of 'json' or 'xml'
+#' @export
+#' @keywords internal
+return_results <- function(x, y, z){
+  if(y=='raw'){
+    return( x )
+  } else if(y=='list')
+  {
+    return( fromJSON(I(x)) )
+  } else
+  {
+    if(z=="json"){ return(fromJSON(I(x))) } else{ return(xmlTreeParse(I(x))) }
+  } 
+}

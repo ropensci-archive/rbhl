@@ -1,25 +1,33 @@
 #' Get a list of languages in which materials in BHL have been written.
 #'
-#' @import RCurl RJSONIO
-#' @param pretty print pretty, as data.frame (TRUE/FALSE)
+#' @import httr XML RJSONIO
+#' @importFrom plyr compact
+#' @importFrom XML xmlTreeParse
 #' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
 #' bhl_getlanguages()
-#' bhl_getlanguages(pretty = T)
+#' bhl_getlanguages(output='parsed')
+#' bhl_getlanguages(output='raw')
+#' bhl_getlanguages(output='raw', format='xml')
 #' }
 #' @export
-bhl_getlanguages <- function(pretty = FALSE, format = "json",
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx", 
-  key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")), 
-  ..., curl = getCurlHandle())
+bhl_getlanguages <- function(format = "json", output='list',
+  key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
+  callopts = list())
 {
-    args <- list(op = "GetLanguages", apikey = key, format = format)
-    message(query2message(url, args))
-    tt <- getForm(url, .params = args, ..., curl = curl)
-    temp <- fromJSON(I(tt))
-    if (!pretty == TRUE) {
-        temp
-    } else {
-        ldply(temp$Result, identity)
-    }
+  if(output=='list') format='json'
+  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
+  args <- compact(list(op = "GetLanguages", apikey = key, format = format))
+  out <- GET(url, query = args, callopts)
+  stop_for_status(out)
+  tt <- content(out, as="text")
+  if(output=='raw'){
+    return( tt )
+  } else if(output=='list')
+  {
+    return( fromJSON(I(tt)) )
+  } else
+  {
+    if(format=="json"){ return(ldply(fromJSON(I(tt))$Result, identity)) } else{ return(xmlTreeParse(I(tt))) }
+  }
 }
