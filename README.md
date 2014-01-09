@@ -1,4 +1,7 @@
-# rbhl #
+rbhl
+====
+
+[![Build Status](https://api.travis-ci.org/ropensci/rbhl.png)](https://travis-ci.org/ropensci/rbhl)
 
 This is an R interface to the Biodiversity Heritage Library API. 
 
