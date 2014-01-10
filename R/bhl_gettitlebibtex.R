@@ -1,10 +1,9 @@
 #' Return a citation for a title, using the BibTeX format.
 #'
-#' @import httr XML RJSONIO
+#' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
 #' @param titleid the identifier of an individual title (numeric)
-#' @param justresult just print result? (TRUE/FALSE)
 #' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
 #' bhl_gettitlebibTex(1726)

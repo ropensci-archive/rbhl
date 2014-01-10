@@ -5,7 +5,7 @@
 bhl_openurl(genre = NULL, title = NULL, aufirst = NULL, aulast = NULL,
   date = NULL, spage = NULL, issue = NULL, version = 0.1,
   format = "json", key = getOption("BioHerLibKey",
-  stop("need an API key for the Biod Her Library")))
+  stop("need an API key for the BHl")), output = "list", callopts = list())
 }
 \arguments{
   \item{genre}{Book genre}
@@ -29,12 +29,9 @@ bhl_openurl(genre = NULL, title = NULL, aufirst = NULL, aulast = NULL,
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
 
-  \item{...}{optional additional curl options (debugging
-  tools mostly)}
+  \item{output}{Output format, one of list, raw, or parsed}
 
-  \item{curl}{If using in a loop, call getCurlHandle()
-  first and pass the returned value in here (avoids
-  unnecessary footprint)}
+  \item{callopts}{Options to pass on to httr::GET}
 }
 \description{
 Not sure how this differs from their other API...
@@ -48,6 +45,16 @@ bhl_openurl(
 	aulast="Williston",
 	date=1908,
 	spage=16)
+
+bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
+   aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16, output='raw')
+
+bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
+   aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16, output='parsed')
+
+bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
+   aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16,
+   format='xml', output='parsed')
 }
 }
 

@@ -1,6 +1,6 @@
 #' Return the OCR-generated text of a page.
 #'
-#' @import httr XML RJSONIO
+#' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
 #' @param page page number to get

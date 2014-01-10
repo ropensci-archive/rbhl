@@ -1,6 +1,6 @@
 #' Return a list of a title's items (books).
 #'
-#' @import httr XML
+#' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
 #' @param titleid the identifier of an individual title (numeric)

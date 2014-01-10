@@ -3,7 +3,7 @@
 #' If you know the Internet Archive identifier for an item, use this method to 
 #'    look up the equivalent item in BHL.
 #'
-#' @import httr XML RJSONIO
+#' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
 #' @param type the type of identifier (barcode or ia) (character)

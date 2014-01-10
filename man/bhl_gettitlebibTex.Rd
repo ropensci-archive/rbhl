@@ -10,8 +10,6 @@ bhl_gettitlebibTex(titleid = NULL, format = "json", output = "list",
   \item{titleid}{the identifier of an individual title
   (numeric)}
 
-  \item{justresult}{just print result? (TRUE/FALSE)}
-
   \item{format}{either XML ("xml") or JSON ("json") format}
 
   \item{output}{Return a list, raw json or xml, or parsed

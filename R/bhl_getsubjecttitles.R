@@ -1,6 +1,6 @@
 #' Return a list of titles associated with a subject.
 #'
-#' @import httr XML RJSONIO
+#' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
 #' @param subject the full or partial subject for which to search (character)

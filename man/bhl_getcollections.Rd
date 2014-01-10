@@ -8,8 +8,6 @@ bhl_getcollections(format = "json", output = "list",
   callopts = list())
 }
 \arguments{
-  \item{asdf}{Print results as a data.frame (logical).}
-
   \item{format}{either XML ("xml") or JSON ("json") format}
 
   \item{output}{Return a list, raw json or xml, or parsed

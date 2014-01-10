@@ -1,18 +1,25 @@
 #' Return a list of the identifiers of all unpublished titles.
 #'
-#' @import RCurl RJSONIO
+#' @import httr
+#' @importFrom plyr compact
+#' @importFrom XML xmlTreeParse
 #' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
 #' bhl_getunpublishedtitles()
+#' bhl_getunpublishedtitles(output='raw')
+#' bhl_getunpublishedtitles(format='xml', output='raw')
+#' bhl_getunpublishedtitles(format='xml', output='parsed')
 #' }
 #' @export
-bhl_getunpublishedtitles <- function(format = "json",
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx", 
-  key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")), 
-  ..., curl = getCurlHandle()) 
+bhl_getunpublishedtitles <- function(format = "json", output='list', 
+  key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
+  callopts=list()) 
 {
-  args <- list(op = "GetUnpublishedTitles", apikey = key, format = format)
-  message(query2message(url, args))
-  tt <- getForm(url, .params = args, ..., curl = curl)
-  fromJSON(I(tt))
+  if(output=='list') format='json'
+  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
+  args <- compact(list(op = "GetUnpublishedTitles", apikey = key, format = format))
+  out <- GET(url, query = args, callopts)
+  stop_for_status(out)
+  tt <- content(out, as="text")
+  return_results(tt, output, format)
 }

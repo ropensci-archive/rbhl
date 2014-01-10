@@ -1,7 +1,8 @@
 #' Get a list of languages in which materials in BHL have been written.
 #'
-#' @import httr XML RJSONIO
-#' @importFrom plyr compact
+#' @import httr
+#' @importFrom RJSONIO fromJSON
+#' @importFrom plyr compact ldply
 #' @importFrom XML xmlTreeParse
 #' @inheritParams bhl_authorsearch
 #' @examples \dontrun{

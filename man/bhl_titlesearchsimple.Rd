@@ -3,10 +3,8 @@
 \title{Perform a simple title search.}
 \usage{
 bhl_titlesearchsimple(title = NA, format = "json",
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx",
-  key = getOption("BioHerLibKey",
-  stop("need an API key for the Biod Her Library")), ...,
-  curl = getCurlHandle())
+  key = getOption("BioHerLibKey", stop("need an API key for the BHL")),
+  output = "list", callopts = list())
 }
 \arguments{
   \item{title}{full or partial title for which to search
@@ -16,6 +14,11 @@ bhl_titlesearchsimple(title = NA, format = "json",
 
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
+
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
+
+  \item{callopts}{Call options passed on to httr::GET.}
 }
 \description{
 The full title (as specified in MARC 245a and MARC 245b

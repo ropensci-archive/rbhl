@@ -1,6 +1,6 @@
 #' Find and return metadata about a title or titles that match a specific identifier.
 #' 
-#' @import httr XML RJSONIO
+#' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
 #' @param type the type of identifier (oclc, issn, isbn, lccn, ddc, nal, nlm, coden) character

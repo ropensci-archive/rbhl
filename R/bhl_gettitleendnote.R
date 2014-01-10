@@ -1,6 +1,6 @@
 #' Return a citation for a title, using the EndNote format.
 #'
-#' @import httr XML
+#' @import httr
 #' @importFrom plyr compact
 #' @param titleid the identifier of an individual title (numeric)
 #' @inheritParams bhl_authorsearch

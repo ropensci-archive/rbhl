@@ -2,7 +2,7 @@
 #' 
 #' You may choose to include a list of the item's pages.
 #'
-#' @import httr XML RJSONIO
+#' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
 #' @param itemid item id (character)

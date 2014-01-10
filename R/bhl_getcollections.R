@@ -2,8 +2,8 @@
 #'    collection may contain either titles or items, but not both.
 #'
 #' @import httr
-#' @importFrom plyr compact
-#' @param asdf Print results as a data.frame (logical).
+#' @importFrom RJSONIO fromJSON
+#' @importFrom plyr compact ldply
 #' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
 #' bhl_getcollections()
@@ -27,6 +27,6 @@ bhl_getcollections <- function(format = "json", output='list',
     return( fromJSON(I(tt)) )
   } else
   {
-    return( ldply(temp$Result, function(x) as.data.frame(x)) )
+    return( ldply(tt$Result, function(x) as.data.frame(x)) )
   }
 }

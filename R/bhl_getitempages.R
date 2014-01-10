@@ -1,6 +1,6 @@
 #' Return a list of an item's pages.
 #'
-#' @import httr XML RJSONIO
+#' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
 #' @param itemid the item id (character)

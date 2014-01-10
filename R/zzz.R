@@ -17,6 +17,8 @@ query2message <- function(url, x) {
 }
 
 #' Internal function to parse results from functions
+#' @importFrom XML xmlTreeParse
+#' @importFrom RJSONIO fromJSON
 #' @param x Raw json or xml data object
 #' @param y Output format, one of 'raw', 'list', or 'parsed'
 #' @param z Format, one of 'json' or 'xml'

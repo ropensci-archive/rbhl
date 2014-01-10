@@ -19,8 +19,7 @@ Imports:
     httr,
     XML,
     RJSONIO,
-    plyr,
-    RCurl
+    plyr
 Suggests:
     testthat,
     roxygen2,

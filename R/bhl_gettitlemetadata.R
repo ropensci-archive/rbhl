@@ -1,28 +1,29 @@
 #' Return metadata about a title. You may choose to include a list of 
 #'    the items (books) associated  with the title.
 #'
-#' @import RCurl RJSONIO
+#' @import httr
+#' @importFrom plyr compact
+#' @importFrom XML xmlTreeParse
 #' @param titleid the identifier of an individual title (numeric)
-#' @param items logical
+#' @param items (logical) TRUE of FALSE (default) to inclue items
 #' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
 #' bhl_gettitlemetadata(1726, TRUE)
+#' bhl_gettitlemetadata(1726, output='raw')
+#' bhl_gettitlemetadata(1726, format='xml', output='raw')
+#' bhl_gettitlemetadata(1726, format='xml', output='parsed')
 #' }
 #' @export
 bhl_gettitlemetadata <- function(titleid = NA, items = FALSE, format = "json",
-    url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx", 
-    key = getOption("BioHerLibKey", stop("need an API key for the Biod Her Library")), 
-    ..., curl = getCurlHandle()) 
+  output='list', key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
+  callopts=list()) 
 {
-    args <- list(op = "GetTitleMetadata", apikey = key, format = format)
-    if (!is.na(titleid)) 
-        args$titleid <- titleid
-    if (items == "TRUE") {
-        args$items <- "t"
-    } else if (items == "FALSE") {
-        args$items <- NULL
-    }
-    message(query2message(url, args))
-    tt <- getForm(url, .params = args, ..., curl = curl)
-    fromJSON(I(tt))
+  if(output=='list') format='json'
+  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
+  args <- compact(list(op = "GetTitleMetadata", apikey = key, format = format,
+                       titleid=titleid, items=items))
+  out <- GET(url, query = args, callopts)
+  stop_for_status(out)
+  tt <- content(out, as="text")
+  return_results(tt, output, format)
 }
