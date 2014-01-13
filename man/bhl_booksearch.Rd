@@ -53,7 +53,7 @@ Use \code{\link{bhl_getcollections}} or
 \dontrun{
 bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825,
    collectionid=4, language='eng')
-bhl_booksearch('evolution', year=2000, output='raw')
+bhl_booksearch(title='evolution', year=2000, output='raw')
 bhl_booksearch('evolution', year=2000, output='raw', format='xml')
 bhl_booksearch('evolution', year=2000, output='parsed', format="xml")
 }
