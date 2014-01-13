@@ -37,10 +37,10 @@
 #' @export
 bhl_openurl <- function(genre = NULL, title = NULL, aufirst = NULL, aulast = NULL, 
 	date = NULL, spage = NULL, issue = NULL, version = 0.1, format = "json",
-  key = getOption("BioHerLibKey", stop("need an API key for the BHl")),
-  output='list', callopts=list()) 
+  key = NULL, output='list', callopts=list()) 
 {
 	url = "http://www.biodiversitylibrary.org/openurl"
+	key <- getkey(key)
   if(version=="1.0"){url_ver <- "z39.88-2004"} else {url_ver <- NULL}
 	args <- compact(list(genre = genre, title = title, aufirst = aufirst,
 							 date = date, spage = spage, issue = issue, url_ver = url_ver,

@@ -9,7 +9,8 @@
 #' @importFrom XML xmlTreeParse
 #' @param name full or partial name of the author for which to search
 #'     (last name listed first, i.e. 'Darwin, Charles') (character)
-#' @param format either XML ("xml") or JSON ("json") format
+#' @param format either XML ('xml') or JSON ('json') format. If output='list',
+#' 		format is forced to equal 'json'
 #' @param key your BHL API key, either enter, or loads from .Rprofile
 #' @param callopts Call options passed on to httr::GET.
 #' @param output Return a list, raw json or xml, or parsed data (character). 
@@ -20,9 +21,10 @@
 #' bhl_authorsearch(name='Jones')
 #' }
 bhl_authorsearch <- function(name = NULL, format = "json", output='list',
-  key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
-  callopts=list())
+  key = NULL, callopts=list())
 {
+  if(output=='list') format='json'
+  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op="AuthorSearch", name=name, apikey=key, format=format))
   out <- GET(url, query=args, callopts)

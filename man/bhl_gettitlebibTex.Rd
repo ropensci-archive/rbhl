@@ -3,14 +3,14 @@
 \title{Return a citation for a title, using the BibTeX format.}
 \usage{
 bhl_gettitlebibTex(titleid = NULL, format = "json", output = "list",
-  key = getOption("BioHerLibKey", stop("need an API key for the BHL")),
-  callopts = list())
+  key = NULL, callopts = list())
 }
 \arguments{
   \item{titleid}{the identifier of an individual title
   (numeric)}
 
-  \item{format}{either XML ("xml") or JSON ("json") format}
+  \item{format}{either XML ('xml') or JSON ('json') format.
+  If output='list', format is forced to equal 'json'}
 
   \item{output}{Return a list, raw json or xml, or parsed
   data (character).  Default: 'list'}

@@ -29,10 +29,10 @@
 #' }
 bhl_booksearch <- function(title = NULL, lname = NULL, volume = NULL, 
     edition = NULL, year = NULL, collectionid = NULL, language = NULL, format = "json",
-    output = 'list', key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
-    callopts = list()) 
+    output = 'list', key = NULL, callopts = list()) 
 {
   if(output=='list') format='json'
+  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "BookSearch", apikey = key, format = format, 
                        title=title, lname=lname, volume=volume, 

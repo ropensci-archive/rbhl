@@ -3,14 +3,14 @@
 \title{Return a list of titles associated with a given BHL author identifier.}
 \usage{
 bhl_getauthortitles(creatorid = NA, format = "json", output = "list",
-  key = getOption("BioHerLibKey", stop("need an API key for the BHL")),
-  callopts = list())
+  key = NULL, callopts = list())
 }
 \arguments{
   \item{creatorid}{BHL identifier for a particular author
   (numeric)}
 
-  \item{format}{either XML ("xml") or JSON ("json") format}
+  \item{format}{either XML ('xml') or JSON ('json') format.
+  If output='list', format is forced to equal 'json'}
 
   \item{output}{Return a list, raw json or xml, or parsed
   data (character).  Default: 'list'}

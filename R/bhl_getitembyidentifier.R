@@ -17,10 +17,10 @@
 #' }
 #' @export
 bhl_getitembyidentifier <- function(type = NULL, value = NULL, format = 'json', 
-  output = "list", key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
-  callopts = list()) 
+  output = "list", key = NULL, callopts = list()) 
 {
   if(output=='list') format='json'
+  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "GetItemByIdentifier", apikey = key, type=type, 
                        value=value, format=format))

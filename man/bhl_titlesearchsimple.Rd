@@ -2,15 +2,15 @@
 \alias{bhl_titlesearchsimple}
 \title{Perform a simple title search.}
 \usage{
-bhl_titlesearchsimple(title = NA, format = "json",
-  key = getOption("BioHerLibKey", stop("need an API key for the BHL")),
+bhl_titlesearchsimple(title = NA, format = "json", key = NULL,
   output = "list", callopts = list())
 }
 \arguments{
   \item{title}{full or partial title for which to search
   (character)}
 
-  \item{format}{either XML ("xml") or JSON ("json") format}
+  \item{format}{either XML ('xml') or JSON ('json') format.
+  If output='list', format is forced to equal 'json'}
 
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}

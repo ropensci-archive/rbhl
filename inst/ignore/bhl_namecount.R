@@ -16,7 +16,7 @@
 #' }
 #' @export
 bhl_namecount <- function(startdate = NULL, enddate = NULL, format = "json",
-  output='list', key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
+  output='list', key = NULL, 
   callopts=list()) 
 {
   message("This method was available in V1 of the API, but appears down now, will update again if becomes avaialable again.")

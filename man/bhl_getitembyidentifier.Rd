@@ -3,8 +3,7 @@
 \title{Find and return metadata about an item or items that match a specific identifier.}
 \usage{
 bhl_getitembyidentifier(type = NULL, value = NULL, format = "json",
-  output = "list", key = getOption("BioHerLibKey",
-  stop("need an API key for the BHL")), callopts = list())
+  output = "list", key = NULL, callopts = list())
 }
 \arguments{
   \item{type}{the type of identifier (barcode or ia)
@@ -12,7 +11,8 @@ bhl_getitembyidentifier(type = NULL, value = NULL, format = "json",
 
   \item{value}{the identifier value (character)}
 
-  \item{format}{either XML ("xml") or JSON ("json") format}
+  \item{format}{either XML ('xml') or JSON ('json') format.
+  If output='list', format is forced to equal 'json'}
 
   \item{output}{Return a list, raw json or xml, or parsed
   data (character).  Default: 'list'}

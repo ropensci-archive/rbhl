@@ -14,10 +14,10 @@
 #' }
 #' @export
 bhl_getpageocrtext <- function(page = NULL, ocr = FALSE, names = FALSE, format = 'json', 
-  output = 'list', key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
-  callopts = list()) 
+  output = 'list', key = NULL, callopts = list()) 
 {
   if(output=='list') format='json'
+  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "GetPageOcrText", apikey = key, format=format, pageid=page,
                        ocr=if(ocr) 't' else NULL, names=if(names) 't' else NULL))

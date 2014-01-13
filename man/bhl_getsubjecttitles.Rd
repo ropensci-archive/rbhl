@@ -3,14 +3,14 @@
 \title{Return a list of titles associated with a subject.}
 \usage{
 bhl_getsubjecttitles(subject = NULL, format = "json", output = "list",
-  key = getOption("BioHerLibKey", stop("need an API key for the BHl")),
-  callopts = list())
+  key = NULL, callopts = list())
 }
 \arguments{
   \item{subject}{the full or partial subject for which to
   search (character)}
 
-  \item{format}{either XML ("xml") or JSON ("json") format}
+  \item{format}{either XML ('xml') or JSON ('json') format.
+  If output='list', format is forced to equal 'json'}
 
   \item{output}{Return a list, raw json or xml, or parsed
   data (character).  Default: 'list'}

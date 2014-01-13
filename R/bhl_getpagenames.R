@@ -12,10 +12,10 @@
 #' }
 #' @export
 bhl_getpagenames <- function(page = NULL, format = 'json', output='list',
-  key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
-  callopts = list()) 
+  key = NULL, callopts = list()) 
 {
   if(output=='list') format='json'
+  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "GetPageNames", apikey=key, format=format, pageid=page))
   out <- GET(url, query = args, callopts)

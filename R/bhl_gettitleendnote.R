@@ -8,10 +8,9 @@
 #' bhl_gettitleendNote(1726)
 #' }
 #' @export
-bhl_gettitleendNote <- function(titleid = NA,
-  key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
-  callopts=list()) 
+bhl_gettitleendNote <- function(titleid = NA, key = NULL, callopts=list()) 
 {
+  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "GetTitleEndNote", apikey = key, format = 'json', titleid=titleid))
   out <- GET(url, query = args, callopts)

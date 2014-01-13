@@ -3,8 +3,8 @@
 \title{Search BHL across many API methods.}
 \usage{
 bhl_bioherlib(method = "GetPageMetadata", pageid = NULL, ocr = FALSE,
-  names = FALSE, format = "json", key = getOption("BioHerLibKey",
-  stop("need an API key for the BHL")), output = "list", callopts = list())
+  names = FALSE, format = "json", key = NULL, output = "list",
+  callopts = list())
 }
 \arguments{
   \item{method}{The API method to use.}
@@ -18,7 +18,8 @@ bhl_bioherlib(method = "GetPageMetadata", pageid = NULL, ocr = FALSE,
   \item{names}{return the names that appear on the page
   (logical). Default: FALSE}
 
-  \item{format}{either XML ("xml") or JSON ("json") format}
+  \item{format}{either XML ('xml') or JSON ('json') format.
+  If output='list', format is forced to equal 'json'}
 
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}

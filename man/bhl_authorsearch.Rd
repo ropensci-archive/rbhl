@@ -4,15 +4,15 @@
    search string.}
 \usage{
 bhl_authorsearch(name = NULL, format = "json", output = "list",
-  key = getOption("BioHerLibKey", stop("need an API key for the BHL")),
-  callopts = list())
+  key = NULL, callopts = list())
 }
 \arguments{
   \item{name}{full or partial name of the author for which
   to search (last name listed first, i.e. 'Darwin,
   Charles') (character)}
 
-  \item{format}{either XML ("xml") or JSON ("json") format}
+  \item{format}{either XML ('xml') or JSON ('json') format.
+  If output='list', format is forced to equal 'json'}
 
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}

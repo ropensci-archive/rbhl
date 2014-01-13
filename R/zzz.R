@@ -35,3 +35,30 @@ return_results <- function(x, y, z){
     if(z=="json"){ return(fromJSON(I(x))) } else{ return(xmlTreeParse(I(x))) }
   } 
 }
+
+#' Function to get API key. 
+#' 
+#' Checks first to get key from your .Rprofile file for an API key with the 
+#' name 'BioHerLibKey'. If it is not found, the default key is used. 
+#' 
+#' @param x An API key, defaults to NULL.
+#' @examples \dontrun{
+#' getkey()
+#' } 
+#' @keywords internal
+#' @export
+getkey <- function(x = NULL, service) {        
+  if(is.null(x)){
+    key <- getOption('BioHerLibKey')
+    if(is.null(key)){
+      key <- "8f7e89db-2ec3-4408-a160-c3dc416b118d"
+      url <- "http://www.biodiversitylibrary.org/getapikey.aspx"
+      message(paste("Using default key: Please get your own API key at ", 
+                    url, sep=""))
+    } else 
+      if(class(key)=="character"){key <- key} else 
+      { stop("check your key input - it should be a character string") }
+  } else 
+  { key <- x }
+  key
+}

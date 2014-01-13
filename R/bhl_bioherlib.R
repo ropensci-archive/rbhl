@@ -15,10 +15,10 @@
 #' bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, raw=TRUE)
 #' }
 bhl_bioherlib <- function(method = 'GetPageMetadata', pageid = NULL, ocr = FALSE, 
-  names = FALSE, format = 'json', key = getOption("BioHerLibKey", 
-  stop("need an API key for the BHL")), output='list', callopts = list()) 
+  names = FALSE, format = 'json', key = NULL, output='list', callopts = list()) 
 {
   if(output=='list') format='json'
+  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   method <- match.arg(method, 
     choices=c('GetPageMetadata', 'GetPageOcrText', 'GetPageNames',

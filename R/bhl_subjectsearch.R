@@ -11,10 +11,10 @@
 #' }
 #' @export
 bhl_subjectsearch <- function(subject = NA, format = "json", 
-  key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
-  output='list', callopts=list()) 
+  key = NULL, output='list', callopts=list()) 
 {
   if(output=='list') format='json'
+  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "SubjectSearch", apikey = key, format = format, 
                        subject = subject))

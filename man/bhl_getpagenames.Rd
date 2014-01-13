@@ -3,13 +3,13 @@
 \title{Return a list of names that appear on a page.}
 \usage{
 bhl_getpagenames(page = NULL, format = "json", output = "list",
-  key = getOption("BioHerLibKey", stop("need an API key for the BHL")),
-  callopts = list())
+  key = NULL, callopts = list())
 }
 \arguments{
   \item{page}{page number to get}
 
-  \item{format}{either XML ("xml") or JSON ("json") format}
+  \item{format}{either XML ('xml') or JSON ('json') format.
+  If output='list', format is forced to equal 'json'}
 
   \item{output}{Return a list, raw json or xml, or parsed
   data (character).  Default: 'list'}

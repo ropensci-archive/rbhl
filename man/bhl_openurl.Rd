@@ -4,8 +4,7 @@
 \usage{
 bhl_openurl(genre = NULL, title = NULL, aufirst = NULL, aulast = NULL,
   date = NULL, spage = NULL, issue = NULL, version = 0.1,
-  format = "json", key = getOption("BioHerLibKey",
-  stop("need an API key for the BHl")), output = "list", callopts = list())
+  format = "json", key = NULL, output = "list", callopts = list())
 }
 \arguments{
   \item{genre}{Book genre}

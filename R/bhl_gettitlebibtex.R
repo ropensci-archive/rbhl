@@ -13,10 +13,10 @@
 #' }
 #' @export
 bhl_gettitlebibTex <- function(titleid = NULL, format = "json", 
-  output='list', key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
-  callopts=list()) 
+  output='list', key = NULL, callopts=list()) 
 {
   if(output=='list') format='json'
+  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "GetTitleBibTex", apikey = key, format = format, titleid=titleid))
   out <- GET(url, query = args, callopts)

@@ -15,10 +15,10 @@
 #' bhl_getauthortitles(1970, output='raw', format='xml')
 #' }
 bhl_getauthortitles <- function(creatorid = NA, format = "json", output='list',
-  key = getOption("BioHerLibKey", stop("need an API key for the BHL")), 
-  callopts=list()) 
+  key = NULL, callopts=list()) 
 {
   if(output=='list') format='json'
+  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "GetAuthorTitles", apikey = key, format = format, 
                        creatorid=creatorid))

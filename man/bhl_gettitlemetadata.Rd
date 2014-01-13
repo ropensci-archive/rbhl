@@ -4,8 +4,7 @@
    the items (books) associated  with the title.}
 \usage{
 bhl_gettitlemetadata(titleid = NA, items = FALSE, format = "json",
-  output = "list", key = getOption("BioHerLibKey",
-  stop("need an API key for the BHL")), callopts = list())
+  output = "list", key = NULL, callopts = list())
 }
 \arguments{
   \item{titleid}{the identifier of an individual title
@@ -14,7 +13,8 @@ bhl_gettitlemetadata(titleid = NA, items = FALSE, format = "json",
   \item{items}{(logical) TRUE of FALSE (default) to inclue
   items}
 
-  \item{format}{either XML ("xml") or JSON ("json") format}
+  \item{format}{either XML ('xml') or JSON ('json') format.
+  If output='list', format is forced to equal 'json'}
 
   \item{output}{Return a list, raw json or xml, or parsed
   data (character).  Default: 'list'}

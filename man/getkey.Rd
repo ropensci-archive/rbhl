@@ -1,0 +1,21 @@
+\name{getkey}
+\alias{getkey}
+\title{Function to get API key.}
+\usage{
+getkey(x = NULL, service)
+}
+\arguments{
+  \item{x}{An API key, defaults to NULL.}
+}
+\description{
+Checks first to get key from your .Rprofile file for an API
+key with the name 'BioHerLibKey'. If it is not found, the
+default key is used.
+}
+\examples{
+\dontrun{
+getkey()
+}
+}
+\keyword{internal}
+

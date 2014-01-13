@@ -2,8 +2,7 @@
 \alias{bhl_gettitleendNote}
 \title{Return a citation for a title, using the EndNote format.}
 \usage{
-bhl_gettitleendNote(titleid = NA, key = getOption("BioHerLibKey",
-  stop("need an API key for the BHL")), callopts = list())
+bhl_gettitleendNote(titleid = NA, key = NULL, callopts = list())
 }
 \arguments{
   \item{titleid}{the identifier of an individual title
