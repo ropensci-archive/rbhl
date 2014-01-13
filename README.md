@@ -168,7 +168,7 @@ $Result[[1]]$FullTitle
 [... cutoff]
 ```
 
-#### 
+#### Search titles
 
 ```coffee
 bhl_titlesearchsimple('husbandry')$Result[[1]]
