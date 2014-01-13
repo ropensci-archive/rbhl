@@ -3,17 +3,19 @@ rbhl
 
 [![Build Status](https://api.travis-ci.org/ropensci/rbhl.png)](https://travis-ci.org/ropensci/rbhl)
 
-This is an R interface to the Biodiversity Heritage Library API. 
+`rbhl` is an R interface to the Biodiversity Heritage Library API. 
 
-Get your Biodiversity Heritage Library API key [here](http://www.biodiversitylibrary.org/getapikey.aspx)
+## Info
 
-Put your API in your .Rprofile file using e.g., `options(BioHerLibKey = "YOURBHLAPIKEY")`, and the functions within this package will be able to use your API key without you having to enter it every time you run a search. 
+Authentication:
 
-Biodiversity Heritage Library API documentation [here](http://www.biodiversitylibrary.org/api2/docs/docs.html).
+* Get your Biodiversity Heritage Library API key [here](http://www.biodiversitylibrary.org/getapikey.aspx)
+* Put your API in your .Rprofile file using e.g., `options(BioHerLibKey = "YOURBHLAPIKEY")`, and the functions within this package will be able to use your API key without you having to enter it every time you run a search. 
 
-Biodiversity Heritage Library OpenURL documentation [here](http://www.biodiversitylibrary.org/openurlhelp.aspx).
+Documentation:
 
-`rbhl` is part of the rOpenSci project, visit http://ropensci.org to learn more.
+* Biodiversity Heritage Library API documentation [here](http://www.biodiversitylibrary.org/api2/docs/docs.html).
+* Biodiversity Heritage Library OpenURL documentation [here](http://www.biodiversitylibrary.org/openurlhelp.aspx).
 
 ## Quickstart
 
@@ -26,29 +28,85 @@ install_github("rbhl", "ropensci")
 require(rbhl)
 ```
 
-### Name search
+### Output formats
+
+You can output various formats using the `format` parameter, setting to 'json' or 'xml'. Use in combination with `output` to get a `list`, `raw` data (json or xml, set via `format`), or `parsed` data. The parsed option will eventually attempt to coerce data to a data.frame to ease consumption of data, but most functions currently return a list when `output=parsed`.
+
+Raw output, in xml format
 
 ```coffee
-bhl_namesearch(name='helianthus annuus')
+bhl_authorsearch(name='dimmock', format='xml', output="raw")
 ```
 
 ```coffee
-   NameBankID EOLID NameFound                                      NameConfirmed Titles
-1     2658020            none                                  Helianthus annuus   none
-2     8722653            none                     Helianthus annuus californicus   none
-3     8507133            none                         Helianthus annuus citrinus   none
-4     8624358            none                        Helianthus annuus coronatus   none
-5      462478            none                               Helianthus annuus L.   none
-6     3889596            none                     Helianthus annuus lenticularis   none
-7                        none                         Helianthus annuus Linnaeus   none
-8     8639717            none                       Helianthus annuus petiolaris   none
-9     1736383            none              Helianthus annuus ssp. texanus Heiser   none
-10    8722723            none                        Helianthus annuus uniflorus   none
-11    1746528            none Helianthus annuus var. macrocarpus (DC.) Cockerell   none
-12    8722760            none                          Helianthus annuus zonatus   none
+[1] "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Response xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><Status>ok</Status><Result><Creator><CreatorID>1970</CreatorID><Name>Dimmock, George,</Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates>1852-</Dates><CreatorUrl>http://www.biodiversitylibrary.org/creator/1970</CreatorUrl></Creator><Creator><CreatorID>8126</CreatorID><Name>Dimmock, George,</Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates>1852-1930</Dates><CreatorUrl>http://www.biodiversitylibrary.org/creator/8126</CreatorUrl></Creator></Result></Response>"
 ```
 
-### Get title metadata
+json format
+
+```coffee
+bhl_authorsearch(name='dimmock', format='json', output="raw")
+```
+
+```coffee
+[1] "{\"Status\":\"ok\",\"ErrorMessage\":null,\"Result\":[{\"CreatorID\":1970,\"Name\":\"Dimmock, George,\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Dates\":\"1852-\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/1970\"},{\"CreatorID\":8126,\"Name\":\"Dimmock, George,\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Dates\":\"1852-1930\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/8126\"}]}"
+```
+
+Or get a list. The default output is a list, and if you set `format='xml'` and `output='list'`, then format is forced to equal 'json' as parsing to a list is more straightforward using json.
+
+```coffee
+bhl_authorsearch(name='dimmock', format='xml', output="list")
+``` 
+
+```coffee
+$Status
+[1] "ok"
+
+$ErrorMessage
+NULL
+
+$Result
+$Result[[1]]
+$Result[[1]]$CreatorID
+[1] 1970
+
+$Result[[1]]$Name
+[1] "Dimmock, George,"
+
+$Result[[1]]$Role
+NULL
+``` 
+
+Is the same output as all default options
+
+```coffee
+bhl_authorsearch(name='dimmock')
+``` 
+
+```coffee
+$Status
+[1] "ok"
+
+$ErrorMessage
+NULL
+
+$Result
+$Result[[1]]
+$Result[[1]]$CreatorID
+[1] 1970
+
+$Result[[1]]$Name
+[1] "Dimmock, George,"
+
+$Result[[1]]$Role
+NULL
+
+[... cutoff]
+``` 
+
+### Some examples of function calls
+
+#### Get title metadata
 
 ```coffee
 bhl_gettitlemetadata(1726, TRUE)
@@ -80,159 +138,79 @@ $Result$SortTitle
 $Result$PartNumber
 NULL
 
-$Result$PartName
-NULL
-
-$Result$CallNumber
-[1] "QL538 .D58"
-
-$Result$Edition
-NULL
-
-$Result$PublisherPlace
-[1] "Boston,"
-
-$Result$PublisherName
-[1] "A. Williams & co.,"
-
-$Result$PublicationDate
-[1] "1881."
-
-$Result$PublicationFrequency
-NULL
-
-$Result$Doi
-[1] "10.5962/bhl.title.1726"
-
-$Result$TitleUrl
-[1] "http://www.biodiversitylibrary.org/bibliography/1726"
-
-$Result$Authors
-$Result$Authors[[1]]
-$Result$Authors[[1]]$CreatorID
-[1] 1970
-
-$Result$Authors[[1]]$Name
-[1] "Dimmock, George,"
-
-$Result$Authors[[1]]$Role
-[1] "Main Entry -- Personal Name (MARC 100)"
-
-$Result$Authors[[1]]$Numeration
-[1] ""
-
-$Result$Authors[[1]]$Unit
-[1] ""
-
-$Result$Authors[[1]]$Title
-[1] ""
-
-$Result$Authors[[1]]$Location
-[1] ""
-
-$Result$Authors[[1]]$FullerForm
-[1] ""
-
-$Result$Authors[[1]]$Dates
-[1] "1852-"
-
-$Result$Authors[[1]]$CreatorUrl
-NULL
-
-
-
-$Result$Subjects
-$Result$Subjects[[1]]
-SubjectText 
-  "Diptera" 
-
-
-$Result$Identifiers
-$Result$Identifiers[[1]]
- IdentifierName IdentifierValue 
-          "DLC"      "08023002" 
-
-$Result$Identifiers[[2]]
- IdentifierName IdentifierValue 
-      "MARC001"          "1223" 
-
-$Result$Identifiers[[3]]
- IdentifierName IdentifierValue 
-         "OCLC"       "2992225" 
-
-
-$Result$Collections
-NULL
-
-$Result$Variants
-list()
-
-$Result$Items
-$Result$Items[[1]]
-$Result$Items[[1]]$ItemID
-[1] 16800
-
-$Result$Items[[1]]$PrimaryTitleID
-[1] 1726
-
-$Result$Items[[1]]$ThumbnailPageID
-[1] 1328691
-
-$Result$Items[[1]]$Source
-[1] "Internet Archive"
-
-$Result$Items[[1]]$SourceIdentifier
-[1] "anatomyofmouthpa00dimm"
-
-$Result$Items[[1]]$Volume
-[1] ""
-
-$Result$Items[[1]]$Year
-NULL
-
-$Result$Items[[1]]$Contributor
-[1] "MBLWHOI Library, Woods Hole"
-
-$Result$Items[[1]]$Sponsor
-[1] "MBLWHOI Library"
-
-$Result$Items[[1]]$Language
-[1] "English"
-
-$Result$Items[[1]]$LicenseUrl
-[1] ""
-
-$Result$Items[[1]]$Rights
-[1] ""
-
-$Result$Items[[1]]$DueDiligence
-[1] ""
-
-$Result$Items[[1]]$CopyrightStatus
-[1] ""
-
-$Result$Items[[1]]$CopyrightRegion
-[1] ""
-
-$Result$Items[[1]]$ItemUrl
-[1] "http://www.biodiversitylibrary.org/item/16800"
-
-$Result$Items[[1]]$TitleUrl
-[1] "http://www.biodiversitylibrary.org/bibliography/1726"
-
-$Result$Items[[1]]$ItemThumbUrl
-[1] "http://www.biodiversitylibrary.org/pagethumb/1328691"
-
-$Result$Items[[1]]$Pages
-NULL
-
-$Result$Items[[1]]$Parts
-NULL
-
-$Result$Items[[1]]$Collections
-NULL
+[... cutoff]
 ```
 
+#### Book search
+
+```coffee
+bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825, collectionid=4, language='eng')
+```
+
+```coffee
+$Status
+[1] "ok"
+
+$ErrorMessage
+NULL
+
+$Result
+$Result[[1]]
+$Result[[1]]$TitleID
+[1] 32868
+
+$Result[[1]]$BibliographicLevel
+[1] ""
+
+$Result[[1]]$FullTitle
+[1] "The natural history of Selborne : to which are added the naturalist's calendar, miscellaneous observations, and poems."
+
+[... cutoff]
+```
+
+#### 
+
+```coffee
+bhl_titlesearchsimple('husbandry')$Result[[1]]
+```
+
+```coffee
+$TitleID
+[1] 25997
+
+$BibliographicLevel
+[1] "Monograph/Item"
+
+$FullTitle
+[1] "An account of the systems of husbandry adopted in the more improved districts of Scotland ...  "
+
+$ShortTitle
+[1] "An account of the systems of husbandry adopted in the more improved districts of Scotland ..."
+
+$SortTitle
+[1] "account of the systems of husbandry adopted in the more imp"
+
+[... cutoff]
+```
+
+#### Get languages
+
+This function gets a list of languages in which materials in BHL have been written.  This is also an example of a function that actually gives a `data.frame` when `output='parsed'`.
+
+```coffee
+out <- bhl_getlanguages(output='parsed')
+head(out)
+```
+
+```coffee
+  LanguageCode LanguageName
+1          AFR    Afrikaans
+2          ARA       Arabic
+3          ARC      Aramaic
+4          BUL    Bulgarian
+5          BUR      Burmese
+6          CAR        Carib
+```
 
 ### Meta
 
