@@ -6,6 +6,9 @@
 R interface to the Biodiversity Heritage Library
 ======
 
+
+
+
 ### About the package
 
 `rbhl` is an R interface to the Biodiversity Heritage Library.
@@ -42,13 +45,11 @@ You can output various formats using the `format` parameter, setting to 'json' o
 
 Raw output, in xml format
 
+_output not shown because of encoding issues in package check_
+
 
 ```r
 bhl_authorsearch(name = "dimmock", format = "xml", output = "raw")
-```
-
-```
-## [1] "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Response xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><Status>ok</Status><Result><Creator><CreatorID>1970</CreatorID><Name>Dimmock, George,</Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates>1852-</Dates><CreatorUrl>http://www.biodiversitylibrary.org/creator/1970</CreatorUrl></Creator><Creator><CreatorID>8126</CreatorID><Name>Dimmock, George,</Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates>1852-1930</Dates><CreatorUrl>http://www.biodiversitylibrary.org/creator/8126</CreatorUrl></Creator></Result></Response>"
 ```
 
 
