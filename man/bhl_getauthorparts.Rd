@@ -1,0 +1,38 @@
+\name{bhl_getauthorparts}
+\alias{bhl_getauthorparts}
+\title{Return a list of parts (articles, chapters, etc) associated with a given BHL
+author identifier. Unless the identifier  for a particular BHL author record
+is known in advance, this method should be used in combination	with the
+AuthorSearch method.}
+\usage{
+bhl_getauthorparts(creatorid, format = "json", output = "list",
+  key = NULL, callopts = list())
+}
+\arguments{
+  \item{format}{either XML ('xml') or JSON ('json') format.
+  If output='list', format is forced to equal 'json'}
+
+  \item{key}{your BHL API key, either enter, or loads from
+  .Rprofile}
+
+  \item{callopts}{Call options passed on to httr::GET.}
+
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
+
+  \item{creatorid}{BHL identifier for a particular author
+  (numeric)}
+}
+\description{
+Note: haven't seen examples for this function that work
+yet...
+}
+\examples{
+\dontrun{
+bhl_getauthorparts(147)
+bhl_getauthorparts(39120, output='raw')
+bhl_getauthorparts(39120, format='xml', output='raw')
+bhl_getauthorparts(39120, format='xml', output='parsed')
+}
+}
+

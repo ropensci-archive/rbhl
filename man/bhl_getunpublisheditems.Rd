@@ -9,13 +9,13 @@ bhl_getunpublisheditems(format = "json", output = "list", key = NULL,
   \item{format}{either XML ('xml') or JSON ('json') format.
   If output='list', format is forced to equal 'json'}
 
-  \item{output}{Return a list, raw json or xml, or parsed
-  data (character).  Default: 'list'}
-
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
 
   \item{callopts}{Call options passed on to httr::GET.}
+
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
 }
 \description{
 Return a list of the identifiers of all unpublished items.

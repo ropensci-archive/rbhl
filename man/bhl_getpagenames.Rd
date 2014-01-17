@@ -6,18 +6,18 @@ bhl_getpagenames(page = NULL, format = "json", output = "list",
   key = NULL, callopts = list())
 }
 \arguments{
-  \item{page}{page number to get}
-
   \item{format}{either XML ('xml') or JSON ('json') format.
   If output='list', format is forced to equal 'json'}
-
-  \item{output}{Return a list, raw json or xml, or parsed
-  data (character).  Default: 'list'}
 
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
 
   \item{callopts}{Call options passed on to httr::GET.}
+
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
+
+  \item{page}{page number to get}
 }
 \description{
 Return a list of names that appear on a page.

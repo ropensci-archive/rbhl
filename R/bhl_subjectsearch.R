@@ -4,8 +4,8 @@
 #' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
+#' @template all
 #' @param subject the full or partial subject for which to search (character)
-#' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
 #' bhl_subjectsearch('diptera')
 #' }

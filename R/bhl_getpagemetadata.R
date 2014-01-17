@@ -5,10 +5,10 @@
 #' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
+#' @template all
 #' @param page page number to get
 #' @param ocr return ocr text of the page (TRUE/FALSE)
 #' @param names return the names that appear on the page (TRUE/FALSE)
-#' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
 #' bhl_getpagemetadata(page=1328690, ocr=TRUE, format='json')
 #' bhl_getpagemetadata(page=1328690, ocr=TRUE, format='xml')

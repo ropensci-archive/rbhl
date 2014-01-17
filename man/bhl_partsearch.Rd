@@ -1,0 +1,56 @@
+\name{bhl_partsearch}
+\alias{bhl_partsearch}
+\title{Search for parts of books in BHL, such as articles, chapters, or treatments.
+Search criteria includes title, container (journal or book title), author,
+date of publication, volume, series, and issue.}
+\usage{
+bhl_partsearch(title = NULL, containerTitle = NULL, author = NULL,
+  date = NULL, volume = NULL, series = NULL, issue = NULL,
+  format = "json", key = NULL, output = "list", callopts = list())
+}
+\arguments{
+  \item{format}{either XML ('xml') or JSON ('json') format.
+  If output='list', format is forced to equal 'json'}
+
+  \item{key}{your BHL API key, either enter, or loads from
+  .Rprofile}
+
+  \item{callopts}{Call options passed on to httr::GET.}
+
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
+
+  \item{title}{Title of the work}
+
+  \item{containerTitle}{Container title of the work}
+
+  \item{author}{Author of the work}
+
+  \item{date}{Date of the work}
+
+  \item{volume}{Volume of the work}
+
+  \item{series}{Series of the work}
+
+  \item{issue}{Issue of the work}
+}
+\description{
+To execute a search, you must supply at least a title or
+author.
+}
+\details{
+The metadata returned by this method includes Part
+Identifier, Part URL, Item ID, Page ID for the start page,
+Genre, Title, Container Title, Publication Details, Volume,
+Series, Issue, Date, Page Range, Language, rights
+information, authors, keywords, identifiers, pages, and
+related parts. For more information, see the "Data
+Elements" section of this documentation.
+}
+\examples{
+\dontrun{
+bhl_partsearch(title='Critical approach to the definition of Darwinian units')
+bhl_partsearch(author='Charles Darwin')
+}
+}
+

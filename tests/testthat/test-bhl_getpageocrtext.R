@@ -4,9 +4,9 @@ context("bhl_getpageocrtext")
 library(XML)
 library(RJSONIO)
 
-tt <- bhl_getpageocrtext(1328690, FALSE, FALSE, 'json')
-uu <- bhl_getpageocrtext(1328690, FALSE, FALSE, 'xml', 'raw')
-vv <- bhl_getpageocrtext(1328690, FALSE, FALSE, 'xml', 'parsed')
+tt <- bhl_getpageocrtext(1328690, 'json')
+uu <- bhl_getpageocrtext(1328690, 'xml', 'raw')
+vv <- bhl_getpageocrtext(1328690, 'xml', 'parsed')
 
 test_that("bhl_getpageocrtext returns the correct class", {
   expect_is(tt, "list")

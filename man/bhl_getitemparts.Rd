@@ -1,0 +1,32 @@
+\name{bhl_getitemparts}
+\alias{bhl_getitemparts}
+\title{Return a list of an item's parts.}
+\usage{
+bhl_getitemparts(itemid, format = "json", output = "list", key = NULL,
+  callopts = list())
+}
+\arguments{
+  \item{format}{either XML ('xml') or JSON ('json') format.
+  If output='list', format is forced to equal 'json'}
+
+  \item{key}{your BHL API key, either enter, or loads from
+  .Rprofile}
+
+  \item{callopts}{Call options passed on to httr::GET.}
+
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
+
+  \item{itemid}{the item id (character)}
+}
+\description{
+Return a list of an item's parts.
+}
+\examples{
+\dontrun{
+bhl_getitemparts(35600)
+bhl_getitemparts(35600, 'xml', 'raw')
+bhl_getitemparts(35600, 'xml', 'parsed')
+}
+}
+

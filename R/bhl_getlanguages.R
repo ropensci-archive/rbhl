@@ -4,7 +4,7 @@
 #' @importFrom RJSONIO fromJSON
 #' @importFrom plyr compact ldply
 #' @importFrom XML xmlTreeParse
-#' @inheritParams bhl_authorsearch
+#' @template all
 #' @examples \dontrun{
 #' bhl_getlanguages()
 #' bhl_getlanguages(output='parsed')

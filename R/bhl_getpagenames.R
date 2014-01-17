@@ -3,8 +3,8 @@
 #' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
+#' @template all
 #' @param page page number to get
-#' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
 #' bhl_getpagenames('1328690')
 #' bhl_getpagenames('1328690', 'xml', 'raw')

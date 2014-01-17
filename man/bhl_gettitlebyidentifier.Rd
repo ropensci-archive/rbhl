@@ -6,21 +6,21 @@ bhl_gettitlebyidentifier(type = NULL, value = NULL, format = "json",
   output = "list", key = NULL, callopts = list())
 }
 \arguments{
-  \item{type}{the type of identifier (oclc, issn, isbn,
-  lccn, ddc, nal, nlm, coden) character}
-
-  \item{value}{the identifier value (numeric)}
-
   \item{format}{either XML ('xml') or JSON ('json') format.
   If output='list', format is forced to equal 'json'}
-
-  \item{output}{Return a list, raw json or xml, or parsed
-  data (character).  Default: 'list'}
 
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
 
   \item{callopts}{Call options passed on to httr::GET.}
+
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
+
+  \item{type}{the type of identifier (oclc, issn, isbn,
+  lccn, ddc, nal, nlm, coden) character}
+
+  \item{value}{the identifier value (numeric)}
 }
 \description{
 Find and return metadata about a title or titles that match

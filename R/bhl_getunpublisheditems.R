@@ -3,7 +3,7 @@
 #' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
-#' @inheritParams bhl_authorsearch
+#' @template all
 #' @examples \dontrun{
 #' bhl_getunpublisheditems()
 #' bhl_getunpublisheditems(output='raw')

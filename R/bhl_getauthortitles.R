@@ -6,8 +6,8 @@
 #'
 #' @import httr
 #' @importFrom plyr compact 
+#' @template all
 #' @param creatorid BHL identifier for a particular author (numeric)
-#' @inheritParams bhl_authorsearch
 #' @export
 #' @examples \dontrun{
 #' bhl_getauthortitles(1970)

@@ -3,11 +3,11 @@
 #' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
+#' @template all
 #' @param method The API method to use.
 #' @param pageid The identifier of an individual page in a scanned book.
 #' @param ocr return ocr text of the page (logical). Default: FALSE
 #' @param names return the names that appear on the page (logical). Default: FALSE
-#' @inheritParams bhl_authorsearch
 #' @export
 #' @examples \dontrun{
 #' bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE)

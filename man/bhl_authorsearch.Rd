@@ -7,10 +7,6 @@ bhl_authorsearch(name = NULL, format = "json", output = "list",
   key = NULL, callopts = list())
 }
 \arguments{
-  \item{name}{full or partial name of the author for which
-  to search (last name listed first, i.e. 'Darwin,
-  Charles') (character)}
-
   \item{format}{either XML ('xml') or JSON ('json') format.
   If output='list', format is forced to equal 'json'}
 
@@ -21,6 +17,10 @@ bhl_authorsearch(name = NULL, format = "json", output = "list",
 
   \item{output}{Return a list, raw json or xml, or parsed
   data (character).  Default: 'list'}
+
+  \item{name}{full or partial name of the author for which
+  to search (last name listed first, i.e. 'Darwin,
+  Charles') (character)}
 }
 \description{
 The namessearched are those contained in MARC 100a, 110a,

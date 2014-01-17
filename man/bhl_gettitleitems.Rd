@@ -6,19 +6,19 @@ bhl_gettitleitems(titleid = NULL, format = "json", output = "list",
   key = NULL, callopts = list())
 }
 \arguments{
-  \item{titleid}{the identifier of an individual title
-  (numeric)}
-
   \item{format}{either XML ('xml') or JSON ('json') format.
   If output='list', format is forced to equal 'json'}
-
-  \item{output}{Return a list, raw json or xml, or parsed
-  data (character).  Default: 'list'}
 
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
 
   \item{callopts}{Call options passed on to httr::GET.}
+
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
+
+  \item{titleid}{the identifier of an individual title
+  (numeric)}
 }
 \description{
 Return a list of a title's items (books).

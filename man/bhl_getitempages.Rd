@@ -2,22 +2,24 @@
 \alias{bhl_getitempages}
 \title{Return a list of an item's pages.}
 \usage{
-bhl_getitempages(itemid = NA, format = "json", output = "list",
+bhl_getitempages(itemid, ocr = FALSE, format = "json", output = "list",
   key = NULL, callopts = list())
 }
 \arguments{
-  \item{itemid}{the item id (character)}
-
   \item{format}{either XML ('xml') or JSON ('json') format.
   If output='list', format is forced to equal 'json'}
-
-  \item{output}{Return a list, raw json or xml, or parsed
-  data (character).  Default: 'list'}
 
   \item{key}{your BHL API key, either enter, or loads from
   .Rprofile}
 
   \item{callopts}{Call options passed on to httr::GET.}
+
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
+
+  \item{itemid}{the item id (character)}
+
+  \item{ocr}{return ocr text of the page (TRUE/FALSE)}
 }
 \description{
 Return a list of an item's pages.
@@ -27,6 +29,9 @@ Return a list of an item's pages.
 bhl_getitempages('16800')
 bhl_getitempages('16800', 'xml', 'raw')
 bhl_getitempages('16800', 'xml', 'parsed')
+
+# Return ocr text
+bhl_getitempages('16800', TRUE)
 }
 }
 

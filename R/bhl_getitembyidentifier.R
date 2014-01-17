@@ -6,12 +6,11 @@
 #' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
+#' @template all
 #' @param type the type of identifier (barcode or ia) (character)
 #' @param value the identifier value (character)
-#' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
 #' bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi')
-#' bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', format='xml')
 #' bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', format='xml', output='raw')
 #' bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', format='xml', output='parsed')
 #' }

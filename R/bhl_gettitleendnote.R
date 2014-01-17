@@ -3,7 +3,8 @@
 #' @import httr
 #' @importFrom plyr compact
 #' @param titleid the identifier of an individual title (numeric)
-#' @inheritParams bhl_authorsearch
+#' @param key your BHL API key, either enter, or loads from .Rprofile
+#' @param callopts Call options passed on to httr::GET.
 #' @examples \dontrun{
 #' bhl_gettitleendNote(1726)
 #' }

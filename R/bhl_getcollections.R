@@ -4,7 +4,7 @@
 #' @import httr
 #' @importFrom RJSONIO fromJSON
 #' @importFrom plyr compact ldply
-#' @inheritParams bhl_authorsearch
+#' @template all
 #' @examples \dontrun{
 #' bhl_getcollections()
 #' bhl_getcollections(out = 'raw')
