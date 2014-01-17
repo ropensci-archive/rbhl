@@ -62,8 +62,3 @@ getkey <- function(x = NULL, service) {
   { key <- x }
   key
 }
-
-# .onLoad <- function(...){
-#   tools::vignetteEngine("knitr", weave = function(...) encoding='utf-8', tangle = vtangle,
-#                       pattern = "[.]Rmd$", package = "knitr")
-# }
