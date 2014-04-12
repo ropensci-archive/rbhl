@@ -4,9 +4,9 @@
 #' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
+#' @template all
 #' @param titleid the identifier of an individual title (numeric)
 #' @param items (logical) TRUE of FALSE (default) to inclue items
-#' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
 #' bhl_gettitlemetadata(1726, TRUE)
 #' bhl_gettitlemetadata(1726, output='raw')

@@ -5,9 +5,9 @@ library(XML)
 library(RJSONIO)
 
 tt <- bhl_getitemmetadata('16800', TRUE)
-uu <- bhl_getitemmetadata('16800', TRUE, 'xml', 'parsed')
-vv <- bhl_getitemmetadata('16800', TRUE, 'json', 'raw')
-zz <- bhl_getitemmetadata('16800', TRUE, 'xml', 'raw')
+uu <- bhl_getitemmetadata('16800', TRUE, format='xml', output='parsed')
+vv <- bhl_getitemmetadata('16800', TRUE, format='json', output='raw')
+zz <- bhl_getitemmetadata('16800', TRUE, format='xml', output='raw')
 
 test_that("bhl_getitemmetadata returns the correct class", {
   expect_is(tt, "list")

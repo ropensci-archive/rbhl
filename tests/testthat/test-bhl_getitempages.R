@@ -5,8 +5,8 @@ library(XML)
 library(RJSONIO)
 
 tt <- bhl_getitempages('16800')
-uu <- bhl_getitempages('16800', 'xml', 'raw')
-vv <- bhl_getitempages('16800', 'xml', 'parsed')
+uu <- bhl_getitempages('16800', format='xml', output='raw')
+vv <- bhl_getitempages('16800', format='xml', output='parsed')
 
 test_that("bhl_getitempages returns the correct class", {
   expect_is(tt, "list")

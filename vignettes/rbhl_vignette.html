@@ -1,0 +1,712 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+  </style>
+  \usepackage[vmargin=1in,hmargin=1in]{geometry}
+</head>
+<body>
+<!--
+%\VignetteEngine{knitr::knitr}
+%\VignetteIndexEntry{rbhl vignette}
+-->
+
+<h1 id="r-interface-to-the-biodiversity-heritage-library">R interface to the Biodiversity Heritage Library</h1>
+<h3 id="about-the-package">About the package</h3>
+<p><code>rbhl</code> is an R interface to the Biodiversity Heritage Library.</p>
+<hr />
+<h3 id="install-rbhl">Install <code>rbhl</code></h3>
+<p>First, install and load <code>rbhl</code> into the R session.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;rbhl&quot;</span>)</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rbhl)</code></pre>
+<p>Advanced users can also download and install the latest development copy from <a href="https://github.com/ropensci/rbhl_">GitHub</a> by doing</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install_github</span>(<span class="st">&quot;rbhl&quot;</span>, <span class="st">&quot;ropensci&quot;</span>)</code></pre>
+<h3 id="output-formats">Output formats</h3>
+<p>You can output various formats using the <code>format</code> parameter, setting to 'json' or 'xml'. Use in combination with <code>output</code> to get a <code>list</code>, <code>raw</code> data (json or xml, set via <code>format</code>), or <code>parsed</code> data. The parsed option will eventually attempt to coerce data to a data.frame to ease consumption of data, but most functions currently return a list when <code>output=parsed</code>.</p>
+<p>Raw output, in xml format</p>
+<p><em>output not shown because of encoding issues in package check</em></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bhl_authorsearch</span>(<span class="dt">name =</span> <span class="st">&quot;dimmock&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;xml&quot;</span>, <span class="dt">output =</span> <span class="st">&quot;raw&quot;</span>)</code></pre>
+<p>json format</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bhl_authorsearch</span>(<span class="dt">name =</span> <span class="st">&quot;dimmock&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;json&quot;</span>, <span class="dt">output =</span> <span class="st">&quot;raw&quot;</span>)</code></pre>
+<pre><code>## [1] &quot;{\&quot;Status\&quot;:\&quot;ok\&quot;,\&quot;ErrorMessage\&quot;:null,\&quot;Result\&quot;:[{\&quot;CreatorID\&quot;:1970,\&quot;Name\&quot;:\&quot;Dimmock, George,\&quot;,\&quot;Role\&quot;:null,\&quot;Numeration\&quot;:\&quot;\&quot;,\&quot;Unit\&quot;:\&quot;\&quot;,\&quot;Title\&quot;:\&quot;\&quot;,\&quot;Location\&quot;:\&quot;\&quot;,\&quot;FullerForm\&quot;:\&quot;\&quot;,\&quot;Dates\&quot;:\&quot;1852-\&quot;,\&quot;CreatorUrl\&quot;:\&quot;http://www.biodiversitylibrary.org/creator/1970\&quot;},{\&quot;CreatorID\&quot;:8126,\&quot;Name\&quot;:\&quot;Dimmock, George,\&quot;,\&quot;Role\&quot;:null,\&quot;Numeration\&quot;:\&quot;\&quot;,\&quot;Unit\&quot;:\&quot;\&quot;,\&quot;Title\&quot;:\&quot;\&quot;,\&quot;Location\&quot;:\&quot;\&quot;,\&quot;FullerForm\&quot;:\&quot;\&quot;,\&quot;Dates\&quot;:\&quot;1852-1930\&quot;,\&quot;CreatorUrl\&quot;:\&quot;http://www.biodiversitylibrary.org/creator/8126\&quot;}]}&quot;</code></pre>
+<p>Or get a list. The default output is a list, and if you set <code>format='xml'</code> and <code>output='list'</code>, then format is forced to equal 'json' as parsing to a list is more straightforward using json.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bhl_authorsearch</span>(<span class="dt">name =</span> <span class="st">&quot;dimmock&quot;</span>, <span class="dt">format =</span> <span class="st">&quot;xml&quot;</span>, <span class="dt">output =</span> <span class="st">&quot;list&quot;</span>)</code></pre>
+<pre><code>## $Status
+## [1] &quot;ok&quot;
+## 
+## $ErrorMessage
+## NULL
+## 
+## $Result
+## $Result[[1]]
+## $Result[[1]]$CreatorID
+## [1] 1970
+## 
+## $Result[[1]]$Name
+## [1] &quot;Dimmock, George,&quot;
+## 
+## $Result[[1]]$Role
+## NULL
+## 
+## $Result[[1]]$Numeration
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$Unit
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$Title
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$Location
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$FullerForm
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$Dates
+## [1] &quot;1852-&quot;
+## 
+## $Result[[1]]$CreatorUrl
+## [1] &quot;http://www.biodiversitylibrary.org/creator/1970&quot;
+## 
+## 
+## $Result[[2]]
+## $Result[[2]]$CreatorID
+## [1] 8126
+## 
+## $Result[[2]]$Name
+## [1] &quot;Dimmock, George,&quot;
+## 
+## $Result[[2]]$Role
+## NULL
+## 
+## $Result[[2]]$Numeration
+## [1] &quot;&quot;
+## 
+## $Result[[2]]$Unit
+## [1] &quot;&quot;
+## 
+## $Result[[2]]$Title
+## [1] &quot;&quot;
+## 
+## $Result[[2]]$Location
+## [1] &quot;&quot;
+## 
+## $Result[[2]]$FullerForm
+## [1] &quot;&quot;
+## 
+## $Result[[2]]$Dates
+## [1] &quot;1852-1930&quot;
+## 
+## $Result[[2]]$CreatorUrl
+## [1] &quot;http://www.biodiversitylibrary.org/creator/8126&quot;</code></pre>
+<p>Is the same output as all default options</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bhl_authorsearch</span>(<span class="dt">name =</span> <span class="st">&quot;dimmock&quot;</span>)</code></pre>
+<pre><code>## $Status
+## [1] &quot;ok&quot;
+## 
+## $ErrorMessage
+## NULL
+## 
+## $Result
+## $Result[[1]]
+## $Result[[1]]$CreatorID
+## [1] 1970
+## 
+## $Result[[1]]$Name
+## [1] &quot;Dimmock, George,&quot;
+## 
+## $Result[[1]]$Role
+## NULL
+## 
+## $Result[[1]]$Numeration
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$Unit
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$Title
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$Location
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$FullerForm
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$Dates
+## [1] &quot;1852-&quot;
+## 
+## $Result[[1]]$CreatorUrl
+## [1] &quot;http://www.biodiversitylibrary.org/creator/1970&quot;
+## 
+## 
+## $Result[[2]]
+## $Result[[2]]$CreatorID
+## [1] 8126
+## 
+## $Result[[2]]$Name
+## [1] &quot;Dimmock, George,&quot;
+## 
+## $Result[[2]]$Role
+## NULL
+## 
+## $Result[[2]]$Numeration
+## [1] &quot;&quot;
+## 
+## $Result[[2]]$Unit
+## [1] &quot;&quot;
+## 
+## $Result[[2]]$Title
+## [1] &quot;&quot;
+## 
+## $Result[[2]]$Location
+## [1] &quot;&quot;
+## 
+## $Result[[2]]$FullerForm
+## [1] &quot;&quot;
+## 
+## $Result[[2]]$Dates
+## [1] &quot;1852-1930&quot;
+## 
+## $Result[[2]]$CreatorUrl
+## [1] &quot;http://www.biodiversitylibrary.org/creator/8126&quot;</code></pre>
+<h3 id="some-examples-of-function-calls">Some examples of function calls</h3>
+<h4 id="get-title-metadata">Get title metadata</h4>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bhl_gettitlemetadata</span>(<span class="dv">1726</span>, <span class="ot">TRUE</span>)</code></pre>
+<pre><code>## $Status
+## [1] &quot;ok&quot;
+## 
+## $ErrorMessage
+## NULL
+## 
+## $Result
+## $Result$TitleID
+## [1] 1726
+## 
+## $Result$BibliographicLevel
+## [1] &quot;Monograph/Item&quot;
+## 
+## $Result$FullTitle
+## [1] &quot;The anatomy of the mouth-parts and of the sucking apparatus of some Diptera.  &quot;
+## 
+## $Result$ShortTitle
+## [1] &quot;The anatomy of the mouth-parts and of the sucking apparatus of some Diptera.&quot;
+## 
+## $Result$SortTitle
+## [1] &quot;anatomy of the mouth-parts and of the sucking apparatus of&quot;
+## 
+## $Result$PartNumber
+## NULL
+## 
+## $Result$PartName
+## NULL
+## 
+## $Result$CallNumber
+## [1] &quot;QL538 .D58&quot;
+## 
+## $Result$Edition
+## NULL
+## 
+## $Result$PublisherPlace
+## [1] &quot;Boston,&quot;
+## 
+## $Result$PublisherName
+## [1] &quot;A. Williams &amp; co.,&quot;
+## 
+## $Result$PublicationDate
+## [1] &quot;1881.&quot;
+## 
+## $Result$PublicationFrequency
+## NULL
+## 
+## $Result$Doi
+## [1] &quot;10.5962/bhl.title.1726&quot;
+## 
+## $Result$TitleUrl
+## [1] &quot;http://www.biodiversitylibrary.org/bibliography/1726&quot;
+## 
+## $Result$Authors
+## $Result$Authors[[1]]
+## $Result$Authors[[1]]$CreatorID
+## [1] 1970
+## 
+## $Result$Authors[[1]]$Name
+## [1] &quot;Dimmock, George,&quot;
+## 
+## $Result$Authors[[1]]$Role
+## [1] &quot;Main Entry -- Personal Name (MARC 100)&quot;
+## 
+## $Result$Authors[[1]]$Numeration
+## [1] &quot;&quot;
+## 
+## $Result$Authors[[1]]$Unit
+## [1] &quot;&quot;
+## 
+## $Result$Authors[[1]]$Title
+## [1] &quot;&quot;
+## 
+## $Result$Authors[[1]]$Location
+## [1] &quot;&quot;
+## 
+## $Result$Authors[[1]]$FullerForm
+## [1] &quot;&quot;
+## 
+## $Result$Authors[[1]]$Dates
+## [1] &quot;1852-&quot;
+## 
+## $Result$Authors[[1]]$CreatorUrl
+## NULL
+## 
+## 
+## 
+## $Result$Subjects
+## $Result$Subjects[[1]]
+## SubjectText 
+##   &quot;Diptera&quot; 
+## 
+## 
+## $Result$Identifiers
+## $Result$Identifiers[[1]]
+##  IdentifierName IdentifierValue 
+##           &quot;DLC&quot;      &quot;08023002&quot; 
+## 
+## $Result$Identifiers[[2]]
+##  IdentifierName IdentifierValue 
+##       &quot;MARC001&quot;          &quot;1223&quot; 
+## 
+## $Result$Identifiers[[3]]
+##  IdentifierName IdentifierValue 
+##          &quot;OCLC&quot;       &quot;2992225&quot; 
+## 
+## 
+## $Result$Collections
+## NULL
+## 
+## $Result$Variants
+## list()
+## 
+## $Result$Items
+## $Result$Items[[1]]
+## $Result$Items[[1]]$ItemID
+## [1] 16800
+## 
+## $Result$Items[[1]]$PrimaryTitleID
+## [1] 1726
+## 
+## $Result$Items[[1]]$ThumbnailPageID
+## [1] 1328691
+## 
+## $Result$Items[[1]]$Source
+## [1] &quot;Internet Archive&quot;
+## 
+## $Result$Items[[1]]$SourceIdentifier
+## [1] &quot;anatomyofmouthpa00dimm&quot;
+## 
+## $Result$Items[[1]]$Volume
+## [1] &quot;&quot;
+## 
+## $Result$Items[[1]]$Year
+## NULL
+## 
+## $Result$Items[[1]]$Contributor
+## [1] &quot;MBLWHOI Library, Woods Hole&quot;
+## 
+## $Result$Items[[1]]$Sponsor
+## [1] &quot;MBLWHOI Library&quot;
+## 
+## $Result$Items[[1]]$Language
+## [1] &quot;English&quot;
+## 
+## $Result$Items[[1]]$LicenseUrl
+## [1] &quot;&quot;
+## 
+## $Result$Items[[1]]$Rights
+## [1] &quot;&quot;
+## 
+## $Result$Items[[1]]$DueDiligence
+## [1] &quot;&quot;
+## 
+## $Result$Items[[1]]$CopyrightStatus
+## [1] &quot;&quot;
+## 
+## $Result$Items[[1]]$CopyrightRegion
+## [1] &quot;&quot;
+## 
+## $Result$Items[[1]]$ItemUrl
+## [1] &quot;http://www.biodiversitylibrary.org/item/16800&quot;
+## 
+## $Result$Items[[1]]$TitleUrl
+## [1] &quot;http://www.biodiversitylibrary.org/bibliography/1726&quot;
+## 
+## $Result$Items[[1]]$ItemThumbUrl
+## [1] &quot;http://www.biodiversitylibrary.org/pagethumb/1328691&quot;
+## 
+## $Result$Items[[1]]$Pages
+## NULL
+## 
+## $Result$Items[[1]]$Parts
+## NULL
+## 
+## $Result$Items[[1]]$Collections
+## NULL</code></pre>
+<h4 id="book-search">Book search</h4>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bhl_booksearch</span>(<span class="dt">title =</span> <span class="st">&quot;Selborne&quot;</span>, <span class="dt">lname =</span> <span class="st">&quot;White&quot;</span>, <span class="dt">volume =</span> <span class="dv">2</span>, <span class="dt">edition =</span> <span class="st">&quot;new&quot;</span>, 
+    <span class="dt">year =</span> <span class="dv">1825</span>, <span class="dt">collectionid =</span> <span class="dv">4</span>, <span class="dt">language =</span> <span class="st">&quot;eng&quot;</span>)</code></pre>
+<pre><code>## $Status
+## [1] &quot;ok&quot;
+## 
+## $ErrorMessage
+## NULL
+## 
+## $Result
+## $Result[[1]]
+## $Result[[1]]$TitleID
+## [1] 32868
+## 
+## $Result[[1]]$BibliographicLevel
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$FullTitle
+## [1] &quot;The natural history of Selborne : to which are added the naturalist&#39;s calendar, miscellaneous observations, and poems.&quot;
+## 
+## $Result[[1]]$ShortTitle
+## NULL
+## 
+## $Result[[1]]$SortTitle
+## NULL
+## 
+## $Result[[1]]$PartNumber
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$PartName
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$CallNumber
+## NULL
+## 
+## $Result[[1]]$Edition
+## [1] &quot;A new ed., with engravings.&quot;
+## 
+## $Result[[1]]$PublisherPlace
+## [1] &quot;London&quot;
+## 
+## $Result[[1]]$PublisherName
+## [1] &quot;Printed for C. and J. Rivington [etc.]&quot;
+## 
+## $Result[[1]]$PublicationDate
+## [1] &quot;1825&quot;
+## 
+## $Result[[1]]$PublicationFrequency
+## NULL
+## 
+## $Result[[1]]$Doi
+## NULL
+## 
+## $Result[[1]]$TitleUrl
+## [1] &quot;http://www.biodiversitylibrary.org/bibliography/32868&quot;
+## 
+## $Result[[1]]$Authors
+## $Result[[1]]$Authors[[1]]
+## $Result[[1]]$Authors[[1]]$CreatorID
+## [1] 9572
+## 
+## $Result[[1]]$Authors[[1]]$Name
+## [1] &quot;White, Gilbert,&quot;
+## 
+## $Result[[1]]$Authors[[1]]$Role
+## [1] &quot;Main Entry -- Personal Name (MARC 100)&quot;
+## 
+## $Result[[1]]$Authors[[1]]$Numeration
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$Authors[[1]]$Unit
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$Authors[[1]]$Title
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$Authors[[1]]$Location
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$Authors[[1]]$FullerForm
+## [1] &quot;&quot;
+## 
+## $Result[[1]]$Authors[[1]]$Dates
+## [1] &quot;1720-1793&quot;
+## 
+## $Result[[1]]$Authors[[1]]$CreatorUrl
+## NULL
+## 
+## 
+## 
+## $Result[[1]]$Subjects
+## NULL
+## 
+## $Result[[1]]$Identifiers
+## NULL
+## 
+## $Result[[1]]$Collections
+## NULL
+## 
+## $Result[[1]]$Variants
+## NULL
+## 
+## $Result[[1]]$Items
+## $Result[[1]]$Items[[1]]
+## $Result[[1]]$Items[[1]]$ItemID
+## [1] 77247
+## 
+## $Result[[1]]$Items[[1]]$PrimaryTitleID
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$ThumbnailPageID
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$Source
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$SourceIdentifier
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$Volume
+## [1] &quot;1&quot;
+## 
+## $Result[[1]]$Items[[1]]$Year
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$Contributor
+## [1] &quot;Gerstein - University of Toronto (archive.org)&quot;
+## 
+## $Result[[1]]$Items[[1]]$Sponsor
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$Language
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$LicenseUrl
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$Rights
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$DueDiligence
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$CopyrightStatus
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$CopyrightRegion
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$ItemUrl
+## [1] &quot;http://www.biodiversitylibrary.org/item/77247&quot;
+## 
+## $Result[[1]]$Items[[1]]$TitleUrl
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$ItemThumbUrl
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$Pages
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$Parts
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$Collections
+## $Result[[1]]$Items[[1]]$Collections[[1]]
+## $Result[[1]]$Items[[1]]$Collections[[1]]$CollectionID
+## [1] 4
+## 
+## $Result[[1]]$Items[[1]]$Collections[[1]]$CollectionName
+## [1] &quot;Charles Darwin&#39;s Library&quot;
+## 
+## $Result[[1]]$Items[[1]]$Collections[[1]]$CollectionDescription
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$Collections[[1]]$CanContainTitles
+## NULL
+## 
+## $Result[[1]]$Items[[1]]$Collections[[1]]$CanContainItems
+## NULL
+## 
+## 
+## 
+## 
+## $Result[[1]]$Items[[2]]
+## $Result[[1]]$Items[[2]]$ItemID
+## [1] 71924
+## 
+## $Result[[1]]$Items[[2]]$PrimaryTitleID
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$ThumbnailPageID
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$Source
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$SourceIdentifier
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$Volume
+## [1] &quot;2&quot;
+## 
+## $Result[[1]]$Items[[2]]$Year
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$Contributor
+## [1] &quot;Gerstein - University of Toronto (archive.org)&quot;
+## 
+## $Result[[1]]$Items[[2]]$Sponsor
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$Language
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$LicenseUrl
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$Rights
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$DueDiligence
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$CopyrightStatus
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$CopyrightRegion
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$ItemUrl
+## [1] &quot;http://www.biodiversitylibrary.org/item/71924&quot;
+## 
+## $Result[[1]]$Items[[2]]$TitleUrl
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$ItemThumbUrl
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$Pages
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$Parts
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$Collections
+## $Result[[1]]$Items[[2]]$Collections[[1]]
+## $Result[[1]]$Items[[2]]$Collections[[1]]$CollectionID
+## [1] 4
+## 
+## $Result[[1]]$Items[[2]]$Collections[[1]]$CollectionName
+## [1] &quot;Charles Darwin&#39;s Library&quot;
+## 
+## $Result[[1]]$Items[[2]]$Collections[[1]]$CollectionDescription
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$Collections[[1]]$CanContainTitles
+## NULL
+## 
+## $Result[[1]]$Items[[2]]$Collections[[1]]$CanContainItems
+## NULL</code></pre>
+<h4 id="search-titles">Search titles</h4>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bhl_titlesearchsimple</span>(<span class="st">&quot;husbandry&quot;</span>)$Result[[<span class="dv">1</span>]]</code></pre>
+<pre><code>## $TitleID
+## [1] 25997
+## 
+## $BibliographicLevel
+## [1] &quot;Monograph/Item&quot;
+## 
+## $FullTitle
+## [1] &quot;An account of the systems of husbandry adopted in the more improved districts of Scotland ...  &quot;
+## 
+## $ShortTitle
+## [1] &quot;An account of the systems of husbandry adopted in the more improved districts of Scotland ...&quot;
+## 
+## $SortTitle
+## [1] &quot;account of the systems of husbandry adopted in the more imp&quot;
+## 
+## $PartNumber
+## NULL
+## 
+## $PartName
+## NULL
+## 
+## $CallNumber
+## NULL
+## 
+## $Edition
+## [1] &quot;2d ed. &quot;
+## 
+## $PublisherPlace
+## [1] &quot;Edinburgh :&quot;
+## 
+## $PublisherName
+## [1] &quot;A. Constable,&quot;
+## 
+## $PublicationDate
+## [1] &quot;1813.&quot;
+## 
+## $PublicationFrequency
+## NULL
+## 
+## $Doi
+## NULL
+## 
+## $TitleUrl
+## NULL
+## 
+## $Authors
+## NULL
+## 
+## $Subjects
+## NULL
+## 
+## $Identifiers
+## NULL
+## 
+## $Collections
+## NULL
+## 
+## $Variants
+## NULL
+## 
+## $Items
+## NULL</code></pre>
+<h4 id="get-languages">Get languages</h4>
+<p>This function gets a list of languages in which materials in BHL have been written. This is also an example of a function that actually gives a <code>data.frame</code> when <code>output='parsed'</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">out &lt;-<span class="st"> </span><span class="kw">bhl_getlanguages</span>(<span class="dt">output =</span> <span class="st">&quot;parsed&quot;</span>)
+<span class="kw">head</span>(out)</code></pre>
+<pre><code>##   LanguageCode LanguageName
+## 1          AFR    Afrikaans
+## 2          ARA       Arabic
+## 3          ARC      Aramaic
+## 4          BUL    Bulgarian
+## 5          BUR      Burmese
+## 6          CAR        Carib</code></pre>
+</body>
+</html>

@@ -3,8 +3,8 @@
 #' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
+#' @template all
 #' @param titleid the identifier of an individual title (numeric)
-#' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
 #' bhl_gettitleitems(1726)
 #' bhl_gettitleitems(1726, output='raw')

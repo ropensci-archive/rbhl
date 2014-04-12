@@ -1,3 +1,7 @@
+all:
+	make move
+	make pandoc
+	make rmd2md
 all: move pandoc rmd2md cleanup
 
 vignettes: 

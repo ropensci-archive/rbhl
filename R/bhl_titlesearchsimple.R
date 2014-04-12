@@ -7,8 +7,8 @@
 #' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
-#' @param  title full or partial title for which to search (character)
-#' @inheritParams bhl_authorsearch
+#' @template all
+#' @param title full or partial title for which to search (character)
 #' @examples \dontrun{
 #' bhl_titlesearchsimple('nematocerous')
 #' bhl_titlesearchsimple('husbandry')

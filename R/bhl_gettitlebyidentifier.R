@@ -3,9 +3,9 @@
 #' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
+#' @template all
 #' @param type the type of identifier (oclc, issn, isbn, lccn, ddc, nal, nlm, coden) character
 #' @param value the identifier value (numeric)
-#' @inheritParams bhl_authorsearch
 #' @examples \dontrun{
 #' bhl_gettitlebyidentifier('oclc', 2992225)
 #' bhl_gettitlebyidentifier('oclc', 2992225, output='raw')

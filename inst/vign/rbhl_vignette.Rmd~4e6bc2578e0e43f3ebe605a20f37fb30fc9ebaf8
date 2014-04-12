@@ -1,0 +1,94 @@
+<!--
+%\VignetteEngine{knitr::knitr}
+%\VignetteIndexEntry{rbhl vignette}
+-->
+
+R interface to the Biodiversity Heritage Library
+======
+
+```{r include=FALSE, eval=TRUE}
+options(encoding = "native.enc")
+```
+
+### About the package
+
+`rbhl` is an R interface to the Biodiversity Heritage Library.
+
+********************
+
+### Install `rbhl`
+
+First, install and load `rbhl` into the R session.
+
+```{r installrbhlcran, eval=FALSE}
+install.packages("rbhl")
+```
+
+```{r loadrbhl, messages=FALSE, warning=FALSE}
+library(rbhl)
+```
+
+Advanced users can also download and install the latest development copy from [GitHub](https://github.com/ropensci/rbhl_) by doing
+
+```{r installgithub, eval=FALSE}
+install_github("rbhl", "ropensci")
+```
+
+### Output formats
+
+You can output various formats using the `format` parameter, setting to 'json' or 'xml'. Use in combination with `output` to get a `list`, `raw` data (json or xml, set via `format`), or `parsed` data. The parsed option will eventually attempt to coerce data to a data.frame to ease consumption of data, but most functions currently return a list when `output=parsed`.
+
+Raw output, in xml format
+
+_output not shown because of encoding issues in package check_
+
+```{r authorsearch1, messages=FALSE, warning=FALSE, eval=FALSE}
+bhl_authorsearch(name='dimmock', format='xml', output="raw")
+```
+
+json format
+
+```{r authorsearch2, messages=FALSE, warning=FALSE}
+bhl_authorsearch(name='dimmock', format='json', output="raw")
+```
+
+Or get a list. The default output is a list, and if you set `format='xml'` and `output='list'`, then format is forced to equal 'json' as parsing to a list is more straightforward using json.
+
+```{r authorsearch3, messages=FALSE, warning=FALSE}
+bhl_authorsearch(name='dimmock', format='xml', output="list")
+``` 
+
+Is the same output as all default options
+
+```{r authorsearch4, messages=FALSE, warning=FALSE}
+bhl_authorsearch(name='dimmock')
+``` 
+
+### Some examples of function calls
+
+#### Get title metadata
+
+```{r gettitlemetadata, messages=FALSE, warning=FALSE}
+bhl_gettitlemetadata(1726, TRUE)
+```
+
+#### Book search
+
+```{r booksearch, messages=FALSE, warning=FALSE}
+bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825, collectionid=4, language='eng')
+```
+
+#### Search titles
+
+```{r titlesearchsimple, messages=FALSE, warning=FALSE}
+bhl_titlesearchsimple('husbandry')$Result[[1]]
+```
+
+#### Get languages
+
+This function gets a list of languages in which materials in BHL have been written.  This is also an example of a function that actually gives a `data.frame` when `output='parsed'`.
+
+```{r getlang, messages=FALSE, warning=FALSE}
+out <- bhl_getlanguages(output='parsed')
+head(out)
+```

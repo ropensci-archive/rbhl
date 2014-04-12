@@ -3,6 +3,7 @@
 #' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
+#' @template all
 #' @param genre Book genre
 #' @param title Book title
 #' @param aufirst First author
@@ -11,10 +12,6 @@
 #' @param spage Start page
 #' @param issue Issue number
 #' @param version One of 0.1 or 1.0 
-#' @param format either XML ("xml") or JSON ("json") format
-#' @param key your BHL API key, either enter, or loads from .Rprofile
-#' @param output Output format, one of list, raw, or parsed
-#' @param callopts Options to pass on to httr::GET
 #' @examples \dontrun{
 #' bhl_openurl(
 #' 	genre="book", 
