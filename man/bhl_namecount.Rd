@@ -1,0 +1,42 @@
+\name{bhl_namecount}
+\alias{bhl_namecount}
+\title{Return the number of unique names found on pages in BHL.}
+\usage{
+bhl_namecount(startdate = NULL, enddate = NULL, format = "json",
+  output = "list", key = NULL, callopts = list())
+}
+\arguments{
+  \item{startdate}{start date of range between which to
+  count names (optional)}
+
+  \item{enddate}{end date of range between which to count
+  names (optional)}
+
+  \item{format}{either XML ('xml') or JSON ('json') format.
+  If output='list', format is forced to equal 'json'}
+
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
+
+  \item{key}{your BHL API key, either enter, or loads from
+  .Rprofile}
+
+  \item{callopts}{Call options passed on to httr::GET.}
+}
+\description{
+Names both with and without NameBank identifiers are
+counted.
+}
+\details{
+BEWARE: this API call can take a long time. They are likely
+working on speeding up the service, but slow for now.
+}
+\examples{
+\dontrun{
+bhl_namecount(startdate = '12/25/2009', enddate = '12/27/2009')
+bhl_namecount(startdate = '10/15/2009', enddate = '10/17/2009', output='raw')
+bhl_namecount(startdate = '10/15/2009', enddate = '10/17/2009', format='xml', output='raw')
+bhl_namecount(startdate = '10/15/2009', enddate = '10/17/2009', format='xml', output='parsed')
+}
+}
+

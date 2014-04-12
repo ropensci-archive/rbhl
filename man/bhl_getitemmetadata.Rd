@@ -2,13 +2,15 @@
 \alias{bhl_getitemmetadata}
 \title{Return metadata about an item.}
 \usage{
-bhl_getitemmetadata(itemid = NULL, pages = TRUE, format = "json",
-  output = "list", key = NULL, callopts = list())
+bhl_getitemmetadata(itemid = NULL, pages = TRUE, ocr = FALSE,
+  format = "json", output = "list", key = NULL, callopts = list())
 }
 \arguments{
   \item{itemid}{item id (character)}
 
-  \item{pages}{return the items pages (TRUE/FALSE)}
+  \item{pages}{return the items pages (logical)}
+
+  \item{ocr}{return ocr text of the page (logical)}
 
   \item{format}{either XML ('xml') or JSON ('json') format.
   If output='list', format is forced to equal 'json'}

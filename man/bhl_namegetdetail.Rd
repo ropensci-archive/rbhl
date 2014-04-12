@@ -1,0 +1,37 @@
+\name{bhl_namegetdetail}
+\alias{bhl_namegetdetail}
+\title{Get basic title, item, and page metadata for each page on which the specified
+name appears.}
+\usage{
+bhl_namegetdetail(namebankid = NA, name = NA, format = "json",
+  output = "list", key = NULL, callopts = list())
+}
+\arguments{
+  \item{namebankid}{(not used if 'name' specified) NameBank
+  identifier for a name (numeric)}
+
+  \item{name}{(not used if 'namebankid' specified) a
+  complete name string (character)}
+
+  \item{format}{either XML ('xml') or JSON ('json') format.
+  If output='list', format is forced to equal 'json'}
+
+  \item{output}{Return a list, raw json or xml, or parsed
+  data (character).  Default: 'list'}
+
+  \item{key}{your BHL API key, either enter, or loads from
+  .Rprofile}
+
+  \item{callopts}{Call options passed on to httr::GET.}
+}
+\description{
+Get basic title, item, and page metadata for each page on
+which the specified name appears.
+}
+\examples{
+\dontrun{
+bhl_namegetdetail(namebankid = 3501464)
+bhl_namegetdetail(name = 'poa annua supina')
+}
+}
+
