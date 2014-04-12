@@ -6,6 +6,4 @@ before_script:
 - ./travis-tool.sh bootstrap
 - ./travis-tool.sh install_deps
 notifications:
-  hipchat:
-    rooms:
-      secure: DU0B2gH/NaZx0xT4NV0rTrpQpOiakbPzoCGTI9PWXl0bTuZJKvVVQ1tfic3bY1vswqxETdUWlPS2FqdjpxSV/nRB01+6LRqkYGMmwjoJeViMDxxOAAQMAZl0bT8Wc7ZHav1AjxmC47ijPymRinneVRLooIVkWaMp33UgIHJsQYI=
+ slack: ropensci:wh30e1MP9Am3wXb2wJx1ZRFi
