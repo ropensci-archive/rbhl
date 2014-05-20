@@ -25,10 +25,6 @@ format is forced to equal 'json'}
 
 \item{output}{Return a list, raw json or xml, or parsed data (character).
 Default: 'list'}
-
-\item{key}{your BHL API key, either enter, or loads from .Rprofile}
-
-\item{callopts}{Call options passed on to httr::GET.}
 }
 \description{
 By using the startrow and batchsize parameters appropriately, you can

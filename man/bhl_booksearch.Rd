@@ -18,10 +18,6 @@ format is forced to equal 'json'}
 \item{output}{Return a list, raw json or xml, or parsed data (character).
 Default: 'list'}
 
-\item{key}{your BHL API key, either enter, or loads from .Rprofile}
-
-\item{callopts}{Call options passed on to httr::GET.}
-
 \item{title}{string to search for in the title (character)}
 
 \item{lname}{last name to search for (character)}

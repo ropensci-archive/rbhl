@@ -16,10 +16,6 @@ format is forced to equal 'json'}
 
 \item{output}{Return a list, raw json or xml, or parsed data (character).
 Default: 'list'}
-
-\item{key}{your BHL API key, either enter, or loads from .Rprofile}
-
-\item{callopts}{Call options passed on to httr::GET.}
 }
 \description{
 Get a list of languages in which materials in BHL have been written.
