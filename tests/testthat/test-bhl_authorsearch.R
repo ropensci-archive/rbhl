@@ -14,5 +14,5 @@ test_that("bhl_authorsearch returns the correct dimensions", {
   expect_equal(length(tt), 3)
   expect_equal(length(tt$Status), 1)
   expect_equal(length(tt$Result), 2)
-  expect_equal(length(tt$Result[[1]]), 10)
+  expect_equal(length(tt$Result[[1]]), 12)
 })
