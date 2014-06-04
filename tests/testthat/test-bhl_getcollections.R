@@ -1,8 +1,8 @@
 # tests for bhl_collection fxn in rbhl
 context("bhl_collection")
 
-library(XML)
-library(RJSONIO)
+library("XML")
+library("RJSONIO")
 
 tt <- bhl_getcollections()
 uu <- bhl_getcollections(out = 'raw')
@@ -21,5 +21,4 @@ test_that("bhl_collection returns the correct dimensions", {
   expect_equal(length(tt$Status), 1)
   expect_equal(length(uu), 1)
   expect_equal(length(fromJSON(uu)), 3)
-  expect_equal(length(fromJSON(uu)$Result), 35)
 })
