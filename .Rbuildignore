@@ -11,3 +11,4 @@ inst/vign/
 vignettes/rbhl_vignette.md
 vignettes/margins.sty
 vignettes/cache/
+^appveyor\.yml$

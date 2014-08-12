@@ -2,15 +2,16 @@ rbhl
 ====
 
 [![Build Status](https://api.travis-ci.org/ropensci/rbhl.png)](https://travis-ci.org/ropensci/rbhl)
+[![Build status](https://ci.appveyor.com/api/projects/status/ej5u9mdirg1yyteg/branch/master)](https://ci.appveyor.com/project/sckott/rbhl/branch/master)
 
-`rbhl` is an R interface to the Biodiversity Heritage Library API. 
+`rbhl` is an R interface to the Biodiversity Heritage Library API.
 
 ## Info
 
 Authentication:
 
 * Get your Biodiversity Heritage Library API key [here](http://www.biodiversitylibrary.org/getapikey.aspx)
-* Put your API in your .Rprofile file using e.g., `options(BioHerLibKey = "YOURBHLAPIKEY")`, and the functions within this package will be able to use your API key without you having to enter it every time you run a search. 
+* Put your API in your .Rprofile file using e.g., `options(BioHerLibKey = "YOURBHLAPIKEY")`, and the functions within this package will be able to use your API key without you having to enter it every time you run a search.
 
 Documentation:
 
@@ -56,7 +57,7 @@ Or get a list. The default output is a list, and if you set `format='xml'` and `
 
 ```coffee
 bhl_authorsearch(name='dimmock', format='xml', output="list")
-``` 
+```
 
 ```coffee
 $Status
@@ -75,13 +76,13 @@ $Result[[1]]$Name
 
 $Result[[1]]$Role
 NULL
-``` 
+```
 
 Is the same output as all default options
 
 ```coffee
 bhl_authorsearch(name='dimmock')
-``` 
+```
 
 ```coffee
 $Status
@@ -102,7 +103,7 @@ $Result[[1]]$Role
 NULL
 
 [... cutoff]
-``` 
+```
 
 ### Some examples of function calls
 
