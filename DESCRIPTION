@@ -19,7 +19,7 @@ Roxygen: list(wrap = FALSE)
 Imports:
     httr,
     XML,
-    RJSONIO,
+    jsonlite,
     plyr
 Suggests:
     testthat,

@@ -1,7 +1,6 @@
 #' Get a list of languages in which materials in BHL have been written.
 #'
 #' @import httr
-#' @importFrom RJSONIO fromJSON
 #' @importFrom plyr compact ldply
 #' @importFrom XML xmlTreeParse
 #' @template all
