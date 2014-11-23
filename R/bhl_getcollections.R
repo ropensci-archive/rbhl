@@ -1,31 +1,31 @@
 #' Get a list of collections which are used to group titles and items. A single
 #'    collection may contain either titles or items, but not both.
 #'
+#' @export
 #' @import httr
-#' @importFrom RJSONIO fromJSON
+#' @importFrom jsonlite fromJSON
 #' @importFrom plyr compact ldply
 #' @template all
 #' @examples \dontrun{
 #' bhl_getcollections()
-#' bhl_getcollections(out = 'raw')
+#' bhl_getcollections(as = 'list')
+#' bhl_getcollections(as = 'json')
+#' bhl_getcollections(as = 'xml')
 #' }
-#' @export
-bhl_getcollections <- function(format = "json", output='list',
-  key = NULL, ...)
+
+bhl_getcollections <- function(as='table', key = NULL, ...)
 {
-  if(output=='list') format='json'
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
+  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
+  url <- "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "GetCollections", apikey = check_key(key), format = format))
   out <- GET(url, query = args, ...)
   stop_for_status(out)
   tt <- content(out, as="text")
-  if(output=='raw'){
-    return( tt )
-  } else if(output=='list')
-  {
-    return( fromJSON(I(tt)) )
-  } else
-  {
-    return( ldply(tt$Result, function(x) as.data.frame(x)) )
-  }
+  switch(as, json = tt, xml = tt,
+         list = jsonlite::fromJSON(tt, FALSE),
+         table = todf(tt))
+}
+
+todf <- function(x){
+  do.call(rbind.fill, lapply(jsonlite::fromJSON(I(x), FALSE)$Result, data.frame))
 }
