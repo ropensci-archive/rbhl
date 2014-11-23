@@ -1,10 +1,10 @@
-#' Return a list of authors that match (fully or partially) the specified 
-#'    search string. 
-#'    
-#' The namessearched are those contained in MARC 100a, 110a, 111a, 700a, 
+#' Return a list of authors that match (fully or partially) the specified
+#'    search string.
+#'
+#' The namessearched are those contained in MARC 100a, 110a, 111a, 700a,
 #'    710a, and 711a library records.
 #'
-#' @import httr 
+#' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
 #' @template all
@@ -19,9 +19,8 @@ bhl_authorsearch <- function(name = NULL, format = "json", output='list',
   key = NULL, callopts=list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op="AuthorSearch", name=name, apikey=key, format=format))
+  args <- compact(list(op="AuthorSearch", name=name, apikey=check_key(key), format=format))
   out <- GET(url, query=args, callopts)
   stop_for_status(out)
   tt <- content(out, as="text")
