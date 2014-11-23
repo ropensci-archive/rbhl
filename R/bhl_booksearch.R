@@ -1,14 +1,14 @@
-#' Search for titles and items in BHL. 
-#' 
-#' Search criteria includes title, author last name, volume, edition, year of 
-#'    publication, subject, language code, and collection identifier. Valid 
-#'    language codes and collection identifiers can be obtained from the 
-#'    getlanguages and getcollections functions. If year of publication is 
-#'    specified, it should be a 4-digit year. To execute a search, you must 
+#' Search for titles and items in BHL.
+#'
+#' Search criteria includes title, author last name, volume, edition, year of
+#'    publication, subject, language code, and collection identifier. Valid
+#'    language codes and collection identifiers can be obtained from the
+#'    getlanguages and getcollections functions. If year of publication is
+#'    specified, it should be a 4-digit year. To execute a search, you must
 #'    supply at least a title, author last name, or collection identifier.
 #'
 #' @import httr
-#' @importFrom plyr compact 
+#' @importFrom plyr compact
 #' @template all
 #' @param title string to search for in the title (character)
 #' @param lname last name to search for (character)
@@ -18,24 +18,23 @@
 #' @param collectionid collection identifier to search for (numeric)
 #' @param language language to search for (character)
 #' @export
-#' @note Use \code{\link{bhl_getcollections}} or \code{\link{bhl_getlanguages}} to get 
+#' @note Use \code{\link{bhl_getcollections}} or \code{\link{bhl_getlanguages}} to get
 #' acceptable terms
 #' @examples \dontrun{
-#' bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825, 
+#' bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825,
 #'    collectionid=4, language='eng')
 #' bhl_booksearch(title='evolution', year=2000, output='raw')
 #' bhl_booksearch('evolution', year=2000, output='raw', format='xml')
 #' bhl_booksearch('evolution', year=2000, output='parsed', format="xml")
 #' }
-bhl_booksearch <- function(title = NULL, lname = NULL, volume = NULL, 
+bhl_booksearch <- function(title = NULL, lname = NULL, volume = NULL,
     edition = NULL, year = NULL, collectionid = NULL, language = NULL, format = "json",
-    output = 'list', key = NULL, callopts = list()) 
+    output = 'list', key = NULL, callopts = list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op = "BookSearch", apikey = key, format = format, 
-                       title=title, lname=lname, volume=volume, 
+  args <- compact(list(op = "BookSearch", apikey = check_key(key), format = format,
+                       title=title, lname=lname, volume=volume,
                        edition=edition, year=year, collectionid=collectionid,
                        language=language))
   out <- GET(url, query = args, callopts)

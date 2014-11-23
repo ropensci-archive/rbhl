@@ -1,4 +1,4 @@
-#' Return a list of subjects that match (fully or partially) the specified 
+#' Return a list of subjects that match (fully or partially) the specified
 #'    search string.
 #'
 #' @import httr
@@ -10,13 +10,12 @@
 #' bhl_subjectsearch('diptera')
 #' }
 #' @export
-bhl_subjectsearch <- function(subject = NA, format = "json", 
-  key = NULL, output='list', callopts=list()) 
+bhl_subjectsearch <- function(subject = NA, format = "json",
+  key = NULL, output='list', callopts=list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op = "SubjectSearch", apikey = key, format = format, 
+  args <- compact(list(op = "SubjectSearch", apikey = check_key(key), format = format,
                        subject = subject))
   out <- GET(url, query = args, callopts)
   stop_for_status(out)

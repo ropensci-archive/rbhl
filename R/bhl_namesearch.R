@@ -1,5 +1,5 @@
 #' Search for a particular name.
-#' 
+#'
 #' Names both with and without NameBank identifiers are returned.
 #'
 #' @param name species name (character)
@@ -13,12 +13,11 @@
 #' }
 
 bhl_namesearch <- function(name = NULL, format = "json", output = 'list',
-  key = NULL, callopts = list()) 
+  key = NULL, callopts = list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op = "NameSearch", name = name, apikey = key, format = format))
+  args <- compact(list(op = "NameSearch", name = name, apikey = check_key(key), format = format))
   out <- GET(url, query = args, callopts)
   stop_for_status(out)
   tt <- content(out, as="text")

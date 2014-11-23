@@ -1,5 +1,5 @@
-#' Return metadata about a page. 
-#' 
+#' Return metadata about a page.
+#'
 #' You may choose to include the OCR text and a list of names found on the page.
 #'
 #' @import httr
@@ -15,14 +15,13 @@
 #' bhl_getpagemetadata(page=1328690, ocr=TRUE, format='xml', output='parsed')
 #' }
 #' @export
-bhl_getpagemetadata <- function(page = NULL, ocr = FALSE, names = FALSE, 
-  format = 'json', output = 'list', key = NULL, callopts = list()) 
+bhl_getpagemetadata <- function(page = NULL, ocr = FALSE, names = FALSE,
+  format = 'json', output = 'list', key = NULL, callopts = list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op = "GetPageMetadata", apikey = key, pageid=page, 
-                       ocr=if(ocr) 't' else NULL, names=if(names) 't' else NULL, 
+  args <- compact(list(op = "GetPageMetadata", apikey = check_key(key), pageid=page,
+                       ocr=if(ocr) 't' else NULL, names=if(names) 't' else NULL,
                        format=format))
   out <- GET(url, query = args, callopts)
   stop_for_status(out)

@@ -1,7 +1,7 @@
-#' Return the number of unique names found on pages in BHL. 
-#' 
+#' Return the number of unique names found on pages in BHL.
+#'
 #' Names both with and without NameBank identifiers are counted.
-#' 
+#'
 #' BEWARE: this API call can take a long time. They are likely working on speeding up the
 #' service, but slow for now.
 #'
@@ -19,13 +19,12 @@
 #' bhl_namecount(startdate = '10/15/2009', enddate = '10/17/2009', format='xml', output='parsed')
 #' }
 
-bhl_namecount <- function(startdate = NULL, enddate = NULL, format='json', output = 'list', 
-  key = NULL, callopts = list()) 
+bhl_namecount <- function(startdate = NULL, enddate = NULL, format='json', output = 'list',
+  key = NULL, callopts = list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op = "NameCount", apikey = key, format = format,
+  args <- compact(list(op = "NameCount", apikey = check_key(key), format = format,
                        startdate=startdate, enddate=enddate))
   out <- GET(url, query = args, callopts)
   stop_for_status(out)

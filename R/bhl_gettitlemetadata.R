@@ -1,4 +1,4 @@
-#' Return metadata about a title. You may choose to include a list of 
+#' Return metadata about a title. You may choose to include a list of
 #'    the items (books) associated  with the title.
 #'
 #' @import httr
@@ -15,12 +15,11 @@
 #' }
 #' @export
 bhl_gettitlemetadata <- function(titleid = NA, items = FALSE, format = "json",
-  output='list', key = NULL, callopts=list()) 
+  output='list', key = NULL, callopts=list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op = "GetTitleMetadata", apikey = key, format = format,
+  args <- compact(list(op = "GetTitleMetadata", apikey = check_key(key), format = format,
                        titleid=titleid, items=items))
   out <- GET(url, query = args, callopts)
   stop_for_status(out)

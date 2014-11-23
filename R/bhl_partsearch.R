@@ -1,13 +1,13 @@
-#' Search for parts of books in BHL, such as articles, chapters, or treatments. 
-#' Search criteria includes title, container (journal or book title), author, 
+#' Search for parts of books in BHL, such as articles, chapters, or treatments.
+#' Search criteria includes title, container (journal or book title), author,
 #' date of publication, volume, series, and issue.
-#' 
+#'
 #' To execute a search, you must supply at least a title or author.
-#' 
-#' The metadata returned by this method includes Part Identifier, Part URL, Item ID, 
-#' Page ID for the start page, Genre, Title, Container Title, Publication Details, 
-#' Volume, Series, Issue, Date, Page Range, Language, rights information, authors, 
-#' keywords, identifiers, pages, and related parts. For more information, see the 
+#'
+#' The metadata returned by this method includes Part Identifier, Part URL, Item ID,
+#' Page ID for the start page, Genre, Title, Container Title, Publication Details,
+#' Volume, Series, Issue, Date, Page Range, Language, rights information, authors,
+#' keywords, identifiers, pages, and related parts. For more information, see the
 #' "Data Elements" section of this documentation.
 #'
 #' @import httr
@@ -26,14 +26,13 @@
 #' bhl_partsearch(author='Charles Darwin')
 #' }
 #' @export
-bhl_partsearch <- function(title=NULL, containerTitle=NULL, author=NULL, date=NULL, 
-  volume=NULL, series=NULL, issue=NULL, format = "json", key = NULL, output='list', 
-  callopts=list()) 
+bhl_partsearch <- function(title=NULL, containerTitle=NULL, author=NULL, date=NULL,
+  volume=NULL, series=NULL, issue=NULL, format = "json", key = NULL, output='list',
+  callopts=list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op = "PartSearch", apikey = key, format = format, 
+  args <- compact(list(op = "PartSearch", apikey = check_key(key), format = format,
                        title = title, containerTitle=containerTitle, author=author,
                        date=date, volume=volume, series=series, issue=issue))
   out <- GET(url, query = args, callopts)

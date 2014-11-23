@@ -10,12 +10,11 @@
 #' }
 #' @export
 bhl_getpartnames <- function(partid, format = "json", output='list',
-  key = NULL, callopts = list()) 
+  key = NULL, callopts = list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op = "GetPartNames", apikey = key, format = format, 
+  args <- compact(list(op = "GetPartNames", apikey = check_key(key), format = format,
                        partid=partid))
   out <- GET(url, query = args, callopts)
   stop_for_status(out)

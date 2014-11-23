@@ -13,13 +13,12 @@
 #' bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', format='xml', output='parsed')
 #' }
 #' @export
-bhl_getpartbyidentifier <- function(type=NULL, value=NULL, format = "json", output='list', 
-  key = NULL, callopts=list()) 
+bhl_getpartbyidentifier <- function(type=NULL, value=NULL, format = "json", output='list',
+  key = NULL, callopts=list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op = "GetPartByIdentifier", apikey = key, format = format, 
+  args <- compact(list(op = "GetPartByIdentifier", apikey = check_key(key), format = format,
                        type=type, value=value))
   out <- GET(url, query = args, callopts)
   stop_for_status(out)

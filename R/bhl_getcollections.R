@@ -1,4 +1,4 @@
-#' Get a list of collections which are used to group titles and items. A single 
+#' Get a list of collections which are used to group titles and items. A single
 #'    collection may contain either titles or items, but not both.
 #'
 #' @import httr
@@ -11,12 +11,11 @@
 #' }
 #' @export
 bhl_getcollections <- function(format = "json", output='list',
-  key = NULL, callopts = list()) 
+  key = NULL, callopts = list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op = "GetCollections", apikey = key, format = format))
+  args <- compact(list(op = "GetCollections", apikey = check_key(key), format = format))
   out <- GET(url, query = args, callopts)
   stop_for_status(out)
   tt <- content(out, as="text")

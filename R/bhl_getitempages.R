@@ -10,18 +10,17 @@
 #' bhl_getitempages('16800')
 #' bhl_getitempages('16800', 'xml', 'raw')
 #' bhl_getitempages('16800', 'xml', 'parsed')
-#' 
+#'
 #' # Return ocr text
-#' bhl_getitempages('16800', TRUE) 
+#' bhl_getitempages('16800', TRUE)
 #' }
 #' @export
 bhl_getitempages <- function(itemid, ocr=FALSE, format = "json", output='list',
-  key = NULL, callopts = list()) 
+  key = NULL, callopts = list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op = "GetItemPages", apikey = key, format = format, 
+  args <- compact(list(op = "GetItemPages", apikey = check_key(key), format = format,
                        itemid=itemid, ocr=if(ocr) 't' else NULL))
   out <- GET(url, query = args, callopts)
   stop_for_status(out)

@@ -12,13 +12,12 @@
 #' bhl_getpartendnote(1000, format='xml', output='parsed')
 #' }
 #' @export
-bhl_getpartendnote <- function(partid, format = "json", output='list', 
-  key = NULL, callopts=list()) 
+bhl_getpartendnote <- function(partid, format = "json", output='list',
+  key = NULL, callopts=list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op = "GetPartEndNote", apikey = key, format = format, partid=partid))
+  args <- compact(list(op = "GetPartEndNote", apikey = check_key(key), format = format, partid=partid))
   out <- GET(url, query = args, callopts)
   stop_for_status(out)
   tt <- content(out, as="text")

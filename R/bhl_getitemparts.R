@@ -12,12 +12,11 @@
 #' }
 #' @export
 bhl_getitemparts <- function(itemid, format = "json", output='list',
-  key = NULL, callopts = list()) 
+  key = NULL, callopts = list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op = "GetItemParts", apikey = key, format = format, 
+  args <- compact(list(op = "GetItemParts", apikey = check_key(key), format = format,
                        itemid=itemid))
   out <- GET(url, query = args, callopts)
   stop_for_status(out)

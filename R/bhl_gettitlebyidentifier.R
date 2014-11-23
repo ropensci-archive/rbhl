@@ -1,5 +1,5 @@
 #' Find and return metadata about a title or titles that match a specific identifier.
-#' 
+#'
 #' @import httr
 #' @importFrom plyr compact
 #' @importFrom XML xmlTreeParse
@@ -14,12 +14,11 @@
 #' }
 #' @export
 bhl_gettitlebyidentifier <- function(type=NULL, value=NULL, format = "json",
-    output='list', key = NULL, callopts=list()) 
+    output='list', key = NULL, callopts=list())
 {
   if(output=='list') format='json'
-  key <- getkey(key)
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
-  args <- compact(list(op = "GetTitleByIdentifier", apikey = key, format = format, 
+  args <- compact(list(op = "GetTitleByIdentifier", apikey = check_key(key), format = format,
                        type=type, value=value))
   out <- GET(url, query = args, callopts)
   stop_for_status(out)
