@@ -7,7 +7,7 @@ date of publication, volume, series, and issue.}
 \usage{
 bhl_partsearch(title = NULL, containerTitle = NULL, author = NULL,
   date = NULL, volume = NULL, series = NULL, issue = NULL,
-  format = "json", key = NULL, output = "list", callopts = list())
+  format = "json", key = NULL, output = "list", ...)
 }
 \arguments{
 \item{title}{Title of the work}
@@ -27,12 +27,13 @@ bhl_partsearch(title = NULL, containerTitle = NULL, author = NULL,
 \item{format}{either XML ('xml') or JSON ('json') format. If output='list',
 format is forced to equal 'json'}
 
-\item{key}{your BHL API key, either enter, or loads from .Rprofile}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+or from \code{.Rprofile} as \code{bhl_key}.}
 
 \item{output}{Return a list, raw json or xml, or parsed data (character).
 Default: 'list'}
 
-\item{callopts}{Call options passed on to httr::GET.}
+\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
 \description{
 To execute a search, you must supply at least a title or author.

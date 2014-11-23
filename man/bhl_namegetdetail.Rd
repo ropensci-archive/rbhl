@@ -5,7 +5,7 @@
 name appears.}
 \usage{
 bhl_namegetdetail(namebankid = NA, name = NA, format = "json",
-  output = "list", key = NULL, callopts = list())
+  output = "list", key = NULL, ...)
 }
 \arguments{
 \item{namebankid}{(not used if 'name' specified) NameBank identifier for a
@@ -19,9 +19,10 @@ format is forced to equal 'json'}
 \item{output}{Return a list, raw json or xml, or parsed data (character).
 Default: 'list'}
 
-\item{key}{your BHL API key, either enter, or loads from .Rprofile}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{callopts}{Call options passed on to httr::GET.}
+\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
 \description{
 Get basic title, item, and page metadata for each page on which the specified

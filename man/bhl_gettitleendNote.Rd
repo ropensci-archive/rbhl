@@ -3,7 +3,7 @@
 \alias{bhl_gettitleendNote}
 \title{Return a citation for a title, using the EndNote format.}
 \usage{
-bhl_gettitleendNote(titleid = NA, key = NULL, callopts = list())
+bhl_gettitleendNote(titleid = NA, key = NULL, ...)
 }
 \arguments{
 \item{titleid}{the identifier of an individual title (numeric)}

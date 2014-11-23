@@ -4,7 +4,7 @@
 \title{Return metadata about a page.}
 \usage{
 bhl_getpagemetadata(page = NULL, ocr = FALSE, names = FALSE,
-  format = "json", output = "list", key = NULL, callopts = list())
+  format = "json", output = "list", key = NULL, ...)
 }
 \arguments{
 \item{page}{page number to get}
@@ -19,9 +19,10 @@ format is forced to equal 'json'}
 \item{output}{Return a list, raw json or xml, or parsed data (character).
 Default: 'list'}
 
-\item{key}{your BHL API key, either enter, or loads from .Rprofile}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{callopts}{Call options passed on to httr::GET.}
+\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
 \description{
 You may choose to include the OCR text and a list of names found on the page.

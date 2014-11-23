@@ -4,7 +4,7 @@
 \title{Return a list of a title's items (books).}
 \usage{
 bhl_gettitleitems(titleid = NULL, format = "json", output = "list",
-  key = NULL, callopts = list())
+  key = NULL, ...)
 }
 \arguments{
 \item{titleid}{the identifier of an individual title (numeric)}
@@ -15,9 +15,10 @@ format is forced to equal 'json'}
 \item{output}{Return a list, raw json or xml, or parsed data (character).
 Default: 'list'}
 
-\item{key}{your BHL API key, either enter, or loads from .Rprofile}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{callopts}{Call options passed on to httr::GET.}
+\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
 \description{
 Return a list of a title's items (books).

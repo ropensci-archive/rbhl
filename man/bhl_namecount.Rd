@@ -4,7 +4,7 @@
 \title{Return the number of unique names found on pages in BHL.}
 \usage{
 bhl_namecount(startdate = NULL, enddate = NULL, format = "json",
-  output = "list", key = NULL, callopts = list())
+  output = "list", key = NULL, ...)
 }
 \arguments{
 \item{startdate}{start date of range between which to count names (optional)}
@@ -17,9 +17,10 @@ format is forced to equal 'json'}
 \item{output}{Return a list, raw json or xml, or parsed data (character).
 Default: 'list'}
 
-\item{key}{your BHL API key, either enter, or loads from .Rprofile}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{callopts}{Call options passed on to httr::GET.}
+\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
 \description{
 Names both with and without NameBank identifiers are counted.

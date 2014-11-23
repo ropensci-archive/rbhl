@@ -4,8 +4,7 @@
 \title{Get a list of collections which are used to group titles and items. A single
    collection may contain either titles or items, but not both.}
 \usage{
-bhl_getcollections(format = "json", output = "list", key = NULL,
-  callopts = list())
+bhl_getcollections(format = "json", output = "list", key = NULL, ...)
 }
 \arguments{
 \item{format}{either XML ('xml') or JSON ('json') format. If output='list',
@@ -14,9 +13,10 @@ format is forced to equal 'json'}
 \item{output}{Return a list, raw json or xml, or parsed data (character).
 Default: 'list'}
 
-\item{key}{your BHL API key, either enter, or loads from .Rprofile}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{callopts}{Call options passed on to httr::GET.}
+\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
 \description{
 Get a list of collections which are used to group titles and items. A single

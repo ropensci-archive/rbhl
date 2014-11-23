@@ -5,7 +5,7 @@
 \usage{
 bhl_openurl(genre = NULL, title = NULL, aufirst = NULL, aulast = NULL,
   date = NULL, spage = NULL, issue = NULL, version = 0.1,
-  format = "json", key = NULL, output = "list", callopts = list())
+  format = "json", key = NULL, output = "list", ...)
 }
 \arguments{
 \item{genre}{Book genre}
@@ -27,12 +27,13 @@ bhl_openurl(genre = NULL, title = NULL, aufirst = NULL, aulast = NULL,
 \item{format}{either XML ('xml') or JSON ('json') format. If output='list',
 format is forced to equal 'json'}
 
-\item{key}{your BHL API key, either enter, or loads from .Rprofile}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+or from \code{.Rprofile} as \code{bhl_key}.}
 
 \item{output}{Return a list, raw json or xml, or parsed data (character).
 Default: 'list'}
 
-\item{callopts}{Call options passed on to httr::GET.}
+\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
 \description{
 Not sure how this differs from their other API...
