@@ -11,9 +11,8 @@
 #' @export
 bhl_gettitleendNote <- function(titleid = NA, key = NULL, ...)
 {
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "GetTitleEndNote", apikey = check_key(key), format = 'json', titleid=titleid))
-  out <- GET(url, query = args, ...)
+  out <- GET(bhl_url(), query = args, ...)
   stop_for_status(out)
   tt <- content(out)
   gsub("\n|%.{1}", "", tt$Result)

@@ -31,11 +31,10 @@ bhl_partsearch <- function(title=NULL, containerTitle=NULL, author=NULL, date=NU
   ...)
 {
   if(output=='list') format='json'
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "PartSearch", apikey = check_key(key), format = format,
                        title = title, containerTitle=containerTitle, author=author,
                        date=date, volume=volume, series=series, issue=issue))
-  out <- GET(url, query = args, ...)
+  out <- GET(bhl_url(), query = args, ...)
   stop_for_status(out)
   tt <- content(out, as="text")
   return_results(tt, output, format)

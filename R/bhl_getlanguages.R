@@ -16,9 +16,8 @@ bhl_getlanguages <- function(format = "json", output='list',
   key = NULL, ...)
 {
   if(output=='list') format='json'
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "GetLanguages", apikey = check_key(key), format = format))
-  out <- GET(url, query = args, ...)
+  out <- GET(bhl_url(), query = args, ...)
   stop_for_status(out)
   tt <- content(out, as="text")
   if(output=='raw'){

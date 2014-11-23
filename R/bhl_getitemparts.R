@@ -15,10 +15,9 @@ bhl_getitemparts <- function(itemid, format = "json", output='list',
   key = NULL, ...)
 {
   if(output=='list') format='json'
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "GetItemParts", apikey = check_key(key), format = format,
                        itemid=itemid))
-  out <- GET(url, query = args, ...)
+  out <- GET(bhl_url(), query = args, ...)
   stop_for_status(out)
   tt <- content(out, as="text")
   return_results(tt, output, format)

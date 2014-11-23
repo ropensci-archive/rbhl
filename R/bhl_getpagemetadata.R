@@ -19,11 +19,10 @@ bhl_getpagemetadata <- function(page = NULL, ocr = FALSE, names = FALSE,
   format = 'json', output = 'list', key = NULL, ...)
 {
   if(output=='list') format='json'
-  url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "GetPageMetadata", apikey = check_key(key), pageid=page,
                        ocr=if(ocr) 't' else NULL, names=if(names) 't' else NULL,
                        format=format))
-  out <- GET(url, query = args, ...)
+  out <- GET(bhl_url(), query = args, ...)
   stop_for_status(out)
   tt <- content(out, as="text")
   return_results(tt, output, format)
