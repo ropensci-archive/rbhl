@@ -20,13 +20,13 @@
 #' }
 
 bhl_namecount <- function(startdate = NULL, enddate = NULL, format='json', output = 'list',
-  key = NULL, callopts = list())
+  key = NULL, ...)
 {
   if(output=='list') format='json'
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "NameCount", apikey = check_key(key), format = format,
                        startdate=startdate, enddate=enddate))
-  out <- GET(url, query = args, callopts)
+  out <- GET(url, query = args, ...)
   stop_for_status(out)
   tt <- content(out, as="text")
   return_results(tt, output, format)

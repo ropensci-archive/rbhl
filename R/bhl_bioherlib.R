@@ -15,7 +15,7 @@
 #' bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, raw=TRUE)
 #' }
 bhl_bioherlib <- function(method = 'GetPageMetadata', pageid = NULL, ocr = FALSE,
-  names = FALSE, format = 'json', key = NULL, output='list', callopts = list())
+  names = FALSE, format = 'json', key = NULL, output='list', ...)
 {
   if(output=='list') format='json'
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
@@ -28,7 +28,7 @@ bhl_bioherlib <- function(method = 'GetPageMetadata', pageid = NULL, ocr = FALSE
      'NameGetDetail', 'NameSearch', 'GetCollections', 'GetLanguages'))
   args <- compact(list(apikey=check_key(key), op=method, pageid=pageid, format=format,
                        ocr=ocr, names=names))
-  out <- GET(url, query = args, callopts)
+  out <- GET(url, query = args, ...)
   stop_for_status(out)
   tt <- content(out, as="text")
   return_results(tt, output, format)

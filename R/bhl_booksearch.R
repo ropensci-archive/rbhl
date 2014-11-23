@@ -29,7 +29,7 @@
 #' }
 bhl_booksearch <- function(title = NULL, lname = NULL, volume = NULL,
     edition = NULL, year = NULL, collectionid = NULL, language = NULL, format = "json",
-    output = 'list', key = NULL, callopts = list())
+    output = 'list', key = NULL, ...)
 {
   if(output=='list') format='json'
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
@@ -37,7 +37,7 @@ bhl_booksearch <- function(title = NULL, lname = NULL, volume = NULL,
                        title=title, lname=lname, volume=volume,
                        edition=edition, year=year, collectionid=collectionid,
                        language=language))
-  out <- GET(url, query = args, callopts)
+  out <- GET(url, query = args, ...)
   stop_for_status(out)
   tt <- content(out, as="text")
   return_results(tt, output, format)

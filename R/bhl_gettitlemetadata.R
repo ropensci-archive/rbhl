@@ -15,13 +15,13 @@
 #' }
 #' @export
 bhl_gettitlemetadata <- function(titleid = NA, items = FALSE, format = "json",
-  output='list', key = NULL, callopts=list())
+  output='list', key = NULL, ...)
 {
   if(output=='list') format='json'
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "GetTitleMetadata", apikey = check_key(key), format = format,
                        titleid=titleid, items=items))
-  out <- GET(url, query = args, callopts)
+  out <- GET(url, query = args, ...)
   stop_for_status(out)
   tt <- content(out, as="text")
   return_results(tt, output, format)

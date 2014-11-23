@@ -15,12 +15,12 @@
 #' }
 #' @export
 bhl_titlesearchsimple <- function(title = NA, format = "json",
-  key = NULL, output='list', callopts=list())
+  key = NULL, output='list', ...)
 {
   if(output=='list') format='json'
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "TitleSearchSimple", apikey = check_key(key), format = format, title=title))
-  out <- GET(url, query = args, callopts)
+  out <- GET(url, query = args, ...)
   stop_for_status(out)
   tt <- content(out, as="text")
   return_results(tt, output, format)

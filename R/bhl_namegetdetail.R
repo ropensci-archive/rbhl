@@ -12,13 +12,13 @@
 #' }
 
 bhl_namegetdetail <- function(namebankid = NA, name = NA, format='json', output = 'list',
-  key = NULL, callopts = list())
+  key = NULL, ...)
 {
   if(output=='list') format='json'
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op="NameGetDetail", apikey=check_key(key),
                        namebankid=namebankid, name=name, format=format))
-  out <- GET(url, query = args, callopts)
+  out <- GET(url, query = args, ...)
   stop_for_status(out)
   tt <- content(out, as="text")
   return_results(tt, output, format)

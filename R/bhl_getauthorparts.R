@@ -18,13 +18,13 @@
 #' }
 #' @export
 bhl_getauthorparts <- function(creatorid, format = "json", output='list',
-  key = NULL, callopts=list())
+  key = NULL, ...)
 {
   if(output=='list') format='json'
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "GetAuthorParts", apikey = check_key(key), format = format,
                        creatorid=creatorid))
-  out <- GET(url, query = args, callopts)
+  out <- GET(url, query = args, ...)
   stop_for_status(out)
   tt <- content(out, as="text")
   return_results(tt, output, format)

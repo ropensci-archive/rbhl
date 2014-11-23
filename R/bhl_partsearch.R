@@ -28,14 +28,14 @@
 #' @export
 bhl_partsearch <- function(title=NULL, containerTitle=NULL, author=NULL, date=NULL,
   volume=NULL, series=NULL, issue=NULL, format = "json", key = NULL, output='list',
-  callopts=list())
+  ...)
 {
   if(output=='list') format='json'
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op = "PartSearch", apikey = check_key(key), format = format,
                        title = title, containerTitle=containerTitle, author=author,
                        date=date, volume=volume, series=series, issue=issue))
-  out <- GET(url, query = args, callopts)
+  out <- GET(url, query = args, ...)
   stop_for_status(out)
   tt <- content(out, as="text")
   return_results(tt, output, format)

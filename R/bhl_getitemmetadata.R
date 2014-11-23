@@ -25,14 +25,14 @@
 #' }
 #' @export
 bhl_getitemmetadata <- function(itemid = NULL, pages = TRUE, ocr=FALSE, parts=FALSE,
-  format='json', output = 'list', key = NULL, callopts = list())
+  format='json', output = 'list', key = NULL, ...)
 {
   if(output=='list') format='json'
   url = "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
   args <- compact(list(op="GetItemMetadata", apikey=check_key(key), pages=pages, itemid=itemid,
                        format=format, ocr=if(ocr) 't' else NULL,
                        parts=if(parts) 't' else NULL))
-  out <- GET(url, query = args, callopts)
+  out <- GET(url, query = args, ...)
   stop_for_status(out)
   tt <- content(out, as="text")
   return_results(tt, output, format)
