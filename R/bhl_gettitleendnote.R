@@ -4,7 +4,7 @@
 #' @importFrom plyr compact
 #' @param titleid the identifier of an individual title (numeric)
 #' @param key your BHL API key, either enter, or loads from .Rprofile
-#' @param callopts Call options passed on to httr::GET.
+#' @param ... Curl options passed on to \code{\link[httr]{GET}}
 #' @examples \dontrun{
 #' bhl_gettitleendNote(1726)
 #' }

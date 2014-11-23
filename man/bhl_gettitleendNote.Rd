@@ -10,7 +10,7 @@ bhl_gettitleendNote(titleid = NA, key = NULL, ...)
 
 \item{key}{your BHL API key, either enter, or loads from .Rprofile}
 
-\item{callopts}{Call options passed on to httr::GET.}
+\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
 \description{
 Return a citation for a title, using the EndNote format.
