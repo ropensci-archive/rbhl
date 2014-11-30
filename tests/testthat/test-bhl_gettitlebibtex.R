@@ -2,7 +2,7 @@
 context("bhl_gettitlebibtex")
 
 library(XML)
-library(RJSONIO)
+require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
 
 tt <- bhl_gettitlebibTex(1726)
 uu <- bhl_gettitlebibTex(1726, output='raw')
@@ -12,13 +12,13 @@ zz <- bhl_gettitlebibTex(1726, format='xml', output='parsed')
 test_that("bhl_gettitlebibtex returns the correct class", {
   expect_is(tt, "list")
   expect_is(tt$Result, "character")
-  
+
   expect_is(uu, "character")
   expect_is(fromJSON(uu), "list")
-  
+
   expect_is(vv, "character")
   expect_is(xmlParse(vv), "XMLInternalDocument")
-  
+
   expect_is(zz, "XMLDocument")
   expect_is(zz$doc, "XMLDocumentContent")
 })

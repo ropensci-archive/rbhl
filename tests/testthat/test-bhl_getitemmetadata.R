@@ -2,7 +2,7 @@
 context("bhl_getitemmetadata")
 
 library(XML)
-library(RJSONIO)
+require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
 
 tt <- bhl_getitemmetadata('16800', TRUE)
 uu <- bhl_getitemmetadata('16800', TRUE, format='xml', output='parsed')
@@ -12,11 +12,11 @@ zz <- bhl_getitemmetadata('16800', TRUE, format='xml', output='raw')
 test_that("bhl_getitemmetadata returns the correct class", {
   expect_is(tt, "list")
   expect_is(tt$Result, "list")
-  
+
   expect_is(uu, "XMLDocument")
   expect_is(uu$doc$version, "character")
   expect_is(uu$doc$children, "list")
-  
+
   expect_is(vv, "character")
   expect_is(fromJSON(vv), "list")
 })

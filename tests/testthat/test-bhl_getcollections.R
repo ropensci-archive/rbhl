@@ -1,24 +1,22 @@
-# tests for bhl_collection fxn in rbhl
-context("bhl_collection")
+# tests for bhl_getcollection fxn in rbhl
+context("bhl_getcollection")
 
 library("XML")
-library("RJSONIO")
+require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
 
 tt <- bhl_getcollections()
-uu <- bhl_getcollections(out = 'raw')
+uu <- bhl_getcollections(as = 'json')
 
 test_that("bhl_collection returns the correct class", {
-	expect_is(tt, "list")
-	expect_is(tt$Result, "list")
-  
+	expect_is(tt, "data.frame")
+
 	expect_is(uu, "character")
 	expect_is(fromJSON(uu), "list")
-	expect_is(fromJSON(uu)$Result[[1]]$CollectionName, "character")
+	expect_is(fromJSON(uu)$Result$CollectionName, "character")
 })
 
 test_that("bhl_collection returns the correct dimensions", {
-  expect_equal(length(tt), 3)
-  expect_equal(length(tt$Status), 1)
+  expect_equal(NCOL(tt), 5)
   expect_equal(length(uu), 1)
   expect_equal(length(fromJSON(uu)), 3)
 })

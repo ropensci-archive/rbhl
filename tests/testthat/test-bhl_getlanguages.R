@@ -1,8 +1,8 @@
 # tests for bhl_getlanguages fxn in rbhl
 context("bhl_getlanguages")
 
-library(XML)
-library(RJSONIO)
+library("XML")
+require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
 
 tt <- bhl_getlanguages()
 uu <- bhl_getlanguages(output='parsed')
@@ -11,7 +11,7 @@ zz <- bhl_getlanguages(output='raw', format='xml')
 
 test_that("bhl_getlanguages returns the correct class", {
   expect_is(tt, "list")
-  expect_is(tt$Result, "list")
+  expect_is(tt$Result, "data.frame")
 
   expect_is(uu, "data.frame")
 
@@ -25,7 +25,7 @@ test_that("bhl_getlanguages returns the correct class", {
 test_that("bhl_getlanguages returns the correct dimensions", {
   expect_equal(length(tt), 3)
   expect_equal(length(tt$Status), 1)
-  expect_equal(NCOL(uu), 2)
+  expect_equal(NCOL(uu), 66)
   expect_equal(length(fromJSON(vv)), 3)
   expect_equal(length(zz), 1)
   expect_equal(length(xmlParse(zz)), 1)

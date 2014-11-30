@@ -2,7 +2,7 @@
 context("bhl_getpagemetadata")
 
 library(XML)
-library(RJSONIO)
+require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
 
 tt <- bhl_getpagemetadata(page=1328690, ocr=TRUE, format='json')
 uu <- bhl_getpagemetadata(page=1328690, ocr=TRUE, format='xml')
@@ -11,10 +11,10 @@ vv <- bhl_getpagemetadata(page=1328690, ocr=TRUE, format='xml', output='parsed')
 test_that("bhl_getpagemetadata returns the correct class", {
   expect_is(tt, "list")
   expect_is(tt$Result, "list")
-  
+
   expect_is(uu, "list")
   expect_equal(uu$ErrorMessage, NULL)
-  
+
   expect_is(vv, "XMLDocument")
   expect_is(vv$doc, "XMLDocumentContent")
 })

@@ -1,8 +1,8 @@
 # tests for bhl_getitempages fxn in rbhl
 context("bhl_getitempages")
 
-library(XML)
-library(RJSONIO)
+library("XML")
+require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
 
 tt <- bhl_getitempages('16800')
 uu <- bhl_getitempages('16800', format='xml', output='raw')
@@ -10,12 +10,12 @@ vv <- bhl_getitempages('16800', format='xml', output='parsed')
 
 test_that("bhl_getitempages returns the correct class", {
   expect_is(tt, "list")
-  expect_is(tt$Result, "list")
-  
+  expect_is(tt$Result, "data.frame")
+
   expect_is(uu, "character")
   expect_is(xmlParse(uu), "XMLInternalDocument")
   expect_is(xpathApply(xmlParse(uu), "//Page"), "XMLNodeSet")
-  
+
   expect_is(vv, "XMLDocument")
   expect_is(xpathApply(vv$doc$children[[1]], "//Page"), "list")
 })

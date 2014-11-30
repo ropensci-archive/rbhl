@@ -4,7 +4,7 @@
 #' @export
 #' @import httr
 #' @importFrom jsonlite fromJSON
-#' @importFrom plyr compact ldply
+#' @importFrom plyr compact ldply rbind.fill
 #' @template all
 #' @examples \dontrun{
 #' bhl_getcollections()

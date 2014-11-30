@@ -1,8 +1,8 @@
 # tests for bhl_getitembyidentifier fxn in rbhl
 context("bhl_getitembyidentifier")
 
-library(XML)
-library(RJSONIO)
+library("XML")
+require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
 
 tt <- bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi')
 uu <- bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', format='xml', output='raw')
@@ -10,13 +10,13 @@ vv <- bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', format=
 
 test_that("bhl_getitembyidentifier returns the correct class", {
 	expect_is(tt, "list")
-	expect_is(tt$Result, "list")
-  
+	expect_is(tt$Result, "data.frame")
+
 	expect_is(uu, "character")
 	expect_is(xmlParse(uu), "XMLInternalDocument")
 	expect_is(xpathApply(xmlParse(uu), "//Year")[[1]], "XMLInternalElementNode")
 	expect_is(xpathApply(xmlParse(uu), "//Year", xmlValue)[[1]][[1]], "character")
-  
+
 	expect_is(vv, "XMLDocument")
 	expect_is(vv$doc$children$Response, "XMLNode")
 })

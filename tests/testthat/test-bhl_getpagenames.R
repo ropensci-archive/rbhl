@@ -1,8 +1,8 @@
 # tests for bhl_getpanames fxn in rbhl
 context("bhl_getpagenames")
 
-library(XML)
-library(RJSONIO)
+library("XML")
+require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
 
 tt <- bhl_getpagenames('1328690')
 uu <- bhl_getpagenames('1328690', 'xml', 'raw')
@@ -10,11 +10,11 @@ vv <- bhl_getpagenames('1328690', 'xml', 'parsed')
 
 test_that("bhl_getpagenames returns the correct class", {
   expect_is(tt, "list")
-  expect_is(tt$Result, "list")
-  
+  expect_is(tt$Result, "data.frame")
+
   expect_is(uu, "character")
   expect_is(xmlParse(uu), "XMLInternalDocument")
-  
+
   expect_is(vv, "XMLDocument")
   expect_is(vv$doc, "XMLDocumentContent")
 })

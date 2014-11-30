@@ -1,8 +1,8 @@
 # tests for bhl_getpanames fxn in rbhl
 context("bhl_gettitlebyidentifier")
 
-library(XML)
-library(RJSONIO)
+library("XML")
+require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
 
 tt <- bhl_gettitlebyidentifier('oclc', 2992225)
 uu <- bhl_gettitlebyidentifier('oclc', 2992225, output='raw')
@@ -11,14 +11,14 @@ zz <- bhl_gettitlebyidentifier('oclc', 2992225, format='xml', output='parsed')
 
 test_that("bhl_gettitlebyidentifier returns the correct class", {
   expect_is(tt, "list")
-  expect_is(tt$Result, "list")
-  
+  expect_is(tt$Result, "data.frame")
+
   expect_is(uu, "character")
   expect_is(fromJSON(uu), "list")
-  
+
   expect_is(vv, "character")
   expect_is(xmlParse(vv), "XMLInternalDocument")
-  
+
   expect_is(zz, "XMLDocument")
   expect_is(zz$doc, "XMLDocumentContent")
 })
