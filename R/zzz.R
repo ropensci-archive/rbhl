@@ -55,3 +55,18 @@ check_key <- function(x){
 #   { key <- x }
 #   key
 # }
+
+bhl_GET <- function(as, args, ...){
+  out <- GET(bhl_url(), query = args, ...)
+  stop_for_status(out)
+  tt <- content(out, as="text")
+  switch(as, json = tt, xml = tt, list = fjson(tt), table = todf(tt))
+}
+
+todf <- function(x){
+  do.call(rbind.fill, lapply(jsonlite::fromJSON(I(x), FALSE)$Result, data.frame))
+}
+
+fjson <- function(x) jsonlite::fromJSON(x, FALSE)
+
+bhl_url <- function() "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
