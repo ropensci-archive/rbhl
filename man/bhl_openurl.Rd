@@ -4,8 +4,8 @@
 \title{Not sure how this differs from their other API...}
 \usage{
 bhl_openurl(genre = NULL, title = NULL, aufirst = NULL, aulast = NULL,
-  date = NULL, spage = NULL, issue = NULL, version = 0.1,
-  format = "json", key = NULL, output = "list", ...)
+  date = NULL, spage = NULL, issue = NULL, version = 0.1, as = "list",
+  key = NULL, ...)
 }
 \arguments{
 \item{genre}{Book genre}
@@ -23,6 +23,8 @@ bhl_openurl(genre = NULL, title = NULL, aufirst = NULL, aulast = NULL,
 \item{issue}{Issue number}
 
 \item{version}{One of 0.1 or 1.0}
+
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -43,14 +45,10 @@ bhl_openurl(
 	spage=16)
 
 bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
-   aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16, output='raw')
+   aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16)
 
 bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
-   aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16, output='parsed')
-
-bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
-   aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16,
-   format='xml', output='parsed')
+   aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16, as='xml')
 }
 }
 
