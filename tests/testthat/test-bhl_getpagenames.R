@@ -24,5 +24,5 @@ test_that("bhl_getpagenames returns the correct dimensions", {
   expect_equal(length(uu), 1)
   expect_equal(length(xmlParse(uu)), 1)
   expect_equal(length(vv), 1)
-  expect_equal(jsonlite::fromJSON(vv)$Status, 1)
+  expect_equal(length(jsonlite::fromJSON(vv)$Status), 1)
 })

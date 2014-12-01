@@ -11,7 +11,7 @@ vv <- bhl_booksearch('evolution', year=2000, as="xml")
 test_that("bhl_booksearch returns the correct class", {
   expect_is(tt, "data.frame")
 
-	expect_is(vv, "list")
+	expect_is(uu, "list")
 
 	expect_is(vv, "character")
 	expect_is(xmlParse(vv), "XMLInternalDocument")
