@@ -19,7 +19,7 @@
 bhl_namecount <- function(startdate = NULL, enddate = NULL, as='table', key = NULL, ...)
 {
   format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- compact(list(op = "NameCount", apikey = check_key(key), format = format,
+  args <- bhlc(list(op = "NameCount", apikey = check_key(key), format = format,
                        startdate=startdate, enddate=enddate))
   bhl_GET(as, args, ...)
 }

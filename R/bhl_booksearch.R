@@ -32,7 +32,7 @@ bhl_booksearch <- function(title = NULL, lname = NULL, volume = NULL,
   as='table', key = NULL, ...)
 {
   format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- compact(list(op = "BookSearch", apikey = check_key(key), format = format,
+  args <- bhlc(list(op = "BookSearch", apikey = check_key(key), format = format,
                        title=title, lname=lname, volume=volume,
                        edition=edition, year=year, collectionid=collectionid,
                        language=language))

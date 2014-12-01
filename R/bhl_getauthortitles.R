@@ -16,7 +16,7 @@
 bhl_getauthortitles <- function(creatorid, as='table', key = NULL, ...)
 {
   format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- compact(list(op = "GetAuthorTitles", apikey = check_key(key), format = format,
+  args <- bhlc(list(op = "GetAuthorTitles", apikey = check_key(key), format = format,
                        creatorid=creatorid))
   bhl_GET(as, args, ...)
 }

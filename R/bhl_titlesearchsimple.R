@@ -14,7 +14,6 @@
 #' }
 bhl_titlesearchsimple <- function(title = NA, as = "table", key = NULL, ...)
 {
-  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- compact(list(op = "TitleSearchSimple", apikey = check_key(key), format = format, title=title))
+  args <- bhlc(list(op = "TitleSearchSimple", apikey = check_key(key), format = as_format(as), title=title))
   bhl_GET(as, args, ...)
 }

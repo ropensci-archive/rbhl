@@ -11,6 +11,6 @@
 bhl_getunpublisheditems <- function(as = "table", key = NULL, ...)
 {
   format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- compact(list(op = "GetUnpublishedItems", apikey = check_key(key), format = format))
+  args <- bhlc(list(op = "GetUnpublishedItems", apikey = check_key(key), format = format))
   bhl_GET(as, args, ...)
 }

@@ -11,7 +11,7 @@
 
 bhl_gettitleendNote <- function(titleid = NA, key = NULL, ...)
 {
-  args <- compact(list(op = "GetTitleEndNote", apikey = check_key(key), format = 'json', titleid=titleid))
+  args <- bhlc(list(op = "GetTitleEndNote", apikey = check_key(key), format = 'json', titleid=titleid))
   out <- GET(bhl_url(), query = args, ...)
   stop_for_status(out)
   tt <- content(out)

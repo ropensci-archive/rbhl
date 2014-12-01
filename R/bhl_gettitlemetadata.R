@@ -14,7 +14,7 @@
 bhl_gettitlemetadata <- function(titleid = NA, items = FALSE, as = "table", key = NULL, ...)
 {
   format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- compact(list(op = "GetTitleMetadata", apikey = check_key(key), format = format,
+  args <- bhlc(list(op = "GetTitleMetadata", apikey = check_key(key), format = format,
                        titleid=titleid, items=items))
   bhl_GET(as, args, ...)
 }

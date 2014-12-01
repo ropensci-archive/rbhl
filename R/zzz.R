@@ -84,3 +84,8 @@ fjson <- function(x) jsonlite::fromJSON(x, FALSE)
 bhl_url <- function() "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
 
 bhlc <- function (l) Filter(Negate(is.null), l)
+
+as_format <- function(x){
+  as <- match.arg(x, c("table","list","json","xml"))
+  if(as %in% c('list','table','json')) 'json' else 'xml'
+}

@@ -12,6 +12,6 @@
 bhl_getpagenames <- function(page = NULL, as = 'table', key = NULL, ...)
 {
   format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- compact(list(op = "GetPageNames", apikey=check_key(key), format=format, pageid=page))
+  args <- bhlc(list(op = "GetPageNames", apikey=check_key(key), format=format, pageid=page))
   bhl_GET(as, args, ...)
 }

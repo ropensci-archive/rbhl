@@ -12,7 +12,7 @@
 bhl_getsubjecttitles <- function(subject = NULL, as = "table", key = NULL, ...)
 {
   format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- compact(list(op = "GetSubjectTitles", apikey = check_key(key), format = format,
+  args <- bhlc(list(op = "GetSubjectTitles", apikey = check_key(key), format = format,
                        subject = subject))
   bhl_GET(as, args, ...)
 }

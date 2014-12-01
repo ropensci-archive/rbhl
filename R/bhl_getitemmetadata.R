@@ -27,7 +27,7 @@ bhl_getitemmetadata <- function(itemid = NULL, pages = TRUE, ocr=FALSE, parts=FA
   as='table', key = NULL, ...)
 {
   format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- compact(list(op="GetItemMetadata", apikey=check_key(key), pages=pages, itemid=itemid,
+  args <- bhlc(list(op="GetItemMetadata", apikey=check_key(key), pages=pages, itemid=itemid,
                        format=format, ocr=if(ocr) 't' else NULL,
                        parts=if(parts) 't' else NULL))
   bhl_GET(as, args, ...)

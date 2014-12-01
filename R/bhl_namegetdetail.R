@@ -15,7 +15,7 @@
 bhl_namegetdetail <- function(namebankid = NULL, name = NULL, as='table', key = NULL, ...)
 {
   format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- compact(list(op="NameGetDetail", apikey=check_key(key),
+  args <- bhlc(list(op="NameGetDetail", apikey=check_key(key),
                        namebankid=namebankid, name=name, format=format))
   bhl_GET(as, args, ...)
 }

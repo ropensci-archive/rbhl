@@ -35,7 +35,7 @@ bhl_openurl <- function(genre = NULL, title = NULL, aufirst = NULL, aulast = NUL
   key = NULL, output='list', ...)
 {
   if(version=="1.0"){url_ver <- "z39.88-2004"} else {url_ver <- NULL}
-	args <- compact(list(genre = genre, title = title, aufirst = aufirst,
+	args <- bhlc(list(genre = genre, title = title, aufirst = aufirst,
 							 date = date, spage = spage, issue = issue, url_ver = url_ver,
 							 apikey = check_key(key), format = format))
 	out <- GET(bhl_url(), query = args, ...)

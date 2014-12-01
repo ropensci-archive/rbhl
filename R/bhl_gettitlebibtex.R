@@ -13,6 +13,6 @@ bhl_gettitlebibTex <- function(titleid = NULL, as = "list", key = NULL, ...)
 {
   as <- match.arg(as, c("table","list","json","xml"))
   format <- if(as %in% c('list','json')) 'json' else 'xml'
-  args <- compact(list(op = "GetTitleBibTex", apikey = check_key(key), format = format, titleid=titleid))
+  args <- bhlc(list(op = "GetTitleBibTex", apikey = check_key(key), format = format, titleid=titleid))
   bhl_GET(as, args, ...)
 }

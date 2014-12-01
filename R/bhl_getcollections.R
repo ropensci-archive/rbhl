@@ -21,6 +21,6 @@
 bhl_getcollections <- function(as='table', key = NULL, ...)
 {
   format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- compact(list(op = "GetCollections", apikey = check_key(key), format = format))
+  args <- bhlc(list(op = "GetCollections", apikey = check_key(key), format = format))
   bhl_GET(as, args, ...)
 }

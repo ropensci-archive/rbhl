@@ -13,6 +13,6 @@ bhl_getpartendnote <- function(partid, as = "list", key = NULL, ...)
 {
   as <- match.arg(as, c("table","list","json","xml"))
   format <- if(as %in% c('list','json')) 'json' else 'xml'
-  args <- compact(list(op = "GetPartEndNote", apikey = check_key(key), format = format, partid=partid))
+  args <- bhlc(list(op = "GetPartEndNote", apikey = check_key(key), format = format, partid=partid))
   bhl_GET(as, args, ...)
 }

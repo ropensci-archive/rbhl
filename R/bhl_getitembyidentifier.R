@@ -19,7 +19,7 @@ bhl_getitembyidentifier <- function(type = NULL, value = NULL, as = 'table',
   key = NULL, ...)
 {
   format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- compact(list(op = "GetItemByIdentifier", apikey = check_key(key), type=type,
+  args <- bhlc(list(op = "GetItemByIdentifier", apikey = check_key(key), type=type,
                        value=value, format=format))
   bhl_GET(as, args, ...)
 }

@@ -13,7 +13,7 @@
 bhl_getitemparts <- function(itemid, as = "table", key = NULL, ...)
 {
   format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- compact(list(op = "GetItemParts", apikey = check_key(key), format = format,
+  args <- bhlc(list(op = "GetItemParts", apikey = check_key(key), format = format,
                        itemid=itemid))
   bhl_GET(as, args, ...)
 }
