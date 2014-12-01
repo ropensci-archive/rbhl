@@ -3,7 +3,7 @@
 #'
 #' @import httr
 #' @importFrom jsonlite fromJSON
-#' @importFrom plyr compact ldply rbind.fill
+#' @importFrom plyr ldply rbind.fill
 #'
 #' @export
 #' @param as (character) Return a list, json xml, or parsed table (default)
