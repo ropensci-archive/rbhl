@@ -6,17 +6,12 @@ author identifier. Unless the identifier  for a particular BHL author record
 is known in advance, this method should be used in combination	with the
 AuthorSearch method.}
 \usage{
-bhl_getauthorparts(creatorid, format = "json", output = "list",
-  key = NULL, ...)
+bhl_getauthorparts(creatorid, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{creatorid}{BHL identifier for a particular author (numeric)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -29,9 +24,9 @@ Note: haven't seen examples for this function that work yet...
 \examples{
 \dontrun{
 bhl_getauthorparts(147)
-bhl_getauthorparts(39120, output='raw')
-bhl_getauthorparts(39120, format='xml', output='raw')
-bhl_getauthorparts(39120, format='xml', output='parsed')
+bhl_getauthorparts(39120, as='json')
+bhl_getauthorparts(39120, as='xml')
+bhl_getauthorparts(39120, as='list')
 }
 }
 

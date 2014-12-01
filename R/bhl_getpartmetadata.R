@@ -1,24 +1,18 @@
 #' Return a list of an item's pages.
 #'
-#' @import httr
-#' @importFrom plyr compact
-#' @importFrom XML xmlTreeParse
-#' @template all
+#' @export
 #' @param partid The identifier of an individual part (article, chapter, etc) (numeric)
+#' @inheritParams bhl_getcollections
 #' @examples \dontrun{
 #' bhl_getpartmetadata(10409)
-#' bhl_getpartmetadata(10409, 'xml', 'raw')
-#' bhl_getpartmetadata(10409, 'xml', 'parsed')
+#' bhl_getpartmetadata(10409, 'xml')
+#' bhl_getpartmetadata(10409, 'json')
 #' }
-#' @export
-bhl_getpartmetadata <- function(partid, format = "json", output='list',
-  key = NULL, ...)
+
+bhl_getpartmetadata <- function(partid, as = "table", key = NULL, ...)
 {
-  if(output=='list') format='json'
+  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
   args <- compact(list(op = "GetPartMetadata", apikey = check_key(key), format = format,
                        partid=partid))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }

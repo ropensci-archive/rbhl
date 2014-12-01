@@ -1,24 +1,21 @@
 #' Get basic title, item, and page metadata for each page on which the specified
 #' name appears.
 #'
+#' @export
 #' @param namebankid (not used if 'name' specified) NameBank identifier for a
 #' name (numeric)
 #' @param name (not used if 'namebankid' specified) a complete name string (character)
-#' @template all
-#' @export
+#' @inheritParams bhl_getcollections
+#'
 #' @examples \dontrun{
 #' bhl_namegetdetail(namebankid = 3501464)
 #' bhl_namegetdetail(name = 'poa annua supina')
 #' }
 
-bhl_namegetdetail <- function(namebankid = NA, name = NA, format='json', output = 'list',
-  key = NULL, ...)
+bhl_namegetdetail <- function(namebankid = NULL, name = NULL, as='table', key = NULL, ...)
 {
-  if(output=='list') format='json'
+  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
   args <- compact(list(op="NameGetDetail", apikey=check_key(key),
                        namebankid=namebankid, name=name, format=format))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }

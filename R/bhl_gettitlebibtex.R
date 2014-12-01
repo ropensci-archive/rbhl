@@ -1,24 +1,18 @@
 #' Return a citation for a title, using the BibTeX format.
 #'
-#' @import httr
-#' @importFrom plyr compact
-#' @importFrom XML xmlTreeParse
-#' @template all
+#' @export
 #' @param titleid the identifier of an individual title (numeric)
+#' @inheritParams bhl_getcollections
 #' @examples \dontrun{
 #' bhl_gettitlebibTex(1726)
-#' bhl_gettitlebibTex(1726, output='raw')
-#' bhl_gettitlebibTex(1726, format='xml', output='raw')
-#' bhl_gettitlebibTex(1726, format='xml', output='parsed')
+#' bhl_gettitlebibTex(1726, 'xml')
+#' bhl_gettitlebibTex(1726, 'json')
 #' }
-#' @export
-bhl_gettitlebibTex <- function(titleid = NULL, format = "json",
-  output='list', key = NULL, ...)
+
+bhl_gettitlebibTex <- function(titleid = NULL, as = "list", key = NULL, ...)
 {
-  if(output=='list') format='json'
+  as <- match.arg(as, c("table","list","json","xml"))
+  format <- if(as %in% c('list','json')) 'json' else 'xml'
   args <- compact(list(op = "GetTitleBibTex", apikey = check_key(key), format = format, titleid=titleid))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }

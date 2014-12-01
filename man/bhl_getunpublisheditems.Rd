@@ -3,14 +3,10 @@
 \alias{bhl_getunpublisheditems}
 \title{Return a list of the identifiers of all unpublished items.}
 \usage{
-bhl_getunpublisheditems(format = "json", output = "list", key = NULL, ...)
+bhl_getunpublisheditems(as = "table", key = NULL, ...)
 }
 \arguments{
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -23,9 +19,8 @@ Return a list of the identifiers of all unpublished items.
 \examples{
 \dontrun{
 bhl_getunpublisheditems()
-bhl_getunpublisheditems(output='raw')
-bhl_getunpublisheditems(format='xml', output='raw')
-bhl_getunpublisheditems(format='xml', output='parsed')
+bhl_getunpublisheditems('xml')
+bhl_getunpublisheditems('json')
 }
 }
 

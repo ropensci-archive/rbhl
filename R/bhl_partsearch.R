@@ -10,10 +10,7 @@
 #' keywords, identifiers, pages, and related parts. For more information, see the
 #' "Data Elements" section of this documentation.
 #'
-#' @import httr
-#' @importFrom plyr compact
-#' @importFrom XML xmlTreeParse
-#' @template all
+#' @export
 #' @param title Title of the work
 #' @param containerTitle Container title of the work
 #' @param author Author of the work
@@ -21,21 +18,18 @@
 #' @param volume Volume of the work
 #' @param series Series of the work
 #' @param issue Issue of the work
+#' @inheritParams bhl_getcollections
 #' @examples \dontrun{
 #' bhl_partsearch(title='Critical approach to the definition of Darwinian units')
 #' bhl_partsearch(author='Charles Darwin')
 #' }
-#' @export
+
 bhl_partsearch <- function(title=NULL, containerTitle=NULL, author=NULL, date=NULL,
-  volume=NULL, series=NULL, issue=NULL, format = "json", key = NULL, output='list',
-  ...)
+  volume=NULL, series=NULL, issue=NULL, as = "table", key = NULL, ...)
 {
-  if(output=='list') format='json'
+  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
   args <- compact(list(op = "PartSearch", apikey = check_key(key), format = format,
                        title = title, containerTitle=containerTitle, author=author,
                        date=date, volume=volume, series=series, issue=issue))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }

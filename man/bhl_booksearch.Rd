@@ -5,7 +5,7 @@
 \usage{
 bhl_booksearch(title = NULL, lname = NULL, volume = NULL,
   edition = NULL, year = NULL, collectionid = NULL, language = NULL,
-  format = "json", output = "list", key = NULL, ...)
+  as = "table", key = NULL, ...)
 }
 \arguments{
 \item{title}{string to search for in the title (character)}
@@ -22,11 +22,7 @@ bhl_booksearch(title = NULL, lname = NULL, volume = NULL,
 
 \item{language}{language to search for (character)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -49,9 +45,9 @@ acceptable terms
 \dontrun{
 bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825,
    collectionid=4, language='eng')
-bhl_booksearch(title='evolution', year=2000, output='raw')
-bhl_booksearch('evolution', year=2000, output='raw', format='xml')
-bhl_booksearch('evolution', year=2000, output='parsed', format="xml")
+bhl_booksearch(title='evolution', year=2000, as='json')
+bhl_booksearch('evolution', year=2000, as='xml')
+bhl_booksearch('evolution', year=2000, as="list")
 }
 }
 

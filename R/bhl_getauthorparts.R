@@ -5,26 +5,20 @@
 #'
 #' Note: haven't seen examples for this function that work yet...
 #'
-#' @import httr
-#' @importFrom plyr compact
-#' @importFrom XML xmlTreeParse
-#' @template all
+#' @export
 #' @param creatorid BHL identifier for a particular author (numeric)
+#' @inheritParams bhl_getcollections
+#'
 #' @examples \dontrun{
 #' bhl_getauthorparts(147)
-#' bhl_getauthorparts(39120, output='raw')
-#' bhl_getauthorparts(39120, format='xml', output='raw')
-#' bhl_getauthorparts(39120, format='xml', output='parsed')
+#' bhl_getauthorparts(39120, as='json')
+#' bhl_getauthorparts(39120, as='xml')
+#' bhl_getauthorparts(39120, as='list')
 #' }
-#' @export
-bhl_getauthorparts <- function(creatorid, format = "json", output='list',
-  key = NULL, ...)
+bhl_getauthorparts <- function(creatorid, as='table', key = NULL, ...)
 {
-  if(output=='list') format='json'
+  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
   args <- compact(list(op = "GetAuthorParts", apikey = check_key(key), format = format,
                        creatorid=creatorid))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }

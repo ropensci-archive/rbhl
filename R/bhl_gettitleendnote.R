@@ -1,14 +1,14 @@
 #' Return a citation for a title, using the EndNote format.
 #'
-#' @import httr
-#' @importFrom plyr compact
+#' @export
 #' @param titleid the identifier of an individual title (numeric)
 #' @param key your BHL API key, either enter, or loads from .Rprofile
 #' @param ... Curl options passed on to \code{\link[httr]{GET}}
+#' @inheritParams bhl_getcollections
 #' @examples \dontrun{
 #' bhl_gettitleendNote(1726)
 #' }
-#' @export
+
 bhl_gettitleendNote <- function(titleid = NA, key = NULL, ...)
 {
   args <- compact(list(op = "GetTitleEndNote", apikey = check_key(key), format = 'json', titleid=titleid))

@@ -4,19 +4,15 @@
 \title{Return metadata about a title. You may choose to include a list of
    the items (books) associated  with the title.}
 \usage{
-bhl_gettitlemetadata(titleid = NA, items = FALSE, format = "json",
-  output = "list", key = NULL, ...)
+bhl_gettitlemetadata(titleid = NA, items = FALSE, as = "table",
+  key = NULL, ...)
 }
 \arguments{
 \item{titleid}{the identifier of an individual title (numeric)}
 
 \item{items}{(logical) TRUE of FALSE (default) to inclue items}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -30,9 +26,8 @@ Return metadata about a title. You may choose to include a list of
 \examples{
 \dontrun{
 bhl_gettitlemetadata(1726, TRUE)
-bhl_gettitlemetadata(1726, output='raw')
-bhl_gettitlemetadata(1726, format='xml', output='raw')
-bhl_gettitlemetadata(1726, format='xml', output='parsed')
+bhl_gettitlemetadata(1726, as='list')
+bhl_gettitlemetadata(1726, as='xml')
 }
 }
 

@@ -3,14 +3,10 @@
 \alias{bhl_getlanguages}
 \title{Get a list of languages in which materials in BHL have been written.}
 \usage{
-bhl_getlanguages(format = "json", output = "list", key = NULL, ...)
+bhl_getlanguages(as = "table", key = NULL, ...)
 }
 \arguments{
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -23,9 +19,9 @@ Get a list of languages in which materials in BHL have been written.
 \examples{
 \dontrun{
 bhl_getlanguages()
-bhl_getlanguages(output='parsed')
-bhl_getlanguages(output='raw')
-bhl_getlanguages(output='raw', format='xml')
+bhl_getlanguages('json')
+bhl_getlanguages('xml')
+bhl_getlanguages('list')
 }
 }
 

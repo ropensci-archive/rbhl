@@ -1,24 +1,18 @@
 #' Return a citation for a part, using the BibTeX format.
 #'
-#' @import httr
-#' @importFrom plyr compact
-#' @importFrom XML xmlTreeParse
-#' @template all
+#' @export
 #' @param partid The identifier of an individual part (article, chapter, etc) (numeric)
+#' @inheritParams bhl_getcollections
 #' @examples \dontrun{
 #' bhl_getpartbibtex(1000)
-#' bhl_getpartbibtex(1000, output='raw')
-#' bhl_getpartbibtex(1000, format='xml', output='raw')
-#' bhl_getpartbibtex(1000, format='xml', output='parsed')
+#' bhl_getpartbibtex(1000, 'xml')
+#' bhl_getpartbibtex(1000, 'json')
 #' }
-#' @export
-bhl_getpartbibtex <- function(partid, format = "json", output='list',
-  key = NULL, ...)
+
+bhl_getpartbibtex <- function(partid, as = "list", key = NULL, ...)
 {
-  if(output=='list') format='json'
+  as <- match.arg(as, c("table","list","json","xml"))
+  format <- if(as %in% c('list','json')) 'json' else 'xml'
   args <- compact(list(op = "GetPartBibTex", apikey = check_key(key), format = format, partid=partid))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }

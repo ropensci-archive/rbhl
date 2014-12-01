@@ -3,19 +3,15 @@
 \alias{bhl_gettitlebyidentifier}
 \title{Find and return metadata about a title or titles that match a specific identifier.}
 \usage{
-bhl_gettitlebyidentifier(type = NULL, value = NULL, format = "json",
-  output = "list", key = NULL, ...)
+bhl_gettitlebyidentifier(type = NULL, value = NULL, as = "table",
+  key = NULL, ...)
 }
 \arguments{
 \item{type}{the type of identifier (oclc, issn, isbn, lccn, ddc, nal, nlm, coden) character}
 
 \item{value}{the identifier value (numeric)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -28,9 +24,8 @@ Find and return metadata about a title or titles that match a specific identifie
 \examples{
 \dontrun{
 bhl_gettitlebyidentifier('oclc', 2992225)
-bhl_gettitlebyidentifier('oclc', 2992225, output='raw')
-bhl_gettitlebyidentifier('oclc', 2992225, format='xml', output='raw')
-bhl_gettitlebyidentifier('oclc', 2992225, format='xml', output='parsed')
+bhl_gettitlebyidentifier('oclc', 2992225, 'json')
+bhl_gettitlebyidentifier('oclc', 2992225, 'xml')
 }
 }
 

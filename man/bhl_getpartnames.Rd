@@ -3,17 +3,12 @@
 \alias{bhl_getpartnames}
 \title{Return a list of scientific names associated with a part.}
 \usage{
-bhl_getpartnames(partid, format = "json", output = "list", key = NULL,
-  ...)
+bhl_getpartnames(partid, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{partid}{The identifier of an individual part (article, chapter, etc) (character)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -25,7 +20,9 @@ Return a list of scientific names associated with a part.
 }
 \examples{
 \dontrun{
-bhl_getpartnames(7443)
+bhl_getpartnames(7443, "xml")
+bhl_getpartnames(7443, "json")
+bhl_getpartnames(7443, "list")
 }
 }
 

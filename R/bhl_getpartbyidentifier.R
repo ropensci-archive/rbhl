@@ -1,26 +1,21 @@
 #' Return a list of the identifiers of all unpublished items.
 #'
-#' @import httr
-#' @importFrom plyr compact
-#' @importFrom XML xmlTreeParse
-#' @template all
+#' @export
+#'
 #' @param type The type of identifier (doi, oclc, issn, isbn, lccn, ddc, nal, nlm, coden)
 #' @param value The identifier value
+#' @inheritParams bhl_getcollections
 #' @examples \dontrun{
 #' bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12')
-#' bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', output='raw')
-#' bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', format='xml', output='raw')
-#' bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', format='xml', output='parsed')
+#' bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', as='json')
+#' bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', as='xml')
+#' bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', as='list')
 #' }
-#' @export
-bhl_getpartbyidentifier <- function(type=NULL, value=NULL, format = "json", output='list',
-  key = NULL, ...)
+
+bhl_getpartbyidentifier <- function(type=NULL, value=NULL, as = "table", key = NULL, ...)
 {
-  if(output=='list') format='json'
+  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
   args <- compact(list(op = "GetPartByIdentifier", apikey = check_key(key), format = format,
                        type=type, value=value))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }

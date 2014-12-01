@@ -1,11 +1,11 @@
 #' Get a list of collections which are used to group titles and items. A single
 #' collection may contain either titles or items, but not both.
 #'
-#' @export
 #' @import httr
 #' @importFrom jsonlite fromJSON
 #' @importFrom plyr compact ldply rbind.fill
 #'
+#' @export
 #' @param as (character) Return a list, json xml, or parsed table (default)
 #' @param key Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 #' or from \code{.Rprofile} as \code{bhl_key}.

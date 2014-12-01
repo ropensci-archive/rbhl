@@ -3,17 +3,12 @@
 \alias{bhl_getsubjectparts}
 \title{Return a list of parts (articles, chapters, etc) associated with a subject.}
 \usage{
-bhl_getsubjectparts(subject = NULL, format = "json", output = "list",
-  key = NULL, ...)
+bhl_getsubjectparts(subject = NULL, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{subject}{the full or partial subject for which to search (character)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -26,8 +21,8 @@ Note: haven't seen examples for this function that work yet...
 \examples{
 \dontrun{
 bhl_getsubjectparts('frogs')
-bhl_getsubjectparts('diptera', 'xml', 'raw')
-bhl_getsubjectparts('diptera', 'xml', 'parsed')
+bhl_getsubjectparts('diptera', 'xml')
+bhl_getsubjectparts('diptera', 'json')
 }
 }
 

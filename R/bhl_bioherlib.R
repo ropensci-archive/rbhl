@@ -1,23 +1,21 @@
 #' Search BHL across many API methods.
 #'
-#' @import httr
-#' @importFrom plyr compact
-#' @importFrom XML xmlTreeParse
-#' @template all
+#' @export
+#' @inheritParams bhl_getcollections
 #' @param method The API method to use.
 #' @param pageid The identifier of an individual page in a scanned book.
 #' @param ocr return ocr text of the page (logical). Default: FALSE
 #' @param names return the names that appear on the page (logical). Default: FALSE
-#' @export
+#'
 #' @examples \dontrun{
 #' bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE)
-#' bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, format="xml")
-#' bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, raw=TRUE)
+#' bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, as="xml")
+#' bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, as="list")
 #' }
+
 bhl_bioherlib <- function(method = 'GetPageMetadata', pageid = NULL, ocr = FALSE,
-  names = FALSE, format = 'json', key = NULL, output='list', ...)
+  names = FALSE, as='table', key = NULL, ...)
 {
-  if(output=='list') format='json'
   method <- match.arg(method,
     choices=c('GetPageMetadata', 'GetPageOcrText', 'GetPageNames',
      'GetItemMetadata', 'GetItemByIdentifier', 'GetItemPages', 'GetUnpublishedItems',
@@ -25,10 +23,9 @@ bhl_bioherlib <- function(method = 'GetPageMetadata', pageid = NULL, ocr = FALSE
      'GetTitleBibTex', 'GetTitleEndNote', 'GetUnpublishedTitles', 'SubjectSearch',
      'GetSubjectTitles', 'AuthorSearch', 'GetAuthorTitles', 'NameCount', 'NameList',
      'NameGetDetail', 'NameSearch', 'GetCollections', 'GetLanguages'))
+  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
   args <- compact(list(apikey=check_key(key), op=method, pageid=pageid, format=format,
                        ocr=ocr, names=names))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }
+

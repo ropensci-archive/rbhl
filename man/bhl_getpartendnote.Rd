@@ -3,17 +3,12 @@
 \alias{bhl_getpartendnote}
 \title{Return a citation for a part, using the EndNote format.}
 \usage{
-bhl_getpartendnote(partid, format = "json", output = "list", key = NULL,
-  ...)
+bhl_getpartendnote(partid, as = "list", key = NULL, ...)
 }
 \arguments{
 \item{partid}{The identifier of an individual part (article, chapter, etc) (numeric)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -26,9 +21,8 @@ Return a citation for a part, using the EndNote format.
 \examples{
 \dontrun{
 bhl_getpartendnote(1000)
-bhl_getpartendnote(1000, output='raw')
-bhl_getpartendnote(1000, format='xml', output='raw')
-bhl_getpartendnote(1000, format='xml', output='parsed')
+bhl_getpartendnote(1000, as='xml')
+bhl_getpartendnote(1000, as='json')
 }
 }
 

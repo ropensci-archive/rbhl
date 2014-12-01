@@ -4,7 +4,7 @@
 \title{Return metadata about an item.}
 \usage{
 bhl_getitemmetadata(itemid = NULL, pages = TRUE, ocr = FALSE,
-  parts = FALSE, format = "json", output = "list", key = NULL, ...)
+  parts = FALSE, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{itemid}{item id (character)}
@@ -19,11 +19,7 @@ here for now.}
 to TRUE apparently doesn't return any parts text, but leaving parameter
 here for now.}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -36,10 +32,9 @@ You may choose to include a list of the item's pages.
 \examples{
 \dontrun{
 bhl_getitemmetadata('16800', TRUE)
-bhl_getitemmetadata('16800', TRUE, 'xml', 'parsed')
-bhl_getitemmetadata('16800', TRUE, 'json', 'raw')
-bhl_getitemmetadata('16800', TRUE, 'xml', 'raw')
-
+bhl_getitemmetadata('16800', TRUE, as='xml')
+bhl_getitemmetadata('16800', TRUE, as='json')
+bhl_getitemmetadata('16800', TRUE, as='list')
 
 bhl_getitemmetadata(20419, pages=FALSE, parts=TRUE)
 }

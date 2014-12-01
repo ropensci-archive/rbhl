@@ -1,24 +1,19 @@
 #' Return a list of an item's parts.
 #'
-#' @import httr
-#' @importFrom plyr compact
-#' @importFrom XML xmlTreeParse
-#' @template all
+#' @export
+#'
 #' @param itemid the item id (character)
+#' @inheritParams bhl_getcollections
 #' @examples \dontrun{
 #' bhl_getitemparts(35600)
-#' bhl_getitemparts(35600, 'xml', 'raw')
-#' bhl_getitemparts(35600, 'xml', 'parsed')
+#' bhl_getitemparts(35600, 'json')
+#' bhl_getitemparts(35600, 'xml')
 #' }
-#' @export
-bhl_getitemparts <- function(itemid, format = "json", output='list',
-  key = NULL, ...)
+
+bhl_getitemparts <- function(itemid, as = "table", key = NULL, ...)
 {
-  if(output=='list') format='json'
+  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
   args <- compact(list(op = "GetItemParts", apikey = check_key(key), format = format,
                        itemid=itemid))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }

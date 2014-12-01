@@ -3,19 +3,15 @@
 \alias{bhl_namecount}
 \title{Return the number of unique names found on pages in BHL.}
 \usage{
-bhl_namecount(startdate = NULL, enddate = NULL, format = "json",
-  output = "list", key = NULL, ...)
+bhl_namecount(startdate = NULL, enddate = NULL, as = "table",
+  key = NULL, ...)
 }
 \arguments{
 \item{startdate}{start date of range between which to count names (optional)}
 
 \item{enddate}{end date of range between which to count names (optional)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -32,9 +28,8 @@ service, but slow for now.
 \examples{
 \dontrun{
 bhl_namecount(startdate = '12/25/2009', enddate = '12/27/2009')
-bhl_namecount(startdate = '10/15/2009', enddate = '10/17/2009', output='raw')
-bhl_namecount(startdate = '10/15/2009', enddate = '10/17/2009', format='xml', output='raw')
-bhl_namecount(startdate = '10/15/2009', enddate = '10/17/2009', format='xml', output='parsed')
+bhl_namecount(startdate = '10/15/2009', enddate = '10/17/2009', as='json')
+bhl_namecount(startdate = '10/15/2009', enddate = '10/17/2009', as='xml')
 }
 }
 

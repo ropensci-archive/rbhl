@@ -3,19 +3,14 @@
 \alias{bhl_getitempages}
 \title{Return a list of an item's pages.}
 \usage{
-bhl_getitempages(itemid, ocr = FALSE, format = "json", output = "list",
-  key = NULL, ...)
+bhl_getitempages(itemid, ocr = FALSE, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{itemid}{the item id (character)}
 
 \item{ocr}{return ocr text of the page (TRUE/FALSE)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -28,8 +23,8 @@ Return a list of an item's pages.
 \examples{
 \dontrun{
 bhl_getitempages('16800')
-bhl_getitempages('16800', 'xml', 'raw')
-bhl_getitempages('16800', 'xml', 'parsed')
+bhl_getitempages('16800', as='json')
+bhl_getitempages('16800', as='xml')
 
 # Return ocr text
 bhl_getitempages('16800', TRUE)

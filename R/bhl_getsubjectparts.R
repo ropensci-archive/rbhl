@@ -2,25 +2,19 @@
 #'
 #' Note: haven't seen examples for this function that work yet...
 #'
-#' @import httr
-#' @importFrom plyr compact
-#' @importFrom XML xmlTreeParse
-#' @template all
+#' @export
 #' @param subject the full or partial subject for which to search (character)
+#' @inheritParams bhl_getcollections
 #' @examples \dontrun{
 #' bhl_getsubjectparts('frogs')
-#' bhl_getsubjectparts('diptera', 'xml', 'raw')
-#' bhl_getsubjectparts('diptera', 'xml', 'parsed')
+#' bhl_getsubjectparts('diptera', 'xml')
+#' bhl_getsubjectparts('diptera', 'json')
 #' }
-#' @export
-bhl_getsubjectparts <- function(subject = NULL, format = "json", output = 'list',
-  key = NULL, ...)
+
+bhl_getsubjectparts <- function(subject = NULL, as = "table", key = NULL, ...)
 {
-  if(output=='list') format='json'
+  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
   args <- compact(list(op = "GetSubjectParts", apikey = check_key(key), format = format,
                        subject = subject))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }

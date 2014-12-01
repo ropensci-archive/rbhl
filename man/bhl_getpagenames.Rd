@@ -3,17 +3,12 @@
 \alias{bhl_getpagenames}
 \title{Return a list of names that appear on a page.}
 \usage{
-bhl_getpagenames(page = NULL, format = "json", output = "list",
-  key = NULL, ...)
+bhl_getpagenames(page = NULL, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{page}{page number to get}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -26,8 +21,8 @@ Return a list of names that appear on a page.
 \examples{
 \dontrun{
 bhl_getpagenames('1328690')
-bhl_getpagenames('1328690', 'xml', 'raw')
-bhl_getpagenames('1328690', 'xml', 'parsed')
+bhl_getpagenames('1328690', 'json')
+bhl_getpagenames('1328690', 'list')
 }
 }
 

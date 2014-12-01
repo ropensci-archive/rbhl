@@ -4,20 +4,15 @@
 \title{Return a list of subjects that match (fully or partially) the specified
    search string.}
 \usage{
-bhl_subjectsearch(subject = NA, format = "json", key = NULL,
-  output = "list", ...)
+bhl_subjectsearch(subject, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{subject}{the full or partial subject for which to search (character)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
@@ -28,6 +23,7 @@ Return a list of subjects that match (fully or partially) the specified
 \examples{
 \dontrun{
 bhl_subjectsearch('diptera')
+bhl_subjectsearch('diptera', "json")
 }
 }
 

@@ -2,10 +2,8 @@
 #'
 #' You may choose to include a list of the item's pages.
 #'
-#' @import httr
-#' @importFrom plyr compact
-#' @importFrom XML xmlTreeParse
-#' @template all
+#' @export
+#'
 #' @param itemid item id (character)
 #' @param pages return the items pages (TRUE/FALSE)
 #' @param ocr (logical) TRUE to return the ocr for the item's pages. Setting this
@@ -14,25 +12,23 @@
 #' @param parts (logical) TRUE to return the item's parts. Setting this
 #' to TRUE apparently doesn't return any parts text, but leaving parameter
 #' here for now.
+#' @inheritParams bhl_getcollections
+#'
 #' @examples \dontrun{
 #' bhl_getitemmetadata('16800', TRUE)
-#' bhl_getitemmetadata('16800', TRUE, 'xml', 'parsed')
-#' bhl_getitemmetadata('16800', TRUE, 'json', 'raw')
-#' bhl_getitemmetadata('16800', TRUE, 'xml', 'raw')
-#'
+#' bhl_getitemmetadata('16800', TRUE, as='xml')
+#' bhl_getitemmetadata('16800', TRUE, as='json')
+#' bhl_getitemmetadata('16800', TRUE, as='list')
 #'
 #' bhl_getitemmetadata(20419, pages=FALSE, parts=TRUE)
 #' }
-#' @export
+
 bhl_getitemmetadata <- function(itemid = NULL, pages = TRUE, ocr=FALSE, parts=FALSE,
-  format='json', output = 'list', key = NULL, ...)
+  as='table', key = NULL, ...)
 {
-  if(output=='list') format='json'
+  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
   args <- compact(list(op="GetItemMetadata", apikey=check_key(key), pages=pages, itemid=itemid,
                        format=format, ocr=if(ocr) 't' else NULL,
                        parts=if(parts) 't' else NULL))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }

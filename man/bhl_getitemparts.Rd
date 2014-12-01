@@ -3,17 +3,12 @@
 \alias{bhl_getitemparts}
 \title{Return a list of an item's parts.}
 \usage{
-bhl_getitemparts(itemid, format = "json", output = "list", key = NULL,
-  ...)
+bhl_getitemparts(itemid, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{itemid}{the item id (character)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -26,8 +21,8 @@ Return a list of an item's parts.
 \examples{
 \dontrun{
 bhl_getitemparts(35600)
-bhl_getitemparts(35600, 'xml', 'raw')
-bhl_getitemparts(35600, 'xml', 'parsed')
+bhl_getitemparts(35600, 'json')
+bhl_getitemparts(35600, 'xml')
 }
 }
 

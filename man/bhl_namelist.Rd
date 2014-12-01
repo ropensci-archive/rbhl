@@ -4,7 +4,7 @@
 \title{List the unique names.}
 \usage{
 bhl_namelist(startrow = NULL, batchsize = NULL, startdate = NULL,
-  enddate = NULL, format = "json", output = "list", key = NULL, ...)
+  enddate = NULL, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{startrow}{first name to return (if using as an offset)}
@@ -15,11 +15,7 @@ bhl_namelist(startrow = NULL, batchsize = NULL, startdate = NULL,
 
 \item{enddate}{(optional) end date of range between which to count names (date)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -35,7 +31,7 @@ By using the startrow and batchsize parameters appropriately, you can
 \dontrun{
 bhl_namelist(startrow=1, batchsize=99, startdate='10/15/2009', enddate='10/16/2009')
 bhl_namelist(startrow=1, batchsize=5, startdate='10/15/2009', enddate='10/31/2009',
-   format='json', output='raw')
+   as='json')
 }
 }
 

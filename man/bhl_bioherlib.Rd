@@ -4,7 +4,7 @@
 \title{Search BHL across many API methods.}
 \usage{
 bhl_bioherlib(method = "GetPageMetadata", pageid = NULL, ocr = FALSE,
-  names = FALSE, format = "json", key = NULL, output = "list", ...)
+  names = FALSE, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{method}{The API method to use.}
@@ -15,14 +15,10 @@ bhl_bioherlib(method = "GetPageMetadata", pageid = NULL, ocr = FALSE,
 
 \item{names}{return the names that appear on the page (logical). Default: FALSE}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
@@ -32,8 +28,8 @@ Search BHL across many API methods.
 \examples{
 \dontrun{
 bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE)
-bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, format="xml")
-bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, raw=TRUE)
+bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, as="xml")
+bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, as="list")
 }
 }
 

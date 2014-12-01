@@ -3,17 +3,12 @@
 \alias{bhl_getauthortitles}
 \title{Return a list of titles associated with a given BHL author identifier.}
 \usage{
-bhl_getauthortitles(creatorid = NA, format = "json", output = "list",
-  key = NULL, ...)
+bhl_getauthortitles(creatorid, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{creatorid}{BHL identifier for a particular author (numeric)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -28,8 +23,9 @@ Unless the identifier  for a particular BHL author record is known in
 \examples{
 \dontrun{
 bhl_getauthortitles(1970)
-bhl_getauthortitles(1970, output='raw')
-bhl_getauthortitles(1970, output='raw', format='xml')
+bhl_getauthortitles(1970, as='json')
+bhl_getauthortitles(1970, as='xml')
+bhl_getauthortitles(1970, as='list')
 }
 }
 

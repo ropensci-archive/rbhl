@@ -3,20 +3,15 @@
 \alias{bhl_titlesearchsimple}
 \title{Perform a simple title search.}
 \usage{
-bhl_titlesearchsimple(title = NA, format = "json", key = NULL,
-  output = "list", ...)
+bhl_titlesearchsimple(title = NA, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{title}{full or partial title for which to search (character)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }

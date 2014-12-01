@@ -3,17 +3,12 @@
 \alias{bhl_getsubjecttitles}
 \title{Return a list of titles associated with a subject.}
 \usage{
-bhl_getsubjecttitles(subject = NULL, format = "json", output = "list",
-  key = NULL, ...)
+bhl_getsubjecttitles(subject = NULL, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{subject}{the full or partial subject for which to search (character)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -26,8 +21,8 @@ Return a list of titles associated with a subject.
 \examples{
 \dontrun{
 bhl_getsubjecttitles('diptera')
-bhl_getsubjecttitles('diptera', 'xml', 'raw')
-bhl_getsubjecttitles('diptera', 'xml', 'parsed')
+bhl_getsubjecttitles('diptera', 'xml')
+bhl_getsubjecttitles('diptera', 'json')
 }
 }
 

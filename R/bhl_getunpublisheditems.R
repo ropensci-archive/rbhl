@@ -1,23 +1,16 @@
 #' Return a list of the identifiers of all unpublished items.
 #'
-#' @import httr
-#' @importFrom plyr compact
-#' @importFrom XML xmlTreeParse
-#' @template all
+#' @export
+#' @inheritParams bhl_getcollections
 #' @examples \dontrun{
 #' bhl_getunpublisheditems()
-#' bhl_getunpublisheditems(output='raw')
-#' bhl_getunpublisheditems(format='xml', output='raw')
-#' bhl_getunpublisheditems(format='xml', output='parsed')
+#' bhl_getunpublisheditems('xml')
+#' bhl_getunpublisheditems('json')
 #' }
-#' @export
-bhl_getunpublisheditems <- function(format = "json", output='list',
-  key = NULL, ...)
+
+bhl_getunpublisheditems <- function(as = "table", key = NULL, ...)
 {
-  if(output=='list') format='json'
+  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
   args <- compact(list(op = "GetUnpublishedItems", apikey = check_key(key), format = format))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }

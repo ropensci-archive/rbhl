@@ -3,17 +3,12 @@
 \alias{bhl_namesearch}
 \title{Search for a particular name.}
 \usage{
-bhl_namesearch(name = NULL, format = "json", output = "list",
-  key = NULL, ...)
+bhl_namesearch(name = NULL, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{name}{species name (character)}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -27,8 +22,8 @@ Names both with and without NameBank identifiers are returned.
 \dontrun{
 bhl_namesearch('poa annua')
 bhl_namesearch(name='helianthus annuus')
-bhl_namesearch(name='helianthus annuus', format='xml', output='raw')
-bhl_namesearch(name='helianthus annuus', format='json', output='raw')
+bhl_namesearch(name='helianthus annuus', as='xml')
+bhl_namesearch(name='helianthus annuus', as='json')
 }
 }
 

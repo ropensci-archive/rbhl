@@ -1,24 +1,17 @@
 #' Return a list of a title's items (books).
 #'
-#' @import httr
-#' @importFrom plyr compact
-#' @importFrom XML xmlTreeParse
-#' @template all
+#' @export
 #' @param titleid the identifier of an individual title (numeric)
+#' @inheritParams bhl_getcollections
 #' @examples \dontrun{
 #' bhl_gettitleitems(1726)
-#' bhl_gettitleitems(1726, output='raw')
-#' bhl_gettitleitems(1726, format='xml', output='raw')
-#' bhl_gettitleitems(1726, format='xml', output='parsed')
+#' bhl_gettitleitems(1726, as='xml')
+#' bhl_gettitleitems(1726, as='list')
 #' }
-#' @export
-bhl_gettitleitems <- function(titleid = NULL, format = "json", output='list',
-  key = NULL, ...)
+
+bhl_gettitleitems <- function(titleid, as = "table", key = NULL, ...)
 {
-  if(output=='list') format='json'
+  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
   args <- compact(list(op = "GetTitleItems", apikey = check_key(key), format = format, titleid=titleid))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }

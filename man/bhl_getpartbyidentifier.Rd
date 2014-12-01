@@ -3,19 +3,15 @@
 \alias{bhl_getpartbyidentifier}
 \title{Return a list of the identifiers of all unpublished items.}
 \usage{
-bhl_getpartbyidentifier(type = NULL, value = NULL, format = "json",
-  output = "list", key = NULL, ...)
+bhl_getpartbyidentifier(type = NULL, value = NULL, as = "table",
+  key = NULL, ...)
 }
 \arguments{
 \item{type}{The type of identifier (doi, oclc, issn, isbn, lccn, ddc, nal, nlm, coden)}
 
 \item{value}{The identifier value}
 
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -28,9 +24,9 @@ Return a list of the identifiers of all unpublished items.
 \examples{
 \dontrun{
 bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12')
-bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', output='raw')
-bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', format='xml', output='raw')
-bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', format='xml', output='parsed')
+bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', as='json')
+bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', as='xml')
+bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', as='list')
 }
 }
 

@@ -3,14 +3,10 @@
 \alias{bhl_getunpublishedparts}
 \title{Return a list of the identifiers of all unpublished parts (articles, chapters, etc).}
 \usage{
-bhl_getunpublishedparts(format = "json", output = "list", key = NULL, ...)
+bhl_getunpublishedparts(as = "table", key = NULL, ...)
 }
 \arguments{
-\item{format}{either XML ('xml') or JSON ('json') format. If output='list',
-format is forced to equal 'json'}
-
-\item{output}{Return a list, raw json or xml, or parsed data (character).
-Default: 'list'}
+\item{as}{(character) Return a list, json xml, or parsed table (default)}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -23,9 +19,8 @@ Return a list of the identifiers of all unpublished parts (articles, chapters, e
 \examples{
 \dontrun{
 bhl_getunpublishedparts()
-bhl_getunpublishedparts(output='raw')
-bhl_getunpublishedparts(format='xml', output='raw')
-bhl_getunpublishedparts(format='xml', output='parsed')
+bhl_getunpublishedparts('json')
+bhl_getunpublishedparts('xml')
 }
 }
 

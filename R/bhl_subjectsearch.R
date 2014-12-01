@@ -1,23 +1,18 @@
 #' Return a list of subjects that match (fully or partially) the specified
 #'    search string.
 #'
-#' @import httr
-#' @importFrom plyr compact
-#' @importFrom XML xmlTreeParse
-#' @template all
+#' @export
+#'
 #' @param subject the full or partial subject for which to search (character)
+#' @inheritParams bhl_getcollections
 #' @examples \dontrun{
 #' bhl_subjectsearch('diptera')
+#' bhl_subjectsearch('diptera', "json")
 #' }
-#' @export
-bhl_subjectsearch <- function(subject = NA, format = "json",
-  key = NULL, output='list', ...)
+bhl_subjectsearch <- function(subject, as = "table", key = NULL, ...)
 {
-  if(output=='list') format='json'
+  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
   args <- compact(list(op = "SubjectSearch", apikey = check_key(key), format = format,
                        subject = subject))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }

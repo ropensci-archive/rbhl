@@ -2,23 +2,20 @@
 #'
 #' Names both with and without NameBank identifiers are returned.
 #'
-#' @param name species name (character)
-#' @template all
 #' @export
+#' @param name species name (character)
+#' @inheritParams bhl_getcollections
+#'
 #' @examples \dontrun{
 #' bhl_namesearch('poa annua')
 #' bhl_namesearch(name='helianthus annuus')
-#' bhl_namesearch(name='helianthus annuus', format='xml', output='raw')
-#' bhl_namesearch(name='helianthus annuus', format='json', output='raw')
+#' bhl_namesearch(name='helianthus annuus', as='xml')
+#' bhl_namesearch(name='helianthus annuus', as='json')
 #' }
 
-bhl_namesearch <- function(name = NULL, format = "json", output = 'list',
-  key = NULL, ...)
+bhl_namesearch <- function(name = NULL, as = "table", key = NULL, ...)
 {
-  if(output=='list') format='json'
+  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
   args <- compact(list(op = "NameSearch", name = name, apikey = check_key(key), format = format))
-  out <- GET(bhl_url(), query = args, ...)
-  stop_for_status(out)
-  tt <- content(out, as="text")
-  return_results(tt, output, format)
+  bhl_GET(as, args, ...)
 }

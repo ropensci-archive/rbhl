@@ -64,9 +64,23 @@ bhl_GET <- function(as, args, ...){
 }
 
 todf <- function(x){
-  do.call(rbind.fill, lapply(jsonlite::fromJSON(I(x), FALSE)$Result, data.frame))
+  temp <- jsonlite::fromJSON(I(x), TRUE)$Result
+  if(!is.null(names(temp)))
+    data.frame(bhlc(temp), stringsAsFactors = FALSE)
+  else
+    do.call(rbind.fill, lapply(bhlc(temp), data.frame))
+#   if( is.null(names(temp)) ){
+#     temp <- lapply(temp, function(z){
+#       z[sapply(z, is.null)] <- NA
+#       z
+#     })
+#   } else {
+#     temp[sapply(temp, is.null)] <- NA
+#   }
 }
 
 fjson <- function(x) jsonlite::fromJSON(x, FALSE)
 
 bhl_url <- function() "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
+
+bhlc <- function (l) Filter(Negate(is.null), l)

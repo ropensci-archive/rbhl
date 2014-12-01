@@ -1,9 +1,6 @@
 #' Not sure how this differs from their other API...
 #'
-#' @import httr
-#' @importFrom plyr compact
-#' @importFrom XML xmlTreeParse
-#' @template all
+#' @export
 #' @param genre Book genre
 #' @param title Book title
 #' @param aufirst First author
@@ -12,6 +9,7 @@
 #' @param spage Start page
 #' @param issue Issue number
 #' @param version One of 0.1 or 1.0
+#' @inheritParams bhl_getcollections
 #' @examples \dontrun{
 #' bhl_openurl(
 #' 	genre="book",
@@ -31,7 +29,7 @@
 #'    aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16,
 #'    format='xml', output='parsed')
 #' }
-#' @export
+
 bhl_openurl <- function(genre = NULL, title = NULL, aufirst = NULL, aulast = NULL,
 	date = NULL, spage = NULL, issue = NULL, version = 0.1, format = "json",
   key = NULL, output='list', ...)
