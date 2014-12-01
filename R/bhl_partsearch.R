@@ -27,8 +27,7 @@
 bhl_partsearch <- function(title=NULL, containerTitle=NULL, author=NULL, date=NULL,
   volume=NULL, series=NULL, issue=NULL, as = "table", key = NULL, ...)
 {
-  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- bhlc(list(op = "PartSearch", apikey = check_key(key), format = format,
+  args <- bhlc(list(op = "PartSearch", apikey = check_key(key), format = as_f(as),
                        title = title, containerTitle=containerTitle, author=author,
                        date=date, volume=volume, series=series, issue=issue))
   bhl_GET(as, args, ...)

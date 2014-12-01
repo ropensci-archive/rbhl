@@ -11,8 +11,7 @@
 #' }
 bhl_subjectsearch <- function(subject, as = "table", key = NULL, ...)
 {
-  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- bhlc(list(op = "SubjectSearch", apikey = check_key(key), format = format,
+  args <- bhlc(list(op = "SubjectSearch", apikey = check_key(key), format = as_f(as),
                        subject = subject))
   bhl_GET(as, args, ...)
 }

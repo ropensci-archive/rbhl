@@ -14,6 +14,6 @@
 #' }
 bhl_titlesearchsimple <- function(title = NA, as = "table", key = NULL, ...)
 {
-  args <- bhlc(list(op = "TitleSearchSimple", apikey = check_key(key), format = as_format(as), title=title))
+  args <- bhlc(list(op = "TitleSearchSimple", apikey = check_key(key), format = as_f(as), title=title))
   bhl_GET(as, args, ...)
 }

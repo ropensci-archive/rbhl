@@ -14,8 +14,7 @@
 
 bhl_getpartbyidentifier <- function(type=NULL, value=NULL, as = "table", key = NULL, ...)
 {
-  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- bhlc(list(op = "GetPartByIdentifier", apikey = check_key(key), format = format,
+  args <- bhlc(list(op = "GetPartByIdentifier", apikey = check_key(key), format = as_f(as),
                        type=type, value=value))
   bhl_GET(as, args, ...)
 }

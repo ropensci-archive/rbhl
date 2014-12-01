@@ -17,9 +17,8 @@
 bhl_getpagemetadata <- function(page = NULL, ocr = FALSE, names = FALSE,
   as = 'table', key = NULL, ...)
 {
-  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
   args <- bhlc(list(op = "GetPageMetadata", apikey = check_key(key), pageid=page,
                        ocr=if(ocr) 't' else NULL, names=if(names) 't' else NULL,
-                       format=format))
+                       format=as_f(as)))
   bhl_GET(as, args, ...)
 }

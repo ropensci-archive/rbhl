@@ -31,8 +31,7 @@ bhl_booksearch <- function(title = NULL, lname = NULL, volume = NULL,
   edition = NULL, year = NULL, collectionid = NULL, language = NULL,
   as='table', key = NULL, ...)
 {
-  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- bhlc(list(op = "BookSearch", apikey = check_key(key), format = format,
+  args <- bhlc(list(op = "BookSearch", apikey = check_key(key), format = as_f(as),
                        title=title, lname=lname, volume=volume,
                        edition=edition, year=year, collectionid=collectionid,
                        language=language))

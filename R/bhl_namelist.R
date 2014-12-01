@@ -21,8 +21,7 @@
 bhl_namelist <- function(startrow = NULL, batchsize = NULL, startdate = NULL,
   enddate = NULL, as = "table", key = NULL, ...)
 {
-  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- bhlc(list(op = "NameList", apikey = check_key(key), format = format, startrow = startrow,
+  args <- bhlc(list(op = "NameList", apikey = check_key(key), format = as_f(as), startrow = startrow,
                        batchsize = batchsize, startdate = startdate, enddate = enddate))
   bhl_GET(as, args, ...)
 }

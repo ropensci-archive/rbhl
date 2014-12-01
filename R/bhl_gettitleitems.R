@@ -11,7 +11,6 @@
 
 bhl_gettitleitems <- function(titleid, as = "table", key = NULL, ...)
 {
-  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- bhlc(list(op = "GetTitleItems", apikey = check_key(key), format = format, titleid=titleid))
+  args <- bhlc(list(op = "GetTitleItems", apikey = check_key(key), format = as_f(as), titleid=titleid))
   bhl_GET(as, args, ...)
 }

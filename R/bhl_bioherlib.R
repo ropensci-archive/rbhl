@@ -23,8 +23,7 @@ bhl_bioherlib <- function(method = 'GetPageMetadata', pageid = NULL, ocr = FALSE
      'GetTitleBibTex', 'GetTitleEndNote', 'GetUnpublishedTitles', 'SubjectSearch',
      'GetSubjectTitles', 'AuthorSearch', 'GetAuthorTitles', 'NameCount', 'NameList',
      'NameGetDetail', 'NameSearch', 'GetCollections', 'GetLanguages'))
-  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- bhlc(list(apikey=check_key(key), op=method, pageid=pageid, format=format,
+  args <- bhlc(list(apikey=check_key(key), op=method, pageid=pageid, format=as_f(as),
                        ocr=ocr, names=names))
   bhl_GET(as, args, ...)
 }

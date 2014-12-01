@@ -17,8 +17,7 @@
 
 bhl_getitempages <- function(itemid, ocr=FALSE, as = "table", key = NULL, ...)
 {
-  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- bhlc(list(op = "GetItemPages", apikey = check_key(key), format = format,
+  args <- bhlc(list(op = "GetItemPages", apikey = check_key(key), format = as_f(as),
                        itemid=itemid, ocr=if(ocr) 't' else NULL))
   bhl_GET(as, args, ...)
 }

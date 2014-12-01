@@ -11,7 +11,6 @@
 
 bhl_getpageocrtext <- function(page = NULL, as = 'table', key = NULL, ...)
 {
-  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- bhlc(list(op = "GetPageOcrText", apikey = check_key(key), format=format, pageid=page))
+  args <- bhlc(list(op = "GetPageOcrText", apikey = check_key(key), format=as_f(as), pageid=page))
   bhl_GET(as, args, ...)
 }

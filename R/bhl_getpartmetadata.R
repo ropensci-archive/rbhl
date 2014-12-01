@@ -11,8 +11,7 @@
 
 bhl_getpartmetadata <- function(partid, as = "table", key = NULL, ...)
 {
-  format <- if(as %in% c('list','table','json')) 'json' else 'xml'
-  args <- bhlc(list(op = "GetPartMetadata", apikey = check_key(key), format = format,
+  args <- bhlc(list(op = "GetPartMetadata", apikey = check_key(key), format = as_f(as),
                        partid=partid))
   bhl_GET(as, args, ...)
 }
