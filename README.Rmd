@@ -1,0 +1,100 @@
+rbhl
+====
+
+[![Build Status](https://api.travis-ci.org/ropensci/rbhl.png)](https://travis-ci.org/ropensci/rbhl)
+[![Build status](https://ci.appveyor.com/api/projects/status/ej5u9mdirg1yyteg/branch/master)](https://ci.appveyor.com/project/sckott/rbhl/branch/master)
+
+`rbhl` is an R interface to the Biodiversity Heritage Library API.
+
+## Info
+
+Authentication:
+
+* Get your Biodiversity Heritage Library API key [here](http://www.biodiversitylibrary.org/getapikey.aspx)
+* Put your API in your .Rprofile file using e.g., `options(BioHerLibKey = "YOURBHLAPIKEY")`, and the functions within this package will be able to use your API key without you having to enter it every time you run a search.
+
+Documentation:
+
+* Biodiversity Heritage Library API documentation [here](http://www.biodiversitylibrary.org/api2/docs/docs.html).
+* Biodiversity Heritage Library OpenURL documentation [here](http://www.biodiversitylibrary.org/openurlhelp.aspx).
+
+## Quickstart
+
+### Installation
+
+Stable version from CRAN
+
+```{r eval=FALSE}
+install.packages("rbhl")
+```
+
+Development version from GitHub
+
+```{r eval=FALSE}
+install.packages("devtools")
+devtools::install_github("ropensci/rbhl")
+```
+
+```{r}
+library("rbhl")
+```
+
+### Output formats
+
+You can output various formats using the `as` parameter, setting to `table`, `list`, `json` or `xml`. 
+
+The default is usually `table`:
+
+```{r}
+bhl_authorsearch(name='dimmock')
+```
+
+list output
+
+```{r}
+bhl_authorsearch(name='dimmock', as='list')$Result[[1]]
+```
+
+XML output
+
+```{r}
+bhl_authorsearch(name='dimmock', as='xml')
+```
+
+JSON output
+
+```{r}
+bhl_authorsearch(name='dimmock', as='json')
+```
+
+### Get title metadata
+
+```{r}
+bhl_gettitlemetadata(titleid = 1726, items = TRUE, as="list")$Result$Items
+```
+
+### Book search
+
+```{r}
+bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825, collectionid=4, language='eng')
+```
+
+### Search titles
+
+```{r}
+head( bhl_titlesearchsimple('husbandry') )
+```
+
+### Get languages
+
+```{r}
+head( bhl_getlanguages() )
+```
+
+## Meta
+
+* Please report any issues or bugs](https://github.com/ropensci/rbhl/issues).
+* License: MIT
+* Get citation information for `rbhl` in R doing `citation(package = 'rbhl')`
+
+[![](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
