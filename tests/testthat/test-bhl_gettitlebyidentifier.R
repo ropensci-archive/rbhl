@@ -5,31 +5,23 @@ library("XML")
 require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
 
 tt <- bhl_gettitlebyidentifier('oclc', 2992225)
-uu <- bhl_gettitlebyidentifier('oclc', 2992225, output='raw')
-vv <- bhl_gettitlebyidentifier('oclc', 2992225, format='xml', output='raw')
-zz <- bhl_gettitlebyidentifier('oclc', 2992225, format='xml', output='parsed')
+vv <- bhl_gettitlebyidentifier('oclc', 2992225, as='xml')
+zz <- bhl_gettitlebyidentifier('oclc', 2992225, as='json')
 
 test_that("bhl_gettitlebyidentifier returns the correct class", {
-  expect_is(tt, "list")
-  expect_is(tt$Result, "data.frame")
+  expect_is(tt, "data.frame")
 
-  expect_is(uu, "character")
-  expect_is(fromJSON(uu), "list")
+  expect_is(zz, "character")
+  expect_is(fromJSON(zz), "list")
 
   expect_is(vv, "character")
   expect_is(xmlParse(vv), "XMLInternalDocument")
-
-  expect_is(zz, "XMLDocument")
-  expect_is(zz$doc, "XMLDocumentContent")
 })
 
 test_that("bhl_gettitlebyidentifier returns the correct dimensions", {
-  expect_equal(length(tt), 3)
-  expect_equal(length(tt$Status), 1)
-  expect_equal(length(uu), 1)
-  expect_equal(length(fromJSON(uu)), 3)
+  expect_equal(NCOL(tt), 21)
+  expect_equal(length(zz), 1)
+  expect_equal(length(fromJSON(zz)), 3)
   expect_equal(length(vv), 1)
   expect_equal(length(xmlParse(vv)), 1)
-  expect_equal(length(zz), 2)
-  expect_equal(length(zz$doc), 3)
 })

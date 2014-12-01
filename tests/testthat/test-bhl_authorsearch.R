@@ -2,16 +2,22 @@
 context("bhl_authorsearch")
 
 tt <- bhl_authorsearch(name='dimmock')
+uu <- bhl_authorsearch(name='dimmock', as = "list")
 
 test_that("bhl_authorsearch returns the correct class", {
-	expect_is(tt, "list")
-	expect_is(tt$Status, "character")
-	expect_is(tt$Result, "data.frame")
-	expect_is(tt$Result$Dates, "character")
+	expect_is(tt, "data.frame")
+	expect_is(tt$CreatorID, "integer")
+
+	expect_is(uu, "list")
+	expect_is(uu$Status, "character")
+	expect_is(uu$Result, "list")
+	expect_is(uu$Result[[1]]$Dates, "character")
+
+  expect_is(bhl_authorsearch(name='dimmock', as="json"), "character")
+	expect_is(bhl_authorsearch(name='dimmock', as="xml"), "character")
 })
 
 test_that("bhl_authorsearch returns the correct dimensions", {
-  expect_equal(length(tt), 3)
-  expect_equal(length(tt$Status), 1)
-  expect_equal(NCOL(tt$Result), 12)
+  expect_equal(NCOL(tt), 12)
+  expect_equal(length(uu$Status), 1)
 })
