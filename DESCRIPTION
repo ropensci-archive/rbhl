@@ -6,7 +6,7 @@ Description: Interface to Biodiversity Heritage Library (BHL) API methods. BHL
 Type: Package
 Version: 0.1.5.99
 License: MIT + file LICENSE
-Date: 2014-11-23
+Date: 2015-01-07
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com"),
     person("Karthik", "Ram", role = "aut",
