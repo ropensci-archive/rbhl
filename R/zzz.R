@@ -65,10 +65,15 @@ bhl_GET <- function(as, args, ...){
 
 todf <- function(x){
   temp <- jsonlite::fromJSON(I(x), TRUE)$Result
-  if(!is.null(names(temp)))
-    data.frame(bhlc(temp), stringsAsFactors = FALSE)
-  else
-    do.call(rbind.fill, lapply(bhlc(temp), data.frame))
+  if(is.character(temp)){
+    temp
+  } else {
+    if(!is.null(names(temp))){
+      data.frame(bhlc(temp), stringsAsFactors = FALSE)
+    } else {
+      do.call(rbind.fill, lapply(bhlc(temp), data.frame))
+    }
+  }
 #   if( is.null(names(temp)) ){
 #     temp <- lapply(temp, function(z){
 #       z[sapply(z, is.null)] <- NA

@@ -4,7 +4,7 @@
 #' @param page page number to get
 #' @inheritParams bhl_getcollections
 #' @examples \dontrun{
-#' bhl_getpageocrtext(1328690)
+#' bhl_getpageocrtext(page=1328690)
 #' bhl_getpageocrtext(1328690, 'json')
 #' bhl_getpageocrtext(1328690, 'xml')
 #' }
