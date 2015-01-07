@@ -9,6 +9,9 @@ getpages(itemid = NULL, key = NULL, ...)
 \arguments{
 \item{itemid}{the item id (character)}
 
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+or from \code{.Rprofile} as \code{bhl_key}.}
+
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
 \description{
