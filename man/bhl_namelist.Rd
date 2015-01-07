@@ -16,7 +16,10 @@ bhl_namelist(startrow = NULL, batchsize = NULL, startdate = NULL,
 
 \item{enddate}{(optional) end date of range between which to count names (date)}
 
-\item{as}{(character) Return a list, json xml, or parsed table (default)}
+\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"), or parsed table
+("table", default). Note that \code{as="table"} can give different data format back
+depending on the function - for example, sometimes a data.frame and sometimes a
+character vector.}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
