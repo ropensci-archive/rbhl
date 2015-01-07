@@ -16,7 +16,7 @@ test_that("bhl_getpageocrtext returns the correct class", {
   expect_is(jsonlite::fromJSON(tt), "list")
   expect_null(jsonlite::fromJSON(tt)$ErrorMessage)
 
-  expect_is(vv, "data.frame")
+  expect_is(vv, "character")
 })
 
 test_that("bhl_getpageocrtext returns the correct dimensions", {
