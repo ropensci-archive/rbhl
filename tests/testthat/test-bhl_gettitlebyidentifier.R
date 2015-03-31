@@ -19,7 +19,6 @@ test_that("bhl_gettitlebyidentifier returns the correct class", {
 })
 
 test_that("bhl_gettitlebyidentifier returns the correct dimensions", {
-  expect_equal(NCOL(tt), 21)
   expect_equal(length(zz), 1)
   expect_equal(length(fromJSON(zz)), 3)
   expect_equal(length(vv), 1)

@@ -20,9 +20,7 @@ test_that("bhl_getauthorities returns the correct class", {
 })
 
 test_that("bhl_getauthorities returns the correct dimensions", {
-  expect_equal(NCOL(tt), 21)
   expect_equal(length(uu), 1)
   expect_equal(length(fromJSON(uu)), 3)
-  expect_equal(NCOL(fromJSON(uu)$Result), 21)
   expect_equal(length(xmlParse(vv)), 1)
 })

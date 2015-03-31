@@ -1,7 +1,7 @@
 # tests for bhl_booksearch fxn in rbhl
 context("bhl_booksearch")
 
-library(XML)
+library("XML")
 require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
 
 tt <- bhl_booksearch('evolution', year=2000)
@@ -16,10 +16,4 @@ test_that("bhl_booksearch returns the correct class", {
 	expect_is(vv, "character")
 	expect_is(xmlParse(vv), "XMLInternalDocument")
 	expect_is(xpathApply(xmlParse(vv), '//Result'), "XMLNodeSet")
-})
-
-test_that("bhl_booksearch returns the correct dimensions", {
-  expect_equal(NCOL(tt), 21)
-  expect_equal(length(uu), 3)
-  expect_equal(length(xmlParse(vv)), 1)
 })

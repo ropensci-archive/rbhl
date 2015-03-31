@@ -19,7 +19,6 @@ test_that("bhl_getsubjecttitles returns the correct class", {
 })
 
 test_that("bhl_getsubjecttitles returns the correct dimensions", {
-  expect_equal(NCOL(tt), 21)
   expect_equal(length(uu), 1)
   expect_equal(length(xmlParse(uu)), 1)
   expect_equal(length(vv), 1)
