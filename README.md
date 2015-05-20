@@ -5,6 +5,8 @@ rbhl
 
 [![Build Status](https://api.travis-ci.org/ropensci/rbhl.png)](https://travis-ci.org/ropensci/rbhl)
 [![Build status](https://ci.appveyor.com/api/projects/status/ej5u9mdirg1yyteg/branch/master)](https://ci.appveyor.com/project/sckott/rbhl/branch/master)
+[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/grand-total/rbhl?color=2ECC71)](https://github.com/metacran/cranlogs.app)
+[![cran version](http://www.r-pkg.org/badges/version/rbhl)](http://cran.rstudio.com/web/packages/rbhl)
 
 `rbhl` is an R interface to the Biodiversity Heritage Library API.
 
