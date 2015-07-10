@@ -27,10 +27,10 @@ Note: haven't seen examples for this function that work yet...
 }
 \examples{
 \dontrun{
-bhl_getauthorparts(147)
-bhl_getauthorparts(39120, as='json')
-bhl_getauthorparts(39120, as='xml')
-bhl_getauthorparts(39120, as='list')
+# bhl_getauthorparts(147)
+# bhl_getauthorparts(39120, as='json')
+# bhl_getauthorparts(39120, as='xml')
+# bhl_getauthorparts(39120, as='list')
 }
 }
 

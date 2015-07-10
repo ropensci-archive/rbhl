@@ -31,7 +31,7 @@ name appears.
 \examples{
 \dontrun{
 bhl_namegetdetail(namebankid = 3501464)
-bhl_namegetdetail(name = 'poa annua supina')
+bhl_namegetdetail(name = 'poa annua')
 }
 }
 

@@ -21,7 +21,7 @@ Get many OCR-generated pages given a single item id
 \dontrun{
 books <- bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825,
    collectionid=4, language='eng')
-bhl_getpages(itemid=16800)
+getpages(itemid=16800)
 }
 }
 

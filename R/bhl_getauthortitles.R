@@ -13,9 +13,9 @@
 #' bhl_getauthortitles(1970, as='xml')
 #' bhl_getauthortitles(1970, as='list')
 #' }
-bhl_getauthortitles <- function(creatorid, as='table', key = NULL, ...)
-{
+bhl_getauthortitles <- function(creatorid, as='table', key = NULL, ...) {
+
   args <- bhlc(list(op = "GetAuthorTitles", apikey = check_key(key), format = as_f(as),
-                       creatorid=creatorid))
+                       creatorid = creatorid))
   bhl_GET(as, args, ...)
 }

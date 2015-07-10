@@ -17,8 +17,7 @@
 #' bhl_getcollections(as = 'xml')
 #' }
 
-bhl_getcollections <- function(as='table', key = NULL, ...)
-{
+bhl_getcollections <- function(as = 'table', key = NULL, ...) {
   args <- bhlc(list(op = "GetCollections", apikey = check_key(key), format = as_f(as)))
   bhl_GET(as, args, ...)
 }

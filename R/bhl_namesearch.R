@@ -13,8 +13,7 @@
 #' bhl_namesearch(name='helianthus annuus', as='json')
 #' }
 
-bhl_namesearch <- function(name = NULL, as = "table", key = NULL, ...)
-{
+bhl_namesearch <- function(name = NULL, as = "table", key = NULL, ...) {
   args <- bhlc(list(op = "NameSearch", name = name, apikey = check_key(key), format = as_f(as)))
   bhl_GET(as, args, ...)
 }

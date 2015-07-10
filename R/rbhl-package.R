@@ -11,6 +11,7 @@
 #' @importFrom jsonlite fromJSON
 #' @importFrom plyr ldply rbind.fill
 #' @importFrom stats setNames
+#' @importFrom XML xmlSize xpathSApply xpathApply xmlParse xmlValue
 #' @name rbhl-package
 #' @aliases rbhl
 #' @docType package

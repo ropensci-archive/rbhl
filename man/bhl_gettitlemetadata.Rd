@@ -2,10 +2,9 @@
 % Please edit documentation in R/bhl_gettitlemetadata.R
 \name{bhl_gettitlemetadata}
 \alias{bhl_gettitlemetadata}
-\title{Return metadata about a title. You may choose to include a list of
-   the items (books) associated  with the title.}
+\title{Get title metadata}
 \usage{
-bhl_gettitlemetadata(titleid = NA, items = FALSE, as = "table",
+bhl_gettitlemetadata(titleid = NA, items = FALSE, as = "list",
   key = NULL, ...)
 }
 \arguments{
@@ -25,7 +24,7 @@ or from \code{.Rprofile} as \code{bhl_key}.}
 }
 \description{
 Return metadata about a title. You may choose to include a list of
-   the items (books) associated  with the title.
+the items (books) associated  with the title.
 }
 \examples{
 \dontrun{

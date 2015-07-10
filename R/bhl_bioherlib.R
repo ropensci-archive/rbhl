@@ -14,17 +14,17 @@
 #' }
 
 bhl_bioherlib <- function(method = 'GetPageMetadata', pageid = NULL, ocr = FALSE,
-  names = FALSE, as='table', key = NULL, ...)
-{
+  names = FALSE, as='table', key = NULL, ...) {
+
   method <- match.arg(method,
-    choices=c('GetPageMetadata', 'GetPageOcrText', 'GetPageNames',
+    choices = c('GetPageMetadata', 'GetPageOcrText', 'GetPageNames',
      'GetItemMetadata', 'GetItemByIdentifier', 'GetItemPages', 'GetUnpublishedItems',
      'GetTitleMetadata', 'GetTitleItems', 'GetTitleByIdentifier', 'TitleSearchSimple',
      'GetTitleBibTex', 'GetTitleEndNote', 'GetUnpublishedTitles', 'SubjectSearch',
      'GetSubjectTitles', 'AuthorSearch', 'GetAuthorTitles', 'NameCount', 'NameList',
      'NameGetDetail', 'NameSearch', 'GetCollections', 'GetLanguages'))
-  args <- bhlc(list(apikey=check_key(key), op=method, pageid=pageid, format=as_f(as),
-                       ocr=ocr, names=names))
+  args <- bhlc(list(apikey = check_key(key), op = method, pageid = pageid, format = as_f(as),
+                       ocr = ocr, names = names))
   bhl_GET(as, args, ...)
 }
 

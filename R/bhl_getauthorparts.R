@@ -10,14 +10,14 @@
 #' @inheritParams bhl_getcollections
 #'
 #' @examples \dontrun{
-#' bhl_getauthorparts(147)
-#' bhl_getauthorparts(39120, as='json')
-#' bhl_getauthorparts(39120, as='xml')
-#' bhl_getauthorparts(39120, as='list')
+#' # bhl_getauthorparts(147)
+#' # bhl_getauthorparts(39120, as='json')
+#' # bhl_getauthorparts(39120, as='xml')
+#' # bhl_getauthorparts(39120, as='list')
 #' }
-bhl_getauthorparts <- function(creatorid, as='table', key = NULL, ...)
-{
+bhl_getauthorparts <- function(creatorid, as='table', key = NULL, ...) {
+
   args <- bhlc(list(op = "GetAuthorParts", apikey = check_key(key), format = as_f(as),
-                       creatorid=creatorid))
+                       creatorid = creatorid))
   bhl_GET(as, args, ...)
 }

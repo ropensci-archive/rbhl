@@ -9,12 +9,11 @@
 #'
 #' @examples \dontrun{
 #' bhl_namegetdetail(namebankid = 3501464)
-#' bhl_namegetdetail(name = 'poa annua supina')
+#' bhl_namegetdetail(name = 'poa annua')
 #' }
 
-bhl_namegetdetail <- function(namebankid = NULL, name = NULL, as='table', key = NULL, ...)
-{
-  args <- bhlc(list(op="NameGetDetail", apikey=check_key(key),
-                       namebankid=namebankid, name=name, format=as_f(as)))
+bhl_namegetdetail <- function(namebankid = NULL, name = NULL, as='table', key = NULL, ...) {
+  args <- bhlc(list(op = "NameGetDetail", apikey = check_key(key),
+                       namebankid = namebankid, name = name, format = as_f(as)))
   bhl_GET(as, args, ...)
 }

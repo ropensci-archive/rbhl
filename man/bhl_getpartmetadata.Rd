@@ -4,15 +4,10 @@
 \alias{bhl_getpartmetadata}
 \title{Return a list of an item's pages.}
 \usage{
-bhl_getpartmetadata(partid, as = "table", key = NULL, ...)
+bhl_getpartmetadata(partid, key = NULL, ...)
 }
 \arguments{
 \item{partid}{The identifier of an individual part (article, chapter, etc) (numeric)}
-
-\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"), or parsed table
-("table", default). Note that \code{as="table"} can give different data format back
-depending on the function - for example, sometimes a data.frame and sometimes a
-character vector.}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
@@ -25,8 +20,6 @@ Return a list of an item's pages.
 \examples{
 \dontrun{
 bhl_getpartmetadata(10409)
-bhl_getpartmetadata(10409, 'xml')
-bhl_getpartmetadata(10409, 'json')
 }
 }
 

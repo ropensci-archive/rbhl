@@ -16,9 +16,9 @@
 #' }
 
 bhl_getitembyidentifier <- function(type = NULL, value = NULL, as = 'table',
-  key = NULL, ...)
-{
-  args <- bhlc(list(op = "GetItemByIdentifier", apikey = check_key(key), type=type,
-                       value=value, format=as_f(as)))
+  key = NULL, ...) {
+
+  args <- bhlc(list(op = "GetItemByIdentifier", apikey = check_key(key), type = type,
+                       value = value, format = as_f(as)))
   bhl_GET(as, args, ...)
 }

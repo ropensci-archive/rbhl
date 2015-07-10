@@ -29,8 +29,8 @@
 #' }
 bhl_booksearch <- function(title = NULL, lname = NULL, volume = NULL,
   edition = NULL, year = NULL, collectionid = NULL, language = NULL,
-  as='table', key = NULL, ...)
-{
+  as='table', key = NULL, ...) {
+
   args <- bhlc(list(op = "BookSearch", apikey = check_key(key), format = as_f(as),
                        title=title, lname=lname, volume=volume,
                        edition=edition, year=year, collectionid=collectionid,

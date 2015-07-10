@@ -10,8 +10,7 @@
 #' bhl_getitemparts(35600, 'xml')
 #' }
 
-bhl_getitemparts <- function(itemid, as = "table", key = NULL, ...)
-{
+bhl_getitemparts <- function(itemid, as = "table", key = NULL, ...) {
   args <- bhlc(list(op = "GetItemParts", apikey = check_key(key), format = as_f(as),
                        itemid=itemid))
   bhl_GET(as, args, ...)

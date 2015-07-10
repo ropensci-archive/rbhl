@@ -10,14 +10,14 @@ bhl_getitemmetadata(itemid = NULL, pages = TRUE, ocr = FALSE,
 \arguments{
 \item{itemid}{item id (character)}
 
-\item{pages}{return the items pages (TRUE/FALSE)}
+\item{pages}{return the items pages (\code{TRUE}/\code{FALSE})}
 
-\item{ocr}{(logical) TRUE to return the ocr for the item's pages. Setting this
-to TRUE apparently doesn't return any actual ocr text, but leaving parameter
+\item{ocr}{(logical) \code{TRUE} to return the ocr for the item's pages. Setting this
+to \code{TRUE} apparently doesn't return any actual ocr text, but leaving parameter
 here for now.}
 
-\item{parts}{(logical) TRUE to return the item's parts. Setting this
-to TRUE apparently doesn't return any parts text, but leaving parameter
+\item{parts}{(logical) \code{TRUE} to return the item's parts. Setting this
+to \code{TRUE} apparently doesn't return any parts text, but leaving parameter
 here for now.}
 
 \item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"), or parsed table
@@ -40,7 +40,7 @@ bhl_getitemmetadata('16800', TRUE, as='xml')
 bhl_getitemmetadata('16800', TRUE, as='json')
 bhl_getitemmetadata('16800', TRUE, as='list')
 
-bhl_getitemmetadata(20419, pages=FALSE, parts=TRUE)
+# bhl_getitemmetadata(20419, pages=FALSE, parts=TRUE)
 }
 }
 
