@@ -1,14 +1,13 @@
 # tests for bhl_getpanames fxn in rbhl
 context("bhl_getpageocrtext")
 
-library("XML")
-require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
-
-tt <- bhl_getpageocrtext(1328690, 'json')
-uu <- bhl_getpageocrtext(1328690, 'xml')
-vv <- bhl_getpageocrtext(1328690)
-
 test_that("bhl_getpageocrtext returns the correct class", {
+  skip_on_cran()
+
+  tt <- bhl_getpageocrtext(1328690, 'json')
+  uu <- bhl_getpageocrtext(1328690, 'xml')
+  vv <- bhl_getpageocrtext(1328690)
+
   expect_is(uu, "character")
   expect_is(xmlParse(uu), "XMLInternalDocument")
 
@@ -17,9 +16,7 @@ test_that("bhl_getpageocrtext returns the correct class", {
   expect_null(jsonlite::fromJSON(tt)$ErrorMessage)
 
   expect_is(vv, "character")
-})
 
-test_that("bhl_getpageocrtext returns the correct dimensions", {
   expect_equal(length(tt), 1)
   expect_equal(length(uu), 1)
   expect_equal(length(xmlParse(uu)), 1)

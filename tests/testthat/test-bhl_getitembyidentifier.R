@@ -1,11 +1,13 @@
 # tests for bhl_getitembyidentifier fxn in rbhl
 context("bhl_getitembyidentifier")
 
-tt <- bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi')
-uu <- bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', as='xml')
-vv <- bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', as='list')
-
 test_that("bhl_getitembyidentifier returns the correct class", {
+	skip_on_cran()
+
+	tt <- bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi')
+	uu <- bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', as='xml')
+	vv <- bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', as='list')
+
 	expect_is(tt$data, "data.frame")
 
 	expect_is(uu, "character")
@@ -16,9 +18,7 @@ test_that("bhl_getitembyidentifier returns the correct class", {
 	expect_is(vv, "list")
 	expect_is(vv$Status, "character")
 	expect_null(vv$ErrorMessage)
-})
 
-test_that("bhl_getitembyidentifier returns the correct dimensions", {
   expect_equal(NCOL(tt$data), 22)
   expect_equal(length(uu), 1)
   expect_equal(length(xmlParse(uu)), 1)

@@ -1,11 +1,14 @@
 # tests for bhl_bioherlib fxn in rbhl
 context("bhl_bioherlib")
 
-tt <- bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE)
-uu <- bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, as="list")
-vv <- bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, as='xml')
+test_that("bhl_bioherlib returns", {
+	skip_on_cran()
 
-test_that("bhl_bioherlib returns the correct class", {
+	tt <- bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE)
+	uu <- bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, as="list")
+	vv <- bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, as='xml')
+
+	# correct classes
 	expect_is(tt$data, "data.frame")
 
   expect_is(uu$Status, "character")
@@ -15,9 +18,8 @@ test_that("bhl_bioherlib returns the correct class", {
 	expect_is(vv, "character")
 	expect_is(xmlParse(vv), "XMLInternalDocument")
 	expect_is(xpathApply(xmlParse(vv), '//Result'), "XMLNodeSet")
-})
 
-test_that("bhl_bioherlib returns the correct dimensions", {
+	# correct dimensions
   expect_equal(NCOL(tt$data), 15)
   expect_equal(length(uu$Status), 1)
   expect_equal(length(uu), 3)
