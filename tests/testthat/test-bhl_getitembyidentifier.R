@@ -1,15 +1,12 @@
 # tests for bhl_getitembyidentifier fxn in rbhl
 context("bhl_getitembyidentifier")
 
-library("XML")
-require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
-
 tt <- bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi')
 uu <- bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', as='xml')
 vv <- bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', as='list')
 
 test_that("bhl_getitembyidentifier returns the correct class", {
-	expect_is(tt, "data.frame")
+	expect_is(tt$data, "data.frame")
 
 	expect_is(uu, "character")
 	expect_is(xmlParse(uu), "XMLInternalDocument")
@@ -22,7 +19,7 @@ test_that("bhl_getitembyidentifier returns the correct class", {
 })
 
 test_that("bhl_getitembyidentifier returns the correct dimensions", {
-  expect_equal(NCOL(tt), 22)
+  expect_equal(NCOL(tt$data), 22)
   expect_equal(length(uu), 1)
   expect_equal(length(xmlParse(uu)), 1)
   expect_equal(length(vv$Status), 1)

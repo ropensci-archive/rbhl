@@ -1,15 +1,12 @@
 # tests for bhl_getauthorities fxn in rbhl
 context("bhl_getauthorities")
 
-library("XML")
-require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
-
 tt <- bhl_getauthortitles(1970)
 uu <- bhl_getauthortitles(1970, as='json')
 vv <- bhl_getauthortitles(1970, as='xml')
 
 test_that("bhl_getauthorities returns the correct class", {
-	expect_is(tt, "data.frame")
+	expect_is(tt$data, "data.frame")
 
 	expect_is(uu, "character")
 	expect_is(fromJSON(uu), "list")

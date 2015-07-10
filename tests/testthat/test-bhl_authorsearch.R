@@ -5,8 +5,8 @@ tt <- bhl_authorsearch(name='dimmock')
 uu <- bhl_authorsearch(name='dimmock', as = "list")
 
 test_that("bhl_authorsearch returns the correct class", {
-	expect_is(tt, "data.frame")
-	expect_is(tt$CreatorID, "integer")
+	expect_is(tt$data, "data.frame")
+	expect_is(tt$data$CreatorID, "integer")
 
 	expect_is(uu, "list")
 	expect_is(uu$Status, "character")
@@ -18,6 +18,6 @@ test_that("bhl_authorsearch returns the correct class", {
 })
 
 test_that("bhl_authorsearch returns the correct dimensions", {
-  expect_equal(NCOL(tt), 12)
+  expect_equal(NCOL(tt$data), 12)
   expect_equal(length(uu$Status), 1)
 })

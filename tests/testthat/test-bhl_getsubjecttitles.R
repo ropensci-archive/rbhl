@@ -1,15 +1,12 @@
 # tests for bhl_getpanames fxn in rbhl
 context("bhl_getsubjecttitles")
 
-library("XML")
-require("jsonlite", warn.conflicts = FALSE, quietly = TRUE)
-
 tt <- bhl_getsubjecttitles('diptera')
 uu <- bhl_getsubjecttitles('diptera', 'xml')
 vv <- bhl_getsubjecttitles('diptera', 'json')
 
 test_that("bhl_getsubjecttitles returns the correct class", {
-  expect_is(tt, "data.frame")
+  expect_is(tt$data, "data.frame")
 
   expect_is(uu, "character")
   expect_is(xmlParse(uu), "XMLInternalDocument")
