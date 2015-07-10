@@ -22,9 +22,7 @@ Documentation:
 * Biodiversity Heritage Library API documentation [here](http://www.biodiversitylibrary.org/api2/docs/docs.html).
 * Biodiversity Heritage Library OpenURL documentation [here](http://www.biodiversitylibrary.org/openurlhelp.aspx).
 
-## Quickstart
-
-### Installation
+## Installation
 
 Stable version from CRAN
 
@@ -46,24 +44,21 @@ devtools::install_github("ropensci/rbhl")
 library("rbhl")
 ```
 
-### Output formats
+## Output formats
 
-You can output various formats using the `as` parameter, setting to `table`, `list`, `json` or `xml`. 
+You can output various formats using the `as` parameter, setting to `table`, `list`, `json` or `xml`.
 
 The default is usually `table`:
 
 
 ```r
 bhl_authorsearch(name='dimmock')
+#> <bhl data> [12, 2]
 #>   CreatorID             Name Role Numeration Unit Title Location
 #> 1      1970 Dimmock, George,   NA                               
 #> 2      8126 Dimmock, George,   NA                               
-#>   FullerForm Relationship TitleOfWork     Dates
-#> 1                      NA          NA     1852-
-#> 2                      NA          NA 1852-1930
-#>                                        CreatorUrl
-#> 1 http://www.biodiversitylibrary.org/creator/1970
-#> 2 http://www.biodiversitylibrary.org/creator/8126
+#> Variables not shown: FullerForm (chr), Relationship (lgl), TitleOfWork
+#>      (lgl), Dates (chr), CreatorUrl (chr)
 ```
 
 list output
@@ -124,7 +119,7 @@ bhl_authorsearch(name='dimmock', as='json')
 #> [1] "{\"Status\":\"ok\",\"ErrorMessage\":null,\"Result\":[{\"CreatorID\":1970,\"Name\":\"Dimmock, George,\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"1852-\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/1970\"},{\"CreatorID\":8126,\"Name\":\"Dimmock, George,\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"1852-1930\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/8126\"}]}"
 ```
 
-### Get title metadata
+## Get title metadata
 
 
 ```r
@@ -197,113 +192,71 @@ bhl_gettitlemetadata(titleid = 1726, items = TRUE, as="list")$Result$Items
 #> NULL
 ```
 
-### Book search
+## Book search
 
 
 ```r
 bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825, collectionid=4, language='eng')
+#> <bhl data> [22, 1]
 #>   TitleID BibliographicLevel
 #> 1   32868                   
-#>                                                                                                                FullTitle
-#> 1 The natural history of Selborne : to which are added the naturalist's calendar, miscellaneous observations, and poems.
-#>   ShortTitle SortTitle PartNumber PartName CallNumber
-#> 1         NA        NA                             NA
-#>                       Edition PublisherPlace
-#> 1 A new ed., with engravings.         London
-#>                            PublisherName PublicationDate
-#> 1 Printed for C. and J. Rivington [etc.]            1825
-#>   PublicationFrequency Doi
-#> 1                   NA  NA
-#>                                                TitleUrl
-#> 1 http://www.biodiversitylibrary.org/bibliography/32868
-#>                                                                                      Authors
-#> 1 9572, White, Gilbert,, Main Entry -- Personal Name (MARC 100), , , , , , , , 1720-1793, NA
-#>   Subjects Identifiers Collections Variants
-#> 1       NA          NA          NA       NA
-#>                                                                                                                                                                                                                  Items
-#> 1 71924, NA, NA, NA, NA, 2, NA, Gerstein - University of Toronto (archive.org), NA, NA, NA, NA, NA, NA, NA, NA, http://www.biodiversitylibrary.org/item/71924, NA, NA, NA, NA, 4, Charles Darwin's Library, NA, NA, NA
+#> Variables not shown: FullTitle (chr), ShortTitle (lgl), SortTitle (lgl),
+#>      PartNumber (chr), PartName (chr), CallNumber (lgl), Edition (chr),
+#>      PublisherPlace (chr), PublisherName (chr), PublicationDate (chr),
+#>      PublicationFrequency (lgl), Doi (lgl), TitleUrl (chr), Authors
+#>      (list), Subjects (lgl), Identifiers (lgl), Collections (lgl),
+#>      Variants (lgl), Items (list), Notes (lgl)
 ```
 
-### Search titles
+## Search titles
 
 
 ```r
-head( bhl_titlesearchsimple('husbandry') )
-#>   TitleID BibliographicLevel
-#> 1   25997     Monograph/Item
-#> 2   44403     Monograph/Item
-#> 3   27062     Monograph/Item
-#> 4   41956     Monograph/Item
-#> 5   44462     Monograph/Item
-#> 6   28081     Monograph/Item
-#>                                                                                                                                                                                                                                                                                  FullTitle
-#> 1                                                                                                                                                                                          An account of the systems of husbandry adopted in the more improved districts of Scotland ...  
-#> 2                                                                                   An account of the systems of husbandry adopted in the more improved districts of Scotland : with some observations on the improvements of which they are susceptible ... / by Sir John Sinclair, Bart.
-#> 3    The American farmer's instructor, or Practical agriculturist; comprehending the cultivation of plants, the husbandry of the domestic animals, and the economy of the farm; together with a variety of information which will be found important to the farmer. By Francis S. Wiggins.
-#> 4 The American farmer's instructor, or, practical agriculturist : comprehending the cultivation of plants, the husbandry of the domestic animals, and the economy of the farm; together with a variety of information which will be found important to the farmer / by Francis S. Wiggins.
-#> 5   The American farmer's instructor, or, Practical agriculturist comprehending the cultivation of plants, the husbandry of the domestic animals, and the economy of the farm, together with a variety of information which will be found important to the farmer / by Francis S. Wiggins.
-#> 6                                                                                                       American husbandry. Being a series of essays on agriculture. Comp. principally from "The Cultivator" and "The Genesee farmer". With additions by Willis Gaylord and Luther Tucker.
-#>                                                                                      ShortTitle
-#> 1 An account of the systems of husbandry adopted in the more improved districts of Scotland ...
-#> 2   An account of the systems of husbandry adopted in the more improved districts of Scotland :
-#> 3                                 The American farmer's instructor, or Practical agriculturist;
-#> 4                               The American farmer's instructor, or, practical agriculturist :
-#> 5                                 The American farmer's instructor, or, Practical agriculturist
-#> 6                                                                           American husbandry.
-#>                                                      SortTitle PartNumber
-#> 1  account of the systems of husbandry adopted in the more imp       <NA>
-#> 2 account of the systems of husbandry adopted in the more impr       <NA>
-#> 3 American farmer's instructor, or Practical agriculturist; co       <NA>
-#> 4 American farmer's instructor, or, practical agriculturist :        <NA>
-#> 5 American farmer's instructor, or, Practical agriculturist co       <NA>
-#> 6 American husbandry. Being series of essays on agriculture. C       <NA>
-#>   PartName CallNumber Edition PublisherPlace
-#> 1     <NA>         NA 2d ed.     Edinburgh :
-#> 2     <NA>         NA    <NA>    Edinburgh :
-#> 3     <NA>         NA    <NA>  Philadelphia,
-#> 4     <NA>         NA    <NA> Philadelphia :
-#> 5     <NA>         NA    <NA> Philadelphia :
-#> 6     <NA>         NA    <NA>     New York :
-#>                                        PublisherName PublicationDate
-#> 1                                      A. Constable,           1813.
-#> 2 Printed for Arch. Constable by Abernethy & Walker,           1812.
-#> 3                                         O. Rogers,           1840.
-#> 4              Orrin Rogers, 67 South Second Street,            1840
-#> 5                                      Orrin Rogers,           1840.
-#> 6                                            Harper,           1864.
-#>   PublicationFrequency Doi TitleUrl Authors Subjects Identifiers
-#> 1                 <NA>  NA       NA      NA       NA          NA
-#> 2                 <NA>  NA       NA      NA       NA          NA
-#> 3                 <NA>  NA       NA      NA       NA          NA
-#> 4                 <NA>  NA       NA      NA       NA          NA
-#> 5                 <NA>  NA       NA      NA       NA          NA
-#> 6                 <NA>  NA       NA      NA       NA          NA
-#>   Collections Variants Items
-#> 1          NA       NA    NA
-#> 2          NA       NA    NA
-#> 3          NA       NA    NA
-#> 4          NA       NA    NA
-#> 5          NA       NA    NA
-#> 6          NA       NA    NA
+bhl_titlesearchsimple('husbandry')
+#> <bhl data> [22, 150]
+#>    TitleID BibliographicLevel
+#> 1    25997     Monograph/Item
+#> 2    44403     Monograph/Item
+#> 3    27062     Monograph/Item
+#> 4    41956     Monograph/Item
+#> 5    44462     Monograph/Item
+#> 6    28081     Monograph/Item
+#> 7    56265     Monograph/Item
+#> 8    58205     Monograph/Item
+#> 9    51946     Monograph/Item
+#> 10   55665     Monograph/Item
+#> ..     ...                ...
+#> Variables not shown: FullTitle (chr), ShortTitle (chr), SortTitle (chr),
+#>      PartNumber (chr), PartName (chr), CallNumber (lgl), Edition (chr),
+#>      PublisherPlace (chr), PublisherName (chr), PublicationDate (chr),
+#>      PublicationFrequency (chr), Doi (lgl), TitleUrl (lgl), Authors (lgl),
+#>      Subjects (lgl), Identifiers (lgl), Collections (lgl), Variants (lgl),
+#>      Items (lgl), Notes (lgl)
 ```
 
-### Get languages
+## Get languages
 
 
 ```r
-head( bhl_getlanguages() )
-#>   LanguageCode LanguageName
-#> 1          AFR    Afrikaans
-#> 2          ARA       Arabic
-#> 3          ARC      Aramaic
-#> 4          BUL    Bulgarian
-#> 5          BUR      Burmese
-#> 6          CAR        Carib
+bhl_getlanguages()
+#> <bhl data> [2, 66]
+#>    LanguageCode   LanguageName
+#> 1           AFR      Afrikaans
+#> 2           ARA         Arabic
+#> 3           ARC        Aramaic
+#> 4           BUL      Bulgarian
+#> 5           BUR        Burmese
+#> 6           CAR          Carib
+#> 7           CAT        Catalan
+#> 8           CEL Celtic (Other)
+#> 9           CHI        Chinese
+#> 10          HRV       Croatian
+#> ..          ...            ...
 ```
 
 ## Meta
 
-* Please report any issues or bugs](https://github.com/ropensci/rbhl/issues).
+* Please [report any issues or bugs](https://github.com/ropensci/rbhl/issues).
 * License: MIT
 * Get citation information for `rbhl` in R doing `citation(package = 'rbhl')`
 

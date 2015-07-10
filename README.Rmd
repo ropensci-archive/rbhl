@@ -91,13 +91,13 @@ bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=18
 ## Search titles
 
 ```{r}
-head( bhl_titlesearchsimple('husbandry') )
+bhl_titlesearchsimple('husbandry')
 ```
 
 ## Get languages
 
 ```{r}
-head( bhl_getlanguages() )
+bhl_getlanguages()
 ```
 
 ## Meta
