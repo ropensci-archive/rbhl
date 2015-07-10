@@ -31,12 +31,17 @@ bhl_openurl <- function(genre = NULL, title = NULL, aufirst = NULL, aulast = NUL
   key = NULL, ...)
 {
 
-  if(version=="1.0"){url_ver <- "z39.88-2004"} else {url_ver <- NULL}
+  if (version == "1.0") {
+    url_ver <- "z39.88-2004"
+  } else {
+    url_ver <- NULL
+  }
 	args <- bhlc(list(genre = genre, title = title, aufirst = aufirst,
 							 date = date, spage = spage, issue = issue, url_ver = url_ver,
 							 apikey = check_key(key), format = as_f(as)))
+	if (length(args) == 0) args <- NULL
 	out <- GET("http://www.biodiversitylibrary.org/openurl", query = args, ...)
 	stop_for_status(out)
-	tt <- content(out, as="text")
+	tt <- content(out, as = "text")
   switch(as, json = tt, xml = tt, list = fjson(tt), table = todf(tt))
 }

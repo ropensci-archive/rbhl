@@ -1,22 +1,20 @@
 Package: rbhl
-Title: R interface to the Biodiversity Heritage Library.
-Description: Interface to Biodiversity Heritage Library (BHL) API methods. BHL
-    is a repository of digitized literature on biodiversity studies,
-    including floras, research papers, and more.
+Title: Interface to the 'Biodiversity' 'Heritage' Library
+Description: Interface to 'Biodiversity' 'Heritage' Library ('BHL') 'API'
+    methods. 'BHL' is a repository of 'digitized' literature on 'biodiversity'
+    studies, including 'floras', research papers, and more.
 Type: Package
-Version: 0.1.7.99
+Version: 0.1.8.9000
 License: MIT + file LICENSE
-Date: 2015-03-31
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
-    email = "myrmecocystus@gmail.com"),
-    person("Karthik", "Ram", role = "aut",
-    email = "karthik.ram@gmail.com"))
+    email = "myrmecocystus@gmail.com"))
 URL: https://github.com/ropensci/rbhl
 BugReports: https://github.com/ropensci/rbhl/issues
 LazyData: true
 VignetteBuilder: knitr
 Roxygen: list(wrap = FALSE)
 Imports:
+    stats,
     httr,
     XML,
     jsonlite,

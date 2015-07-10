@@ -9,9 +9,10 @@
 #' bhl_gettitleendNote(1726)
 #' }
 
-bhl_gettitleendNote <- function(titleid = NA, key = NULL, ...)
-{
-  args <- bhlc(list(op = "GetTitleEndNote", apikey = check_key(key), format = 'json', titleid=titleid))
+bhl_gettitleendNote <- function(titleid = NA, key = NULL, ...) {
+  args <- bhlc(list(op = "GetTitleEndNote", apikey = check_key(key),
+                    format = 'json', titleid = titleid))
+  if (length(args) == 0) args <- NULL
   out <- GET(bhl_url(), query = args, ...)
   stop_for_status(out)
   tt <- content(out)

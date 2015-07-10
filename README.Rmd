@@ -29,9 +29,7 @@ Documentation:
 * Biodiversity Heritage Library API documentation [here](http://www.biodiversitylibrary.org/api2/docs/docs.html).
 * Biodiversity Heritage Library OpenURL documentation [here](http://www.biodiversitylibrary.org/openurlhelp.aspx).
 
-## Quickstart
-
-### Installation
+## Installation
 
 Stable version from CRAN
 
@@ -50,7 +48,7 @@ devtools::install_github("ropensci/rbhl")
 library("rbhl")
 ```
 
-### Output formats
+## Output formats
 
 You can output various formats using the `as` parameter, setting to `table`, `list`, `json` or `xml`.
 
@@ -78,25 +76,25 @@ JSON output
 bhl_authorsearch(name='dimmock', as='json')
 ```
 
-### Get title metadata
+## Get title metadata
 
 ```{r}
 bhl_gettitlemetadata(titleid = 1726, items = TRUE, as="list")$Result$Items
 ```
 
-### Book search
+## Book search
 
 ```{r}
 bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825, collectionid=4, language='eng')
 ```
 
-### Search titles
+## Search titles
 
 ```{r}
 head( bhl_titlesearchsimple('husbandry') )
 ```
 
-### Get languages
+## Get languages
 
 ```{r}
 head( bhl_getlanguages() )
@@ -104,7 +102,7 @@ head( bhl_getlanguages() )
 
 ## Meta
 
-* Please report any issues or bugs](https://github.com/ropensci/rbhl/issues).
+* Please [report any issues or bugs](https://github.com/ropensci/rbhl/issues).
 * License: MIT
 * Get citation information for `rbhl` in R doing `citation(package = 'rbhl')`
 

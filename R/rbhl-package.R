@@ -7,6 +7,7 @@
 #' will be able to use your API key without you having to enter it every time
 #' you run a search.
 #'
+#' @importFrom stats setNames
 #' @name rbhl-package
 #' @aliases rbhl
 #' @docType package
