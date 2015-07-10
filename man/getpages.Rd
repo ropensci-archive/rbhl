@@ -4,10 +4,10 @@
 \alias{getpages}
 \title{Get many OCR-generated pages given a single item id}
 \usage{
-getpages(itemid = NULL, key = NULL, ...)
+getpages(itemid, key = NULL, ...)
 }
 \arguments{
-\item{itemid}{the item id (character)}
+\item{itemid}{the item id (character). Required}
 
 \item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}

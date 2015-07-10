@@ -67,6 +67,6 @@ as_f <- function(x) {
 
 #' @export
 print.bhldf <- function(x, ..., n = 10) {
-  cat(sprintf("<bhl data> [%d, %d]", NCOL(x$data), NROW(x$data)), sep = "\n")
+  cat(sprintf("<bhl data> [%d, %d]", NROW(x$data), NCOL(x$data)), sep = "\n")
   trunc_mat(x$data, n = n)
 }
