@@ -13,3 +13,5 @@ vignettes/margins.sty
 vignettes/cache/
 ^appveyor\.yml$
 README.Rmd
+NEWS.md
+cran-comments.md
