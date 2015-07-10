@@ -1,10 +1,6 @@
 #' Get a list of collections which are used to group titles and items. A single
 #' collection may contain either titles or items, but not both.
 #'
-#' @import httr
-#' @importFrom jsonlite fromJSON
-#' @importFrom plyr ldply rbind.fill
-#'
 #' @export
 #' @param as (character) Return a list ("list"), json ("json"), xml ("xml"), or parsed table
 #' ("table", default). Note that \code{as="table"} can give different data format back

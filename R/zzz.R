@@ -23,43 +23,29 @@ query2message <- function(url, x) {
 #' @param z Format, one of 'json' or 'xml'
 #' @export
 #' @keywords internal
-return_results <- function(x, y, z){
-  if(y=='raw'){
+return_results <- function(x, y, z) {
+  if(y=='raw') {
     return( x )
-  } else if(y=='list')
-  {
-    return( fromJSON(I(x)) )
-  } else
-  {
-    if(z=="json"){ return(fromJSON(I(x))) } else{ return(xmlTreeParse(I(x))) }
+  } else if(y=='list') {
+    return( jsonlite::fromJSON(I(x)) )
+  } else {
+    if (z == "json") {
+      return(jsonlite::fromJSON(I(x)))
+    } else {
+      return(XML::xmlTreeParse(I(x)))
+    }
   }
 }
 
-check_key <- function(x){
-  tmp <- if(is.null(x)) Sys.getenv("BHL_KEY", "") else x
+check_key <- function(x) {
+  tmp <- if (is.null(x)) Sys.getenv("BHL_KEY", "") else x
   if(tmp == "") getOption("bhl_key", stop("need an API key for BHL")) else tmp
 }
-
-# getkey <- function(x = NULL, service) {
-#   if(is.null(x)){
-#     key <- getOption('BioHerLibKey')
-#     if(is.null(key)){
-#       key <- "8f7e89db-2ec3-4408-a160-c3dc416b118d"
-#       url <- "http://www.biodiversitylibrary.org/getapikey.aspx"
-#       message(paste("Using default key: Please get your own API key at ",
-#                     url, sep=""))
-#     } else
-#       if(class(key)=="character"){key <- key} else
-#       { stop("check your key input - it should be a character string") }
-#   } else
-#   { key <- x }
-#   key
-# }
 
 bhl_GET <- function(as, args, ...){
   out <- GET(bhl_url(), query = args, ...)
   stop_for_status(out)
-  tt <- content(out, as="text")
+  tt <- content(out, as = "text")
   switch(as, json = tt, xml = tt, list = fjson(tt), table = todf(tt))
 }
 
@@ -74,14 +60,6 @@ todf <- function(x){
       do.call(rbind.fill, lapply(bhlc(temp), data.frame))
     }
   }
-#   if( is.null(names(temp)) ){
-#     temp <- lapply(temp, function(z){
-#       z[sapply(z, is.null)] <- NA
-#       z
-#     })
-#   } else {
-#     temp[sapply(temp, is.null)] <- NA
-#   }
 }
 
 fjson <- function(x) jsonlite::fromJSON(x, FALSE)

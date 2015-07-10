@@ -7,6 +7,9 @@
 #' will be able to use your API key without you having to enter it every time
 #' you run a search.
 #'
+#' @importFrom httr GET content stop_for_status
+#' @importFrom jsonlite fromJSON
+#' @importFrom plyr ldply rbind.fill
 #' @importFrom stats setNames
 #' @name rbhl-package
 #' @aliases rbhl
