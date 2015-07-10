@@ -14,6 +14,8 @@ LazyData: true
 VignetteBuilder: knitr
 Roxygen: list(wrap = FALSE)
 Imports:
+    methods,
+    utils,
     stats,
     httr,
     XML,
