@@ -30,15 +30,17 @@ bhl_GET <- function(as, args, ...){
   stop_for_status(out)
   res <- switch(as,
          xml = xmlSize(xpathSApply(content(out), "//Result")[[1]]),
-         json = length(content(out)$Result),
-         list = length(content(out)$Result),
-         table = length(content(out)$Result))
+         json = length(jsonlite::fromJSON(content_utf8(out))$Result),
+         list = length(jsonlite::fromJSON(content_utf8(out))$Result),
+         table = length(jsonlite::fromJSON(content_utf8(out))$Result))
   if (is.null(res) || res == 0) {
     stop("No results found", call. = FALSE)
   }
-  tt <- content(out, as = "text")
+  tt <- content_utf8(out)
   switch(as, json = tt, xml = tt, list = fjson(tt), table = todf(tt))
 }
+
+content_utf8 <- function(x) content(x, as = "text", encoding = "UTF-8")
 
 todf <- function(x){
   temp <- jsonlite::fromJSON(I(x), TRUE)$Result

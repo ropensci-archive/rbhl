@@ -15,6 +15,6 @@ bhl_gettitleendNote <- function(titleid = NA, key = NULL, ...) {
   if (length(args) == 0) args <- NULL
   out <- GET(bhl_url(), query = args, ...)
   stop_for_status(out)
-  tt <- content(out)
+  tt <- jsonlite::fromJSON(content_utf8(out), FALSE)
   gsub("\n|%.{1}", "", tt$Result)
 }

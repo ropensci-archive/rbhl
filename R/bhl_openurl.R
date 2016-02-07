@@ -28,8 +28,7 @@
 
 bhl_openurl <- function(genre = NULL, title = NULL, aufirst = NULL, aulast = NULL,
 	date = NULL, spage = NULL, issue = NULL, version = 0.1, as = "list",
-  key = NULL, ...)
-{
+  key = NULL, ...) {
 
   if (version == "1.0") {
     url_ver <- "z39.88-2004"
@@ -42,6 +41,6 @@ bhl_openurl <- function(genre = NULL, title = NULL, aufirst = NULL, aulast = NUL
 	if (length(args) == 0) args <- NULL
 	out <- GET("http://www.biodiversitylibrary.org/openurl", query = args, ...)
 	stop_for_status(out)
-	tt <- content(out, as = "text")
+	tt <- content_utf8(out)
   switch(as, json = tt, xml = tt, list = fjson(tt), table = todf(tt))
 }
