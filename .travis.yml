@@ -1,8 +1,16 @@
 language: r
-
 sudo: required
 
+r_github_packages:
+  - jimhester/covr
+
+after_success:
+  - Rscript -e 'covr::codecov()'
+
 notifications:
+  email:
+    on_success: change
+    on_failure: change
   slack:
     secure: mjW1sHpIhzj3mjB3w+I361LO8WXPx7NgnFBZ59geOW0oLb///1Xd8IGj7N5ljP5WQttNsLNw0uzCzqPd8fWIX52UubAzxcYv7qQKSWLCSjWD0/jViGLVzMERnSb11L/h7lbTg/w7jZd/YbMJf+nHxhOdO6NirEFV2kh+3xGbQ4Y=
 
