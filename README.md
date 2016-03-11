@@ -53,7 +53,7 @@ The default is usually `table`:
 
 ```r
 bhl_authorsearch(name='dimmock')
-#> <bhl data> [12, 2]
+#> <bhl data> [2, 12]
 #>   CreatorID             Name Role Numeration Unit Title Location
 #> 1      1970 Dimmock, George,   NA                               
 #> 2      8126 Dimmock, George,   NA                               
@@ -165,7 +165,7 @@ bhl_gettitlemetadata(titleid = 1726, items = TRUE, as="list")$Result$Items
 #> [1] ""
 #> 
 #> [[1]]$CopyrightStatus
-#> [1] ""
+#> [1] "Public domain.  The BHL considers that this work is no longer under copyright protection."
 #> 
 #> [[1]]$CopyrightRegion
 #> [1] ""
@@ -197,7 +197,7 @@ bhl_gettitlemetadata(titleid = 1726, items = TRUE, as="list")$Result$Items
 
 ```r
 bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825, collectionid=4, language='eng')
-#> <bhl data> [22, 1]
+#> <bhl data> [1, 22]
 #>   TitleID BibliographicLevel
 #> 1   32868                   
 #> Variables not shown: FullTitle (chr), ShortTitle (lgl), SortTitle (lgl),
@@ -213,7 +213,7 @@ bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=18
 
 ```r
 bhl_titlesearchsimple('husbandry')
-#> <bhl data> [22, 150]
+#> <bhl data> [151, 22]
 #>    TitleID BibliographicLevel
 #> 1    25997     Monograph/Item
 #> 2    44403     Monograph/Item
@@ -239,7 +239,7 @@ bhl_titlesearchsimple('husbandry')
 
 ```r
 bhl_getlanguages()
-#> <bhl data> [2, 66]
+#> <bhl data> [68, 2]
 #>    LanguageCode   LanguageName
 #> 1           AFR      Afrikaans
 #> 2           ARA         Arabic
@@ -259,5 +259,6 @@ bhl_getlanguages()
 * Please [report any issues or bugs](https://github.com/ropensci/rbhl/issues).
 * License: MIT
 * Get citation information for `rbhl` in R doing `citation(package = 'rbhl')`
+* Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
 [![rofooter](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)

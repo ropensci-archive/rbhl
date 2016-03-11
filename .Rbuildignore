@@ -15,3 +15,4 @@ vignettes/cache/
 README.Rmd
 NEWS.md
 cran-comments.md
+^CONDUCT\.md$
