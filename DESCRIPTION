@@ -22,5 +22,6 @@ Imports:
     plyr
 Suggests:
     testthat,
-    knitr
+    knitr,
+    covr
 RoxygenNote: 5.0.1
