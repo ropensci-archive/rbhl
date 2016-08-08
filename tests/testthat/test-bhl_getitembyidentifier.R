@@ -19,10 +19,10 @@ test_that("bhl_getitembyidentifier returns the correct class", {
 	expect_is(vv$Status, "character")
 	expect_null(vv$ErrorMessage)
 
-  expect_equal(NCOL(tt$data), 22)
+  expect_gt(NCOL(tt$data), 10)
   expect_equal(length(uu), 1)
   expect_equal(length(xmlParse(uu)), 1)
   expect_equal(length(vv$Status), 1)
   expect_equal(length(vv), 3)
-  expect_equal(length(vv$Result), 1)
+  expect_gt(length(vv$Result), 10)
 })
