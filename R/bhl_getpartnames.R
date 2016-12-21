@@ -8,10 +8,8 @@
 #' bhl_getpartnames(7443, "json")
 #' bhl_getpartnames(7443, "list")
 #' }
-
-bhl_getpartnames <- function(partid, as = "table", key = NULL, ...)
-{
+bhl_getpartnames <- function(partid, as = "table", key = NULL, ...) {
   args <- bhlc(list(op = "GetPartNames", apikey = check_key(key), format = as_f(as),
-                       partid=partid))
+                       partid = partid))
   bhl_GET(as, args, ...)
 }

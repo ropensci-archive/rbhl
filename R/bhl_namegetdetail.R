@@ -8,8 +8,8 @@
 #' @inheritParams bhl_getcollections
 #'
 #' @examples \dontrun{
-#' bhl_namegetdetail(namebankid = 3501464)
-#' bhl_namegetdetail(name = 'poa annua')
+#' # bhl_namegetdetail(namebankid = 3501464)
+#' # bhl_namegetdetail(name = 'poa annua')
 #' }
 
 bhl_namegetdetail <- function(namebankid = NULL, name = NULL, as='table', key = NULL, ...) {
