@@ -43,7 +43,7 @@ bhl_GET <- function(as, args, ...){
 content_utf8 <- function(x) content(x, as = "text", encoding = "UTF-8")
 
 todf <- function(x){
-  temp <- jsonlite::fromJSON(I(x), TRUE)$Result
+  temp <- jsonlite::fromJSON(I(x), TRUE, flatten = TRUE)$Result
   if (is.character(temp)) {
     temp
   } else {
@@ -52,7 +52,8 @@ todf <- function(x){
     } else {
       do.call(rbind.fill, lapply(bhlc(temp), data.frame))
     }
-    structure(list(data = tmp), class = "bhldf")
+    #structure(list(data = tmp), class = "bhldf")
+    tibble::as_data_frame(tmp)
   }
 }
 
@@ -65,10 +66,4 @@ bhlc <- function(l) Filter(Negate(is.null), l)
 as_f <- function(x) {
   as <- match.arg(x, c("table","list","json","xml"))
   if (as %in% c('list','table','json')) 'json' else 'xml'
-}
-
-#' @export
-print.bhldf <- function(x, ..., n = 10) {
-  cat(sprintf("<bhl data> [%d, %d]", NROW(x$data), NCOL(x$data)), sep = "\n")
-  trunc_mat(x$data, n = n)
 }

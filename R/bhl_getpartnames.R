@@ -4,6 +4,7 @@
 #' @param partid The identifier of an individual part (article, chapter, etc) (character)
 #' @inheritParams bhl_getcollections
 #' @examples \dontrun{
+#' bhl_getpartnames(7443)
 #' bhl_getpartnames(7443, "xml")
 #' bhl_getpartnames(7443, "json")
 #' bhl_getpartnames(7443, "list")

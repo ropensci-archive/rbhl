@@ -24,6 +24,7 @@ Return a list of scientific names associated with a part.
 }
 \examples{
 \dontrun{
+bhl_getpartnames(7443)
 bhl_getpartnames(7443, "xml")
 bhl_getpartnames(7443, "json")
 bhl_getpartnames(7443, "list")

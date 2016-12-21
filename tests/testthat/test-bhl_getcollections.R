@@ -7,13 +7,13 @@ test_that("bhl_collection returns the correct class", {
 	tt <- bhl_getcollections()
 	uu <- bhl_getcollections(as = 'json')
 
-	expect_is(tt$data, "data.frame")
+	expect_is(tt, "data.frame")
 
 	expect_is(uu, "character")
-	expect_is(fromJSON(uu), "list")
-	expect_is(fromJSON(uu)$Result$CollectionName, "character")
+	expect_is(jsonlite::fromJSON(uu), "list")
+	expect_is(jsonlite::fromJSON(uu)$Result$CollectionName, "character")
 
-  expect_equal(NCOL(tt$data), 5)
+  expect_equal(NCOL(tt), 5)
   expect_equal(length(uu), 1)
-  expect_equal(length(fromJSON(uu)), 3)
+  expect_equal(length(jsonlite::fromJSON(uu)), 3)
 })

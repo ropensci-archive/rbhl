@@ -9,17 +9,17 @@ test_that("bhl_gettitlebyidentifier returns", {
   zz <- bhl_gettitlebyidentifier('oclc', 2992225, as='json')
 
   # the correct classes
-  expect_is(tt$data, "data.frame")
+  expect_is(tt, "data.frame")
 
   expect_is(zz, "character")
-  expect_is(fromJSON(zz), "list")
+  expect_is(jsonlite::fromJSON(zz), "list")
 
   expect_is(vv, "character")
-  expect_is(xmlParse(vv), "XMLInternalDocument")
+  expect_is(xml2::read_xml(vv), "xml_document")
 
   # the correct dimensions
   expect_equal(length(zz), 1)
-  expect_equal(length(fromJSON(zz)), 3)
+  expect_equal(length(jsonlite::fromJSON(zz)), 3)
   expect_equal(length(vv), 1)
-  expect_equal(length(xmlParse(vv)), 1)
+  expect_equal(length(xml2::read_xml(vv)), 2)
 })

@@ -9,20 +9,20 @@ test_that("bhl_getlanguages returns the correct class", {
   vv <- bhl_getlanguages('json')
   zz <- bhl_getlanguages('xml')
 
-  expect_is(tt$data, "data.frame")
+  expect_is(tt, "data.frame")
 
   expect_is(uu, "list")
 
   expect_is(vv, "character")
-  expect_is(fromJSON(vv), "list")
+  expect_is(jsonlite::fromJSON(vv), "list")
 
   expect_is(zz, "character")
-  expect_is(xmlParse(zz), "XMLInternalDocument")
+  expect_is(xml2::read_xml(zz), "xml_document")
 
-  expect_equal(NCOL(tt$data), 2)
+  expect_equal(NCOL(tt), 2)
   expect_equal(length(uu), 3)
   expect_equal(length(uu$Status), 1)
-  expect_equal(length(fromJSON(vv)), 3)
+  expect_equal(length(jsonlite::fromJSON(vv)), 3)
   expect_equal(length(zz), 1)
-  expect_equal(length(xmlParse(zz)), 1)
+  expect_equal(length(xml2::read_xml(zz)), 2)
 })

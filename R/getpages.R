@@ -20,5 +20,5 @@ getpages <- function(itemid, key = NULL, ...){
     else
       tmp
   })
-  setNames(out, res$PageID)
+  stats::setNames(out, res$PageID)
 }
