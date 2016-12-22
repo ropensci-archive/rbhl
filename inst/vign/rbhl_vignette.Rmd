@@ -34,13 +34,13 @@ knitr::opts_chunk$set(
   comment = "#>", 
   warning = FALSE, 
   message = FALSE,
-  cache = TRUE
+  cache = FALSE
 )
 
 ```
 
 rbhl Introduction
-======
+=================
 
 `rbhl` is an R interface to the Biodiversity Heritage Library.
 

@@ -9,8 +9,9 @@ getpages(itemid, key = NULL, ...)
 \arguments{
 \item{itemid}{the item id (character). Required}
 
-\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
-or from \code{.Rprofile} as \code{bhl_key}.}
+\item{key}{Your BHL API key, either enter, or loads from your
+\code{.Renviron} as \code{BHL_KEY} or from \code{.Rprofile} as
+\code{bhl_key}}
 
 \item{...}{Curl options passed on to \code{\link[httr]{GET}}}
 }
@@ -19,9 +20,9 @@ Get many OCR-generated pages given a single item id
 }
 \examples{
 \dontrun{
-books <- bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825,
-   collectionid=4, language='eng')
-getpages(itemid=16800)
+books <- bhl_booksearch(title='Selborne', lname='White', volume=2,
+  edition='new', year=1825, collectionid=4, language='eng')
+getpages(itemid = 16800)
 }
 }
 

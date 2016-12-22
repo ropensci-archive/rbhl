@@ -7,7 +7,7 @@
 
 
 rbhl Introduction
-======
+=================
 
 `rbhl` is an R interface to the Biodiversity Heritage Library.
 
@@ -53,7 +53,7 @@ bhl_authorsearch(name='dimmock', as='json')
 ```
 
 ```
-#> [1] "{\"Status\":\"ok\",\"ErrorMessage\":null,\"Result\":[{\"CreatorID\":1970,\"Name\":\"Dimmock, George,\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"1852-\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/1970\"},{\"CreatorID\":8126,\"Name\":\"Dimmock, George,\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"1852-1930\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/8126\"}]}"
+#> [1] "{\"Status\":\"ok\",\"ErrorMessage\":null,\"Result\":[{\"CreatorID\":189035,\"Name\":\"Dimmock, Anna Katherina\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/189035\"},{\"CreatorID\":59023,\"Name\":\"Dimmock, G\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/59023\"},{\"CreatorID\":189042,\"Name\":\"Dimmock, Geo \",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/189042\"},{\"CreatorID\":189021,\"Name\":\"Dimmock, George\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/189021\"},{\"CreatorID\":1970,\"Name\":\"Dimmock, George,\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"1852-\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/1970\"},{\"CreatorID\":8126,\"Name\":\"Dimmock, George,\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"1852-1930\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/8126\"}]}"
 ```
 
 Or get a list
@@ -73,7 +73,7 @@ bhl_authorsearch(name='dimmock', as='list')
 #> $Result
 #> $Result[[1]]
 #> $Result[[1]]$CreatorID
-#> [1] 1970
+#> [1] 189035
 ...
 ```
 
@@ -85,12 +85,17 @@ bhl_authorsearch(name='dimmock')
 ```
 
 ```
-#> <bhl data> [12, 2]
-#>   CreatorID             Name Role Numeration Unit Title Location
-#> 1      1970 Dimmock, George,   NA                               
-#> 2      8126 Dimmock, George,   NA                               
-#> Variables not shown: FullerForm (chr), Relationship (lgl), TitleOfWork
-#>      (lgl), Dates (chr), CreatorUrl (chr)
+#> # A tibble: 6 × 12
+#>   CreatorID                    Name  Role Numeration  Unit Title Location
+#> *     <int>                   <chr> <lgl>      <chr> <chr> <chr>    <chr>
+#> 1    189035 Dimmock, Anna Katherina    NA                                
+#> 2     59023              Dimmock, G    NA                                
+#> 3    189042           Dimmock, Geo     NA                                
+#> 4    189021         Dimmock, George    NA                                
+#> 5      1970        Dimmock, George,    NA                                
+#> 6      8126        Dimmock, George,    NA                                
+#> # ... with 5 more variables: FullerForm <chr>, Relationship <lgl>,
+#> #   TitleOfWork <lgl>, Dates <chr>, CreatorUrl <chr>
 ```
 
 ## Some examples of function calls
@@ -124,15 +129,16 @@ bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=18
 ```
 
 ```
-#> <bhl data> [22, 1]
+#> # A tibble: 1 × 22
 #>   TitleID BibliographicLevel
+#> *   <int>              <chr>
 #> 1   32868                   
-#> Variables not shown: FullTitle (chr), ShortTitle (lgl), SortTitle (lgl),
-#>      PartNumber (chr), PartName (chr), CallNumber (lgl), Edition (chr),
-#>      PublisherPlace (chr), PublisherName (chr), PublicationDate (chr),
-#>      PublicationFrequency (lgl), Doi (lgl), TitleUrl (chr), Authors
-#>      (list), Subjects (lgl), Identifiers (lgl), Collections (lgl),
-#>      Variants (lgl), Items (list), Notes (lgl)
+#> # ... with 20 more variables: FullTitle <chr>, ShortTitle <lgl>,
+#> #   SortTitle <lgl>, PartNumber <chr>, PartName <chr>, CallNumber <lgl>,
+#> #   Edition <chr>, PublisherPlace <chr>, PublisherName <chr>,
+#> #   PublicationDate <chr>, PublicationFrequency <lgl>, Doi <lgl>,
+#> #   TitleUrl <chr>, Authors <list>, Subjects <lgl>, Identifiers <lgl>,
+#> #   Collections <lgl>, Variants <lgl>, Items <list>, Notes <lgl>
 ```
 
 ### Search titles
@@ -143,8 +149,9 @@ bhl_titlesearchsimple('husbandry')
 ```
 
 ```
-#> <bhl data> [22, 150]
+#> # A tibble: 153 × 22
 #>    TitleID BibliographicLevel
+#> *    <int>              <chr>
 #> 1    25997     Monograph/Item
 #> 2    44403     Monograph/Item
 #> 3    27062     Monograph/Item
@@ -155,13 +162,13 @@ bhl_titlesearchsimple('husbandry')
 #> 8    58205     Monograph/Item
 #> 9    51946     Monograph/Item
 #> 10   55665     Monograph/Item
-#> ..     ...                ...
-#> Variables not shown: FullTitle (chr), ShortTitle (chr), SortTitle (chr),
-#>      PartNumber (chr), PartName (chr), CallNumber (lgl), Edition (chr),
-#>      PublisherPlace (chr), PublisherName (chr), PublicationDate (chr),
-#>      PublicationFrequency (chr), Doi (lgl), TitleUrl (lgl), Authors (lgl),
-#>      Subjects (lgl), Identifiers (lgl), Collections (lgl), Variants (lgl),
-#>      Items (lgl), Notes (lgl)
+#> # ... with 143 more rows, and 20 more variables: FullTitle <chr>,
+#> #   ShortTitle <chr>, SortTitle <chr>, PartNumber <chr>, PartName <chr>,
+#> #   CallNumber <lgl>, Edition <chr>, PublisherPlace <chr>,
+#> #   PublisherName <chr>, PublicationDate <chr>,
+#> #   PublicationFrequency <chr>, Doi <lgl>, TitleUrl <lgl>, Authors <lgl>,
+#> #   Subjects <lgl>, Identifiers <lgl>, Collections <lgl>, Variants <lgl>,
+#> #   Items <lgl>, Notes <lgl>
 ```
 
 ### Get languages
@@ -174,19 +181,20 @@ bhl_getlanguages()
 ```
 
 ```
-#> <bhl data> [2, 66]
-#>    LanguageCode   LanguageName
-#> 1           AFR      Afrikaans
-#> 2           ARA         Arabic
-#> 3           ARC        Aramaic
-#> 4           BUL      Bulgarian
-#> 5           BUR        Burmese
-#> 6           CAR          Carib
-#> 7           CAT        Catalan
-#> 8           CEL Celtic (Other)
-#> 9           CHI        Chinese
-#> 10          HRV       Croatian
-#> ..          ...            ...
+#> # A tibble: 69 × 2
+#>    LanguageCode         LanguageName
+#> *         <chr>                <chr>
+#> 1           AFR            Afrikaans
+#> 2           ARA               Arabic
+#> 3           ARC              Aramaic
+#> 4           MAP Austronesian (Other)
+#> 5           BUL            Bulgarian
+#> 6           BUR              Burmese
+#> 7           CAR                Carib
+#> 8           CAT              Catalan
+#> 9           CEL       Celtic (Other)
+#> 10          CHI              Chinese
+#> # ... with 59 more rows
 ```
 
 ## Use case for BHL data

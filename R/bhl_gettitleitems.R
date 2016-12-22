@@ -9,8 +9,8 @@
 #' bhl_gettitleitems(1726, as='list')
 #' }
 
-bhl_gettitleitems <- function(titleid, as = "table", key = NULL, ...)
-{
-  args <- bhlc(list(op = "GetTitleItems", apikey = check_key(key), format = as_f(as), titleid=titleid))
+bhl_gettitleitems <- function(titleid, as = "table", key = NULL, ...) {
+  args <- bhlc(list(op = "GetTitleItems", apikey = check_key(key),
+                    format = as_f(as), titleid = titleid))
   bhl_GET(as, args, ...)
 }

@@ -9,9 +9,8 @@
 #' bhl_getsubjecttitles('diptera', 'json')
 #' }
 
-bhl_getsubjecttitles <- function(subject = NULL, as = "table", key = NULL, ...)
-{
-  args <- bhlc(list(op = "GetSubjectTitles", apikey = check_key(key), format = as_f(as),
-                       subject = subject))
+bhl_getsubjecttitles <- function(subject = NULL, as = "table", key = NULL, ...) {
+  args <- bhlc(list(op = "GetSubjectTitles", apikey = check_key(key),
+                    format = as_f(as), subject = subject))
   bhl_GET(as, args, ...)
 }

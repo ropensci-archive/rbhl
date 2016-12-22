@@ -7,10 +7,6 @@ man-roxygen
 CONTRIBUTING.md
 README.html
 Makefile
-inst/vign/
-vignettes/rbhl_vignette.md
-vignettes/margins.sty
-vignettes/cache/
 ^appveyor\.yml$
 README.Rmd
 NEWS.md

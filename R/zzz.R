@@ -1,25 +1,3 @@
-query2message <- function(url, x) {
-  mylist <- list()
-  for (i in 1:length(x)) {
-    mylist[i] <- paste(names(x[i]), '=', x[i][[1]], sep = '')
-  }
-  paste('API call:\n', paste(url, "?", paste(mylist, collapse = "&"), sep = ''))
-}
-
-return_results <- function(x, y, z) {
-  if (y == 'raw') {
-    return( x )
-  } else if (y == 'list') {
-    return( jsonlite::fromJSON(I(x)) )
-  } else {
-    if (z == "json") {
-      return(jsonlite::fromJSON(I(x)))
-    } else {
-      return(XML::xmlTreeParse(I(x)))
-    }
-  }
-}
-
 check_key <- function(x) {
   tmp <- if (is.null(x)) Sys.getenv("BHL_KEY", "") else x
   if (tmp == "") getOption("bhl_key", stop("need an API key for BHL")) else tmp
@@ -29,7 +7,7 @@ bhl_GET <- function(as, args, ...){
   out <- GET(bhl_url(), query = args, ...)
   stop_for_status(out)
   res <- switch(as,
-         xml = xmlSize(xpathSApply(xmlParse(content_utf8(out)), "//Result")[[1]]),
+         xml = length(xml_children(xml_find_all(read_xml(content_utf8(out)), "//Result"))),
          json = length(jsonlite::fromJSON(content_utf8(out))$Result),
          list = length(jsonlite::fromJSON(content_utf8(out))$Result),
          table = length(jsonlite::fromJSON(content_utf8(out))$Result))
@@ -52,7 +30,6 @@ todf <- function(x){
     } else {
       do.call(rbind.fill, lapply(bhlc(temp), data.frame))
     }
-    #structure(list(data = tmp), class = "bhldf")
     tibble::as_data_frame(tmp)
   }
 }
