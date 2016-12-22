@@ -33,7 +33,6 @@ service, but slow for now.
 \dontrun{
 bhl_namecount(startdate = '12/25/2009', enddate = '12/27/2009')
 bhl_namecount(startdate = '10/15/2009', enddate = '10/17/2009', as='json')
-bhl_namecount(startdate = '10/15/2009', enddate = '10/17/2009', as='xml')
 }
 }
 

@@ -25,7 +25,6 @@ Return a citation for a title, using the BibTeX format.
 \examples{
 \dontrun{
 bhl_gettitlebibTex(1726)
-bhl_gettitlebibTex(1726, 'xml')
 bhl_gettitlebibTex(1726, 'json')
 }
 }

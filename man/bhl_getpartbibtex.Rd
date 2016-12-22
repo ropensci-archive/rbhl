@@ -25,7 +25,6 @@ Return a citation for a part, using the BibTeX format.
 \examples{
 \dontrun{
 bhl_getpartbibtex(1000)
-bhl_getpartbibtex(1000, 'xml')
 bhl_getpartbibtex(1000, 'json')
 }
 }

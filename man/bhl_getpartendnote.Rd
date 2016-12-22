@@ -25,7 +25,6 @@ Return a citation for a part, using the EndNote format.
 \examples{
 \dontrun{
 bhl_getpartendnote(1000)
-bhl_getpartendnote(1000, as='xml')
 bhl_getpartendnote(1000, as='json')
 }
 }

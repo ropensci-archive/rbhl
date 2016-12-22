@@ -26,7 +26,6 @@ Return the OCR-generated text of a page.
 \dontrun{
 bhl_getpageocrtext(page=1328690)
 bhl_getpageocrtext(1328690, 'json')
-bhl_getpageocrtext(1328690, 'xml')
 }
 }
 
