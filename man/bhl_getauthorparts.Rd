@@ -33,4 +33,3 @@ Note: haven't seen examples for this function that work yet...
 # bhl_getauthorparts(39120, as='list')
 }
 }
-

@@ -33,4 +33,3 @@ bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', as='json')
 bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', as='xml')
 }
 }
-

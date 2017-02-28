@@ -35,4 +35,3 @@ bhl_getpagemetadata(page=1328690, ocr=TRUE, as='xml')
 bhl_getpagemetadata(page=1328690, ocr=TRUE, as='list')
 }
 }
-

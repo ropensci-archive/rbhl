@@ -28,4 +28,3 @@ bhl_getpageocrtext(page=1328690)
 bhl_getpageocrtext(1328690, 'json')
 }
 }
-

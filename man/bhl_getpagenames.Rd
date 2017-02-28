@@ -29,4 +29,3 @@ bhl_getpagenames('1328690', 'json')
 bhl_getpagenames('1328690', 'list')
 }
 }
-

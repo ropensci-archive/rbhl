@@ -29,4 +29,3 @@ bhl_gettitleitems(1726, as='xml')
 bhl_gettitleitems(1726, as='list')
 }
 }
-

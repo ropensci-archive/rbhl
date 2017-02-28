@@ -6,7 +6,7 @@ Description: Interface to 'Biodiversity' 'Heritage' Library ('BHL')
     repository of 'digitized' literature on 'biodiversity'
     studies, including 'floras', research papers, and more.
 Type: Package
-Version: 0.3.0.9000
+Version: 0.3.2.9100
 License: MIT + file LICENSE
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com"))
@@ -25,4 +25,4 @@ Suggests:
     testthat,
     knitr,
     covr
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1

@@ -28,4 +28,3 @@ bhl_getpartbibtex(1000)
 bhl_getpartbibtex(1000, 'json')
 }
 }
-

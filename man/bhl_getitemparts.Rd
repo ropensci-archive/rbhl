@@ -29,4 +29,3 @@ bhl_getitemparts(35600, 'json')
 bhl_getitemparts(35600, 'xml')
 }
 }
-

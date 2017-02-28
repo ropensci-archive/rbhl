@@ -27,4 +27,3 @@ bhl_getunpublisheditems('xml')
 bhl_getunpublisheditems('json')
 }
 }
-

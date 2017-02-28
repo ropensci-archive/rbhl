@@ -8,4 +8,3 @@
 Data.frame of all the BHL API methods from the BHL website.
 }
 \keyword{datasets}
-

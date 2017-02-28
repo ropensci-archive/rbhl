@@ -55,4 +55,3 @@ bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
    aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16, as='xml')
 }
 }
-

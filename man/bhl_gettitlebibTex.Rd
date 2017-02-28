@@ -28,4 +28,3 @@ bhl_gettitlebibTex(1726)
 bhl_gettitlebibTex(1726, 'json')
 }
 }
-

@@ -30,4 +30,3 @@ holders, and scanning institutions.
 bhl_getinstitutions()
 }
 }
-

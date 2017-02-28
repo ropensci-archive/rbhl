@@ -28,4 +28,3 @@ bhl_getlanguages('xml')
 bhl_getlanguages('list')
 }
 }
-

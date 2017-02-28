@@ -25,4 +25,3 @@ books <- bhl_booksearch(title='Selborne', lname='White', volume=2,
 getpages(itemid = 16800)
 }
 }
-

@@ -27,4 +27,3 @@ bhl_getunpublishedtitles('json')
 bhl_getunpublishedtitles('xml')
 }
 }
-

@@ -32,4 +32,3 @@ bhl_getauthortitles(1970, as='xml')
 bhl_getauthortitles(1970, as='list')
 }
 }
-

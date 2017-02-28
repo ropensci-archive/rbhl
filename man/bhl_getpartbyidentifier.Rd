@@ -33,4 +33,3 @@ bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', as='xml')
 bhl_getpartbyidentifier('doi', '10.4039/Ent38406-12', as='list')
 }
 }
-

@@ -32,4 +32,3 @@ bhl_gettitlebyidentifier('oclc', 2992225, 'json')
 bhl_gettitlebyidentifier('oclc', 2992225, 'xml')
 }
 }
-

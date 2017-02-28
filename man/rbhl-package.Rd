@@ -2,8 +2,8 @@
 % Please edit documentation in R/rbhl-package.R
 \docType{package}
 \name{rbhl-package}
-\alias{rbhl}
 \alias{rbhl-package}
+\alias{rbhl}
 \title{R interface to the Biodiversity Heritage Library API.}
 \description{
 R interface to the Biodiversity Heritage Library API.
@@ -20,4 +20,3 @@ it every time you run a search.
 Scott Chamberlain \email{myrmecocystus@gmail.com}
 }
 \keyword{package}
-

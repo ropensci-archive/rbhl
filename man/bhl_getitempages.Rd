@@ -34,4 +34,3 @@ bhl_getitempages('16800', as='xml')
 bhl_getitempages('16800', TRUE)
 }
 }
-

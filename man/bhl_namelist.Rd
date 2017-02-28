@@ -38,4 +38,3 @@ bhl_namelist(startrow=1, batchsize=5, startdate='10/15/2009', enddate='10/31/200
    as='json')
 }
 }
-

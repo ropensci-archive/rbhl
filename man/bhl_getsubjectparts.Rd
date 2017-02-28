@@ -29,4 +29,3 @@ bhl_getsubjectparts('diptera', 'xml')
 bhl_getsubjectparts('diptera', 'json')
 }
 }
-

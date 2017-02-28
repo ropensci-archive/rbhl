@@ -30,4 +30,3 @@ bhl_subjectsearch('diptera')
 bhl_subjectsearch('diptera', "json")
 }
 }
-

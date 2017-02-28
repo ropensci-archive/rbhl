@@ -31,4 +31,3 @@ bhl_authorsearch(name='dimmock')
 bhl_authorsearch(name='Jones')
 }
 }
-

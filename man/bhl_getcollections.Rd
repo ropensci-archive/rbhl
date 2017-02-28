@@ -30,4 +30,3 @@ bhl_getcollections(as = 'json')
 bhl_getcollections(as = 'xml')
 }
 }
-
