@@ -149,7 +149,7 @@ bhl_titlesearchsimple('husbandry')
 ```
 
 ```
-#> # A tibble: 153 × 22
+#> # A tibble: 154 × 22
 #>    TitleID BibliographicLevel
 #> *    <int>              <chr>
 #> 1    25997     Monograph/Item
@@ -162,7 +162,7 @@ bhl_titlesearchsimple('husbandry')
 #> 8    58205     Monograph/Item
 #> 9    51946     Monograph/Item
 #> 10   55665     Monograph/Item
-#> # ... with 143 more rows, and 20 more variables: FullTitle <chr>,
+#> # ... with 144 more rows, and 20 more variables: FullTitle <chr>,
 #> #   ShortTitle <chr>, SortTitle <chr>, PartNumber <chr>, PartName <chr>,
 #> #   CallNumber <lgl>, Edition <chr>, PublisherPlace <chr>,
 #> #   PublisherName <chr>, PublicationDate <chr>,
