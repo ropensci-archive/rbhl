@@ -7,6 +7,8 @@
 #' this package will be able to use your API key without you having to enter
 #' it every time you run a search.
 #'
+#' See [rbhl-defunct] for defunct functions.
+#'
 #' @importFrom xml2 xml_find_all read_xml xml_children
 #' @name rbhl-package
 #' @aliases rbhl
@@ -21,4 +23,16 @@ NULL
 #' @name rbhlmethods
 #' @docType data
 #' @keywords datasets
+NULL
+
+#' Defunct functions in rbhl
+#'
+#' These functions are gone, no longer available.
+#'
+#' \itemize{
+#'  \item `bhl_getpartendnote()`: BHL removed this API method.
+#'  \item `bhl_gettitleendnote()`: BHL removed this API method.
+#' }
+#'
+#' @name rbhl-defunct
 NULL

@@ -15,6 +15,8 @@ Put your API key in your .Rprofile file using e.g.,
 \code{options(BioHerLibKey = "YOURBHLAPIKEY")}, and the functions within
 this package will be able to use your API key without you having to enter
 it every time you run a search.
+
+See \link{rbhl-defunct} for defunct functions.
 }
 \author{
 Scott Chamberlain \email{myrmecocystus@gmail.com}

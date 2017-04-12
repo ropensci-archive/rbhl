@@ -5,7 +5,9 @@ rbhl 0.8.0
 
 * moved to markdown docs and tidied docs to 80 line width (#22)
 * replaced `httr` with `crul` for http client (#21)
-
+* added many more tests (#2)
+* `bhl_getpartendnote()` and `bhl_gettitleendnote` methods removed
+due to their removal in the BHL API
 
 rbhl 0.3.0
 ===============

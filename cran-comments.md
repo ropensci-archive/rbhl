@@ -21,7 +21,8 @@ There are no reverse dependencies.
 
 ---
 
-This version xxxx
+This version changes out a dependency, moves package to 
+Markdown documentation, and makes a few functions defunct.
 
 Thanks!
 Scott Chamberlain
