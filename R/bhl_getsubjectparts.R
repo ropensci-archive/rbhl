@@ -11,9 +11,9 @@
 #' bhl_getsubjectparts('diptera', 'json')
 #' }
 
-bhl_getsubjectparts <- function(subject = NULL, as = "table", key = NULL, ...)
-{
-  args <- bhlc(list(op = "GetSubjectParts", apikey = check_key(key), format = as_f(as),
-                       subject = subject))
+bhl_getsubjectparts <- function(subject = NULL, as = "table", key = NULL, ...){
+
+  args <- bhlc(list(op = "GetSubjectParts", apikey = check_key(key),
+                    format = as_f(as), subject = subject))
   bhl_GET(as, args, ...)
 }

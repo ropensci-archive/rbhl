@@ -25,15 +25,16 @@ bhl_openurl(genre = NULL, title = NULL, aufirst = NULL, aulast = NULL,
 
 \item{version}{One of 0.1 or 1.0}
 
-\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"), or parsed table
-("table", default). Note that \code{as="table"} can give different data format back
-depending on the function - for example, sometimes a data.frame and sometimes a
-character vector.}
+\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"),
+or parsed table ("table", default). Note that \code{as="table"} can give
+different data format back depending on the function - for example,
+sometimes a data.frame and sometimes a character vector.}
 
-\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron}
+as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul:HttpClient]{crul::HttpClient()}}}
 }
 \description{
 Not sure how this differs from their other API...
@@ -52,6 +53,7 @@ bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
    aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16)
 
 bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
-   aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16, as='xml')
+   aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16,
+   as='xml')
 }
 }

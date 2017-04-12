@@ -23,12 +23,13 @@
 #'    aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16)
 #'
 #' bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
-#'    aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16, as='xml')
+#'    aufirst="Samuel Wendell", aulast="Williston", date=1908, spage=16,
+#'    as='xml')
 #' }
 
-bhl_openurl <- function(genre = NULL, title = NULL, aufirst = NULL, aulast = NULL,
-	date = NULL, spage = NULL, issue = NULL, version = 0.1, as = "list",
-  key = NULL, ...) {
+bhl_openurl <- function(genre = NULL, title = NULL, aufirst = NULL,
+  aulast = NULL, date = NULL, spage = NULL, issue = NULL, version = 0.1,
+  as = "list", key = NULL, ...) {
 
   if (version == "1.0") {
     url_ver <- "z39.88-2004"

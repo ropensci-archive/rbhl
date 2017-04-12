@@ -9,20 +9,21 @@ bhl_getauthortitles(creatorid, as = "table", key = NULL, ...)
 \arguments{
 \item{creatorid}{BHL identifier for a particular author (numeric)}
 
-\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"), or parsed table
-("table", default). Note that \code{as="table"} can give different data format back
-depending on the function - for example, sometimes a data.frame and sometimes a
-character vector.}
+\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"),
+or parsed table ("table", default). Note that \code{as="table"} can give
+different data format back depending on the function - for example,
+sometimes a data.frame and sometimes a character vector.}
 
-\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron}
+as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul:HttpClient]{crul::HttpClient()}}}
 }
 \description{
 Unless the identifier  for a particular BHL author record is known in
-   advance, this method should be used in combination	with the AuthorSearch
-   method.
+advance, this method should be used in combination	with the AuthorSearch
+method.
 }
 \examples{
 \dontrun{

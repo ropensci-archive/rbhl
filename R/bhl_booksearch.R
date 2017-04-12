@@ -18,11 +18,11 @@
 #' @param language language to search for (character)
 #' @inheritParams bhl_getcollections
 #'
-#' @note Use \code{\link{bhl_getcollections}} or \code{\link{bhl_getlanguages}} to get
-#' acceptable terms
+#' @note Use [bhl_getcollections()] or [bhl_getlanguages()]
+#' to get acceptable terms
 #' @examples \dontrun{
-#' bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825,
-#'    collectionid=4, language='eng')
+#' bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new',
+#'    year=1825, collectionid=4, language='eng')
 #' bhl_booksearch(title='evolution', year=2000, as='json')
 #' bhl_booksearch('evolution', year=2000, as='xml')
 #' bhl_booksearch('evolution', year=2000, as="list")
@@ -31,9 +31,10 @@ bhl_booksearch <- function(title = NULL, lname = NULL, volume = NULL,
   edition = NULL, year = NULL, collectionid = NULL, language = NULL,
   as='table', key = NULL, ...) {
 
-  args <- bhlc(list(op = "BookSearch", apikey = check_key(key), format = as_f(as),
-                       title=title, lname=lname, volume=volume,
-                       edition=edition, year=year, collectionid=collectionid,
-                       language=language))
+  args <- bhlc(list(op = "BookSearch", apikey = check_key(key),
+                    format = as_f(as),
+                    title=title, lname=lname, volume=volume,
+                    edition=edition, year=year, collectionid=collectionid,
+                    language=language))
   bhl_GET(as, args, ...)
 }

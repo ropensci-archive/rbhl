@@ -12,22 +12,23 @@ bhl_namecount(startdate = NULL, enddate = NULL, as = "table",
 
 \item{enddate}{end date of range between which to count names (optional)}
 
-\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"), or parsed table
-("table", default). Note that \code{as="table"} can give different data format back
-depending on the function - for example, sometimes a data.frame and sometimes a
-character vector.}
+\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"),
+or parsed table ("table", default). Note that \code{as="table"} can give
+different data format back depending on the function - for example,
+sometimes a data.frame and sometimes a character vector.}
 
-\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron}
+as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul:HttpClient]{crul::HttpClient()}}}
 }
 \description{
 Names both with and without NameBank identifiers are counted.
 }
 \details{
-BEWARE: this API call can take a long time. They are likely working on speeding up the
-service, but slow for now.
+BEWARE: this API call can take a long time. They are likely working on
+speeding up the service, but slow for now.
 }
 \examples{
 \dontrun{

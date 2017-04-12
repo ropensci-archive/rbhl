@@ -12,23 +12,24 @@ bhl_getitemmetadata(itemid = NULL, pages = TRUE, ocr = FALSE,
 
 \item{pages}{return the items pages (\code{TRUE}/\code{FALSE})}
 
-\item{ocr}{(logical) \code{TRUE} to return the ocr for the item's pages. Setting this
-to \code{TRUE} apparently doesn't return any actual ocr text, but leaving parameter
-here for now.}
+\item{ocr}{(logical) \code{TRUE} to return the ocr for the item's pages.
+Setting this to \code{TRUE} apparently doesn't return any actual ocr text,
+but leaving parameter here for now.}
 
 \item{parts}{(logical) \code{TRUE} to return the item's parts. Setting this
-to \code{TRUE} apparently doesn't return any parts text, but leaving parameter
-here for now.}
+to \code{TRUE} apparently doesn't return any parts text, but leaving
+parameter here for now.}
 
-\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"), or parsed table
-("table", default). Note that \code{as="table"} can give different data format back
-depending on the function - for example, sometimes a data.frame and sometimes a
-character vector.}
+\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"),
+or parsed table ("table", default). Note that \code{as="table"} can give
+different data format back depending on the function - for example,
+sometimes a data.frame and sometimes a character vector.}
 
-\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron}
+as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul:HttpClient]{crul::HttpClient()}}}
 }
 \description{
 You may choose to include a list of the item's pages.

@@ -13,7 +13,7 @@ getpages(itemid, key = NULL, ...)
 \code{.Renviron} as \code{BHL_KEY} or from \code{.Rprofile} as
 \code{bhl_key}}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul:HttpClient]{crul::HttpClient()}}}
 }
 \description{
 Get many OCR-generated pages given a single item id

@@ -7,7 +7,8 @@ bhl_GET <- function(as, args, ...){
   out <- GET(bhl_url(), query = args, ...)
   stop_for_status(out)
   res <- switch(as,
-         xml = length(xml_children(xml_find_all(read_xml(content_utf8(out)), "//Result"))),
+         xml = length(xml_children(xml_find_all(read_xml(content_utf8(out)),
+                                                "//Result"))),
          json = length(jsonlite::fromJSON(content_utf8(out))$Result),
          list = length(jsonlite::fromJSON(content_utf8(out))$Result),
          table = length(jsonlite::fromJSON(content_utf8(out))$Result))

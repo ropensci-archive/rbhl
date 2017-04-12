@@ -7,9 +7,8 @@
 #' bhl_getunpublishedtitles('json')
 #' bhl_getunpublishedtitles('xml')
 #' }
-
-bhl_getunpublishedtitles <- function(as = "table", key = NULL, ...)
-{
-  args <- bhlc(list(op = "GetUnpublishedTitles", apikey = check_key(key), format = as_f(as)))
+bhl_getunpublishedtitles <- function(as = "table", key = NULL, ...) {
+  args <- bhlc(list(op = "GetUnpublishedTitles", apikey = check_key(key),
+                    format = as_f(as)))
   bhl_GET(as, args, ...)
 }

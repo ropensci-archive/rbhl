@@ -12,29 +12,33 @@ bhl_namelist(startrow = NULL, batchsize = NULL, startdate = NULL,
 
 \item{batchsize}{number of names to return (numeric)}
 
-\item{startdate}{(optional) start date of range between which to count names (date)}
+\item{startdate}{(optional) start date of range between which to count
+names (date)}
 
-\item{enddate}{(optional) end date of range between which to count names (date)}
+\item{enddate}{(optional) end date of range between which to count
+names (date)}
 
-\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"), or parsed table
-("table", default). Note that \code{as="table"} can give different data format back
-depending on the function - for example, sometimes a data.frame and sometimes a
-character vector.}
+\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"),
+or parsed table ("table", default). Note that \code{as="table"} can give
+different data format back depending on the function - for example,
+sometimes a data.frame and sometimes a character vector.}
 
-\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron}
+as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul:HttpClient]{crul::HttpClient()}}}
 }
 \description{
 By using the startrow and batchsize parameters appropriately, you can
-   pull the list all at once, or in batches (i.e. 1000 names at a time).
-   Names both with and without NameBank identifiers are returned.
+pull the list all at once, or in batches (i.e. 1000 names at a time).
+Names both with and without NameBank identifiers are returned.
 }
 \examples{
 \dontrun{
-bhl_namelist(startrow=1, batchsize=99, startdate='10/15/2009', enddate='10/16/2009')
-bhl_namelist(startrow=1, batchsize=5, startdate='10/15/2009', enddate='10/31/2009',
-   as='json')
+bhl_namelist(startrow=1, batchsize=99, startdate='10/15/2009',
+  enddate='10/16/2009')
+bhl_namelist(startrow=1, batchsize=5, startdate='10/15/2009',
+  enddate='10/31/2009', as='json')
 }
 }

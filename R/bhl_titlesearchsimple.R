@@ -12,8 +12,8 @@
 #' bhl_titlesearchsimple('nematocerous')
 #' bhl_titlesearchsimple('husbandry')
 #' }
-bhl_titlesearchsimple <- function(title = NA, as = "table", key = NULL, ...)
-{
-  args <- bhlc(list(op = "TitleSearchSimple", apikey = check_key(key), format = as_f(as), title=title))
+bhl_titlesearchsimple <- function(title = NA, as = "table", key = NULL, ...) {
+  args <- bhlc(list(op = "TitleSearchSimple", apikey = check_key(key),
+                    format = as_f(as), title = title))
   bhl_GET(as, args, ...)
 }

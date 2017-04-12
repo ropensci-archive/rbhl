@@ -9,9 +9,8 @@
 #' bhl_subjectsearch('diptera')
 #' bhl_subjectsearch('diptera', "json")
 #' }
-bhl_subjectsearch <- function(subject, as = "table", key = NULL, ...)
-{
-  args <- bhlc(list(op = "SubjectSearch", apikey = check_key(key), format = as_f(as),
-                       subject = subject))
+bhl_subjectsearch <- function(subject, as = "table", key = NULL, ...) {
+  args <- bhlc(list(op = "SubjectSearch", apikey = check_key(key),
+                    format = as_f(as), subject = subject))
   bhl_GET(as, args, ...)
 }

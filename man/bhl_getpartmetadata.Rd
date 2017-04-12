@@ -7,12 +7,14 @@
 bhl_getpartmetadata(partid, key = NULL, ...)
 }
 \arguments{
-\item{partid}{The identifier of an individual part (article, chapter, etc) (numeric)}
+\item{partid}{The identifier of an individual part (article, chapter, etc)
+(numeric)}
 
-\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron}
+as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul:HttpClient]{crul::HttpClient()}}}
 }
 \description{
 Return a list of an item's pages.

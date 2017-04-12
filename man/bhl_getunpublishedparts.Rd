@@ -2,23 +2,26 @@
 % Please edit documentation in R/bhl_getunpublishedparts.R
 \name{bhl_getunpublishedparts}
 \alias{bhl_getunpublishedparts}
-\title{Return a list of the identifiers of all unpublished parts (articles, chapters, etc).}
+\title{Return a list of the identifiers of all unpublished parts
+(articles, chapters, etc).}
 \usage{
 bhl_getunpublishedparts(as = "table", key = NULL, ...)
 }
 \arguments{
-\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"), or parsed table
-("table", default). Note that \code{as="table"} can give different data format back
-depending on the function - for example, sometimes a data.frame and sometimes a
-character vector.}
+\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"),
+or parsed table ("table", default). Note that \code{as="table"} can give
+different data format back depending on the function - for example,
+sometimes a data.frame and sometimes a character vector.}
 
-\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron}
+as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul:HttpClient]{crul::HttpClient()}}}
 }
 \description{
-Return a list of the identifiers of all unpublished parts (articles, chapters, etc).
+Return a list of the identifiers of all unpublished parts
+(articles, chapters, etc).
 }
 \examples{
 \dontrun{

@@ -2,28 +2,32 @@
 % Please edit documentation in R/bhl_gettitlebyidentifier.R
 \name{bhl_gettitlebyidentifier}
 \alias{bhl_gettitlebyidentifier}
-\title{Find and return metadata about a title or titles that match a specific identifier.}
+\title{Find and return metadata about a title or titles that match a specific
+identifier.}
 \usage{
 bhl_gettitlebyidentifier(type = NULL, value = NULL, as = "table",
   key = NULL, ...)
 }
 \arguments{
-\item{type}{the type of identifier (oclc, issn, isbn, lccn, ddc, nal, nlm, coden) character}
+\item{type}{the type of identifier (oclc, issn, isbn, lccn, ddc, nal, nlm,
+coden) character}
 
 \item{value}{the identifier value (numeric)}
 
-\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"), or parsed table
-("table", default). Note that \code{as="table"} can give different data format back
-depending on the function - for example, sometimes a data.frame and sometimes a
-character vector.}
+\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"),
+or parsed table ("table", default). Note that \code{as="table"} can give
+different data format back depending on the function - for example,
+sometimes a data.frame and sometimes a character vector.}
 
-\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron}
+as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul:HttpClient]{crul::HttpClient()}}}
 }
 \description{
-Find and return metadata about a title or titles that match a specific identifier.
+Find and return metadata about a title or titles that match a specific
+identifier.
 }
 \examples{
 \dontrun{

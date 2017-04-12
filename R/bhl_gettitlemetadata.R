@@ -13,9 +13,11 @@
 #' bhl_gettitlemetadata(1726, as='xml')
 #' }
 
-bhl_gettitlemetadata <- function(titleid = NA, items = FALSE, as = "list", key = NULL, ...) {
+bhl_gettitlemetadata <- function(titleid = NA, items = FALSE, as = "list",
+                                 key = NULL, ...) {
+
   as <- match.arg(as, c("list","json","xml"))
-  args <- bhlc(list(op = "GetTitleMetadata", apikey = check_key(key), format = as_f(as),
-                       titleid = titleid, items = items))
+  args <- bhlc(list(op = "GetTitleMetadata", apikey = check_key(key),
+                    format = as_f(as), titleid = titleid, items = items))
   bhl_GET(as, args, ...)
 }

@@ -14,6 +14,7 @@
 #' }
 
 bhl_authorsearch <- function(name = NULL, as='table', key = NULL, ...) {
-  args <- bhlc(list(op = "AuthorSearch", name = name, apikey = check_key(key), format = as_f(as)))
+  args <- bhlc(list(op = "AuthorSearch", name = name,
+                    apikey = check_key(key), format = as_f(as)))
   bhl_GET(as, args, ...)
 }

@@ -9,8 +9,9 @@
 #' bhl_getpagenames('1328690', 'list')
 #' }
 
-bhl_getpagenames <- function(page = NULL, as = 'table', key = NULL, ...)
-{
-  args <- bhlc(list(op = "GetPageNames", apikey=check_key(key), format=as_f(as), pageid=page))
+bhl_getpagenames <- function(page = NULL, as = 'table', key = NULL, ...) {
+
+  args <- bhlc(list(op = "GetPageNames", apikey = check_key(key),
+                    format = as_f(as), pageid = page))
   bhl_GET(as, args, ...)
 }

@@ -25,29 +25,32 @@ bhl_partsearch(title = NULL, containerTitle = NULL, author = NULL,
 
 \item{issue}{Issue of the work}
 
-\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"), or parsed table
-("table", default). Note that \code{as="table"} can give different data format back
-depending on the function - for example, sometimes a data.frame and sometimes a
-character vector.}
+\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"),
+or parsed table ("table", default). Note that \code{as="table"} can give
+different data format back depending on the function - for example,
+sometimes a data.frame and sometimes a character vector.}
 
-\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron}
+as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul:HttpClient]{crul::HttpClient()}}}
 }
 \description{
 To execute a search, you must supply at least a title or author.
 }
 \details{
-The metadata returned by this method includes Part Identifier, Part URL, Item ID,
-Page ID for the start page, Genre, Title, Container Title, Publication Details,
-Volume, Series, Issue, Date, Page Range, Language, rights information, authors,
-keywords, identifiers, pages, and related parts. For more information, see the
-"Data Elements" section of this documentation.
+The metadata returned by this method includes Part Identifier, Part URL,
+Item ID, Page ID for the start page, Genre, Title, Container Title,
+Publication Details, Volume, Series, Issue, Date, Page Range, Language,
+rights information, authors, keywords, identifiers, pages, and related
+parts. For more information, see the "Data Elements" section of this
+documentation.
 }
 \examples{
 \dontrun{
-bhl_partsearch(title='Critical approach to the definition of Darwinian units')
+bhl_partsearch(title='Critical approach to the definition of
+  Darwinian units')
 bhl_partsearch(author='Charles Darwin')
 }
 }

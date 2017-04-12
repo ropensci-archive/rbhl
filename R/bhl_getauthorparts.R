@@ -17,7 +17,7 @@
 #' }
 bhl_getauthorparts <- function(creatorid, as='table', key = NULL, ...) {
 
-  args <- bhlc(list(op = "GetAuthorParts", apikey = check_key(key), format = as_f(as),
-                       creatorid = creatorid))
+  args <- bhlc(list(op = "GetAuthorParts", apikey = check_key(key),
+                    format = as_f(as), creatorid = creatorid))
   bhl_GET(as, args, ...)
 }

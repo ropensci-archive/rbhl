@@ -1,7 +1,8 @@
 #' Return a citation for a part, using the BibTeX format.
 #'
 #' @export
-#' @param partid The identifier of an individual part (article, chapter, etc) (numeric)
+#' @param partid The identifier of an individual part (article, chapter, etc)
+#' (numeric)
 #' @inheritParams bhl_getcollections
 #' @examples \dontrun{
 #' bhl_getpartbibtex(1000)

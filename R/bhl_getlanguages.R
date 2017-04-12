@@ -8,8 +8,8 @@
 #' bhl_getlanguages('xml')
 #' bhl_getlanguages('list')
 #' }
-bhl_getlanguages <- function(as = "table", key = NULL, ...)
-{
-  args <- bhlc(list(op = "GetLanguages", apikey = check_key(key), format = as_f(as)))
+bhl_getlanguages <- function(as = "table", key = NULL, ...) {
+  args <- bhlc(list(op = "GetLanguages", apikey = check_key(key),
+                    format = as_f(as)))
   bhl_GET(as, args, ...)
 }

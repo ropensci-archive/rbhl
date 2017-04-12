@@ -2,7 +2,8 @@
 % Please edit documentation in R/bhl_getitembyidentifier.R
 \name{bhl_getitembyidentifier}
 \alias{bhl_getitembyidentifier}
-\title{Find and return metadata about an item or items that match a specific identifier.}
+\title{Find and return metadata about an item or items that match a specific
+identifier.}
 \usage{
 bhl_getitembyidentifier(type = NULL, value = NULL, as = "table",
   key = NULL, ...)
@@ -12,24 +13,27 @@ bhl_getitembyidentifier(type = NULL, value = NULL, as = "table",
 
 \item{value}{the identifier value (character)}
 
-\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"), or parsed table
-("table", default). Note that \code{as="table"} can give different data format back
-depending on the function - for example, sometimes a data.frame and sometimes a
-character vector.}
+\item{as}{(character) Return a list ("list"), json ("json"), xml ("xml"),
+or parsed table ("table", default). Note that \code{as="table"} can give
+different data format back depending on the function - for example,
+sometimes a data.frame and sometimes a character vector.}
 
-\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron} as \code{BHL_KEY}
+\item{key}{Your BHL API key, either enter, or loads from your \code{.Renviron}
+as \code{BHL_KEY}
 or from \code{.Rprofile} as \code{bhl_key}.}
 
-\item{...}{Curl options passed on to \code{\link[httr]{GET}}}
+\item{...}{Curl options passed on to \code{\link[crul:HttpClient]{crul::HttpClient()}}}
 }
 \description{
 If you know the Internet Archive identifier for an item, use this method to
-   look up the equivalent item in BHL.
+look up the equivalent item in BHL.
 }
 \examples{
 \dontrun{
 bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi')
-bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', as='json')
-bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi', as='xml')
+bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi',
+  as='json')
+bhl_getitembyidentifier(type='ia', value='animalkingdomarr03cuvi',
+  as='xml')
 }
 }
