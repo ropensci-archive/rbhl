@@ -7,9 +7,6 @@
 #' this package will be able to use your API key without you having to enter
 #' it every time you run a search.
 #'
-#' @importFrom httr GET content stop_for_status
-#' @importFrom jsonlite fromJSON
-#' @importFrom plyr rbind.fill
 #' @importFrom xml2 xml_find_all read_xml xml_children
 #' @name rbhl-package
 #' @aliases rbhl
