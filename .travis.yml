@@ -2,7 +2,7 @@ language: r
 sudo: false
 cache: packages
 
-r_check_args: "--as-cran --run-dontrun"
+r_check_args: "--as-cran"
 
 r_github_packages:
   - jimhester/covr
