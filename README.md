@@ -1,6 +1,8 @@
 rbhl
 ====
 
+
+
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![Build Status](https://api.travis-ci.org/ropensci/rbhl.png)](https://travis-ci.org/ropensci/rbhl)
 [![Build status](https://ci.appveyor.com/api/projects/status/ej5u9mdirg1yyteg/branch/master)](https://ci.appveyor.com/project/sckott/rbhl/branch/master)
@@ -15,7 +17,7 @@ rbhl
 Authentication:
 
 * Get your Biodiversity Heritage Library API key [here](http://www.biodiversitylibrary.org/getapikey.aspx)
-* Put your API in your .Rprofile file using e.g., `options(BioHerLibKey = "YOURBHLAPIKEY")`, and the functions within this package will be able to use your API key without you having to enter it every time you run a search.
+* Put your API key either in your .Renviron file (or similar) with the name `BHL_KEY`, or your .Rprofile file with the name `bhl_key`, and we'll use your API key without you having to enter it every time you run a search.
 
 Documentation:
 
@@ -53,17 +55,17 @@ The default is usually `table`:
 
 ```r
 bhl_authorsearch(name='dimmock')
-#> # A tibble: 6 × 12
-#>   CreatorID                    Name  Role Numeration  Unit Title Location
-#> *     <int>                   <chr> <lgl>      <chr> <chr> <chr>    <chr>
-#> 1    189035 Dimmock, Anna Katherina    NA                                
-#> 2     59023              Dimmock, G    NA                                
-#> 3    189042           Dimmock, Geo     NA                                
-#> 4    189021         Dimmock, George    NA                                
-#> 5      1970        Dimmock, George,    NA                                
-#> 6      8126        Dimmock, George,    NA                                
-#> # ... with 5 more variables: FullerForm <chr>, Relationship <lgl>,
-#> #   TitleOfWork <lgl>, Dates <chr>, CreatorUrl <chr>
+#> # A tibble: 6 x 12
+#>   CreatorID Name  Role  Numeration Unit  Title Location FullerForm
+#> *     <int> <chr> <lgl> <chr>      <chr> <chr> <chr>    <chr>     
+#> 1    189035 Dimm… NA    ""         ""    ""    ""       ""        
+#> 2     59023 Dimm… NA    ""         ""    ""    ""       ""        
+#> 3    189042 "Dim… NA    ""         ""    ""    ""       ""        
+#> 4    189021 Dimm… NA    ""         ""    ""    ""       ""        
+#> 5      1970 Dimm… NA    ""         ""    ""    ""       ""        
+#> 6      8126 Dimm… NA    ""         ""    ""    ""       ""        
+#> # ... with 4 more variables: Relationship <lgl>, TitleOfWork <lgl>,
+#> #   Dates <chr>, CreatorUrl <chr>
 ```
 
 list output
@@ -105,7 +107,7 @@ bhl_authorsearch(name='dimmock', as='list')$Result[[1]]
 #> [1] ""
 #> 
 #> $CreatorUrl
-#> [1] "http://www.biodiversitylibrary.org/creator/189035"
+#> [1] "https://www.biodiversitylibrary.org/creator/189035"
 ```
 
 XML output
@@ -113,7 +115,7 @@ XML output
 
 ```r
 bhl_authorsearch(name='dimmock', as='xml')
-#> [1] "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Response xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><Status>ok</Status><Result><Creator><CreatorID>189035</CreatorID><Name>Dimmock, Anna Katherina</Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates /><CreatorUrl>http://www.biodiversitylibrary.org/creator/189035</CreatorUrl></Creator><Creator><CreatorID>59023</CreatorID><Name>Dimmock, G</Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates /><CreatorUrl>http://www.biodiversitylibrary.org/creator/59023</CreatorUrl></Creator><Creator><CreatorID>189042</CreatorID><Name>Dimmock, Geo </Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates /><CreatorUrl>http://www.biodiversitylibrary.org/creator/189042</CreatorUrl></Creator><Creator><CreatorID>189021</CreatorID><Name>Dimmock, George</Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates /><CreatorUrl>http://www.biodiversitylibrary.org/creator/189021</CreatorUrl></Creator><Creator><CreatorID>1970</CreatorID><Name>Dimmock, George,</Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates>1852-</Dates><CreatorUrl>http://www.biodiversitylibrary.org/creator/1970</CreatorUrl></Creator><Creator><CreatorID>8126</CreatorID><Name>Dimmock, George,</Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates>1852-1930</Dates><CreatorUrl>http://www.biodiversitylibrary.org/creator/8126</CreatorUrl></Creator></Result></Response>"
+#> [1] "﻿<?xml version=\"1.0\" encoding=\"utf-8\"?><Response xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><Status>ok</Status><Result><Creator><CreatorID>189035</CreatorID><Name>Dimmock, Anna Katherina</Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates /><CreatorUrl>https://www.biodiversitylibrary.org/creator/189035</CreatorUrl></Creator><Creator><CreatorID>59023</CreatorID><Name>Dimmock, G</Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates /><CreatorUrl>https://www.biodiversitylibrary.org/creator/59023</CreatorUrl></Creator><Creator><CreatorID>189042</CreatorID><Name>Dimmock, Geo </Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates /><CreatorUrl>https://www.biodiversitylibrary.org/creator/189042</CreatorUrl></Creator><Creator><CreatorID>189021</CreatorID><Name>Dimmock, George</Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates /><CreatorUrl>https://www.biodiversitylibrary.org/creator/189021</CreatorUrl></Creator><Creator><CreatorID>1970</CreatorID><Name>Dimmock, George,</Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates>1852-</Dates><CreatorUrl>https://www.biodiversitylibrary.org/creator/1970</CreatorUrl></Creator><Creator><CreatorID>8126</CreatorID><Name>Dimmock, George,</Name><Numeration /><Unit /><Title /><Location /><FullerForm /><Dates>1852-1930</Dates><CreatorUrl>https://www.biodiversitylibrary.org/creator/8126</CreatorUrl></Creator></Result></Response>"
 ```
 
 JSON output
@@ -121,7 +123,7 @@ JSON output
 
 ```r
 bhl_authorsearch(name='dimmock', as='json')
-#> [1] "{\"Status\":\"ok\",\"ErrorMessage\":null,\"Result\":[{\"CreatorID\":189035,\"Name\":\"Dimmock, Anna Katherina\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/189035\"},{\"CreatorID\":59023,\"Name\":\"Dimmock, G\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/59023\"},{\"CreatorID\":189042,\"Name\":\"Dimmock, Geo \",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/189042\"},{\"CreatorID\":189021,\"Name\":\"Dimmock, George\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/189021\"},{\"CreatorID\":1970,\"Name\":\"Dimmock, George,\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"1852-\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/1970\"},{\"CreatorID\":8126,\"Name\":\"Dimmock, George,\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"1852-1930\",\"CreatorUrl\":\"http://www.biodiversitylibrary.org/creator/8126\"}]}"
+#> [1] "{\"Status\":\"ok\",\"ErrorMessage\":null,\"Result\":[{\"CreatorID\":189035,\"Name\":\"Dimmock, Anna Katherina\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"\",\"CreatorUrl\":\"https://www.biodiversitylibrary.org/creator/189035\"},{\"CreatorID\":59023,\"Name\":\"Dimmock, G\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"\",\"CreatorUrl\":\"https://www.biodiversitylibrary.org/creator/59023\"},{\"CreatorID\":189042,\"Name\":\"Dimmock, Geo \",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"\",\"CreatorUrl\":\"https://www.biodiversitylibrary.org/creator/189042\"},{\"CreatorID\":189021,\"Name\":\"Dimmock, George\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"\",\"CreatorUrl\":\"https://www.biodiversitylibrary.org/creator/189021\"},{\"CreatorID\":1970,\"Name\":\"Dimmock, George,\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"1852-\",\"CreatorUrl\":\"https://www.biodiversitylibrary.org/creator/1970\"},{\"CreatorID\":8126,\"Name\":\"Dimmock, George,\",\"Role\":null,\"Numeration\":\"\",\"Unit\":\"\",\"Title\":\"\",\"Location\":\"\",\"FullerForm\":\"\",\"Relationship\":null,\"TitleOfWork\":null,\"Dates\":\"1852-1930\",\"CreatorUrl\":\"https://www.biodiversitylibrary.org/creator/8126\"}]}"
 ```
 
 ## Get title metadata
@@ -154,7 +156,7 @@ bhl_gettitlemetadata(titleid = 1726, items = TRUE, as="list")$Result$Items
 #> [[1]]$CopySpecificInformation
 #> NULL
 #> 
-#> [[1]]$Contributor
+#> [[1]]$HoldingInstitution
 #> [1] "MBLWHOI Library"
 #> 
 #> [[1]]$RightsHolder
@@ -188,13 +190,13 @@ bhl_gettitlemetadata(titleid = 1726, items = TRUE, as="list")$Result$Items
 #> [1] ""
 #> 
 #> [[1]]$ItemUrl
-#> [1] "http://www.biodiversitylibrary.org/item/16800"
+#> [1] "https://www.biodiversitylibrary.org/item/16800"
 #> 
 #> [[1]]$TitleUrl
-#> [1] "http://www.biodiversitylibrary.org/bibliography/1726"
+#> [1] "https://www.biodiversitylibrary.org/bibliography/1726"
 #> 
 #> [[1]]$ItemThumbUrl
-#> [1] "http://www.biodiversitylibrary.org/pagethumb/1328691"
+#> [1] "https://www.biodiversitylibrary.org/pagethumb/1328691"
 #> 
 #> [[1]]$Pages
 #> NULL
@@ -211,16 +213,16 @@ bhl_gettitlemetadata(titleid = 1726, items = TRUE, as="list")$Result$Items
 
 ```r
 bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825, collectionid=4, language='eng')
-#> # A tibble: 1 × 22
-#>   TitleID BibliographicLevel
-#> *   <int>              <chr>
-#> 1   32868                   
-#> # ... with 20 more variables: FullTitle <chr>, ShortTitle <lgl>,
-#> #   SortTitle <lgl>, PartNumber <chr>, PartName <chr>, CallNumber <lgl>,
-#> #   Edition <chr>, PublisherPlace <chr>, PublisherName <chr>,
-#> #   PublicationDate <chr>, PublicationFrequency <lgl>, Doi <lgl>,
-#> #   TitleUrl <chr>, Authors <list>, Subjects <lgl>, Identifiers <lgl>,
-#> #   Collections <lgl>, Variants <lgl>, Items <list>, Notes <lgl>
+#> # A tibble: 1 x 23
+#>   TitleID BibliographicLe… MaterialType FullTitle ShortTitle SortTitle
+#> *   <int> <chr>            <chr>        <chr>     <lgl>      <lgl>    
+#> 1   32868 ""               ""           The natu… NA         NA       
+#> # ... with 17 more variables: PartNumber <chr>, PartName <chr>,
+#> #   CallNumber <lgl>, Edition <chr>, PublisherPlace <chr>,
+#> #   PublisherName <chr>, PublicationDate <chr>,
+#> #   PublicationFrequency <lgl>, Doi <lgl>, TitleUrl <chr>, Authors <list>,
+#> #   Subjects <lgl>, Identifiers <lgl>, Collections <lgl>, Variants <lgl>,
+#> #   Items <list>, Notes <lgl>
 ```
 
 ## Search titles
@@ -228,22 +230,21 @@ bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=18
 
 ```r
 bhl_titlesearchsimple('husbandry')
-#> # A tibble: 154 × 22
-#>    TitleID BibliographicLevel
-#> *    <int>              <chr>
-#> 1    25997     Monograph/Item
-#> 2    44403     Monograph/Item
-#> 3    27062     Monograph/Item
-#> 4    41956     Monograph/Item
-#> 5    44462     Monograph/Item
-#> 6    28081     Monograph/Item
-#> 7    56265     Monograph/Item
-#> 8    58205     Monograph/Item
-#> 9    51946     Monograph/Item
-#> 10   55665     Monograph/Item
-#> # ... with 144 more rows, and 20 more variables: FullTitle <chr>,
-#> #   ShortTitle <chr>, SortTitle <chr>, PartNumber <chr>, PartName <chr>,
-#> #   CallNumber <lgl>, Edition <chr>, PublisherPlace <chr>,
+#> # A tibble: 154 x 23
+#>    TitleID BibliographicLe… MaterialType FullTitle ShortTitle SortTitle
+#>  *   <int> <chr>            <chr>        <chr>     <chr>      <chr>    
+#>  1   25997 Monograph/Item   Published m… "An acco… An accoun… account …
+#>  2   44403 Monograph/Item   Published m… An accou… An accoun… account …
+#>  3   27062 Monograph/Item   Published m… The Amer… The Ameri… American…
+#>  4   41956 Monograph/Item   Published m… The Amer… The Ameri… "America…
+#>  5   44462 Monograph/Item   Published m… The Amer… The Ameri… American…
+#>  6   28081 Monograph/Item   Published m… American… American … American…
+#>  7   56265 Monograph/Item   Published m… "Animal … Animal hu… Animal h…
+#>  8   58205 Monograph/Item   Published m… "Animal … Animal hu… Animal h…
+#>  9   51946 Monograph/Item   Published m… "Animal … Animal hu… Animal h…
+#> 10   55665 Monograph/Item   Published m… "Animal … Animal hu… Animal h…
+#> # ... with 144 more rows, and 17 more variables: PartNumber <chr>,
+#> #   PartName <chr>, CallNumber <lgl>, Edition <chr>, PublisherPlace <chr>,
 #> #   PublisherName <chr>, PublicationDate <chr>,
 #> #   PublicationFrequency <chr>, Doi <lgl>, TitleUrl <lgl>, Authors <lgl>,
 #> #   Subjects <lgl>, Identifiers <lgl>, Collections <lgl>, Variants <lgl>,
@@ -255,20 +256,20 @@ bhl_titlesearchsimple('husbandry')
 
 ```r
 bhl_getlanguages()
-#> # A tibble: 69 × 2
-#>    LanguageCode         LanguageName
-#> *         <chr>                <chr>
-#> 1           AFR            Afrikaans
-#> 2           ARA               Arabic
-#> 3           ARC              Aramaic
-#> 4           MAP Austronesian (Other)
-#> 5           BUL            Bulgarian
-#> 6           BUR              Burmese
-#> 7           CAR                Carib
-#> 8           CAT              Catalan
-#> 9           CEL       Celtic (Other)
-#> 10          CHI              Chinese
-#> # ... with 59 more rows
+#> # A tibble: 72 x 2
+#>    LanguageCode LanguageName        
+#>  * <chr>        <chr>               
+#>  1 AFR          Afrikaans           
+#>  2 ARA          Arabic              
+#>  3 ARC          Aramaic             
+#>  4 MAP          Austronesian (Other)
+#>  5 BUL          Bulgarian           
+#>  6 BUR          Burmese             
+#>  7 CAR          Carib               
+#>  8 CAT          Catalan             
+#>  9 CEL          Celtic (Other)      
+#> 10 CHI          Chinese             
+#> # ... with 62 more rows
 ```
 
 ## Meta
@@ -278,4 +279,4 @@ bhl_getlanguages()
 * Get citation information for `rbhl` in R doing `citation(package = 'rbhl')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-[![rofooter](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+[![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)

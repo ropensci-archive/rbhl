@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 Authentication:
 
 * Get your Biodiversity Heritage Library API key [here](http://www.biodiversitylibrary.org/getapikey.aspx)
-* Put your API in your .Rprofile file using e.g., `options(BioHerLibKey = "YOURBHLAPIKEY")`, and the functions within this package will be able to use your API key without you having to enter it every time you run a search.
+* Put your API key either in your .Renviron file (or similar) with the name `BHL_KEY`, or your .Rprofile file with the name `bhl_key`, and we'll use your API key without you having to enter it every time you run a search.
 
 Documentation:
 
@@ -109,4 +109,4 @@ bhl_getlanguages()
 * Get citation information for `rbhl` in R doing `citation(package = 'rbhl')`
 * Please note that this project is released with a [Contributor Code of Conduct](CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-[![rofooter](http://ropensci.org/public_images/github_footer.png)](http://ropensci.org)
+[![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)

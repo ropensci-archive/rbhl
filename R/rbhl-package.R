@@ -2,9 +2,9 @@
 #'
 #' You need an API key to use the Biodiversity Heritage Library API. Get your
 #' BHL API key at <http://www.biodiversitylibrary.org/getapikey.aspx>.
-#' Put your API key in your .Rprofile file using e.g.,
-#' `options(BioHerLibKey = "YOURBHLAPIKEY")`, and the functions within
-#' this package will be able to use your API key without you having to enter
+#' Put your API key either in your .Renviron file (or similar) with the name 
+#' `BHL_KEY`, or in your .Rprofile file with the name `bhl_key`, and the 
+#' we'll use your API key without you having to enter
 #' it every time you run a search.
 #'
 #' See [rbhl-defunct] for defunct functions.
@@ -29,10 +29,8 @@ NULL
 #'
 #' These functions are gone, no longer available.
 #'
-#' \itemize{
-#'  \item `bhl_getpartendnote()`: BHL removed this API method.
-#'  \item `bhl_gettitleendnote()`: BHL removed this API method.
-#' }
+#' - `bhl_getpartendnote()`: BHL removed this API method.
+#' - `bhl_gettitleendnote()`: BHL removed this API method.
 #'
 #' @name rbhl-defunct
 NULL
