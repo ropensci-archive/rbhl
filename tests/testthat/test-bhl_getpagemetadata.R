@@ -10,7 +10,7 @@ test_that("bhl_getpagemetadata returns the correct class", {
 
   expect_is(tt, "list")
   expect_is(tt$Result, "list")
-  expect_null(tt$ErrorMessage)
+  expect_false(nzchar(tt$ErrorMessage))
 
   expect_is(uu, "character")
 

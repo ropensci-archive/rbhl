@@ -18,7 +18,7 @@ test_that("bhl_getitembyidentifier returns the correct class", {
 
 	expect_is(vv, "list")
 	expect_is(vv$Status, "character")
-	expect_null(vv$ErrorMessage)
+	expect_false(nzchar(vv$ErrorMessage))
 
   expect_gt(NCOL(tt), 10)
   #expect_equal(length(uu), 1)
