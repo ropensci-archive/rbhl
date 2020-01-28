@@ -1,15 +1,26 @@
 language: r
-sudo: false
 cache: packages
-dist: trusty
-
-r_check_args: "--as-cran"
 
 r_binary_packages:
   - covr
 
+matrix:
+  include:
+    - r: release
+      env: R_CODECOV=true
+    - r: devel
+      env: _R_CHECK_LENGTH_1_LOGIC2_=TRUE
+
+
 after_success:
-  - Rscript -e 'covr::codecov()'
+  - if [[ "${R_CODECOV}" ]]; then R -e 'covr::codecov()'; fi
+
+env:
+   global:
+     - R_LIBS="https://cran.rstudio.com"
+     - R_BUILD_ARGS="--no-build-vignettes --no-manual"
+     - R_CHECK_ARGS="--no-build-vignettes --no-manual --as-cran"
+     - BOOTSTRAP_LATEX=""
 
 notifications:
   email:
@@ -17,8 +28,3 @@ notifications:
     on_failure: change
   slack:
     secure: mjW1sHpIhzj3mjB3w+I361LO8WXPx7NgnFBZ59geOW0oLb///1Xd8IGj7N5ljP5WQttNsLNw0uzCzqPd8fWIX52UubAzxcYv7qQKSWLCSjWD0/jViGLVzMERnSb11L/h7lbTg/w7jZd/YbMJf+nHxhOdO6NirEFV2kh+3xGbQ4Y=
-
-env:
-  global:
-  - secure: a3iWnfIDySLBQgJGtdJNtukIrdLAGQX3rO/RtWDvlkGdjYlWnrEhdkHPL7LYBenZhzjbNsY6/tBRYm/xe0UFWV7vyEBEjVt1dQ+5K0PeTjtFobkmXUFrX5ARt6CiXw3EeN5JlMc2ZFpaqxFdUWNOPIYnDO6cdmwvgFsq/AR+nTU=
-  - secure: CrcfiQ7pSS8pF8dWWhNw2ShitgBRbfkbDgHztpwMDmhDQNktba4zZeg4q2StArfFnMQu0s2PvWNPgxN0yoNTe4kD3w2IvSKhKETjikSMXfaOd7ErKG1vitTgBWnzyVvnFef4ReLKC7ux7HjGwW8zuaGfBRtNJEjB/zzSvx/q56s=
