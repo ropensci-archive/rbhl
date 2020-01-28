@@ -4,8 +4,13 @@
 \alias{bhl_getpartbyidentifier}
 \title{Return a list of the identifiers of all unpublished items.}
 \usage{
-bhl_getpartbyidentifier(type = NULL, value = NULL, as = "table",
-  key = NULL, ...)
+bhl_getpartbyidentifier(
+  type = NULL,
+  value = NULL,
+  as = "table",
+  key = NULL,
+  ...
+)
 }
 \arguments{
 \item{type}{The type of identifier (doi, oclc, issn, isbn, lccn, ddc, nal,

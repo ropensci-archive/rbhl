@@ -6,9 +6,18 @@
 Search criteria includes title, container (journal or book title), author,
 date of publication, volume, series, and issue.}
 \usage{
-bhl_partsearch(title = NULL, containerTitle = NULL, author = NULL,
-  date = NULL, volume = NULL, series = NULL, issue = NULL,
-  as = "table", key = NULL, ...)
+bhl_partsearch(
+  title = NULL,
+  containerTitle = NULL,
+  author = NULL,
+  date = NULL,
+  volume = NULL,
+  series = NULL,
+  issue = NULL,
+  as = "table",
+  key = NULL,
+  ...
+)
 }
 \arguments{
 \item{title}{Title of the work}

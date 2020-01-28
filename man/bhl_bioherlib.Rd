@@ -4,8 +4,15 @@
 \alias{bhl_bioherlib}
 \title{Search BHL across many API methods.}
 \usage{
-bhl_bioherlib(method = "GetPageMetadata", pageid = NULL, ocr = FALSE,
-  names = FALSE, as = "table", key = NULL, ...)
+bhl_bioherlib(
+  method = "GetPageMetadata",
+  pageid = NULL,
+  ocr = FALSE,
+  names = FALSE,
+  as = "table",
+  key = NULL,
+  ...
+)
 }
 \arguments{
 \item{method}{The API method to use.}

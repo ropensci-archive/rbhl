@@ -5,8 +5,13 @@
 \title{Find and return metadata about an item or items that match a specific
 identifier.}
 \usage{
-bhl_getitembyidentifier(type = NULL, value = NULL, as = "table",
-  key = NULL, ...)
+bhl_getitembyidentifier(
+  type = NULL,
+  value = NULL,
+  as = "table",
+  key = NULL,
+  ...
+)
 }
 \arguments{
 \item{type}{the type of identifier (barcode or ia) (character)}

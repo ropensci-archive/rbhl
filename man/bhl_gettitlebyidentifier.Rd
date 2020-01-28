@@ -5,8 +5,13 @@
 \title{Find and return metadata about a title or titles that match a specific
 identifier.}
 \usage{
-bhl_gettitlebyidentifier(type = NULL, value = NULL, as = "table",
-  key = NULL, ...)
+bhl_gettitlebyidentifier(
+  type = NULL,
+  value = NULL,
+  as = "table",
+  key = NULL,
+  ...
+)
 }
 \arguments{
 \item{type}{the type of identifier (oclc, issn, isbn, lccn, ddc, nal, nlm,

@@ -11,11 +11,11 @@ knitr::opts_chunk$set(
 ```
 
 [![cran checks](https://cranchecks.info/badges/worst/rbhl)](https://cranchecks.info/pkgs/rbhl)
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Build Status](https://api.travis-ci.org/ropensci/rbhl.png)](https://travis-ci.org/ropensci/rbhl)
 [![Build status](https://ci.appveyor.com/api/projects/status/ej5u9mdirg1yyteg/branch/master)](https://ci.appveyor.com/project/sckott/rbhl/branch/master)
-[![rstudio mirror downloads](http://cranlogs.r-pkg.org/badges/rbhl?color=2ECC71)](https://github.com/metacran/cranlogs.app)
-[![cran version](http://www.r-pkg.org/badges/version/rbhl)](https://cran.r-project.org/package=rbhl)
+[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/rbhl?color=2ECC71)](https://github.com/metacran/cranlogs.app)
+[![cran version](https://www.r-pkg.org/badges/version/rbhl)](https://cran.r-project.org/package=rbhl)
 [![codecov.io](https://codecov.io/github/ropensci/rbhl/coverage.svg?branch=master)](https://codecov.io/github/ropensci/rbhl?branch=master)
 
 `rbhl` is an R interface to the Biodiversity Heritage Library API.
@@ -24,27 +24,26 @@ knitr::opts_chunk$set(
 
 Authentication:
 
-* Get your Biodiversity Heritage Library API key [here](http://www.biodiversitylibrary.org/getapikey.aspx)
+* Get your Biodiversity Heritage Library API key at <https://www.biodiversitylibrary.org/getapikey.aspx>
 * Put your API key either in your .Renviron file (or similar) with the name `BHL_KEY`, or your .Rprofile file with the name `bhl_key`, and we'll use your API key without you having to enter it every time you run a search.
 
 Documentation:
 
-* Biodiversity Heritage Library API documentation [here](http://www.biodiversitylibrary.org/api2/docs/docs.html).
-* Biodiversity Heritage Library OpenURL documentation [here](http://www.biodiversitylibrary.org/openurlhelp.aspx).
+* Biodiversity Heritage Library API documentation at <https://www.biodiversitylibrary.org/docs/api3.html>
+* Biodiversity Heritage Library OpenURL documentation at <https://www.biodiversitylibrary.org/openurlhelp.aspx>
 
 ## Installation
 
-Stable version from CRAN
+Stable version
 
 ```{r eval=FALSE}
 install.packages("rbhl")
 ```
 
-Development version from GitHub
+Development version
 
 ```{r eval=FALSE}
-install.packages("devtools")
-devtools::install_github("ropensci/rbhl")
+remotes::install_github("ropensci/rbhl")
 ```
 
 ```{r}
@@ -108,6 +107,8 @@ bhl_getlanguages()
 * Please [report any issues or bugs](https://github.com/ropensci/rbhl/issues).
 * License: MIT
 * Get citation information for `rbhl` in R doing `citation(package = 'rbhl')`
-* Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+* Please note that this project is released with a [Contributor Code of Conduct][coc]. By participating in this project you agree to abide by its terms.
 
 [![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
+
+[coc]: https://github.com/ropensci/rbhl/blob/master/CODE_OF_CONDUCT.md

@@ -4,8 +4,14 @@
 \alias{bhl_getpagemetadata}
 \title{Return metadata about a page.}
 \usage{
-bhl_getpagemetadata(page = NULL, ocr = FALSE, names = FALSE,
-  as = "table", key = NULL, ...)
+bhl_getpagemetadata(
+  page = NULL,
+  ocr = FALSE,
+  names = FALSE,
+  as = "table",
+  key = NULL,
+  ...
+)
 }
 \arguments{
 \item{page}{page number to get}

@@ -5,8 +5,13 @@
 \title{Get basic title, item, and page metadata for each page on which the
 specified name appears.}
 \usage{
-bhl_namegetdetail(namebankid = NULL, name = NULL, as = "table",
-  key = NULL, ...)
+bhl_namegetdetail(
+  namebankid = NULL,
+  name = NULL,
+  as = "table",
+  key = NULL,
+  ...
+)
 }
 \arguments{
 \item{namebankid}{(not used if 'name' specified) NameBank identifier for a

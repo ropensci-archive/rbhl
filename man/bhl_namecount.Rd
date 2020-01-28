@@ -4,8 +4,7 @@
 \alias{bhl_namecount}
 \title{Return the number of unique names found on pages in BHL.}
 \usage{
-bhl_namecount(startdate = NULL, enddate = NULL, as = "table",
-  key = NULL, ...)
+bhl_namecount(startdate = NULL, enddate = NULL, as = "table", key = NULL, ...)
 }
 \arguments{
 \item{startdate}{start date of range between which to count names (optional)}

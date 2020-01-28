@@ -4,9 +4,18 @@
 \alias{bhl_booksearch}
 \title{Search for titles and items in BHL.}
 \usage{
-bhl_booksearch(title = NULL, lname = NULL, volume = NULL,
-  edition = NULL, year = NULL, collectionid = NULL, language = NULL,
-  as = "table", key = NULL, ...)
+bhl_booksearch(
+  title = NULL,
+  lname = NULL,
+  volume = NULL,
+  edition = NULL,
+  year = NULL,
+  collectionid = NULL,
+  language = NULL,
+  as = "table",
+  key = NULL,
+  ...
+)
 }
 \arguments{
 \item{title}{string to search for in the title (character)}

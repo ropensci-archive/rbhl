@@ -4,8 +4,15 @@
 \alias{bhl_namelist}
 \title{List the unique names.}
 \usage{
-bhl_namelist(startrow = NULL, batchsize = NULL, startdate = NULL,
-  enddate = NULL, as = "table", key = NULL, ...)
+bhl_namelist(
+  startrow = NULL,
+  batchsize = NULL,
+  startdate = NULL,
+  enddate = NULL,
+  as = "table",
+  key = NULL,
+  ...
+)
 }
 \arguments{
 \item{startrow}{first name to return (if using as an offset)}

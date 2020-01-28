@@ -4,9 +4,19 @@
 \alias{bhl_openurl}
 \title{Not sure how this differs from their other API...}
 \usage{
-bhl_openurl(genre = NULL, title = NULL, aufirst = NULL, aulast = NULL,
-  date = NULL, spage = NULL, issue = NULL, version = 0.1, as = "list",
-  key = NULL, ...)
+bhl_openurl(
+  genre = NULL,
+  title = NULL,
+  aufirst = NULL,
+  aulast = NULL,
+  date = NULL,
+  spage = NULL,
+  issue = NULL,
+  version = 0.1,
+  as = "list",
+  key = NULL,
+  ...
+)
 }
 \arguments{
 \item{genre}{Book genre}

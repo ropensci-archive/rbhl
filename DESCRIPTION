@@ -1,28 +1,29 @@
 Package: rbhl
 Title: Interface to the 'Biodiversity' 'Heritage' Library
 Description: Interface to 'Biodiversity' 'Heritage' Library ('BHL')
-    (<http://www.biodiversitylibrary.org/>) 'API'
-    (<http://www.biodiversitylibrary.org/api2/docs/docs.html>). 'BHL' is a
+    (<https://www.biodiversitylibrary.org/>) 'API'
+    (<https://www.biodiversitylibrary.org/docs/api3.html>). 'BHL' is a
     repository of 'digitized' literature on 'biodiversity'
     studies, including 'floras', research papers, and more.
 Type: Package
-Version: 0.8.0.9100
+Version: 0.8.8.92
 License: MIT + file LICENSE
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
-    email = "myrmecocystus@gmail.com"))
-URL: https://docs.ropensci.org/rbhl, https://github.com/ropensci/rbhl
+    email = "myrmecocystus@gmail.com",
+    comment = c(ORCID="0000-0003-1444-9135")))
+URL: https://github.com/ropensci/rbhl (devel)
+    https://docs.ropensci.org/rbhl (documentation)
 BugReports: https://github.com/ropensci/rbhl/issues
 LazyData: true
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
 Imports:
-    crul (>= 0.3.4),
-    xml2 (>= 1.0.0),
-    jsonlite (>= 1.1),
-    plyr (>= 1.8.4),
-    tibble (>= 1.2)
+    crul,
+    xml2,
+    jsonlite,
+    plyr,
+    tibble
 Suggests:
-    roxygen2 (>= 6.0.1),
     testthat,
     knitr
-RoxygenNote: 6.0.1
+RoxygenNote: 7.0.2
