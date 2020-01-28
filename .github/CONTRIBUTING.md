@@ -13,7 +13,6 @@
 * Push up to your account
 * Submit a pull request to home base at `ropensci/rbhl`
 
-### Also, check out our [discussion forum](https://discuss.ropensci.org)
+### Forum
 
-### Prefer to Email? Get in touch: [myrmecocystus@gmail.com](mailto:myrmecocystus@gmail.com)
-
+Our [discussion forum](https://discuss.ropensci.org) is another good place to get help.
