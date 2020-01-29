@@ -1,7 +1,4 @@
-# tests for bhl_authorsearch fxn in rbhl
-context("bhl_authorsearch")
-
-test_that("bhl_authorsearch returns", {
+test_that("bhl_authorsearch", {
 	skip_on_cran()
 
 	tt <- bhl_authorsearch(name='dimmock')
@@ -9,17 +6,14 @@ test_that("bhl_authorsearch returns", {
 
 	# correct classes
 	expect_is(tt, "data.frame")
-	expect_is(tt$CreatorID, "integer")
+	expect_is(tt$CreatorUrl, "character")
 
 	expect_is(uu, "list")
 	expect_is(uu$Status, "character")
 	expect_is(uu$Result, "list")
-	expect_is(uu$Result[[1]]$Dates, "character")
-
+	expect_is(uu$Result[[1]]$AuthorID, "character")
   expect_is(bhl_authorsearch(name='dimmock', as="json"), "character")
 	expect_is(bhl_authorsearch(name='dimmock', as="xml"), "character")
-
-	# correct dimensions
-  expect_equal(NCOL(tt), 12)
-  expect_equal(length(uu$Status), 1)
+  expect_gt(NROW(tt), 2)
+  expect_equal(uu$Status, "ok")
 })

@@ -10,6 +10,8 @@
 #' See [rbhl-defunct] for defunct functions.
 #'
 #' @importFrom xml2 xml_find_all read_xml xml_children
+#' @importFrom tibble as_tibble
+#' @importFrom jsonlite fromJSON
 #' @name rbhl-package
 #' @aliases rbhl
 #' @docType package

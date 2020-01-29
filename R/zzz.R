@@ -30,7 +30,7 @@ todf <- function(x){
     } else {
       do.call(plyr::rbind.fill, lapply(bhlc(temp), data.frame))
     }
-    tibble::as_data_frame(tmp)
+    tibble::as_tibble(tmp)
   }
 }
 

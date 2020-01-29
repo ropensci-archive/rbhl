@@ -16,7 +16,7 @@ test_that("bhl_getitemmetadata returns the correct class", {
   expect_is(vv, "character")
   expect_is(jsonlite::fromJSON(vv), "list")
 
-  expect_equal(NCOL(tt), 31)
+  expect_equal(NROW(tt), 1)
   expect_equal(length(uu), 1)
   expect_equal(length(vv), 1)
   expect_equal(length(jsonlite::fromJSON(vv)), 3)

@@ -13,7 +13,7 @@ test_that("bhl_collection returns the correct class", {
 	expect_is(jsonlite::fromJSON(uu), "list")
 	expect_is(jsonlite::fromJSON(uu)$Result$CollectionName, "character")
 
-  expect_equal(NCOL(tt), 5)
+  expect_gt(NROW(tt), 3)
   expect_equal(length(uu), 1)
   expect_equal(length(jsonlite::fromJSON(uu)), 3)
 })

@@ -13,14 +13,14 @@ test_that("bhl_bioherlib returns", {
 
   expect_is(uu$Status, "character")
 	expect_is(uu$Result, "list")
-	expect_is(uu$Result$ItemID, "integer")
+	expect_is(uu$Result[[1]]$ItemID, "integer")
 
 	expect_is(vv, "character")
 	expect_is(xml2::read_xml(vv), "xml_document")
 	expect_is(xml2::xml_find_all(xml2::read_xml(vv), '//Result'), "xml_nodeset")
 
 	# correct dimensions
-  expect_equal(NCOL(tt), 15)
+  expect_equal(NROW(tt), 1)
   expect_equal(length(uu$Status), 1)
   expect_equal(length(uu), 3)
   expect_equal(length(vv), 1)
