@@ -1,0 +1,39 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.biodiversitylibrary.org/api3?op=PublicationSearchAdvanced&title=cocos%20island&authorname=gifford&apikey=<<bhl_key>>&format=json
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      cache-control: private
+      content-type: application/json; charset=utf-8
+      access-control-allow-origin: '*'
+      x-server-name: BHL1
+      content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
+      date: Wed, 29 Jan 2020 00:20:12 GMT
+      content-length: '934'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Status":"ok","ErrorMessage":"","Result":[{"BHLType":"Part","FoundIn":"Metadata","Volume":"2","Authors":[{"Name":"Gifford,
+        Edward Winslow"}],"PartUrl":"https://www.biodiversitylibrary.org/part/69838","PartID":"69838","Genre":"Article","Title":"Field
+        notes on the land birds of the Galapagos Islands, and of Cocos Island,Costa
+        Rica","ContainerTitle":"Proceedings of the California Academy of Sciences,
+        4th series.","Series":"4","Date":"1919","PageRange":"189--258"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"2","Authors":[{"Name":"Gifford,
+        Edward Winslow"}],"PartUrl":"https://www.biodiversitylibrary.org/part/70086","PartID":"70086","Genre":"Article","Title":"The
+        birds of the Galapagos Islands, with observations on the birds of Cocos and
+        Clipperton Islands (Columbiformes to Pelecaniformes)","ContainerTitle":"Proceedings
+        of the California Academy of Sciences, 4th series.","Series":"4","Date":"1913","PageRange":"1--132"}]}'
+  recorded_at: 2020-01-29 00:20:14 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0

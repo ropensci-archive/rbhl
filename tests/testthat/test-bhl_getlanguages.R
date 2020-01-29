@@ -1,13 +1,10 @@
-# tests for bhl_getlanguages fxn in rbhl
-context("bhl_getlanguages")
-
-test_that("bhl_getlanguages returns the correct class", {
-  skip_on_cran()
-
-  tt <- bhl_getlanguages()
-  uu <- bhl_getlanguages('list')
-  vv <- bhl_getlanguages('json')
-  zz <- bhl_getlanguages('xml')
+test_that("bhl_getlanguages", {
+  vcr::use_cassette("bhl_getlanguages", {
+    tt <- bhl_getlanguages()
+    uu <- bhl_getlanguages('list')
+    vv <- bhl_getlanguages('json')
+    zz <- bhl_getlanguages('xml')
+  })
 
   expect_is(tt, "data.frame")
 

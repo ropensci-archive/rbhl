@@ -1,8 +1,8 @@
 test_that("bhl_authorsearch", {
-	skip_on_cran()
-
-	tt <- bhl_authorsearch(name='dimmock')
-	uu <- bhl_authorsearch(name='dimmock', as = "list")
+	vcr::use_cassette("bhl_authorsearch", {
+  	tt <- bhl_authorsearch(name='dimmock')
+  	uu <- bhl_authorsearch(name='dimmock', as = "list")
+  })
 
 	# correct classes
 	expect_is(tt, "data.frame")

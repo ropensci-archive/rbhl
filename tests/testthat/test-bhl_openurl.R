@@ -1,17 +1,15 @@
-context("bhl_openurl")
-
 test_that("bhl_openurl works", {
-  skip_on_cran()
-
-  tt <- bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
-                    aufirst="Samuel Wendell", aulast="Williston", date=1908,
-                    spage=16)
-  vv <- bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
-                    aufirst="Samuel Wendell", aulast="Williston", date=1908,
-                    spage=16, as='xml')
-  zz <- bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
-                    aufirst="Samuel Wendell", aulast="Williston", date=1908,
-                    spage=16, as='json')
+  vcr::use_cassette("bhl_openurl", {
+    tt <- bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
+                      aufirst="Samuel Wendell", aulast="Williston", date=1908,
+                      spage=16)
+    vv <- bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
+                      aufirst="Samuel Wendell", aulast="Williston", date=1908,
+                      spage=16, as='xml')
+    zz <- bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
+                      aufirst="Samuel Wendell", aulast="Williston", date=1908,
+                      spage=16, as='json')
+  })
 
   # the correct classes
   expect_is(tt, "list")

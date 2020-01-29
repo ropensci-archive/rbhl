@@ -1,0 +1,837 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.biodiversitylibrary.org/api3?op=GetCollections&apikey=<<bhl_key>>&format=json
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      cache-control: private
+      content-type: application/json; charset=utf-8
+      access-control-allow-origin: '*'
+      x-server-name: BHL1
+      content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
+      date: Wed, 29 Jan 2020 00:15:47 GMT
+      content-length: '21173'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Status":"ok","ErrorMessage":"","Result":[{"CollectionID":"97","CollectionName":"A
+        History of Cats: 1858-1922","CollectionDescription":"Cats were not always
+        the beloved household pets as we know them today. This collection of books
+        from the Library of Congress illustrates the variety of ways that people thought
+        about domestic cats from 1858 to 1922."},{"CollectionID":"85","CollectionName":"Antarctic
+        Exploration \u0026 Discovery","CollectionDescription":"This collection contains
+        rare books, journals and field diaries relating to the exploration and biodiversity
+        of Antarctica."},{"CollectionID":"99","CollectionName":"Antarctic Geological
+        Field Notebooks","CollectionDescription":"This collection contains Antarctic
+        field notebooks from Geoscience Australia’s N.H. (Doc) Fisher Geoscience Library
+        Collection. Geoscience Australia has a long and rich history of contributing
+        to the mapping and geological understanding of Antarctica. These notebooks
+        contain original observations made by geologists and geophysicists on the
+        Antarctic continent and adjacent sub-Antarctic islands."},{"CollectionID":"59","CollectionName":"Archives
+        from the Boston Metropolitan Park Flora","CollectionDescription":"In 1894
+        the Metropolitan Park Commission in Boston, Mass. commissioned Olmsted, Olmsted
+        \u0026 Eliot to survey the plants of newly acquired woodland reservations.
+        This collection includes 8,000 pages of correspondence, published books, articles,
+        and maps documenting the progress of the survey. To learn more about the collection
+        please visit us \u003ca href=\"http://hwpi.harvard.edu/botlib_projects/book/archives-and-specimens-boston-metropolitan-park-flora\"\u003e\u003cb\u003eonline.\u003cb\u003e\u003c/a\u003e"},{"CollectionID":"62","CollectionName":"Art
+        of Science","CollectionDescription":"This collection contains the rare books
+        featured in the Australian exhibition \"The Art of Science: Remarkable Natural
+        History illustrations from Museum Victoria\"."},{"CollectionID":"112","CollectionName":"Australian
+        Botanical","CollectionDescription":"Australian Botanical is a collection of
+        Australia\u0027s botanical taxonomic literature published in state, territory
+        and national herbarium journals, made openly accessible and searchable online
+        on the Biodiversity Heritage Library website."},{"CollectionID":"82","CollectionName":"BHL
+        at 10","CollectionDescription":"Celebrate BHL\u0027s 10th anniversary by browsing
+        notable contributions from its consortium members. From 2006 and its first
+        10 institutions to 2016 and its \u003ca href=\"https://about.biodiversitylibrary.org/about/bhl-consortium/\"\u003e40+
+        organizations\u003c/a\u003e, BHL partners have digitized and made freely available
+        some of the most remarkable works from their collections. Sit back, relax,
+        and browse some of BHL\u0027s best!"},{"CollectionID":"63","CollectionName":"BHL
+        Australia","CollectionDescription":"This collection contains the titles contributed
+        by museum and herbarium libraries in Australia, as well as by Australia\u0027s
+        royal societies, field naturalist clubs and government institutes and agencies."},{"CollectionID":"87","CollectionName":"BHL
+        Field Notes Project","CollectionDescription":"Items digitized for the BHL
+        Field Notes Project, a collaborative project funded by the Council on Library
+        and Information Resources (CLIR). The project provides open access to field
+        notes from institutions across the United States, and reunites fragmented
+        collections through institutional collaboration. More information about the
+        project and a full list of participating institutions can be found \u003ca
+        href=\"https://about.biodiversitylibrary.org/projects/past-projects/field-notes-project/\"\u003ehere\u003c/a\u003e."},{"CollectionID":"67","CollectionName":"BHL
+        Singapore","CollectionDescription":"This collection contains items contributed
+        by National Library Board Singapore and its partner institutions in Singapore."},{"CollectionID":"40","CollectionName":"Blog
+        Features","CollectionDescription":"All items featured in Book of the Week
+        posts on the \u003ca href=\"http://blog.biodiversitylibrary.org\"\u003eBHL
+        Blog\u003c/a\u003e"},{"CollectionID":"41","CollectionName":"Bone Wars Collection","CollectionDescription":"Collection
+        of items authored or edited by Edward Drinker Cope and Othniel Charles Marsh."},{"CollectionID":"92","CollectionName":"Botanic
+        Gardens Melbourne (1852-1899)","CollectionDescription":"This collection contains
+        reports, catalogues, essays, notes and correspondence authored by the Directors
+        of the Botanic Gardens Melbourne (now Royal Botanic Gardens Victoria) between
+        1852 and 1899."},{"CollectionID":"37","CollectionName":"Carl Linnaeus Collection","CollectionDescription":"Select
+        items authored by or about the Swedish botanist, physician, and zoologist."},{"CollectionID":"53","CollectionName":"Celebrating
+        Alfred Russel Wallace","CollectionDescription":"Selected items featuring the
+        work of Alfred Russel Wallace (1823-1913), British biologist, anthropologist,
+        geographer, environmentalist, and human rights advocate. The man who, independently
+        of Darwin, arrived to the same conclusion on natural selection. In 1858 he
+        corresponded with Darwin about his theory, prompting Darwin to finally publish
+        the famous work, On the Origin of Species, in 1859."},{"CollectionID":"4","CollectionName":"Charles
+        Darwin\u0027s Library","CollectionDescription":"Books that were a part of
+        Charles Darwin\u0027s personal collection."},{"CollectionID":"80","CollectionName":"Color
+        Our Collections","CollectionDescription":"A collection of books with plates
+        suitable for coloring. Created as part of the #ColorOurCollections event."},{"CollectionID":"49","CollectionName":"Curious
+        and Bizarre Creatures","CollectionDescription":"What do deep sea monsters,
+        mermaids, hydra, dinosaurs, and Shakespeare have in common? They\u0027re all
+        in this collection featuring some of the strangest books BHL has to offer."},{"CollectionID":"98","CollectionName":"Dazzling
+        Diversity: The Insect World","CollectionDescription":"Explore the books featured
+        in the Smithsonian Libraries\u0027 Dazzling Diversity exhibit at the National
+        Museum of Natural History and celebrate the insect world through the pages
+        of historic natural history books."},{"CollectionID":"69","CollectionName":"Early
+        Women in Science","CollectionDescription":"This collection features works
+        by important women scientists working prior to the middle of the twentieth
+        century.  Some of these women are well-known, and others have been only minimally
+        recognized, but all are important for their unique contributions to their
+        respective scientific fields. \u003cbr/\u003ePart of the \u003ca href=\"http://earlywomeninscience.biodiversityexhibition.com/\"\u003eEarly
+        Women in Science exhibition\u003c/a\u003e"},{"CollectionID":"6","CollectionName":"Engelmann
+        Herbarium","CollectionDescription":"Botanical literature generated during
+        expansion into the American West."},{"CollectionID":"38","CollectionName":"Engelmann
+        Papers, Missouri Botanical Garden","CollectionDescription":"The personal papers
+        of the botanist George Engelmann include almost 5,000 letters from about 550
+        leading and amateur scientists in the United States and Europe in the middle
+        decades of the 19th century.  The collection also includes the various scientific
+        notes and written works composed by Engelmann during his life as a medical
+        doctor living in St. Louis, Missouri."},{"CollectionID":"84","CollectionName":"Expanding
+        Access to Biodiversity Literature","CollectionDescription":"Expanding Access
+        to Biodiversity Literature, which is funded generously by the Institute of
+        Museum and Library Services (IMLS), will significantly increase online access
+        to biodiversity material by positioning BHL as an on-ramp for biodiversity
+        content providers that would like to contribute to the national digital library
+        infrastructure through the Digital Public Library of America (DPLA)."},{"CollectionID":"21","CollectionName":"Extinct
+        Species","CollectionDescription":"Dinosaurs, dodos, and more. Selected books
+        highlighting extinct species of plants and animals."},{"CollectionID":"91","CollectionName":"Ferdinand
+        von Mueller Collection","CollectionDescription":"This collection contains
+        reports, essays, papers, books, catalogues and correspondence produced by
+        Ferdinand von Mueller, Government Botanist for the Colony of Victoria from
+        1853, Director of the Melbourne Botanic Gardens (now Royal Botanic Gardens
+        Victoria) from 1857 to 1873, and founder of the National Herbarium of Victoria."},{"CollectionID":"18","CollectionName":"Fieldiana:
+        The Flora of Peru","CollectionDescription":"This collection contains those
+        Fieldiana:Botany volumes which comprise the series Flora of Peru."},{"CollectionID":"31","CollectionName":"Floral
+        Mania","CollectionDescription":"These books contain some of the most beautiful
+        and unusual illustrations of flowering plants in BHL."},{"CollectionID":"76","CollectionName":"Fossil
+        Stories","CollectionDescription":"Rocks hold the key to the history of life
+        on Earth. \"Fossil Stories\" explores the world of fossils, the history of
+        paleontology, and the men, women, and publications that shaped our knowledge
+        of life preserved in these rocks. This collection includes seminal works in
+        the history of paleontology."},{"CollectionID":"96","CollectionName":"John
+        Torrey Papers","CollectionDescription":"The collection consists of incoming
+        and outgoing correspondence, pertaining mostly to Torrey’s work as a botanist
+        and professor. Much of the scientific correspondence concerns identification
+        of plants from the vast interior of the continent from government-sponsored
+        expeditions. Unrelated letters to and from other correspondents (some of which
+        predate Torrey’s birth) are also in the collection."},{"CollectionID":"93","CollectionName":"Joseph
+        Dalton Hooker Collection","CollectionDescription":"Sir Joseph Dalton Hooker
+        was one of the most important botanists of the 19th century and Kew Gardens\u0027
+        most illustrious Director (1865-1885). This collection features many of Hooker\u0027s
+        publications and personal correspondence."},{"CollectionID":"109","CollectionName":"Language
+        of Flowers","CollectionDescription":"Selections from Chicago Botanic Garden’s
+        Language of Flowers collection, digitized with generous funding awarded by
+        the National Endowment for the Humanities. Also includes selections from Cornell
+        University Library’s Language of Flowers collection. These works add to the
+        body of knowledge on the subject of language of flowers that are at the intersection
+        of botany, horticulture, art, poetry, and woman’s studies."},{"CollectionID":"71","CollectionName":"Latino
+        Natural History","CollectionDescription":"\u003ctable role=\"presentation\"\u003e\u003ctr\u003e\u003ctd\u003eThis
+        collection features items related to naturalists from — or who are descendants
+        of people from — Mexico, Cuba, Puerto Rico, and Central and South America,
+        often referred to collectively as Latin America. These Latino/a naturalists
+        have influenced the study of the world\u0027s flora and fauna, and in many
+        cases provided the foundation for the study of science in their home countries.
+        \u003cbr/ \u003ePart of the \u003ca href=\"http://latinonaturalhistory.biodiversityexhibition.com\"\u003eLatino
+        Natural History exhibition\u003c/a\u003e\u003c/td\u003e\r\n\u003ctd\u003eEsta
+        colección presenta títulos relacionados a naturalistas que son de — o son
+        descendientes de personas de — México, Cuba, Puerto Rico, Centroamérica, y
+        Sudamérica, paises a los que frecuentemente  se refiere como Latinoamérica.
+        Estos naturalistas latinos/as han influido el estudio de la fauna y flora
+        del mundo, y en muchos casos crearon las bases del estudio de ciencias naturales
+        en sus países. \u003cbr/ \u003eParte de la exhibición \u003ca href=\"http://latinonaturalhistory.biodiversityexhibition.com\"\u003eLatino
+        Natural History\u003c/a\u003e\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e"},{"CollectionID":"5","CollectionName":"Missouri
+        Botanical Garden\u0027s Materia Medica","CollectionDescription":"A title scanned
+        for Trio Foundation."},{"CollectionID":"7","CollectionName":"Missouri Botanical
+        Garden\u0027s Orchid Folios","CollectionDescription":"Titles scanned for the
+        Trio Foundation, 2011"},{"CollectionID":"1","CollectionName":"Missouri Botanical
+        Garden\u0027s Rare Books Collection","CollectionDescription":"A volume scanned
+        as part of MBG\u0027s Rare Books Website."},{"CollectionID":"64","CollectionName":"Monsters
+        Are Real","CollectionDescription":"Many of history\u0027s most fearsome legendary
+        monsters are based on real animals. The BHL Monsters Are Real campaign explores
+        the stories, people, books, and animals that inspired such infamous beasts
+        as Sea Serpents, the Kraken, Hydra, Mermaids, and Leviathans. This collection
+        includes the books that fueled such monster myths, as well as those that highlight
+        the real identity of these beasts."},{"CollectionID":"60","CollectionName":"Museums
+        Victoria","CollectionDescription":"This collection contains rare and old books,
+        journals and pamphlets from the Museums Victoria Library in Melbourne, Australia."},{"CollectionID":"45","CollectionName":"New
+        York Botanical Garden","CollectionDescription":"Items contributed from the
+        \u003ca href=\"http://www.nybg.org\"\u003eNew York Botanical Garden\u003c/a\u003e."},{"CollectionID":"94","CollectionName":"Objects
+        of Wonder","CollectionDescription":"The natural world is filled with many
+        objects of wonder, and BHL\u0027s collections document many of these wonders.
+        From early cabinets of curiosity to notable books from BHL\u0027s partners,
+        explore some of BHL\u0027s objects of wonder in this collection."},{"CollectionID":"58","CollectionName":"Once
+        There Were Billions","CollectionDescription":"Once an amazing diversity of
+        birds—some in breathtaking abundance—inhabited the vast forests and plains
+        of North America. But starting around 1600, species began to disappear, as
+        humans altered habitats, over-hunted, and introduced predators. This collection
+        includes books related to the exhibition \u003ca href=\"http://library.si.edu/exhibition/once-there-were-billions\"\u003e\"Once
+        There Were Billions\"\u003c/a\u003e which focuses on the extinction of four
+        bird species: the Passenger Pigeon (Ectopistes migratorius), Great Auk (Pinguinus
+        impennis), Carolina Parakeet (Conuropsis carolinensis), and Heath Hen (Tympanuchus
+        cupido cupido.)"},{"CollectionID":"72","CollectionName":"Perkins Agricultural
+        Library","CollectionDescription":"The \u003ca href=\"http://library.soton.ac.uk/perkins\"\u003ePerkins
+        Agricultural Library\u003c/a\u003e was presented to Southampton University
+        Library in 1946 by Walter Frank Perkins, compiler of the bibliography, British
+        and Irish Writers on Agriculture (1929). The Library contains over 2000 books
+        and 40 periodicals published from the 17th century to the late 19th century.
+        The books include practical farming texts on crops, animals, buildings and
+        farm machinery as well as encyclopaedias and textbooks. The \u003ca href=\"http://viewer.soton.ac.uk/library/image/52136644/1/\"\u003epublished
+        catalogue is available online\u003c/a\u003e and the collection can be \u003ca
+        href=\"https://www-lib.soton.ac.uk/\"\u003esearched from WebCat\u003c/a\u003e
+        by selecting \u0027Perkins collection\u0027 in the \u0027location\u0027 field.
+        This is a digitisation project in progress with texts being added weekly to
+        the collection. Should you have particular interest in any texts in the catalogue
+        that are currently not available, please \u003ca href=\"mailto:digitise@soton.ac.uk\"\u003elet
+        us know\u003c/a\u003e and we will attempt to prioritise their digitisation
+        and availability."},{"CollectionID":"103","CollectionName":"Pomology: Apples
+        and Cider","CollectionDescription":"Pomology is the study of and cultivation
+        of fruit. Cider (sometimes called hard cider) is a fermented beverage made
+        from apple juice. This comprehensive collection highlights the historical
+        importance of apple (Malus xdomestica and other Malus species) and cider production
+        around the world. Many texts contain color illustrations of rare, historic,
+        and heirloom apple cultivars."},{"CollectionID":"22","CollectionName":"Publicaciones
+        en Español","CollectionDescription":""},{"CollectionID":"27","CollectionName":"Rarest
+        of the Rare","CollectionDescription":"These unique gems of the Biodiversity
+        Heritage Library collection represent some of the rarest natural history works
+        to ever hit the digital world."},{"CollectionID":"50","CollectionName":"Savants
+        of Napoleon’s Egyptian Campaign","CollectionDescription":"Contributions of
+        the French scientists who took part in Napoleon\u0027s Egyptian Expedition.
+        These materials represent works by the scientists associated with the campaign
+        or are later works by said scientists not necessarily related to Egypt."},{"CollectionID":"56","CollectionName":"Seed
+        \u0026 Nursery Catalogs","CollectionDescription":"This collection includes
+        works issued as seed and nursery catalogs, originally published for the purposes
+        of documenting trends, products, and expert advice related to botany, horticulture,
+        and commercial agriculture."},{"CollectionID":"39","CollectionName":"Shark
+        Week Collection","CollectionDescription":"A collection of works about sharks
+        to celebrate \u003ca href=\"http://en.wikipedia.org/wiki/Shark_Week\"\u003eShark
+        Week\u003c/a\u003e."},{"CollectionID":"77","CollectionName":"Smithsonian Field
+        Books collection","CollectionDescription":"This collection contains titles
+        and items from the Smithsonian Field Book Project, an initiative to increase
+        accessibility to field book content through cataloging, conservation, digitization,
+        and online publication."},{"CollectionID":"110","CollectionName":"The Royal
+        Society of Western Australia Journals","CollectionDescription":"This significant
+        collection contains the scientific Journals of The Royal Society of Western
+        Australia from 1914 to date, in addition to those of precursor societies from
+        1899 to 1914."},{"CollectionID":"32","CollectionName":"Theodore Roosevelt
+        Collection","CollectionDescription":"Selected works authored, co-authored
+        or introduced by Theodore Roosevelt dealing with Natural History. Also available
+        in iTunes U."},{"CollectionID":"83","CollectionName":"Top BHL Partner Content","CollectionDescription":"This
+        collection represents the top downloaded books from each of BHL\u0027s Members,
+        Affiliates, and Partners as of BHL\u0027s 10th anniversary celebration in
+        2016."},{"CollectionID":"74","CollectionName":"Under the Sea: World Oceans
+        Day","CollectionDescription":"In honor of World Oceans Day on June 8, we’ve
+        compiled a collection of publications that represent important milestones
+        in the progress of marine bioscience research and ocean exploration."},{"CollectionID":"111","CollectionName":"Unearthed!
+        Smithsonian Libraries\u0027 Paleo Collection","CollectionDescription":"In
+        celebration of the opening of the David H. Koch Hall of Fossils opening at
+        the National Museum of Natural History, Smithsonian Libraries has curated
+        an online collection of important and beautiful selections from the Libraries’
+        Paleobiology literature.  The digitized books are hosted on Biodiversity Heritage
+        Library (BHL), the world’s largest open access digital library for biodiversity
+        literature and archives. As part of this celebration, we have invited renowned
+        scientists and librarians to discuss the collection and identify their favorite
+        books in a series of blog posts."},{"CollectionID":"46","CollectionName":"Whales:
+        From Bone to Book Collection","CollectionDescription":"Select items about
+        the anatomy, ecology and evolution of whales authored by notable authors and
+        Smithsonian scientists, part of the Smithsonian Libraries \u003ca href=\"http://library.si.edu/exhibition/bone-to-book\"\u003e\"Whales:
+        From Bone to Book\" exhibit\u003ca/\u003e."},{"CollectionID":"78","CollectionName":"White
+        Whale","CollectionDescription":"A collection of works that include information
+        about the sperm whale (Physeter macrocephalus)."},{"CollectionID":"113","CollectionName":"William
+        Brewster Papers","CollectionDescription":"William Brewster (1851-1919) was
+        a renowned American amateur ornithologist, first president of the Massachusetts
+        Audubon Society, and a president of the American Ornithologists\u0027 Union.
+        His ornithological collection, bequeathed to the Museum of Comparative Zoology
+        at Harvard University, is considered one of the finest private collections
+        of North American birds ever assembled. Brewster’s diaries, journals, notebooks,
+        correspondence, and photographs contain a wealth of ecological and climatological
+        data, and document the development of the field of ornithology in the late
+        nineteenth and early twentieth centuries."},{"CollectionID":"43","CollectionName":"Women
+        in Natural History","CollectionDescription":"A collection of selected works
+        created by women who made direct contributions to the study of Botany and
+        Zoology either by way of authoring or editing works on the subject or by providing
+        critical illustrations to support the works authored by someone else. This
+        collection is by no means comprehensive."}]}'
+  recorded_at: 2020-01-29 00:15:49 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0
+- request:
+    method: get
+    uri: https://www.biodiversitylibrary.org/api3?op=GetCollections&apikey=<<bhl_key>>&format=json
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      cache-control: private
+      content-type: application/json; charset=utf-8
+      access-control-allow-origin: '*'
+      x-server-name: BHL1
+      content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
+      date: Wed, 29 Jan 2020 00:15:47 GMT
+      content-length: '21173'
+      set-cookie: TS010ecf5c=01a3504f4cd5362282ac30d276b125fbabefe8bb6724d0670c953f6f04493cbc7723d6afdb0b5906515cdad1659b5c9661530330a4;
+        Path=/; Secure; HTTPOnly
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Status":"ok","ErrorMessage":"","Result":[{"CollectionID":"97","CollectionName":"A
+        History of Cats: 1858-1922","CollectionDescription":"Cats were not always
+        the beloved household pets as we know them today. This collection of books
+        from the Library of Congress illustrates the variety of ways that people thought
+        about domestic cats from 1858 to 1922."},{"CollectionID":"85","CollectionName":"Antarctic
+        Exploration \u0026 Discovery","CollectionDescription":"This collection contains
+        rare books, journals and field diaries relating to the exploration and biodiversity
+        of Antarctica."},{"CollectionID":"99","CollectionName":"Antarctic Geological
+        Field Notebooks","CollectionDescription":"This collection contains Antarctic
+        field notebooks from Geoscience Australia’s N.H. (Doc) Fisher Geoscience Library
+        Collection. Geoscience Australia has a long and rich history of contributing
+        to the mapping and geological understanding of Antarctica. These notebooks
+        contain original observations made by geologists and geophysicists on the
+        Antarctic continent and adjacent sub-Antarctic islands."},{"CollectionID":"59","CollectionName":"Archives
+        from the Boston Metropolitan Park Flora","CollectionDescription":"In 1894
+        the Metropolitan Park Commission in Boston, Mass. commissioned Olmsted, Olmsted
+        \u0026 Eliot to survey the plants of newly acquired woodland reservations.
+        This collection includes 8,000 pages of correspondence, published books, articles,
+        and maps documenting the progress of the survey. To learn more about the collection
+        please visit us \u003ca href=\"http://hwpi.harvard.edu/botlib_projects/book/archives-and-specimens-boston-metropolitan-park-flora\"\u003e\u003cb\u003eonline.\u003cb\u003e\u003c/a\u003e"},{"CollectionID":"62","CollectionName":"Art
+        of Science","CollectionDescription":"This collection contains the rare books
+        featured in the Australian exhibition \"The Art of Science: Remarkable Natural
+        History illustrations from Museum Victoria\"."},{"CollectionID":"112","CollectionName":"Australian
+        Botanical","CollectionDescription":"Australian Botanical is a collection of
+        Australia\u0027s botanical taxonomic literature published in state, territory
+        and national herbarium journals, made openly accessible and searchable online
+        on the Biodiversity Heritage Library website."},{"CollectionID":"82","CollectionName":"BHL
+        at 10","CollectionDescription":"Celebrate BHL\u0027s 10th anniversary by browsing
+        notable contributions from its consortium members. From 2006 and its first
+        10 institutions to 2016 and its \u003ca href=\"https://about.biodiversitylibrary.org/about/bhl-consortium/\"\u003e40+
+        organizations\u003c/a\u003e, BHL partners have digitized and made freely available
+        some of the most remarkable works from their collections. Sit back, relax,
+        and browse some of BHL\u0027s best!"},{"CollectionID":"63","CollectionName":"BHL
+        Australia","CollectionDescription":"This collection contains the titles contributed
+        by museum and herbarium libraries in Australia, as well as by Australia\u0027s
+        royal societies, field naturalist clubs and government institutes and agencies."},{"CollectionID":"87","CollectionName":"BHL
+        Field Notes Project","CollectionDescription":"Items digitized for the BHL
+        Field Notes Project, a collaborative project funded by the Council on Library
+        and Information Resources (CLIR). The project provides open access to field
+        notes from institutions across the United States, and reunites fragmented
+        collections through institutional collaboration. More information about the
+        project and a full list of participating institutions can be found \u003ca
+        href=\"https://about.biodiversitylibrary.org/projects/past-projects/field-notes-project/\"\u003ehere\u003c/a\u003e."},{"CollectionID":"67","CollectionName":"BHL
+        Singapore","CollectionDescription":"This collection contains items contributed
+        by National Library Board Singapore and its partner institutions in Singapore."},{"CollectionID":"40","CollectionName":"Blog
+        Features","CollectionDescription":"All items featured in Book of the Week
+        posts on the \u003ca href=\"http://blog.biodiversitylibrary.org\"\u003eBHL
+        Blog\u003c/a\u003e"},{"CollectionID":"41","CollectionName":"Bone Wars Collection","CollectionDescription":"Collection
+        of items authored or edited by Edward Drinker Cope and Othniel Charles Marsh."},{"CollectionID":"92","CollectionName":"Botanic
+        Gardens Melbourne (1852-1899)","CollectionDescription":"This collection contains
+        reports, catalogues, essays, notes and correspondence authored by the Directors
+        of the Botanic Gardens Melbourne (now Royal Botanic Gardens Victoria) between
+        1852 and 1899."},{"CollectionID":"37","CollectionName":"Carl Linnaeus Collection","CollectionDescription":"Select
+        items authored by or about the Swedish botanist, physician, and zoologist."},{"CollectionID":"53","CollectionName":"Celebrating
+        Alfred Russel Wallace","CollectionDescription":"Selected items featuring the
+        work of Alfred Russel Wallace (1823-1913), British biologist, anthropologist,
+        geographer, environmentalist, and human rights advocate. The man who, independently
+        of Darwin, arrived to the same conclusion on natural selection. In 1858 he
+        corresponded with Darwin about his theory, prompting Darwin to finally publish
+        the famous work, On the Origin of Species, in 1859."},{"CollectionID":"4","CollectionName":"Charles
+        Darwin\u0027s Library","CollectionDescription":"Books that were a part of
+        Charles Darwin\u0027s personal collection."},{"CollectionID":"80","CollectionName":"Color
+        Our Collections","CollectionDescription":"A collection of books with plates
+        suitable for coloring. Created as part of the #ColorOurCollections event."},{"CollectionID":"49","CollectionName":"Curious
+        and Bizarre Creatures","CollectionDescription":"What do deep sea monsters,
+        mermaids, hydra, dinosaurs, and Shakespeare have in common? They\u0027re all
+        in this collection featuring some of the strangest books BHL has to offer."},{"CollectionID":"98","CollectionName":"Dazzling
+        Diversity: The Insect World","CollectionDescription":"Explore the books featured
+        in the Smithsonian Libraries\u0027 Dazzling Diversity exhibit at the National
+        Museum of Natural History and celebrate the insect world through the pages
+        of historic natural history books."},{"CollectionID":"69","CollectionName":"Early
+        Women in Science","CollectionDescription":"This collection features works
+        by important women scientists working prior to the middle of the twentieth
+        century.  Some of these women are well-known, and others have been only minimally
+        recognized, but all are important for their unique contributions to their
+        respective scientific fields. \u003cbr/\u003ePart of the \u003ca href=\"http://earlywomeninscience.biodiversityexhibition.com/\"\u003eEarly
+        Women in Science exhibition\u003c/a\u003e"},{"CollectionID":"6","CollectionName":"Engelmann
+        Herbarium","CollectionDescription":"Botanical literature generated during
+        expansion into the American West."},{"CollectionID":"38","CollectionName":"Engelmann
+        Papers, Missouri Botanical Garden","CollectionDescription":"The personal papers
+        of the botanist George Engelmann include almost 5,000 letters from about 550
+        leading and amateur scientists in the United States and Europe in the middle
+        decades of the 19th century.  The collection also includes the various scientific
+        notes and written works composed by Engelmann during his life as a medical
+        doctor living in St. Louis, Missouri."},{"CollectionID":"84","CollectionName":"Expanding
+        Access to Biodiversity Literature","CollectionDescription":"Expanding Access
+        to Biodiversity Literature, which is funded generously by the Institute of
+        Museum and Library Services (IMLS), will significantly increase online access
+        to biodiversity material by positioning BHL as an on-ramp for biodiversity
+        content providers that would like to contribute to the national digital library
+        infrastructure through the Digital Public Library of America (DPLA)."},{"CollectionID":"21","CollectionName":"Extinct
+        Species","CollectionDescription":"Dinosaurs, dodos, and more. Selected books
+        highlighting extinct species of plants and animals."},{"CollectionID":"91","CollectionName":"Ferdinand
+        von Mueller Collection","CollectionDescription":"This collection contains
+        reports, essays, papers, books, catalogues and correspondence produced by
+        Ferdinand von Mueller, Government Botanist for the Colony of Victoria from
+        1853, Director of the Melbourne Botanic Gardens (now Royal Botanic Gardens
+        Victoria) from 1857 to 1873, and founder of the National Herbarium of Victoria."},{"CollectionID":"18","CollectionName":"Fieldiana:
+        The Flora of Peru","CollectionDescription":"This collection contains those
+        Fieldiana:Botany volumes which comprise the series Flora of Peru."},{"CollectionID":"31","CollectionName":"Floral
+        Mania","CollectionDescription":"These books contain some of the most beautiful
+        and unusual illustrations of flowering plants in BHL."},{"CollectionID":"76","CollectionName":"Fossil
+        Stories","CollectionDescription":"Rocks hold the key to the history of life
+        on Earth. \"Fossil Stories\" explores the world of fossils, the history of
+        paleontology, and the men, women, and publications that shaped our knowledge
+        of life preserved in these rocks. This collection includes seminal works in
+        the history of paleontology."},{"CollectionID":"96","CollectionName":"John
+        Torrey Papers","CollectionDescription":"The collection consists of incoming
+        and outgoing correspondence, pertaining mostly to Torrey’s work as a botanist
+        and professor. Much of the scientific correspondence concerns identification
+        of plants from the vast interior of the continent from government-sponsored
+        expeditions. Unrelated letters to and from other correspondents (some of which
+        predate Torrey’s birth) are also in the collection."},{"CollectionID":"93","CollectionName":"Joseph
+        Dalton Hooker Collection","CollectionDescription":"Sir Joseph Dalton Hooker
+        was one of the most important botanists of the 19th century and Kew Gardens\u0027
+        most illustrious Director (1865-1885). This collection features many of Hooker\u0027s
+        publications and personal correspondence."},{"CollectionID":"109","CollectionName":"Language
+        of Flowers","CollectionDescription":"Selections from Chicago Botanic Garden’s
+        Language of Flowers collection, digitized with generous funding awarded by
+        the National Endowment for the Humanities. Also includes selections from Cornell
+        University Library’s Language of Flowers collection. These works add to the
+        body of knowledge on the subject of language of flowers that are at the intersection
+        of botany, horticulture, art, poetry, and woman’s studies."},{"CollectionID":"71","CollectionName":"Latino
+        Natural History","CollectionDescription":"\u003ctable role=\"presentation\"\u003e\u003ctr\u003e\u003ctd\u003eThis
+        collection features items related to naturalists from — or who are descendants
+        of people from — Mexico, Cuba, Puerto Rico, and Central and South America,
+        often referred to collectively as Latin America. These Latino/a naturalists
+        have influenced the study of the world\u0027s flora and fauna, and in many
+        cases provided the foundation for the study of science in their home countries.
+        \u003cbr/ \u003ePart of the \u003ca href=\"http://latinonaturalhistory.biodiversityexhibition.com\"\u003eLatino
+        Natural History exhibition\u003c/a\u003e\u003c/td\u003e\r\n\u003ctd\u003eEsta
+        colección presenta títulos relacionados a naturalistas que son de — o son
+        descendientes de personas de — México, Cuba, Puerto Rico, Centroamérica, y
+        Sudamérica, paises a los que frecuentemente  se refiere como Latinoamérica.
+        Estos naturalistas latinos/as han influido el estudio de la fauna y flora
+        del mundo, y en muchos casos crearon las bases del estudio de ciencias naturales
+        en sus países. \u003cbr/ \u003eParte de la exhibición \u003ca href=\"http://latinonaturalhistory.biodiversityexhibition.com\"\u003eLatino
+        Natural History\u003c/a\u003e\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e"},{"CollectionID":"5","CollectionName":"Missouri
+        Botanical Garden\u0027s Materia Medica","CollectionDescription":"A title scanned
+        for Trio Foundation."},{"CollectionID":"7","CollectionName":"Missouri Botanical
+        Garden\u0027s Orchid Folios","CollectionDescription":"Titles scanned for the
+        Trio Foundation, 2011"},{"CollectionID":"1","CollectionName":"Missouri Botanical
+        Garden\u0027s Rare Books Collection","CollectionDescription":"A volume scanned
+        as part of MBG\u0027s Rare Books Website."},{"CollectionID":"64","CollectionName":"Monsters
+        Are Real","CollectionDescription":"Many of history\u0027s most fearsome legendary
+        monsters are based on real animals. The BHL Monsters Are Real campaign explores
+        the stories, people, books, and animals that inspired such infamous beasts
+        as Sea Serpents, the Kraken, Hydra, Mermaids, and Leviathans. This collection
+        includes the books that fueled such monster myths, as well as those that highlight
+        the real identity of these beasts."},{"CollectionID":"60","CollectionName":"Museums
+        Victoria","CollectionDescription":"This collection contains rare and old books,
+        journals and pamphlets from the Museums Victoria Library in Melbourne, Australia."},{"CollectionID":"45","CollectionName":"New
+        York Botanical Garden","CollectionDescription":"Items contributed from the
+        \u003ca href=\"http://www.nybg.org\"\u003eNew York Botanical Garden\u003c/a\u003e."},{"CollectionID":"94","CollectionName":"Objects
+        of Wonder","CollectionDescription":"The natural world is filled with many
+        objects of wonder, and BHL\u0027s collections document many of these wonders.
+        From early cabinets of curiosity to notable books from BHL\u0027s partners,
+        explore some of BHL\u0027s objects of wonder in this collection."},{"CollectionID":"58","CollectionName":"Once
+        There Were Billions","CollectionDescription":"Once an amazing diversity of
+        birds—some in breathtaking abundance—inhabited the vast forests and plains
+        of North America. But starting around 1600, species began to disappear, as
+        humans altered habitats, over-hunted, and introduced predators. This collection
+        includes books related to the exhibition \u003ca href=\"http://library.si.edu/exhibition/once-there-were-billions\"\u003e\"Once
+        There Were Billions\"\u003c/a\u003e which focuses on the extinction of four
+        bird species: the Passenger Pigeon (Ectopistes migratorius), Great Auk (Pinguinus
+        impennis), Carolina Parakeet (Conuropsis carolinensis), and Heath Hen (Tympanuchus
+        cupido cupido.)"},{"CollectionID":"72","CollectionName":"Perkins Agricultural
+        Library","CollectionDescription":"The \u003ca href=\"http://library.soton.ac.uk/perkins\"\u003ePerkins
+        Agricultural Library\u003c/a\u003e was presented to Southampton University
+        Library in 1946 by Walter Frank Perkins, compiler of the bibliography, British
+        and Irish Writers on Agriculture (1929). The Library contains over 2000 books
+        and 40 periodicals published from the 17th century to the late 19th century.
+        The books include practical farming texts on crops, animals, buildings and
+        farm machinery as well as encyclopaedias and textbooks. The \u003ca href=\"http://viewer.soton.ac.uk/library/image/52136644/1/\"\u003epublished
+        catalogue is available online\u003c/a\u003e and the collection can be \u003ca
+        href=\"https://www-lib.soton.ac.uk/\"\u003esearched from WebCat\u003c/a\u003e
+        by selecting \u0027Perkins collection\u0027 in the \u0027location\u0027 field.
+        This is a digitisation project in progress with texts being added weekly to
+        the collection. Should you have particular interest in any texts in the catalogue
+        that are currently not available, please \u003ca href=\"mailto:digitise@soton.ac.uk\"\u003elet
+        us know\u003c/a\u003e and we will attempt to prioritise their digitisation
+        and availability."},{"CollectionID":"103","CollectionName":"Pomology: Apples
+        and Cider","CollectionDescription":"Pomology is the study of and cultivation
+        of fruit. Cider (sometimes called hard cider) is a fermented beverage made
+        from apple juice. This comprehensive collection highlights the historical
+        importance of apple (Malus xdomestica and other Malus species) and cider production
+        around the world. Many texts contain color illustrations of rare, historic,
+        and heirloom apple cultivars."},{"CollectionID":"22","CollectionName":"Publicaciones
+        en Español","CollectionDescription":""},{"CollectionID":"27","CollectionName":"Rarest
+        of the Rare","CollectionDescription":"These unique gems of the Biodiversity
+        Heritage Library collection represent some of the rarest natural history works
+        to ever hit the digital world."},{"CollectionID":"50","CollectionName":"Savants
+        of Napoleon’s Egyptian Campaign","CollectionDescription":"Contributions of
+        the French scientists who took part in Napoleon\u0027s Egyptian Expedition.
+        These materials represent works by the scientists associated with the campaign
+        or are later works by said scientists not necessarily related to Egypt."},{"CollectionID":"56","CollectionName":"Seed
+        \u0026 Nursery Catalogs","CollectionDescription":"This collection includes
+        works issued as seed and nursery catalogs, originally published for the purposes
+        of documenting trends, products, and expert advice related to botany, horticulture,
+        and commercial agriculture."},{"CollectionID":"39","CollectionName":"Shark
+        Week Collection","CollectionDescription":"A collection of works about sharks
+        to celebrate \u003ca href=\"http://en.wikipedia.org/wiki/Shark_Week\"\u003eShark
+        Week\u003c/a\u003e."},{"CollectionID":"77","CollectionName":"Smithsonian Field
+        Books collection","CollectionDescription":"This collection contains titles
+        and items from the Smithsonian Field Book Project, an initiative to increase
+        accessibility to field book content through cataloging, conservation, digitization,
+        and online publication."},{"CollectionID":"110","CollectionName":"The Royal
+        Society of Western Australia Journals","CollectionDescription":"This significant
+        collection contains the scientific Journals of The Royal Society of Western
+        Australia from 1914 to date, in addition to those of precursor societies from
+        1899 to 1914."},{"CollectionID":"32","CollectionName":"Theodore Roosevelt
+        Collection","CollectionDescription":"Selected works authored, co-authored
+        or introduced by Theodore Roosevelt dealing with Natural History. Also available
+        in iTunes U."},{"CollectionID":"83","CollectionName":"Top BHL Partner Content","CollectionDescription":"This
+        collection represents the top downloaded books from each of BHL\u0027s Members,
+        Affiliates, and Partners as of BHL\u0027s 10th anniversary celebration in
+        2016."},{"CollectionID":"74","CollectionName":"Under the Sea: World Oceans
+        Day","CollectionDescription":"In honor of World Oceans Day on June 8, we’ve
+        compiled a collection of publications that represent important milestones
+        in the progress of marine bioscience research and ocean exploration."},{"CollectionID":"111","CollectionName":"Unearthed!
+        Smithsonian Libraries\u0027 Paleo Collection","CollectionDescription":"In
+        celebration of the opening of the David H. Koch Hall of Fossils opening at
+        the National Museum of Natural History, Smithsonian Libraries has curated
+        an online collection of important and beautiful selections from the Libraries’
+        Paleobiology literature.  The digitized books are hosted on Biodiversity Heritage
+        Library (BHL), the world’s largest open access digital library for biodiversity
+        literature and archives. As part of this celebration, we have invited renowned
+        scientists and librarians to discuss the collection and identify their favorite
+        books in a series of blog posts."},{"CollectionID":"46","CollectionName":"Whales:
+        From Bone to Book Collection","CollectionDescription":"Select items about
+        the anatomy, ecology and evolution of whales authored by notable authors and
+        Smithsonian scientists, part of the Smithsonian Libraries \u003ca href=\"http://library.si.edu/exhibition/bone-to-book\"\u003e\"Whales:
+        From Bone to Book\" exhibit\u003ca/\u003e."},{"CollectionID":"78","CollectionName":"White
+        Whale","CollectionDescription":"A collection of works that include information
+        about the sperm whale (Physeter macrocephalus)."},{"CollectionID":"113","CollectionName":"William
+        Brewster Papers","CollectionDescription":"William Brewster (1851-1919) was
+        a renowned American amateur ornithologist, first president of the Massachusetts
+        Audubon Society, and a president of the American Ornithologists\u0027 Union.
+        His ornithological collection, bequeathed to the Museum of Comparative Zoology
+        at Harvard University, is considered one of the finest private collections
+        of North American birds ever assembled. Brewster’s diaries, journals, notebooks,
+        correspondence, and photographs contain a wealth of ecological and climatological
+        data, and document the development of the field of ornithology in the late
+        nineteenth and early twentieth centuries."},{"CollectionID":"43","CollectionName":"Women
+        in Natural History","CollectionDescription":"A collection of selected works
+        created by women who made direct contributions to the study of Botany and
+        Zoology either by way of authoring or editing works on the subject or by providing
+        critical illustrations to support the works authored by someone else. This
+        collection is by no means comprehensive."}]}'
+  recorded_at: 2020-01-29 00:15:49 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0
+- request:
+    method: get
+    uri: https://www.biodiversitylibrary.org/api3?op=GetCollections&apikey=<<bhl_key>>&format=json
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      cache-control: private
+      content-type: application/json; charset=utf-8
+      access-control-allow-origin: '*'
+      x-server-name: BHL1
+      content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
+      date: Wed, 29 Jan 2020 00:15:47 GMT
+      content-length: '21173'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Status":"ok","ErrorMessage":"","Result":[{"CollectionID":"97","CollectionName":"A
+        History of Cats: 1858-1922","CollectionDescription":"Cats were not always
+        the beloved household pets as we know them today. This collection of books
+        from the Library of Congress illustrates the variety of ways that people thought
+        about domestic cats from 1858 to 1922."},{"CollectionID":"85","CollectionName":"Antarctic
+        Exploration \u0026 Discovery","CollectionDescription":"This collection contains
+        rare books, journals and field diaries relating to the exploration and biodiversity
+        of Antarctica."},{"CollectionID":"99","CollectionName":"Antarctic Geological
+        Field Notebooks","CollectionDescription":"This collection contains Antarctic
+        field notebooks from Geoscience Australia’s N.H. (Doc) Fisher Geoscience Library
+        Collection. Geoscience Australia has a long and rich history of contributing
+        to the mapping and geological understanding of Antarctica. These notebooks
+        contain original observations made by geologists and geophysicists on the
+        Antarctic continent and adjacent sub-Antarctic islands."},{"CollectionID":"59","CollectionName":"Archives
+        from the Boston Metropolitan Park Flora","CollectionDescription":"In 1894
+        the Metropolitan Park Commission in Boston, Mass. commissioned Olmsted, Olmsted
+        \u0026 Eliot to survey the plants of newly acquired woodland reservations.
+        This collection includes 8,000 pages of correspondence, published books, articles,
+        and maps documenting the progress of the survey. To learn more about the collection
+        please visit us \u003ca href=\"http://hwpi.harvard.edu/botlib_projects/book/archives-and-specimens-boston-metropolitan-park-flora\"\u003e\u003cb\u003eonline.\u003cb\u003e\u003c/a\u003e"},{"CollectionID":"62","CollectionName":"Art
+        of Science","CollectionDescription":"This collection contains the rare books
+        featured in the Australian exhibition \"The Art of Science: Remarkable Natural
+        History illustrations from Museum Victoria\"."},{"CollectionID":"112","CollectionName":"Australian
+        Botanical","CollectionDescription":"Australian Botanical is a collection of
+        Australia\u0027s botanical taxonomic literature published in state, territory
+        and national herbarium journals, made openly accessible and searchable online
+        on the Biodiversity Heritage Library website."},{"CollectionID":"82","CollectionName":"BHL
+        at 10","CollectionDescription":"Celebrate BHL\u0027s 10th anniversary by browsing
+        notable contributions from its consortium members. From 2006 and its first
+        10 institutions to 2016 and its \u003ca href=\"https://about.biodiversitylibrary.org/about/bhl-consortium/\"\u003e40+
+        organizations\u003c/a\u003e, BHL partners have digitized and made freely available
+        some of the most remarkable works from their collections. Sit back, relax,
+        and browse some of BHL\u0027s best!"},{"CollectionID":"63","CollectionName":"BHL
+        Australia","CollectionDescription":"This collection contains the titles contributed
+        by museum and herbarium libraries in Australia, as well as by Australia\u0027s
+        royal societies, field naturalist clubs and government institutes and agencies."},{"CollectionID":"87","CollectionName":"BHL
+        Field Notes Project","CollectionDescription":"Items digitized for the BHL
+        Field Notes Project, a collaborative project funded by the Council on Library
+        and Information Resources (CLIR). The project provides open access to field
+        notes from institutions across the United States, and reunites fragmented
+        collections through institutional collaboration. More information about the
+        project and a full list of participating institutions can be found \u003ca
+        href=\"https://about.biodiversitylibrary.org/projects/past-projects/field-notes-project/\"\u003ehere\u003c/a\u003e."},{"CollectionID":"67","CollectionName":"BHL
+        Singapore","CollectionDescription":"This collection contains items contributed
+        by National Library Board Singapore and its partner institutions in Singapore."},{"CollectionID":"40","CollectionName":"Blog
+        Features","CollectionDescription":"All items featured in Book of the Week
+        posts on the \u003ca href=\"http://blog.biodiversitylibrary.org\"\u003eBHL
+        Blog\u003c/a\u003e"},{"CollectionID":"41","CollectionName":"Bone Wars Collection","CollectionDescription":"Collection
+        of items authored or edited by Edward Drinker Cope and Othniel Charles Marsh."},{"CollectionID":"92","CollectionName":"Botanic
+        Gardens Melbourne (1852-1899)","CollectionDescription":"This collection contains
+        reports, catalogues, essays, notes and correspondence authored by the Directors
+        of the Botanic Gardens Melbourne (now Royal Botanic Gardens Victoria) between
+        1852 and 1899."},{"CollectionID":"37","CollectionName":"Carl Linnaeus Collection","CollectionDescription":"Select
+        items authored by or about the Swedish botanist, physician, and zoologist."},{"CollectionID":"53","CollectionName":"Celebrating
+        Alfred Russel Wallace","CollectionDescription":"Selected items featuring the
+        work of Alfred Russel Wallace (1823-1913), British biologist, anthropologist,
+        geographer, environmentalist, and human rights advocate. The man who, independently
+        of Darwin, arrived to the same conclusion on natural selection. In 1858 he
+        corresponded with Darwin about his theory, prompting Darwin to finally publish
+        the famous work, On the Origin of Species, in 1859."},{"CollectionID":"4","CollectionName":"Charles
+        Darwin\u0027s Library","CollectionDescription":"Books that were a part of
+        Charles Darwin\u0027s personal collection."},{"CollectionID":"80","CollectionName":"Color
+        Our Collections","CollectionDescription":"A collection of books with plates
+        suitable for coloring. Created as part of the #ColorOurCollections event."},{"CollectionID":"49","CollectionName":"Curious
+        and Bizarre Creatures","CollectionDescription":"What do deep sea monsters,
+        mermaids, hydra, dinosaurs, and Shakespeare have in common? They\u0027re all
+        in this collection featuring some of the strangest books BHL has to offer."},{"CollectionID":"98","CollectionName":"Dazzling
+        Diversity: The Insect World","CollectionDescription":"Explore the books featured
+        in the Smithsonian Libraries\u0027 Dazzling Diversity exhibit at the National
+        Museum of Natural History and celebrate the insect world through the pages
+        of historic natural history books."},{"CollectionID":"69","CollectionName":"Early
+        Women in Science","CollectionDescription":"This collection features works
+        by important women scientists working prior to the middle of the twentieth
+        century.  Some of these women are well-known, and others have been only minimally
+        recognized, but all are important for their unique contributions to their
+        respective scientific fields. \u003cbr/\u003ePart of the \u003ca href=\"http://earlywomeninscience.biodiversityexhibition.com/\"\u003eEarly
+        Women in Science exhibition\u003c/a\u003e"},{"CollectionID":"6","CollectionName":"Engelmann
+        Herbarium","CollectionDescription":"Botanical literature generated during
+        expansion into the American West."},{"CollectionID":"38","CollectionName":"Engelmann
+        Papers, Missouri Botanical Garden","CollectionDescription":"The personal papers
+        of the botanist George Engelmann include almost 5,000 letters from about 550
+        leading and amateur scientists in the United States and Europe in the middle
+        decades of the 19th century.  The collection also includes the various scientific
+        notes and written works composed by Engelmann during his life as a medical
+        doctor living in St. Louis, Missouri."},{"CollectionID":"84","CollectionName":"Expanding
+        Access to Biodiversity Literature","CollectionDescription":"Expanding Access
+        to Biodiversity Literature, which is funded generously by the Institute of
+        Museum and Library Services (IMLS), will significantly increase online access
+        to biodiversity material by positioning BHL as an on-ramp for biodiversity
+        content providers that would like to contribute to the national digital library
+        infrastructure through the Digital Public Library of America (DPLA)."},{"CollectionID":"21","CollectionName":"Extinct
+        Species","CollectionDescription":"Dinosaurs, dodos, and more. Selected books
+        highlighting extinct species of plants and animals."},{"CollectionID":"91","CollectionName":"Ferdinand
+        von Mueller Collection","CollectionDescription":"This collection contains
+        reports, essays, papers, books, catalogues and correspondence produced by
+        Ferdinand von Mueller, Government Botanist for the Colony of Victoria from
+        1853, Director of the Melbourne Botanic Gardens (now Royal Botanic Gardens
+        Victoria) from 1857 to 1873, and founder of the National Herbarium of Victoria."},{"CollectionID":"18","CollectionName":"Fieldiana:
+        The Flora of Peru","CollectionDescription":"This collection contains those
+        Fieldiana:Botany volumes which comprise the series Flora of Peru."},{"CollectionID":"31","CollectionName":"Floral
+        Mania","CollectionDescription":"These books contain some of the most beautiful
+        and unusual illustrations of flowering plants in BHL."},{"CollectionID":"76","CollectionName":"Fossil
+        Stories","CollectionDescription":"Rocks hold the key to the history of life
+        on Earth. \"Fossil Stories\" explores the world of fossils, the history of
+        paleontology, and the men, women, and publications that shaped our knowledge
+        of life preserved in these rocks. This collection includes seminal works in
+        the history of paleontology."},{"CollectionID":"96","CollectionName":"John
+        Torrey Papers","CollectionDescription":"The collection consists of incoming
+        and outgoing correspondence, pertaining mostly to Torrey’s work as a botanist
+        and professor. Much of the scientific correspondence concerns identification
+        of plants from the vast interior of the continent from government-sponsored
+        expeditions. Unrelated letters to and from other correspondents (some of which
+        predate Torrey’s birth) are also in the collection."},{"CollectionID":"93","CollectionName":"Joseph
+        Dalton Hooker Collection","CollectionDescription":"Sir Joseph Dalton Hooker
+        was one of the most important botanists of the 19th century and Kew Gardens\u0027
+        most illustrious Director (1865-1885). This collection features many of Hooker\u0027s
+        publications and personal correspondence."},{"CollectionID":"109","CollectionName":"Language
+        of Flowers","CollectionDescription":"Selections from Chicago Botanic Garden’s
+        Language of Flowers collection, digitized with generous funding awarded by
+        the National Endowment for the Humanities. Also includes selections from Cornell
+        University Library’s Language of Flowers collection. These works add to the
+        body of knowledge on the subject of language of flowers that are at the intersection
+        of botany, horticulture, art, poetry, and woman’s studies."},{"CollectionID":"71","CollectionName":"Latino
+        Natural History","CollectionDescription":"\u003ctable role=\"presentation\"\u003e\u003ctr\u003e\u003ctd\u003eThis
+        collection features items related to naturalists from — or who are descendants
+        of people from — Mexico, Cuba, Puerto Rico, and Central and South America,
+        often referred to collectively as Latin America. These Latino/a naturalists
+        have influenced the study of the world\u0027s flora and fauna, and in many
+        cases provided the foundation for the study of science in their home countries.
+        \u003cbr/ \u003ePart of the \u003ca href=\"http://latinonaturalhistory.biodiversityexhibition.com\"\u003eLatino
+        Natural History exhibition\u003c/a\u003e\u003c/td\u003e\r\n\u003ctd\u003eEsta
+        colección presenta títulos relacionados a naturalistas que son de — o son
+        descendientes de personas de — México, Cuba, Puerto Rico, Centroamérica, y
+        Sudamérica, paises a los que frecuentemente  se refiere como Latinoamérica.
+        Estos naturalistas latinos/as han influido el estudio de la fauna y flora
+        del mundo, y en muchos casos crearon las bases del estudio de ciencias naturales
+        en sus países. \u003cbr/ \u003eParte de la exhibición \u003ca href=\"http://latinonaturalhistory.biodiversityexhibition.com\"\u003eLatino
+        Natural History\u003c/a\u003e\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e"},{"CollectionID":"5","CollectionName":"Missouri
+        Botanical Garden\u0027s Materia Medica","CollectionDescription":"A title scanned
+        for Trio Foundation."},{"CollectionID":"7","CollectionName":"Missouri Botanical
+        Garden\u0027s Orchid Folios","CollectionDescription":"Titles scanned for the
+        Trio Foundation, 2011"},{"CollectionID":"1","CollectionName":"Missouri Botanical
+        Garden\u0027s Rare Books Collection","CollectionDescription":"A volume scanned
+        as part of MBG\u0027s Rare Books Website."},{"CollectionID":"64","CollectionName":"Monsters
+        Are Real","CollectionDescription":"Many of history\u0027s most fearsome legendary
+        monsters are based on real animals. The BHL Monsters Are Real campaign explores
+        the stories, people, books, and animals that inspired such infamous beasts
+        as Sea Serpents, the Kraken, Hydra, Mermaids, and Leviathans. This collection
+        includes the books that fueled such monster myths, as well as those that highlight
+        the real identity of these beasts."},{"CollectionID":"60","CollectionName":"Museums
+        Victoria","CollectionDescription":"This collection contains rare and old books,
+        journals and pamphlets from the Museums Victoria Library in Melbourne, Australia."},{"CollectionID":"45","CollectionName":"New
+        York Botanical Garden","CollectionDescription":"Items contributed from the
+        \u003ca href=\"http://www.nybg.org\"\u003eNew York Botanical Garden\u003c/a\u003e."},{"CollectionID":"94","CollectionName":"Objects
+        of Wonder","CollectionDescription":"The natural world is filled with many
+        objects of wonder, and BHL\u0027s collections document many of these wonders.
+        From early cabinets of curiosity to notable books from BHL\u0027s partners,
+        explore some of BHL\u0027s objects of wonder in this collection."},{"CollectionID":"58","CollectionName":"Once
+        There Were Billions","CollectionDescription":"Once an amazing diversity of
+        birds—some in breathtaking abundance—inhabited the vast forests and plains
+        of North America. But starting around 1600, species began to disappear, as
+        humans altered habitats, over-hunted, and introduced predators. This collection
+        includes books related to the exhibition \u003ca href=\"http://library.si.edu/exhibition/once-there-were-billions\"\u003e\"Once
+        There Were Billions\"\u003c/a\u003e which focuses on the extinction of four
+        bird species: the Passenger Pigeon (Ectopistes migratorius), Great Auk (Pinguinus
+        impennis), Carolina Parakeet (Conuropsis carolinensis), and Heath Hen (Tympanuchus
+        cupido cupido.)"},{"CollectionID":"72","CollectionName":"Perkins Agricultural
+        Library","CollectionDescription":"The \u003ca href=\"http://library.soton.ac.uk/perkins\"\u003ePerkins
+        Agricultural Library\u003c/a\u003e was presented to Southampton University
+        Library in 1946 by Walter Frank Perkins, compiler of the bibliography, British
+        and Irish Writers on Agriculture (1929). The Library contains over 2000 books
+        and 40 periodicals published from the 17th century to the late 19th century.
+        The books include practical farming texts on crops, animals, buildings and
+        farm machinery as well as encyclopaedias and textbooks. The \u003ca href=\"http://viewer.soton.ac.uk/library/image/52136644/1/\"\u003epublished
+        catalogue is available online\u003c/a\u003e and the collection can be \u003ca
+        href=\"https://www-lib.soton.ac.uk/\"\u003esearched from WebCat\u003c/a\u003e
+        by selecting \u0027Perkins collection\u0027 in the \u0027location\u0027 field.
+        This is a digitisation project in progress with texts being added weekly to
+        the collection. Should you have particular interest in any texts in the catalogue
+        that are currently not available, please \u003ca href=\"mailto:digitise@soton.ac.uk\"\u003elet
+        us know\u003c/a\u003e and we will attempt to prioritise their digitisation
+        and availability."},{"CollectionID":"103","CollectionName":"Pomology: Apples
+        and Cider","CollectionDescription":"Pomology is the study of and cultivation
+        of fruit. Cider (sometimes called hard cider) is a fermented beverage made
+        from apple juice. This comprehensive collection highlights the historical
+        importance of apple (Malus xdomestica and other Malus species) and cider production
+        around the world. Many texts contain color illustrations of rare, historic,
+        and heirloom apple cultivars."},{"CollectionID":"22","CollectionName":"Publicaciones
+        en Español","CollectionDescription":""},{"CollectionID":"27","CollectionName":"Rarest
+        of the Rare","CollectionDescription":"These unique gems of the Biodiversity
+        Heritage Library collection represent some of the rarest natural history works
+        to ever hit the digital world."},{"CollectionID":"50","CollectionName":"Savants
+        of Napoleon’s Egyptian Campaign","CollectionDescription":"Contributions of
+        the French scientists who took part in Napoleon\u0027s Egyptian Expedition.
+        These materials represent works by the scientists associated with the campaign
+        or are later works by said scientists not necessarily related to Egypt."},{"CollectionID":"56","CollectionName":"Seed
+        \u0026 Nursery Catalogs","CollectionDescription":"This collection includes
+        works issued as seed and nursery catalogs, originally published for the purposes
+        of documenting trends, products, and expert advice related to botany, horticulture,
+        and commercial agriculture."},{"CollectionID":"39","CollectionName":"Shark
+        Week Collection","CollectionDescription":"A collection of works about sharks
+        to celebrate \u003ca href=\"http://en.wikipedia.org/wiki/Shark_Week\"\u003eShark
+        Week\u003c/a\u003e."},{"CollectionID":"77","CollectionName":"Smithsonian Field
+        Books collection","CollectionDescription":"This collection contains titles
+        and items from the Smithsonian Field Book Project, an initiative to increase
+        accessibility to field book content through cataloging, conservation, digitization,
+        and online publication."},{"CollectionID":"110","CollectionName":"The Royal
+        Society of Western Australia Journals","CollectionDescription":"This significant
+        collection contains the scientific Journals of The Royal Society of Western
+        Australia from 1914 to date, in addition to those of precursor societies from
+        1899 to 1914."},{"CollectionID":"32","CollectionName":"Theodore Roosevelt
+        Collection","CollectionDescription":"Selected works authored, co-authored
+        or introduced by Theodore Roosevelt dealing with Natural History. Also available
+        in iTunes U."},{"CollectionID":"83","CollectionName":"Top BHL Partner Content","CollectionDescription":"This
+        collection represents the top downloaded books from each of BHL\u0027s Members,
+        Affiliates, and Partners as of BHL\u0027s 10th anniversary celebration in
+        2016."},{"CollectionID":"74","CollectionName":"Under the Sea: World Oceans
+        Day","CollectionDescription":"In honor of World Oceans Day on June 8, we’ve
+        compiled a collection of publications that represent important milestones
+        in the progress of marine bioscience research and ocean exploration."},{"CollectionID":"111","CollectionName":"Unearthed!
+        Smithsonian Libraries\u0027 Paleo Collection","CollectionDescription":"In
+        celebration of the opening of the David H. Koch Hall of Fossils opening at
+        the National Museum of Natural History, Smithsonian Libraries has curated
+        an online collection of important and beautiful selections from the Libraries’
+        Paleobiology literature.  The digitized books are hosted on Biodiversity Heritage
+        Library (BHL), the world’s largest open access digital library for biodiversity
+        literature and archives. As part of this celebration, we have invited renowned
+        scientists and librarians to discuss the collection and identify their favorite
+        books in a series of blog posts."},{"CollectionID":"46","CollectionName":"Whales:
+        From Bone to Book Collection","CollectionDescription":"Select items about
+        the anatomy, ecology and evolution of whales authored by notable authors and
+        Smithsonian scientists, part of the Smithsonian Libraries \u003ca href=\"http://library.si.edu/exhibition/bone-to-book\"\u003e\"Whales:
+        From Bone to Book\" exhibit\u003ca/\u003e."},{"CollectionID":"78","CollectionName":"White
+        Whale","CollectionDescription":"A collection of works that include information
+        about the sperm whale (Physeter macrocephalus)."},{"CollectionID":"113","CollectionName":"William
+        Brewster Papers","CollectionDescription":"William Brewster (1851-1919) was
+        a renowned American amateur ornithologist, first president of the Massachusetts
+        Audubon Society, and a president of the American Ornithologists\u0027 Union.
+        His ornithological collection, bequeathed to the Museum of Comparative Zoology
+        at Harvard University, is considered one of the finest private collections
+        of North American birds ever assembled. Brewster’s diaries, journals, notebooks,
+        correspondence, and photographs contain a wealth of ecological and climatological
+        data, and document the development of the field of ornithology in the late
+        nineteenth and early twentieth centuries."},{"CollectionID":"43","CollectionName":"Women
+        in Natural History","CollectionDescription":"A collection of selected works
+        created by women who made direct contributions to the study of Botany and
+        Zoology either by way of authoring or editing works on the subject or by providing
+        critical illustrations to support the works authored by someone else. This
+        collection is by no means comprehensive."}]}'
+  recorded_at: 2020-01-29 00:15:49 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0

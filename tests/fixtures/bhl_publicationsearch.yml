@@ -1,0 +1,137 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.biodiversitylibrary.org/api3?op=PublicationSearch&searchterm=cocos%20island%20costa%20rica%20birds&searchtype=C&apikey=<<bhl_key>>&format=json
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      cache-control: private
+      content-type: application/json; charset=utf-8
+      access-control-allow-origin: '*'
+      x-server-name: BHL1
+      content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
+      date: Wed, 29 Jan 2020 00:20:11 GMT
+      content-length: '860'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Status":"ok","ErrorMessage":"","Result":[{"BHLType":"Part","FoundIn":"Metadata","Volume":"2","Authors":[{"Name":"Gifford,
+        Edward Winslow"}],"PartUrl":"https://www.biodiversitylibrary.org/part/69838","PartID":"69838","Genre":"Article","Title":"Field
+        notes on the land birds of the Galapagos Islands, and of Cocos Island,Costa
+        Rica","ContainerTitle":"Proceedings of the California Academy of Sciences,
+        4th series.","Series":"4","Date":"1919","PageRange":"189--258"},{"BHLType":"Item","FoundIn":"Metadata","ItemID":"167380","TitleID":"89765","ExternalUrl":"http://hdl.handle.net/2246/1677","ItemUrl":"https://www.biodiversitylibrary.org/item/167380","TitleUrl":"https://www.biodiversitylibrary.org/bibliography/89765","Authors":[{"Name":"Slud,
+        Paul."}],"Genre":"Book","Title":"The birds of Cocos Island (Costa Rica). Bulletin
+        of the AMNH ; v. 134, article 4"}]}'
+  recorded_at: 2020-01-29 00:20:13 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0
+- request:
+    method: get
+    uri: https://www.biodiversitylibrary.org/api3?op=PublicationSearch&searchterm=nematocerous&searchtype=C&apikey=<<bhl_key>>&format=json
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      cache-control: private
+      content-type: application/json; charset=utf-8
+      access-control-allow-origin: '*'
+      x-server-name: BHL1
+      content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
+      date: Wed, 29 Jan 2020 00:20:12 GMT
+      content-length: '8997'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Status":"ok","ErrorMessage":"","Result":[{"BHLType":"Item","FoundIn":"Metadata","ItemID":"35296","TitleID":"8531","Volume":"pt.1-2
+        (1903-1905)","ItemUrl":"https://www.biodiversitylibrary.org/item/35296","TitleUrl":"https://www.biodiversitylibrary.org/bibliography/8531","MaterialType":"Published
+        material","PublisherPlace":"Albany","PublisherName":"University of the State
+        of New York,","PublicationDate":"1903-1905","Authors":[{"Name":"Johannsen,
+        O. A. (Oskar Augustus),"}],"Genre":"Book","Title":"Aquatic nematocerous diptera.
+        (I)"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"68","Authors":[{"Name":"Johannsen,
+        O A"}],"PartUrl":"https://www.biodiversitylibrary.org/part/9363","PartID":"9363","Genre":"Article","Title":"Aquatic
+        nematocerous Diptera","ContainerTitle":"Bulletin / New York State Museum.","Date":"1903","PageRange":"328--441"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"8","Authors":[{"Name":"Kellogg,
+        Vernon L"}],"PartUrl":"https://www.biodiversitylibrary.org/part/183259","PartID":"183259","Genre":"Article","Title":"The
+        Mouthpart of the Nematocerous Diptera, V","ContainerTitle":"Psyche.","Date":"1899","PageRange":"363--365"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"51","Authors":[{"Name":"Alexander,
+        Charles P"}],"PartUrl":"https://www.biodiversitylibrary.org/part/248893","PartID":"248893","Genre":"Article","Title":"Undescribed
+        species of nematocerous Diptera","ContainerTitle":"Bulletin of the Brooklyn
+        Entomological Society.","Issue":"3","Date":"1956","PageRange":"75--81"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"8","Authors":[{"Name":"Kellogg,
+        Vernon L"}],"PartUrl":"https://www.biodiversitylibrary.org/part/183251","PartID":"183251","Genre":"Article","Title":"The
+        Mouthparts of the Nematocerous Diptera, III","ContainerTitle":"Psyche.","Date":"1899","PageRange":"346--348"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"48","Authors":[{"Name":"Alexander,
+        Charles P"}],"PartUrl":"https://www.biodiversitylibrary.org/part/177342","PartID":"177342","Genre":"Article","Title":"Undescribed
+        species of nematocerous Diptera. II","ContainerTitle":"Bulletin of the Brooklyn
+        Entomological Society.","Series":"new","Date":"1953","PageRange":"41--49"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"55","Authors":[{"Name":"Alexander,
+        Charles Paul"}],"PartUrl":"https://www.biodiversitylibrary.org/part/177262","PartID":"177262","Genre":"Article","Title":"Undescribed
+        species of Nematocerous Diptera, part X","ContainerTitle":"Bulletin of the
+        Brooklyn Entomological Society.","Series":"new","Date":"1961","PageRange":"114--120"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"57","Authors":[{"Name":"Alexander,
+        Charles P"}],"PartUrl":"https://www.biodiversitylibrary.org/part/177185","PartID":"177185","Genre":"Article","Title":"Undescribed
+        species of Nematocerous Diptera. Part XI","ContainerTitle":"Bulletin of the
+        Brooklyn Entomological Society.","Series":"new","Date":"1962","PageRange":"33--39"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"58","Authors":[{"Name":"Alexander,
+        Charles Paul"}],"PartUrl":"https://www.biodiversitylibrary.org/part/177191","PartID":"177191","Genre":"Article","Title":"Undescribed
+        species of Nematocerous Diptera. Part XII","ContainerTitle":"Bulletin of the
+        Brooklyn Entomological Society.","Series":"new","Date":"1963","PageRange":"6--11"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"8","Authors":[{"Name":"Kellogg,
+        Vernon L"}],"PartUrl":"https://www.biodiversitylibrary.org/part/183254","PartID":"183254","Genre":"Article","Title":"The
+        Mouthparts of the Nematocerous Diptera, IV","ContainerTitle":"Psyche.","Date":"1899","PageRange":"355--359"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"13","Authors":[{"Name":"Coquillett,
+        D. W. (Daniel William),"}],"PartUrl":"https://www.biodiversitylibrary.org/part/40076","PartID":"40076","Genre":"Article","Title":"New
+        nematocerous Diptera from North America","ContainerTitle":"Journal of the
+        New York Entomological Society.","Date":"1905","PageRange":"56--69"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"57","Authors":[{"Name":"Edwards,
+        F W"}],"PartUrl":"https://www.biodiversitylibrary.org/part/22329","PartID":"22329","Genre":"Article","Title":"Resting
+        positions of some nematocerous Diptera","ContainerTitle":"The Entomologist\u0027s
+        monthly magazine.","Series":"3","Date":"1921","PageRange":"22--26"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"8","Authors":[{"Name":"Kellogg,
+        Vernon L"}],"PartUrl":"https://www.biodiversitylibrary.org/part/183246","PartID":"183246","Genre":"Article","Title":"The
+        Mouthparts of the Nematocerous Diptera, II","ContainerTitle":"Psyche.","Date":"1899","PageRange":"327--330"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"58","Authors":[{"Name":"Alexander,
+        Charles P"}],"PartUrl":"https://www.biodiversitylibrary.org/part/177203","PartID":"177203","Genre":"Article","Title":"Undescribed
+        species of Nematocerous Diptera. Part XIII","ContainerTitle":"Bulletin of
+        the Brooklyn Entomological Society.","Series":"new","Date":"1963","PageRange":"133--138"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"54","Authors":[{"Name":"Alexander,
+        Charles P"}],"PartUrl":"https://www.biodiversitylibrary.org/part/177316","PartID":"177316","Genre":"Article","Title":"Undescribed
+        species of Nematocerous Diptera. Part VIII","ContainerTitle":"Bulletin of
+        the Brooklyn Entomological Society.","Series":"new","Date":"1960","PageRange":"129--135"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"54","Authors":[{"Name":"Alexander,
+        Charles P"}],"PartUrl":"https://www.biodiversitylibrary.org/part/177307","PartID":"177307","Genre":"Article","Title":"Undescribed
+        species of Nematocerous Diptera. Parts VI, VII","ContainerTitle":"Bulletin
+        of the Brooklyn Entomological Society.","Series":"new","Date":"1959","PageRange":"37--43"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"8","Authors":[{"Name":"Kellogg,
+        Vernon L"}],"PartUrl":"https://www.biodiversitylibrary.org/part/183238","PartID":"183238","Genre":"Article","Title":"The
+        Mouth Parts of the Nematocerous Diptera.—I","ContainerTitle":"Psyche.","Date":"1899","PageRange":"303--306"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"3","Authors":[{"Name":"Edwards,
+        F W"}],"PartUrl":"https://www.biodiversitylibrary.org/part/98111","PartID":"98111","Genre":"Article","Title":"New
+        and little-known Nematocerous Diptera from Java","ContainerTitle":"Treubia.","Date":"1923","PageRange":"180--183"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"31","Authors":[{"Name":"Crampton,
+        G C"}],"PartUrl":"https://www.biodiversitylibrary.org/part/234905","PartID":"234905","Genre":"Article","Title":"Remarks
+        on the Phylogeny and Interrelationships of Nematocerous Diptera","ContainerTitle":"Psyche.","Issue":"5","Date":"1924","PageRange":"238--242"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"52","Authors":[{"Name":"Alexander,
+        Charles Paul"}],"PartUrl":"https://www.biodiversitylibrary.org/part/47026","PartID":"47026","Genre":"Article","Title":"The
+        interpretation of the radial field of the wing in the nematocerous Diptera,
+        with special reference to the Tipulidae","ContainerTitle":"Proceedings of
+        the Linnean Society of New South Wales.","Date":"1927","PageRange":"42--72"},{"BHLType":"Part","FoundIn":"Metadata","Volume":"513","ExternalUrl":"http://zookeys.pensoft.net/articles.php?id=5680","Authors":[{"Name":"Rozo-Lopez,
+        Paula"},{"Name":"Sanchis, Joaquin (Ximo)"}],"PartUrl":"https://www.biodiversitylibrary.org/part/216873","PartID":"216873","Genre":"Article","Title":"Mosquito
+        species (Diptera, Culicidae) in three ecosystems from the Colombian Andes:
+        identification through DNA barcoding and adult morphology","ContainerTitle":"ZooKeys","Date":"2015","PageRange":"39-64"},{"BHLType":"Item","FoundIn":"Metadata","ItemID":"125019","TitleID":"61505","ItemUrl":"https://www.biodiversitylibrary.org/item/125019","TitleUrl":"https://www.biodiversitylibrary.org/bibliography/61505","MaterialType":"Published
+        material","PublisherPlace":"Albany","PublisherName":"University of the state
+        of New York,","Authors":[{"Name":"Needham, James G. (James George),"},{"Name":"MacGillivray,
+        Alexander Dyer,"},{"Name":"Johannsen, O. A. (Oskar Augustus),"},{"Name":"Davis,
+        Kary Cadmus,"}],"Genre":"Book","Title":"Aquatic insects in New York state
+        ; a study conducted at the entomologic field station, Ithaca, N. Y. under
+        the direction of Ephraim Porter Felt."},{"BHLType":"Item","FoundIn":"Metadata","ItemID":"273012","TitleID":"163466","Volume":"no.
+        3793","ItemUrl":"https://www.biodiversitylibrary.org/item/273012","TitleUrl":"https://www.biodiversitylibrary.org/bibliography/163466","MaterialType":"Published
+        material","PublisherPlace":"New York NY","PublisherName":"American Museum
+        of Natural History,","PublicationDate":"2014","Authors":[{"Name":"Grimaldi,
+        David A."},{"Name":"Johnston, M. Andrew,"}],"Genre":"Book","Title":"The long-tongued
+        Cretaceous scorpionfly Parapolycentropus Grimaldi and Rasnitsyn (Mecoptera,
+        Pseudopolycentropodidae) : new data and interpretations /"}]}'
+  recorded_at: 2020-01-29 00:20:13 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0

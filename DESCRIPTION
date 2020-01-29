@@ -27,5 +27,6 @@ Imports:
     tibble
 Suggests:
     testthat,
-    knitr
+    knitr,
+    vcr
 RoxygenNote: 7.0.2

@@ -1,0 +1,157 @@
+http_interactions:
+- request:
+    method: get
+    uri: https://www.biodiversitylibrary.org/openurl?genre=book&title=Manual%2Bof%2BNorth%2BAmerican%2BDiptera&aufirst=Samuel%20Wendell&date=1908&spage=16&apikey=<<bhl_key>>&format=json
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      cache-control: private
+      content-type: text/json; charset=utf-8
+      content-encoding: gzip
+      vary: Accept-Encoding
+      x-server-name: BHL1
+      content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
+      date: Wed, 29 Jan 2020 00:18:29 GMT
+      content-length: '530'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Status":1,"Message":"","citations":[{"Url":"https://www.biodiversitylibrary.org/page/1316635","PartUrl":"","ItemUrl":"https://www.biodiversitylibrary.org/item/16772","TitleUrl":"https://www.biodiversitylibrary.org/bibliography/1704","Title":"Manual
+        of North American Diptera /","STitle":"","Genre":"Book","Authors":["Williston,
+        Samuel W. (Samuel Wendell),"],"Subjects":["Diptera","North America",""],"PublisherName":"J.T.
+        Hathaway,","PublisherPlace":"New Haven :","Date":"1908","Volume":"","Edition":"3rd
+        ed. ","PublicationFrequency":"","Language":"English","Oclc":"6445326","Lccn":"08024896","Issn":"","Isbn":"","ATitle":"","SPage":"Page
+        16","EPage":"","Pages":""}]}'
+  recorded_at: 2020-01-29 00:18:33 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0
+- request:
+    method: get
+    uri: https://www.biodiversitylibrary.org/openurl?genre=book&title=Manual%2Bof%2BNorth%2BAmerican%2BDiptera&aufirst=Samuel%20Wendell&date=1908&spage=16&apikey=<<bhl_key>>&format=xml
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      cache-control: private
+      content-type: text/xml; charset=utf-8
+      content-encoding: gzip
+      vary: Accept-Encoding
+      x-server-name: BHL1
+      content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
+      date: Wed, 29 Jan 2020 00:18:30 GMT
+      content-length: '715'
+    body:
+      encoding: UTF-8
+      file: no
+      string: "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<OpenUrlResponse xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
+        xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n  <Status>Success</Status>\r\n
+        \ <Message />\r\n  <citations>\r\n    <OpenUrlResponseCitation>\r\n      <Url>https://www.biodiversitylibrary.org/page/1316635</Url>\r\n
+        \     <PartUrl />\r\n      <ItemUrl>https://www.biodiversitylibrary.org/item/16772</ItemUrl>\r\n
+        \     <TitleUrl>https://www.biodiversitylibrary.org/bibliography/1704</TitleUrl>\r\n
+        \     <Title>Manual of North American Diptera /</Title>\r\n      <STitle />\r\n
+        \     <Genre>Book</Genre>\r\n      <Authors>\r\n        <string>Williston,
+        Samuel W. (Samuel Wendell),</string>\r\n      </Authors>\r\n      <Subjects>\r\n
+        \       <string>Diptera</string>\r\n        <string>North America</string>\r\n
+        \       <string />\r\n      </Subjects>\r\n      <PublisherName>J.T. Hathaway,</PublisherName>\r\n
+        \     <PublisherPlace>New Haven :</PublisherPlace>\r\n      <Date>1908</Date>\r\n
+        \     <Volume />\r\n      <Edition>3rd ed. </Edition>\r\n      <PublicationFrequency
+        />\r\n      <Language>English</Language>\r\n      <Oclc>6445326</Oclc>\r\n
+        \     <Lccn>08024896</Lccn>\r\n      <Issn />\r\n      <Isbn />\r\n      <ATitle
+        />\r\n      <SPage>Page 16</SPage>\r\n      <EPage />\r\n      <Pages />\r\n
+        \   </OpenUrlResponseCitation>\r\n  </citations>\r\n</OpenUrlResponse>"
+  recorded_at: 2020-01-29 00:18:33 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0
+- request:
+    method: get
+    uri: https://www.biodiversitylibrary.org/openurl?genre=book&title=Manual%2Bof%2BNorth%2BAmerican%2BDiptera&aufirst=Samuel%20Wendell&date=1908&spage=16&apikey=<<bhl_key>>&format=json
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      cache-control: private
+      content-type: text/json; charset=utf-8
+      content-encoding: gzip
+      vary: Accept-Encoding
+      x-server-name: BHL1
+      content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
+      date: Wed, 29 Jan 2020 00:18:30 GMT
+      content-length: '530'
+      set-cookie: TS010ecf5c=01a3504f4c13d36218297e3bf2f02c98894b43bf91be69fb56f76e622c5256c625cd4c44e2a8a3278f55e5c39f6497f7385f4d348b;
+        Path=/; Secure; HTTPOnly
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Status":1,"Message":"","citations":[{"Url":"https://www.biodiversitylibrary.org/page/1316635","PartUrl":"","ItemUrl":"https://www.biodiversitylibrary.org/item/16772","TitleUrl":"https://www.biodiversitylibrary.org/bibliography/1704","Title":"Manual
+        of North American Diptera /","STitle":"","Genre":"Book","Authors":["Williston,
+        Samuel W. (Samuel Wendell),"],"Subjects":["Diptera","North America",""],"PublisherName":"J.T.
+        Hathaway,","PublisherPlace":"New Haven :","Date":"1908","Volume":"","Edition":"3rd
+        ed. ","PublicationFrequency":"","Language":"English","Oclc":"6445326","Lccn":"08024896","Issn":"","Isbn":"","ATitle":"","SPage":"Page
+        16","EPage":"","Pages":""}]}'
+  recorded_at: 2020-01-29 00:18:33 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0
+- request:
+    method: get
+    uri: https://www.biodiversitylibrary.org/openurl?genre=book&title=Manual%2Bof%2BNorth%2BAmerican%2BDiptera&aufirst=Samuel%20Wendell&date=1908&spage=16&apikey=<<bhl_key>>&format=json
+    body:
+      encoding: ''
+      string: ''
+    headers:
+      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      Accept-Encoding: gzip, deflate
+      Accept: application/json, text/xml, application/xml, */*
+  response:
+    status:
+      status_code: '200'
+      message: OK
+      explanation: Request fulfilled, document follows
+    headers:
+      status: HTTP/1.1 200 OK
+      cache-control: private
+      content-type: text/json; charset=utf-8
+      content-encoding: gzip
+      vary: Accept-Encoding
+      x-server-name: BHL1
+      content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
+      date: Wed, 29 Jan 2020 00:18:32 GMT
+      content-length: '530'
+    body:
+      encoding: UTF-8
+      file: no
+      string: '{"Status":1,"Message":"","citations":[{"Url":"https://www.biodiversitylibrary.org/page/1316635","PartUrl":"","ItemUrl":"https://www.biodiversitylibrary.org/item/16772","TitleUrl":"https://www.biodiversitylibrary.org/bibliography/1704","Title":"Manual
+        of North American Diptera /","STitle":"","Genre":"Book","Authors":["Williston,
+        Samuel W. (Samuel Wendell),"],"Subjects":["Diptera","North America",""],"PublisherName":"J.T.
+        Hathaway,","PublisherPlace":"New Haven :","Date":"1908","Volume":"","Edition":"3rd
+        ed. ","PublicationFrequency":"","Language":"English","Oclc":"6445326","Lccn":"08024896","Issn":"","Isbn":"","ATitle":"","SPage":"Page
+        16","EPage":"","Pages":""}]}'
+  recorded_at: 2020-01-29 00:18:33 GMT
+  recorded_with: vcr/0.4.0, webmockr/0.5.0

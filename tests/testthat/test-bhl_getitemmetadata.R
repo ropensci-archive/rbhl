@@ -1,12 +1,9 @@
-# tests for bhl_getitemmetadata fxn in rbhl
-context("bhl_getitemmetadata")
-
-test_that("bhl_getitemmetadata returns the correct class", {
-	skip_on_cran()
-
-	tt <- bhl_getitemmetadata('16800', TRUE)
-	uu <- bhl_getitemmetadata('16800', TRUE, as='xml')
-	vv <- bhl_getitemmetadata('16800', TRUE, as='json')
+test_that("bhl_getitemmetadata", {
+	vcr::use_cassette("bhl_getitemmetadata", {
+  	tt <- bhl_getitemmetadata('16800', TRUE)
+  	uu <- bhl_getitemmetadata('16800', TRUE, as='xml')
+  	vv <- bhl_getitemmetadata('16800', TRUE, as='json')
+  })
 
   expect_is(tt, "data.frame")
 

@@ -1,11 +1,8 @@
-# tests for bhl_getcollection fxn in rbhl
-context("bhl_getcollection")
-
-test_that("bhl_collection returns the correct class", {
-	skip_on_cran()
-
-	tt <- bhl_getcollections()
-	uu <- bhl_getcollections(as = 'json')
+test_that("bhl_collection", {
+	vcr::use_cassette("bhl_getcollections", {
+  	tt <- bhl_getcollections()
+  	uu <- bhl_getcollections(as = 'json')
+  })
 
 	expect_is(tt, "data.frame")
 

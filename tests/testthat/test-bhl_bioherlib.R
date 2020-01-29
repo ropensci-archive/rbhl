@@ -1,12 +1,12 @@
-# tests for bhl_bioherlib fxn in rbhl
-context("bhl_bioherlib")
-
-test_that("bhl_bioherlib returns", {
-	skip_on_cran()
-
-	tt <- bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE)
-	uu <- bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, as="list")
-	vv <- bhl_bioherlib(method='GetPageMetadata', pageid=1328690, ocr=TRUE, names=TRUE, as='xml')
+test_that("bhl_bioherlib", {
+	vcr::use_cassette("bhl_bioherlib", {
+  	tt <- bhl_bioherlib(method='GetPageMetadata', pageid=1328690,
+      ocr=TRUE, names=TRUE)
+  	uu <- bhl_bioherlib(method='GetPageMetadata', pageid=1328690,
+      ocr=TRUE, names=TRUE, as="list")
+  	vv <- bhl_bioherlib(method='GetPageMetadata', pageid=1328690,
+      ocr=TRUE, names=TRUE, as='xml')
+  })
 
 	# correct classes
 	expect_is(tt, "data.frame")
