@@ -1,3 +1,16 @@
+rbhl 0.9.0
+===============
+
+### NEW FEATURES
+
+* Re-worked package functions to work with BHL API version 3. Some functions are defunct, see `?rbhl-defunct` after installation. Some BHL API methods were removed and others folded into other API methods; see https://www.biodiversitylibrary.org/docs/api3.html for all the details (#25) (#27)
+
+### MINOR IMPROVEMENTS
+
+* fix missing title in vignette (#26)
+* fix instructions for setting a BHL API key (#24)
+
+
 rbhl 0.8.0
 ===============
 
