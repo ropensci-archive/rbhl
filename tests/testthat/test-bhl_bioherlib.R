@@ -1,4 +1,5 @@
 test_that("bhl_bioherlib", {
+  skip_on_cran()
 	vcr::use_cassette("bhl_bioherlib", {
   	tt <- bhl_bioherlib(method='GetPageMetadata', pageid=1328690,
       ocr=TRUE, names=TRUE)

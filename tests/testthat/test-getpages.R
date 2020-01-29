@@ -1,5 +1,3 @@
-context("getpages")
-
 # test_that("getpages works", {
 #   skip_on_cran()
 #

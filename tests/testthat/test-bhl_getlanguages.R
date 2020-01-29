@@ -1,4 +1,5 @@
 test_that("bhl_getlanguages", {
+  skip_on_cran()
   vcr::use_cassette("bhl_getlanguages", {
     tt <- bhl_getlanguages()
     uu <- bhl_getlanguages('list')

@@ -1,4 +1,5 @@
 test_that("bhl_getpagemetadata returns the correct class", {
+  skip_on_cran()
 	vcr::use_cassette("bhl_getpagemetadata", {
   	tt <- bhl_getpagemetadata(page=1328690, ocr=TRUE, as='list')
   	uu <- bhl_getpagemetadata(page=1328690, ocr=TRUE, as='xml')

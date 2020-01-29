@@ -1,4 +1,5 @@
 test_that("bhl_openurl works", {
+  skip_on_cran()
   vcr::use_cassette("bhl_openurl", {
     tt <- bhl_openurl(genre="book", title="Manual+of+North+American+Diptera",
                       aufirst="Samuel Wendell", aulast="Williston", date=1908,

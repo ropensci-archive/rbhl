@@ -1,4 +1,5 @@
 test_that("bhl_namesearch", {
+  skip_on_cran()
   vcr::use_cassette("bhl_namesearch", {
     tt <- bhl_namesearch('poa annua')
     vv <- bhl_namesearch('poa annua', as='xml')

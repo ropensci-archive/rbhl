@@ -1,4 +1,5 @@
 test_that("bhl_getitemmetadata", {
+  skip_on_cran()
 	vcr::use_cassette("bhl_getitemmetadata", {
   	tt <- bhl_getitemmetadata('16800', TRUE)
   	uu <- bhl_getitemmetadata('16800', TRUE, as='xml')

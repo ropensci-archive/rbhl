@@ -1,4 +1,5 @@
 test_that("bhl_collection", {
+  skip_on_cran()
 	vcr::use_cassette("bhl_getcollections", {
   	tt <- bhl_getcollections()
   	uu <- bhl_getcollections(as = 'json')

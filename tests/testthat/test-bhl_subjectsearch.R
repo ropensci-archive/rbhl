@@ -1,4 +1,5 @@
 test_that("bhl_subjectsearch", {
+  skip_on_cran()
   vcr::use_cassette("bhl_subjectsearch", {
     tt <- bhl_subjectsearch('diptera')
     vv <- bhl_subjectsearch('diptera', as='xml')

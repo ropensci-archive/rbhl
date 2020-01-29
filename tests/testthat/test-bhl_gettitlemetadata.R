@@ -1,4 +1,5 @@
 test_that("bhl_gettitlemetadata works", {
+  skip_on_cran()
   vcr::use_cassette("bhl_gettitlemetadata", {
     tt <- bhl_gettitlemetadata(1726)
     vv <- bhl_gettitlemetadata(1726, as='xml')

@@ -1,4 +1,5 @@
 test_that("bhl_publicationsearch", {
+  skip_on_cran()
   vcr::use_cassette("bhl_publicationsearch", {
     tt <- bhl_publicationsearch('cocos island costa rica birds')
     zz <- bhl_publicationsearch('nematocerous', as='json')
@@ -14,6 +15,7 @@ test_that("bhl_publicationsearch", {
 })
 
 test_that("bhl_publicationsearchadv", {
+  skip_on_cran()
   vcr::use_cassette("bhl_publicationsearchadv", {
     tt <- bhl_publicationsearchadv(title = "cocos island",
       authorname = "gifford")
