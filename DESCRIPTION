@@ -17,6 +17,8 @@ BugReports: https://github.com/ropensci/rbhl/issues
 LazyData: true
 VignetteBuilder: knitr
 Roxygen: list(markdown = TRUE)
+Encoding: UTF-8
+Language: en-US
 Imports:
     crul,
     xml2,

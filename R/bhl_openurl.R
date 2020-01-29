@@ -37,7 +37,7 @@ bhl_openurl <- function(genre = NULL, title = NULL, aufirst = NULL,
 							 apikey = check_key(key), format = as_f(as)))
 	if (length(args) == 0) args <- NULL
 	out <- crul::HttpClient$new(
-	  url = "http://www.biodiversitylibrary.org/openurl", opts = list(...)
+	  url = "https://www.biodiversitylibrary.org/openurl", opts = list(...)
 	)$get(query = args)
 	out$raise_for_status()
 	tt <- out$parse("UTF-8")

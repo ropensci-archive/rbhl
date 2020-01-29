@@ -4,11 +4,48 @@
 \alias{rbhl-defunct}
 \title{Defunct functions in rbhl}
 \description{
-These functions are gone, no longer available.
-}
-\details{
 \itemize{
 \item \code{bhl_getpartendnote()}: BHL removed this API method.
 \item \code{bhl_gettitleendnote()}: BHL removed this API method.
+\item \code{\link[=bhl_booksearch]{bhl_booksearch()}}: method removed in API v3, see
+\code{\link[=bhl_publicationsearch]{bhl_publicationsearch()}}
+\item \code{\link[=bhl_partsearch]{bhl_partsearch()}}: method removed in API v3, see
+\code{\link[=bhl_publicationsearch]{bhl_publicationsearch()}}
+\item \code{\link[=bhl_titlesearchsimple]{bhl_titlesearchsimple()}}: method removed in API v3, see
+\code{\link[=bhl_publicationsearch]{bhl_publicationsearch()}}
+\item \code{\link[=bhl_getauthorparts]{bhl_getauthorparts()}}: method removed in API v3, see
+\code{\link[=bhl_getauthormetadata]{bhl_getauthormetadata()}}
+\item \code{\link[=bhl_getauthortitles]{bhl_getauthortitles()}}: method removed in API v3, see
+\code{\link[=bhl_getauthormetadata]{bhl_getauthormetadata()}}
+\item \code{\link[=bhl_getitembyidentifier]{bhl_getitembyidentifier()}}: method removed in API v3, see
+\code{\link[=bhl_getitemmetadata]{bhl_getitemmetadata()}}
+\item \code{\link[=bhl_getitempages]{bhl_getitempages()}}: method removed in API v3, see
+\code{\link[=bhl_getitemmetadata]{bhl_getitemmetadata()}}
+\item \code{\link[=bhl_getitemparts]{bhl_getitemparts()}}: method removed in API v3, see
+\code{\link[=bhl_getitemmetadata]{bhl_getitemmetadata()}}
+\item \code{\link[=bhl_getpagenames]{bhl_getpagenames()}}: method removed in API v3, see
+\code{\link[=bhl_getpagemetadata]{bhl_getpagemetadata()}}
+\item \code{\link[=bhl_getpageocrtext]{bhl_getpageocrtext()}}: method removed in API v3, see
+\code{\link[=bhl_getpagemetadata]{bhl_getpagemetadata()}}
+\item \code{\link[=bhl_getpartbyidentifier]{bhl_getpartbyidentifier()}}: method removed in API v3, see
+\code{\link[=bhl_getpartmetadata]{bhl_getpartmetadata()}}
+\item \code{\link[=bhl_getpartnames]{bhl_getpartnames()}}: method removed in API v3, see
+\code{\link[=bhl_getpartmetadata]{bhl_getpartmetadata()}}
+\item \code{\link[=bhl_getsubjectparts]{bhl_getsubjectparts()}}: method removed in API v3, see
+\code{\link[=bhl_subjectmetadata]{bhl_subjectmetadata()}}
+\item \code{\link[=bhl_getsubjecttitles]{bhl_getsubjecttitles()}}: method removed in API v3, see
+\code{\link[=bhl_subjectmetadata]{bhl_subjectmetadata()}}
+\item \code{\link[=bhl_getpartbibtex]{bhl_getpartbibtex()}}: method removed in API v3
+\item \code{\link[=bhl_gettitlebibTex]{bhl_gettitlebibTex()}}: method removed in API v3
+\item \code{\link[=bhl_gettitlebyidentifier]{bhl_gettitlebyidentifier()}}: API method merged in API v3, see
+\code{\link[=bhl_gettitlemetadata]{bhl_gettitlemetadata()}}
+\item \code{\link[=bhl_gettitleitems]{bhl_gettitleitems()}}: API method merged in API v3, see
+\code{\link[=bhl_gettitlemetadata]{bhl_gettitlemetadata()}}
+\item \code{\link[=bhl_getunpublisheditems]{bhl_getunpublisheditems()}}: method removed in API v3
+\item \code{\link[=bhl_getunpublishedparts]{bhl_getunpublishedparts()}}: method removed in API v3
+\item \code{\link[=bhl_getunpublishedtitles]{bhl_getunpublishedtitles()}}: method removed in API v3
+\item \code{\link[=bhl_namecount]{bhl_namecount()}}: method removed in API v3
+\item \code{\link[=bhl_namelist]{bhl_namelist()}}: method removed in API v3
+\item \code{bhl_namegetdetail()}: method renamed - see \code{\link[=bhl_namemetadata]{bhl_namemetadata()}}
 }
 }

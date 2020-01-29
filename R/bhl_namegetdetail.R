@@ -2,21 +2,22 @@
 #' specified name appears.
 #'
 #' @export
-#' @param namebankid (not used if 'name' specified) NameBank identifier for a
-#' name (numeric)
-#' @param name (not used if 'namebankid' specified) a complete name string
-#' (character)
+#' @param namebankid (numeric) (not used if 'name' specified) NameBank
+#' identifier for a name
+#' @param name (character) (not used if 'namebankid' specified) a
+#' complete name string
+#' @param id_type (character) the type of identifier (namebank, eol, gni,
+#' ion, col, gbif, itis, ipni, worms). Not used if name is specified
 #' @inheritParams bhl_getcollections
-#'
 #' @examples \dontrun{
-#' # bhl_namegetdetail(namebankid = 3501464)
-#' # bhl_namegetdetail(name = 'poa annua')
+#' res <- bhl_namemetadata(name = 'poa annua linnaeus')
+#' str(res)
+#' # bhl_namemetadata(namebankid = 3501464)
 #' }
-
-bhl_namegetdetail <- function(namebankid = NULL, name = NULL, as='table',
-                              key = NULL, ...) {
-
-  args <- bhlc(list(op = "NameGetDetail", apikey = check_key(key),
-                       namebankid = namebankid, name = name, format = as_f(as)))
+bhl_namemetadata <- function(namebankid = NULL, name = NULL, id_type = NULL,
+  as = 'list', key = NULL, ...) {
+  
+  args <- bhlc(list(op = "GetNameMetadata", apikey = check_key(key),
+    id = namebankid, name = name, idtype = id_type, format = as_f(as)))
   bhl_GET(as, args, ...)
 }

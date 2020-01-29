@@ -47,7 +47,6 @@ bhl_getitemmetadata('16800', TRUE)
 bhl_getitemmetadata('16800', TRUE, as='xml')
 bhl_getitemmetadata('16800', TRUE, as='json')
 bhl_getitemmetadata('16800', TRUE, as='list')
-
-# bhl_getitemmetadata(20419, pages=FALSE, parts=TRUE)
+bhl_getitemmetadata(20419, pages=FALSE, parts=TRUE)
 }
 }

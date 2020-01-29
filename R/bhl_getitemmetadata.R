@@ -19,15 +19,14 @@
 #' bhl_getitemmetadata('16800', TRUE, as='xml')
 #' bhl_getitemmetadata('16800', TRUE, as='json')
 #' bhl_getitemmetadata('16800', TRUE, as='list')
-#'
-#' # bhl_getitemmetadata(20419, pages=FALSE, parts=TRUE)
+#' bhl_getitemmetadata(20419, pages=FALSE, parts=TRUE)
 #' }
 
 bhl_getitemmetadata <- function(itemid = NULL, pages = TRUE, ocr = FALSE,
-                                parts = FALSE, as = 'table', key = NULL, ...) {
+  parts = FALSE, as = 'table', key = NULL, ...) {
 
   args <- bhlc(list(op = "GetItemMetadata", apikey = check_key(key),
-                    pages = pages, itemid = itemid, format = as_f(as),
+                    pages = pages, id = itemid, format = as_f(as),
                     ocr = if (ocr) 't' else NULL,
                     parts = if (parts) 't' else NULL))
   bhl_GET(as, args, ...)

@@ -7,13 +7,13 @@
 #' `bhl_key`
 #' @param ... Curl options passed on to [crul::HttpClient()]
 #' @examples \dontrun{
-#' books <- bhl_booksearch(title='Selborne', lname='White', volume=2,
-#'   edition='new', year=1825, collectionid=4, language='eng')
-#' getpages(itemid = 16800)
+#' # books <- bhl_booksearch(title='Selborne', lname='White', volume=2,
+#' #   edition='new', year=1825, collectionid=4, language='eng')
+#' # getpages(itemid = 16800)
 #' }
 
 getpages <- function(itemid, key = NULL, ...) {
-  res <- bhl_getitempages(itemid, ...)
+  res <- bhl_getitemmetadata(itemid, ...)
   out <- lapply(res$PageID, function(x){
     tmp <- bhl_getpageocrtext(page = x)
     if (grepl("OCR text unavailable for this page", tmp))

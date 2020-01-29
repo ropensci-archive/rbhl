@@ -1,6 +1,6 @@
 #' Return metadata about a page.
 #'
-#' You may choose to include the OCR text and a list of names found on the page.
+#' You may choose to include the OCR text and a list of names found on the page
 #'
 #' @export
 #' @param page page number to get
@@ -18,7 +18,7 @@ bhl_getpagemetadata <- function(page = NULL, ocr = FALSE, names = FALSE,
   as = 'table', key = NULL, ...) {
 
   args <- bhlc(list(op = "GetPageMetadata", apikey = check_key(key),
-                    pageid = page, ocr = if (ocr) 't' else NULL,
-                    names = if (names) 't' else NULL, format = as_f(as)))
+    pageid = page, ocr = if (ocr) 't' else NULL,
+    names = if (names) 't' else NULL, format = as_f(as)))
   bhl_GET(as, args, ...)
 }

@@ -36,11 +36,18 @@ todf <- function(x){
 
 fjson <- function(x) jsonlite::fromJSON(x, FALSE)
 
-bhl_url <- function() "http://www.biodiversitylibrary.org/api2/httpquery.ashx"
+bhl_url <- function() "https://www.biodiversitylibrary.org/api3"
 
 bhlc <- function(l) Filter(Negate(is.null), l)
 
 as_f <- function(x) {
   as <- match.arg(x, c("table","list","json","xml"))
   if (as %in% c('list','table','json')) 'json' else 'xml'
+}
+
+bool2let <- function(x, y) {
+  if (is.null(x)) return(NULL)
+  stopifnot(is.logical(x))
+  stopifnot(length(y) == 2)
+  if (x) y[1] else y[2]
 }

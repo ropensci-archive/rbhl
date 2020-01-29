@@ -10,6 +10,6 @@
 bhl_getpartmetadata <- function(partid, key = NULL, ...) {
 
   args <- bhlc(list(op = "GetPartMetadata", apikey = check_key(key),
-                    format = as_f("list"), partid = partid))
+                    format = as_f("list"), id = partid))
   bhl_GET("list", args, ...)
 }
