@@ -1,12 +1,12 @@
 Package: rbhl
 Title: Interface to the 'Biodiversity' 'Heritage' Library
 Description: Interface to 'Biodiversity' 'Heritage' Library ('BHL')
-    (<https://www.biodiversitylibrary.org/>) 'API'
+    (<https://www.biodiversitylibrary.org/>) API
     (<https://www.biodiversitylibrary.org/docs/api3.html>). 'BHL' is a
     repository of 'digitized' literature on 'biodiversity'
     studies, including 'floras', research papers, and more.
 Type: Package
-Version: 0.8.8.92
+Version: 0.9.0
 License: MIT + file LICENSE
 Authors@R: c(person("Scott", "Chamberlain", role = c("aut", "cre"),
     email = "myrmecocystus@gmail.com",
@@ -30,3 +30,6 @@ Suggests:
     knitr,
     vcr
 RoxygenNote: 7.0.2
+X-schema.org-applicationCategory: Biodiversity
+X-schema.org-keywords: BHL, library, API, web-services, conservation, species, taxonomy, OCR, text-mining
+X-schema.org-isPartOf: https://ropensci.org
