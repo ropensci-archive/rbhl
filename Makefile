@@ -6,11 +6,11 @@ all: move rmd2md
 all: move rmd2md
 
 move:
-	cp inst/vign/rbhl_vignette.md vignettes/
+	cp inst/vign/rbhl.md vignettes/
 
 rmd2md:
 	cd vignettes;\
-	mv rbhl_vignette.md rbhl_vignette.Rmd
+	mv rbhl.md rbhl.Rmd
 
 install: doc build
 	R CMD INSTALL . && rm *.tar.gz
