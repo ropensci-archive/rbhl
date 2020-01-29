@@ -28,7 +28,7 @@ the items (books) associated  with the title.
 }
 \examples{
 \dontrun{
-bhl_gettitlemetadata(1726, TRUE)
+bhl_gettitlemetadata(1726, items = TRUE)
 bhl_gettitlemetadata(1726, as='list')
 bhl_gettitlemetadata(1726, as='xml')
 }

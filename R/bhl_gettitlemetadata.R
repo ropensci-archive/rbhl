@@ -8,7 +8,7 @@
 #' @param items (logical) TRUE of FALSE (default) to inclue items
 #' @inheritParams bhl_getcollections
 #' @examples \dontrun{
-#' bhl_gettitlemetadata(1726, TRUE)
+#' bhl_gettitlemetadata(1726, items = TRUE)
 #' bhl_gettitlemetadata(1726, as='list')
 #' bhl_gettitlemetadata(1726, as='xml')
 #' }

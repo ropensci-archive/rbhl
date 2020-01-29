@@ -81,19 +81,13 @@ bhl_authorsearch(name='dimmock', as='json')
 ## Get title metadata
 
 ```{r}
-bhl_gettitlemetadata(titleid = 1726, items = TRUE, as="list")$Result$Items
+bhl_gettitlemetadata(1726, items = TRUE, as = "list")$Result[[1]]$Items
 ```
 
 ## Book search
 
 ```{r}
-bhl_booksearch(title='Selborne', lname='White', volume=2, edition='new', year=1825, collectionid=4, language='eng')
-```
-
-## Search titles
-
-```{r}
-bhl_titlesearchsimple('husbandry')
+bhl_publicationsearch('cocos island costa rica birds')
 ```
 
 ## Get languages
