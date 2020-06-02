@@ -1,4 +1,5 @@
-#' R interface to the Biodiversity Heritage Library API.
+#' @title rbhl
+#' @description R interface to the Biodiversity Heritage Library API.
 #'
 #' You need an API key to use the Biodiversity Heritage Library API. Get your
 #' BHL API key at <http://www.biodiversitylibrary.org/getapikey.aspx>.

@@ -29,7 +29,7 @@ Suggests:
     testthat,
     knitr,
     vcr
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 X-schema.org-applicationCategory: Biodiversity
 X-schema.org-keywords: BHL, library, API, web-services, conservation, species, taxonomy, OCR, text-mining
 X-schema.org-isPartOf: https://ropensci.org

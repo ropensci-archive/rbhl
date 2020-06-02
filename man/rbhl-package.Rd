@@ -4,11 +4,10 @@
 \name{rbhl-package}
 \alias{rbhl-package}
 \alias{rbhl}
-\title{R interface to the Biodiversity Heritage Library API.}
+\title{rbhl}
 \description{
 R interface to the Biodiversity Heritage Library API.
-}
-\details{
+
 You need an API key to use the Biodiversity Heritage Library API. Get your
 BHL API key at \url{http://www.biodiversitylibrary.org/getapikey.aspx}.
 Put your API key either in your .Renviron file (or similar) with the name
