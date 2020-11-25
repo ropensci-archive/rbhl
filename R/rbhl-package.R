@@ -17,7 +17,7 @@
 #' @aliases rbhl
 #' @docType package
 #' @title R interface to the Biodiversity Heritage Library API.
-#' @author Scott Chamberlain \email{myrmecocystus@@gmail.com}
+#' @author Scott Chamberlain
 #' @keywords package
 NULL
 
