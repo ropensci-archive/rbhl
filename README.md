@@ -130,7 +130,7 @@ bhl_publicationsearch('cocos island costa rica birds')
 
 ```r
 bhl_getlanguages()
-#> # A tibble: 75 x 2
+#> # A tibble: 80 x 2
 #>    LanguageCode LanguageName        
 #>    <chr>        <chr>               
 #>  1 AFR          Afrikaans           
@@ -143,7 +143,7 @@ bhl_getlanguages()
 #>  8 CAT          Catalan             
 #>  9 CEL          Celtic (Other)      
 #> 10 CHI          Chinese             
-#> # … with 65 more rows
+#> # … with 70 more rows
 ```
 
 ## Meta
@@ -151,8 +151,6 @@ bhl_getlanguages()
 * Please [report any issues or bugs](https://github.com/ropensci/rbhl/issues).
 * License: MIT
 * Get citation information for `rbhl` in R doing `citation(package = 'rbhl')`
-* Please note that this project is released with a [Contributor Code of Conduct][coc]. By participating in this project you agree to abide by its terms.
+* Please note that this package is released with a [Contributor Code of Conduct](https://ropensci.org/code-of-conduct/). By contributing to this project, you agree to abide by its terms.
 
 [![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
-
-[coc]: https://github.com/ropensci/rbhl/blob/master/CODE_OF_CONDUCT.md
