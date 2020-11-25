@@ -6,7 +6,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      User-Agent: libcurl/7.73.0 r-curl/4.3 crul/1.0.0
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -18,34 +18,48 @@ http_interactions:
       status: HTTP/1.1 200 OK
       cache-control: private
       content-type: application/json; charset=utf-8
-      access-control-allow-origin: '*'
-      x-server-name: BHL1
+      x-server-name: BHL2
       content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
-      date: Wed, 29 Jan 2020 00:20:44 GMT
-      content-length: '1449'
+      access-control-allow-origin: '*'
+      access-control-allow-methods: GET,HEAD,OPTIONS,POST
+      access-control-allow-headers: Access-Control-Allow-Headers, Origin,Accept, X-Requested-With,
+        Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers
+      date: Wed, 25 Nov 2020 16:37:13 GMT
+      content-length: '2387'
     body:
       encoding: UTF-8
       file: no
       string: '{"Status":"ok","ErrorMessage":"","Result":[{"NameConfirmed":"Poa annua"},{"NameConfirmed":"Poa
-        annua L."},{"NameConfirmed":"Poa annua L. (1753)"},{"NameConfirmed":"Poa annua
-        Linnaeus"},{"NameConfirmed":"Poa annua fo. purpurea Mike L.Grant"},{"NameConfirmed":"Poa
-        annua fo. remotiflora Hack."},{"NameConfirmed":"Poa annua hypsophila"},{"NameConfirmed":"Poa
-        annua raniglumis"},{"NameConfirmed":"Poa annua reptans"},{"NameConfirmed":"Poa
-        annua rigidiuscula"},{"NameConfirmed":"Poa annua rigidula"},{"NameConfirmed":"Poa
-        annua ssp. exilis (Tomm. ex Freyn) Asch. \u0026 Graebn."},{"NameConfirmed":"Poa
-        annua ssp. varia (Gaudin) Gaudin"},{"NameConfirmed":"Poa annua subsp. supina
-        (Schrad.) Husn., 1896"},{"NameConfirmed":"Poa annua typica"},{"NameConfirmed":"Poa
-        annua var. annua"},{"NameConfirmed":"Poa annua var. annua L."},{"NameConfirmed":"Poa
-        annua var. aquatica Aschers."},{"NameConfirmed":"Poa annua var. eriolepis
-        E. Desv."},{"NameConfirmed":"Poa annua var. exigua (Husn.) Hack."},{"NameConfirmed":"Poa
-        annua var. nepalensis G.C. Wall. ex Griseb."},{"NameConfirmed":"Poa annua
-        var. reptans Hausskn."},{"NameConfirmed":"Poa annua var. rigidiuscula L.H.
-        Dewey"},{"NameConfirmed":"Poa annua var. sikkimensis Stapf"},{"NameConfirmed":"Poa
+        annua Cham. \u0026 Schltdl., nom. nud."},{"NameConfirmed":"Poa annua L."},{"NameConfirmed":"Poa
+        annua L. (1753)"},{"NameConfirmed":"Poa annua Linnaeus"},{"NameConfirmed":"Poa
+        annua f. maxima Honda"},{"NameConfirmed":"Poa annua f. purpurea Mike L.Grant"},{"NameConfirmed":"Poa
+        annua f. reptans (Hausskn.) T.Koyama"},{"NameConfirmed":"Poa annua fo. purpurea
+        Mike L.Grant"},{"NameConfirmed":"Poa annua fo. remotiflora Hack."},{"NameConfirmed":"Poa
+        annua hypsophila"},{"NameConfirmed":"Poa annua raniglumis"},{"NameConfirmed":"Poa
+        annua reptans"},{"NameConfirmed":"Poa annua rigidiuscula"},{"NameConfirmed":"Poa
+        annua rigidula"},{"NameConfirmed":"Poa annua ssp. exilis (Tomm. ex Freyn)
+        Asch. \u0026 Graebn."},{"NameConfirmed":"Poa annua ssp. varia (Gaudin) Gaudin"},{"NameConfirmed":"Poa
+        annua subsp. exilis (Tomm. ex Freyn.) Asch. \u0026 Graebn."},{"NameConfirmed":"Poa
+        annua subsp. supina (Schrad.) Husn."},{"NameConfirmed":"Poa annua subsp. supina
+        (Schrad.) Husn., 1896"},{"NameConfirmed":"Poa annua subsp. varia (Gaudin)
+        Gaudin"},{"NameConfirmed":"Poa annua typica"},{"NameConfirmed":"Poa annua
+        var. annua"},{"NameConfirmed":"Poa annua var. annua L."},{"NameConfirmed":"Poa
+        annua var. aquatica Asch."},{"NameConfirmed":"Poa annua var. aquatica Aschers."},{"NameConfirmed":"Poa
+        annua var. campana Seguin, 1895"},{"NameConfirmed":"Poa annua var. eriolepis
+        E. Desv."},{"NameConfirmed":"Poa annua var. eriolepis Ã‰.Desv."},{"NameConfirmed":"Poa
+        annua var. exigua (Husn.) Hack."},{"NameConfirmed":"Poa annua var. nepalensis
+        G.C. Wall. ex Griseb."},{"NameConfirmed":"Poa annua var. nepalensis Wall.
+        ex Griseb."},{"NameConfirmed":"Poa annua var. remotiflora Trab."},{"NameConfirmed":"Poa
+        annua var. reptans Hausskn."},{"NameConfirmed":"Poa annua var. rigidiuscula
+        Dewey"},{"NameConfirmed":"Poa annua var. rigidiuscula L.H. Dewey"},{"NameConfirmed":"Poa
+        annua var. sikkimensis Stapf"},{"NameConfirmed":"Poa annua var. stricta Vasey"},{"NameConfirmed":"Poa
         annua var. stricta Vasey ex Scribn."},{"NameConfirmed":"Poa annua var. supina
         (Schrad.) Link"},{"NameConfirmed":"Poa annua var. tommasinii Asch. \u0026
-        Graebn."},{"NameConfirmed":"Poa annua varia Gaudin, 1811"}]}'
-  recorded_at: 2020-01-29 00:20:47 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.0
+        Graebn."},{"NameConfirmed":"Poa annua var. tommasinii Asch. \u0026 Graebn.,
+        nom. superfl."},{"NameConfirmed":"Poa annua var. typica Beck"},{"NameConfirmed":"Poa
+        annua varia Gaudin, 1811"}]}'
+  recorded_at: 2020-11-25 16:37:14 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
 - request:
     method: get
     uri: https://www.biodiversitylibrary.org/api3?op=NameSearch&name=poa%20annua&apikey=<<bhl_key>>&format=xml
@@ -53,7 +67,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      User-Agent: libcurl/7.73.0 r-curl/4.3 crul/1.0.0
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -67,41 +81,60 @@ http_interactions:
       content-type: text/xml; charset=utf-8
       content-encoding: gzip
       vary: Accept-Encoding
-      access-control-allow-origin: '*'
-      x-server-name: BHL1
+      x-server-name: BHL2
       content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
-      date: Wed, 29 Jan 2020 00:20:45 GMT
-      content-length: '791'
+      access-control-allow-origin: '*'
+      access-control-allow-methods: GET,HEAD,OPTIONS,POST
+      access-control-allow-headers: Access-Control-Allow-Headers, Origin,Accept, X-Requested-With,
+        Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers
+      date: Wed, 25 Nov 2020 16:37:13 GMT
+      content-length: '978'
     body:
       encoding: UTF-8
       file: no
       string: "\uFEFF<?xml version=\"1.0\" encoding=\"utf-8\"?><Response xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"
         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><Status>ok</Status><ErrorMessage
         /><Result><Name><NameConfirmed>Poa annua</NameConfirmed></Name><Name><NameConfirmed>Poa
+        annua Cham. &amp; Schltdl., nom. nud.</NameConfirmed></Name><Name><NameConfirmed>Poa
         annua L.</NameConfirmed></Name><Name><NameConfirmed>Poa annua L. (1753)</NameConfirmed></Name><Name><NameConfirmed>Poa
-        annua Linnaeus</NameConfirmed></Name><Name><NameConfirmed>Poa annua fo. purpurea
+        annua Linnaeus</NameConfirmed></Name><Name><NameConfirmed>Poa annua f. maxima
+        Honda</NameConfirmed></Name><Name><NameConfirmed>Poa annua f. purpurea Mike
+        L.Grant</NameConfirmed></Name><Name><NameConfirmed>Poa annua f. reptans (Hausskn.)
+        T.Koyama</NameConfirmed></Name><Name><NameConfirmed>Poa annua fo. purpurea
         Mike L.Grant</NameConfirmed></Name><Name><NameConfirmed>Poa annua fo. remotiflora
         Hack.</NameConfirmed></Name><Name><NameConfirmed>Poa annua hypsophila</NameConfirmed></Name><Name><NameConfirmed>Poa
         annua raniglumis</NameConfirmed></Name><Name><NameConfirmed>Poa annua reptans</NameConfirmed></Name><Name><NameConfirmed>Poa
         annua rigidiuscula</NameConfirmed></Name><Name><NameConfirmed>Poa annua rigidula</NameConfirmed></Name><Name><NameConfirmed>Poa
         annua ssp. exilis (Tomm. ex Freyn) Asch. &amp; Graebn.</NameConfirmed></Name><Name><NameConfirmed>Poa
         annua ssp. varia (Gaudin) Gaudin</NameConfirmed></Name><Name><NameConfirmed>Poa
+        annua subsp. exilis (Tomm. ex Freyn.) Asch. &amp; Graebn.</NameConfirmed></Name><Name><NameConfirmed>Poa
+        annua subsp. supina (Schrad.) Husn.</NameConfirmed></Name><Name><NameConfirmed>Poa
         annua subsp. supina (Schrad.) Husn., 1896</NameConfirmed></Name><Name><NameConfirmed>Poa
+        annua subsp. varia (Gaudin) Gaudin</NameConfirmed></Name><Name><NameConfirmed>Poa
         annua typica</NameConfirmed></Name><Name><NameConfirmed>Poa annua var. annua</NameConfirmed></Name><Name><NameConfirmed>Poa
         annua var. annua L.</NameConfirmed></Name><Name><NameConfirmed>Poa annua var.
-        aquatica Aschers.</NameConfirmed></Name><Name><NameConfirmed>Poa annua var.
-        eriolepis E. Desv.</NameConfirmed></Name><Name><NameConfirmed>Poa annua var.
-        exigua (Husn.) Hack.</NameConfirmed></Name><Name><NameConfirmed>Poa annua
-        var. nepalensis G.C. Wall. ex Griseb.</NameConfirmed></Name><Name><NameConfirmed>Poa
+        aquatica Asch.</NameConfirmed></Name><Name><NameConfirmed>Poa annua var. aquatica
+        Aschers.</NameConfirmed></Name><Name><NameConfirmed>Poa annua var. campana
+        Seguin, 1895</NameConfirmed></Name><Name><NameConfirmed>Poa annua var. eriolepis
+        E. Desv.</NameConfirmed></Name><Name><NameConfirmed>Poa annua var. eriolepis
+        Ã‰.Desv.</NameConfirmed></Name><Name><NameConfirmed>Poa annua var. exigua
+        (Husn.) Hack.</NameConfirmed></Name><Name><NameConfirmed>Poa annua var. nepalensis
+        G.C. Wall. ex Griseb.</NameConfirmed></Name><Name><NameConfirmed>Poa annua
+        var. nepalensis Wall. ex Griseb.</NameConfirmed></Name><Name><NameConfirmed>Poa
+        annua var. remotiflora Trab.</NameConfirmed></Name><Name><NameConfirmed>Poa
         annua var. reptans Hausskn.</NameConfirmed></Name><Name><NameConfirmed>Poa
+        annua var. rigidiuscula Dewey</NameConfirmed></Name><Name><NameConfirmed>Poa
         annua var. rigidiuscula L.H. Dewey</NameConfirmed></Name><Name><NameConfirmed>Poa
         annua var. sikkimensis Stapf</NameConfirmed></Name><Name><NameConfirmed>Poa
-        annua var. stricta Vasey ex Scribn.</NameConfirmed></Name><Name><NameConfirmed>Poa
+        annua var. stricta Vasey</NameConfirmed></Name><Name><NameConfirmed>Poa annua
+        var. stricta Vasey ex Scribn.</NameConfirmed></Name><Name><NameConfirmed>Poa
         annua var. supina (Schrad.) Link</NameConfirmed></Name><Name><NameConfirmed>Poa
         annua var. tommasinii Asch. &amp; Graebn.</NameConfirmed></Name><Name><NameConfirmed>Poa
-        annua varia Gaudin, 1811</NameConfirmed></Name></Result></Response>"
-  recorded_at: 2020-01-29 00:20:47 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.0
+        annua var. tommasinii Asch. &amp; Graebn., nom. superfl.</NameConfirmed></Name><Name><NameConfirmed>Poa
+        annua var. typica Beck</NameConfirmed></Name><Name><NameConfirmed>Poa annua
+        varia Gaudin, 1811</NameConfirmed></Name></Result></Response>"
+  recorded_at: 2020-11-25 16:37:14 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
 - request:
     method: get
     uri: https://www.biodiversitylibrary.org/api3?op=NameSearch&name=poa%20annua&apikey=<<bhl_key>>&format=json
@@ -109,7 +142,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      User-Agent: libcurl/7.73.0 r-curl/4.3 crul/1.0.0
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -121,80 +154,45 @@ http_interactions:
       status: HTTP/1.1 200 OK
       cache-control: private
       content-type: application/json; charset=utf-8
-      access-control-allow-origin: '*'
-      x-server-name: BHL1
+      x-server-name: BHL2
       content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
-      date: Wed, 29 Jan 2020 00:20:45 GMT
-      content-length: '1449'
-      set-cookie: TS010ecf5c=01a3504f4c25d74acbc9b42a4cec3338059964e22c195ff2267bf78feac19df57cc38c883195650768861f61e1f94d1e84d7817bdf;
-        Path=/; Secure; HTTPOnly
+      access-control-allow-origin: '*'
+      access-control-allow-methods: GET,HEAD,OPTIONS,POST
+      access-control-allow-headers: Access-Control-Allow-Headers, Origin,Accept, X-Requested-With,
+        Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers
+      date: Wed, 25 Nov 2020 16:37:14 GMT
+      content-length: '2387'
     body:
       encoding: UTF-8
       file: no
       string: '{"Status":"ok","ErrorMessage":"","Result":[{"NameConfirmed":"Poa annua"},{"NameConfirmed":"Poa
-        annua L."},{"NameConfirmed":"Poa annua L. (1753)"},{"NameConfirmed":"Poa annua
-        Linnaeus"},{"NameConfirmed":"Poa annua fo. purpurea Mike L.Grant"},{"NameConfirmed":"Poa
-        annua fo. remotiflora Hack."},{"NameConfirmed":"Poa annua hypsophila"},{"NameConfirmed":"Poa
-        annua raniglumis"},{"NameConfirmed":"Poa annua reptans"},{"NameConfirmed":"Poa
-        annua rigidiuscula"},{"NameConfirmed":"Poa annua rigidula"},{"NameConfirmed":"Poa
-        annua ssp. exilis (Tomm. ex Freyn) Asch. \u0026 Graebn."},{"NameConfirmed":"Poa
-        annua ssp. varia (Gaudin) Gaudin"},{"NameConfirmed":"Poa annua subsp. supina
-        (Schrad.) Husn., 1896"},{"NameConfirmed":"Poa annua typica"},{"NameConfirmed":"Poa
-        annua var. annua"},{"NameConfirmed":"Poa annua var. annua L."},{"NameConfirmed":"Poa
-        annua var. aquatica Aschers."},{"NameConfirmed":"Poa annua var. eriolepis
-        E. Desv."},{"NameConfirmed":"Poa annua var. exigua (Husn.) Hack."},{"NameConfirmed":"Poa
-        annua var. nepalensis G.C. Wall. ex Griseb."},{"NameConfirmed":"Poa annua
-        var. reptans Hausskn."},{"NameConfirmed":"Poa annua var. rigidiuscula L.H.
-        Dewey"},{"NameConfirmed":"Poa annua var. sikkimensis Stapf"},{"NameConfirmed":"Poa
+        annua Cham. \u0026 Schltdl., nom. nud."},{"NameConfirmed":"Poa annua L."},{"NameConfirmed":"Poa
+        annua L. (1753)"},{"NameConfirmed":"Poa annua Linnaeus"},{"NameConfirmed":"Poa
+        annua f. maxima Honda"},{"NameConfirmed":"Poa annua f. purpurea Mike L.Grant"},{"NameConfirmed":"Poa
+        annua f. reptans (Hausskn.) T.Koyama"},{"NameConfirmed":"Poa annua fo. purpurea
+        Mike L.Grant"},{"NameConfirmed":"Poa annua fo. remotiflora Hack."},{"NameConfirmed":"Poa
+        annua hypsophila"},{"NameConfirmed":"Poa annua raniglumis"},{"NameConfirmed":"Poa
+        annua reptans"},{"NameConfirmed":"Poa annua rigidiuscula"},{"NameConfirmed":"Poa
+        annua rigidula"},{"NameConfirmed":"Poa annua ssp. exilis (Tomm. ex Freyn)
+        Asch. \u0026 Graebn."},{"NameConfirmed":"Poa annua ssp. varia (Gaudin) Gaudin"},{"NameConfirmed":"Poa
+        annua subsp. exilis (Tomm. ex Freyn.) Asch. \u0026 Graebn."},{"NameConfirmed":"Poa
+        annua subsp. supina (Schrad.) Husn."},{"NameConfirmed":"Poa annua subsp. supina
+        (Schrad.) Husn., 1896"},{"NameConfirmed":"Poa annua subsp. varia (Gaudin)
+        Gaudin"},{"NameConfirmed":"Poa annua typica"},{"NameConfirmed":"Poa annua
+        var. annua"},{"NameConfirmed":"Poa annua var. annua L."},{"NameConfirmed":"Poa
+        annua var. aquatica Asch."},{"NameConfirmed":"Poa annua var. aquatica Aschers."},{"NameConfirmed":"Poa
+        annua var. campana Seguin, 1895"},{"NameConfirmed":"Poa annua var. eriolepis
+        E. Desv."},{"NameConfirmed":"Poa annua var. eriolepis Ã‰.Desv."},{"NameConfirmed":"Poa
+        annua var. exigua (Husn.) Hack."},{"NameConfirmed":"Poa annua var. nepalensis
+        G.C. Wall. ex Griseb."},{"NameConfirmed":"Poa annua var. nepalensis Wall.
+        ex Griseb."},{"NameConfirmed":"Poa annua var. remotiflora Trab."},{"NameConfirmed":"Poa
+        annua var. reptans Hausskn."},{"NameConfirmed":"Poa annua var. rigidiuscula
+        Dewey"},{"NameConfirmed":"Poa annua var. rigidiuscula L.H. Dewey"},{"NameConfirmed":"Poa
+        annua var. sikkimensis Stapf"},{"NameConfirmed":"Poa annua var. stricta Vasey"},{"NameConfirmed":"Poa
         annua var. stricta Vasey ex Scribn."},{"NameConfirmed":"Poa annua var. supina
         (Schrad.) Link"},{"NameConfirmed":"Poa annua var. tommasinii Asch. \u0026
-        Graebn."},{"NameConfirmed":"Poa annua varia Gaudin, 1811"}]}'
-  recorded_at: 2020-01-29 00:20:47 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.0
-- request:
-    method: get
-    uri: https://www.biodiversitylibrary.org/api3?op=NameSearch&name=poa%20annua&apikey=<<bhl_key>>&format=json
-    body:
-      encoding: ''
-      string: ''
-    headers:
-      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
-      Accept-Encoding: gzip, deflate
-      Accept: application/json, text/xml, application/xml, */*
-  response:
-    status:
-      status_code: '200'
-      message: OK
-      explanation: Request fulfilled, document follows
-    headers:
-      status: HTTP/1.1 200 OK
-      cache-control: private
-      content-type: application/json; charset=utf-8
-      access-control-allow-origin: '*'
-      x-server-name: BHL1
-      content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
-      date: Wed, 29 Jan 2020 00:20:46 GMT
-      content-length: '1449'
-    body:
-      encoding: UTF-8
-      file: no
-      string: '{"Status":"ok","ErrorMessage":"","Result":[{"NameConfirmed":"Poa annua"},{"NameConfirmed":"Poa
-        annua L."},{"NameConfirmed":"Poa annua L. (1753)"},{"NameConfirmed":"Poa annua
-        Linnaeus"},{"NameConfirmed":"Poa annua fo. purpurea Mike L.Grant"},{"NameConfirmed":"Poa
-        annua fo. remotiflora Hack."},{"NameConfirmed":"Poa annua hypsophila"},{"NameConfirmed":"Poa
-        annua raniglumis"},{"NameConfirmed":"Poa annua reptans"},{"NameConfirmed":"Poa
-        annua rigidiuscula"},{"NameConfirmed":"Poa annua rigidula"},{"NameConfirmed":"Poa
-        annua ssp. exilis (Tomm. ex Freyn) Asch. \u0026 Graebn."},{"NameConfirmed":"Poa
-        annua ssp. varia (Gaudin) Gaudin"},{"NameConfirmed":"Poa annua subsp. supina
-        (Schrad.) Husn., 1896"},{"NameConfirmed":"Poa annua typica"},{"NameConfirmed":"Poa
-        annua var. annua"},{"NameConfirmed":"Poa annua var. annua L."},{"NameConfirmed":"Poa
-        annua var. aquatica Aschers."},{"NameConfirmed":"Poa annua var. eriolepis
-        E. Desv."},{"NameConfirmed":"Poa annua var. exigua (Husn.) Hack."},{"NameConfirmed":"Poa
-        annua var. nepalensis G.C. Wall. ex Griseb."},{"NameConfirmed":"Poa annua
-        var. reptans Hausskn."},{"NameConfirmed":"Poa annua var. rigidiuscula L.H.
-        Dewey"},{"NameConfirmed":"Poa annua var. sikkimensis Stapf"},{"NameConfirmed":"Poa
-        annua var. stricta Vasey ex Scribn."},{"NameConfirmed":"Poa annua var. supina
-        (Schrad.) Link"},{"NameConfirmed":"Poa annua var. tommasinii Asch. \u0026
-        Graebn."},{"NameConfirmed":"Poa annua varia Gaudin, 1811"}]}'
-  recorded_at: 2020-01-29 00:20:47 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.0
+        Graebn."},{"NameConfirmed":"Poa annua var. tommasinii Asch. \u0026 Graebn.,
+        nom. superfl."},{"NameConfirmed":"Poa annua var. typica Beck"},{"NameConfirmed":"Poa
+        annua varia Gaudin, 1811"}]}'
+  recorded_at: 2020-11-25 16:37:14 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0

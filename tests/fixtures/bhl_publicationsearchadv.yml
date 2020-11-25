@@ -6,7 +6,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      User-Agent: libcurl/7.73.0 r-curl/4.3 crul/1.0.0
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -18,10 +18,13 @@ http_interactions:
       status: HTTP/1.1 200 OK
       cache-control: private
       content-type: application/json; charset=utf-8
-      access-control-allow-origin: '*'
-      x-server-name: BHL1
+      x-server-name: BHL2
       content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
-      date: Wed, 29 Jan 2020 00:20:12 GMT
+      access-control-allow-origin: '*'
+      access-control-allow-methods: GET,HEAD,OPTIONS,POST
+      access-control-allow-headers: Access-Control-Allow-Headers, Origin,Accept, X-Requested-With,
+        Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers
+      date: Wed, 25 Nov 2020 16:37:16 GMT
       content-length: '934'
     body:
       encoding: UTF-8
@@ -35,5 +38,5 @@ http_interactions:
         birds of the Galapagos Islands, with observations on the birds of Cocos and
         Clipperton Islands (Columbiformes to Pelecaniformes)","ContainerTitle":"Proceedings
         of the California Academy of Sciences, 4th series.","Series":"4","Date":"1913","PageRange":"1--132"}]}'
-  recorded_at: 2020-01-29 00:20:14 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.0
+  recorded_at: 2020-11-25 16:37:17 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0

@@ -6,7 +6,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      User-Agent: libcurl/7.73.0 r-curl/4.3 crul/1.0.0
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -18,11 +18,14 @@ http_interactions:
       status: HTTP/1.1 200 OK
       cache-control: private
       content-type: application/json; charset=utf-8
-      access-control-allow-origin: '*'
-      x-server-name: BHL1
+      x-server-name: BHL2
       content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
-      date: Wed, 29 Jan 2020 00:18:00 GMT
-      content-length: '1060'
+      access-control-allow-origin: '*'
+      access-control-allow-methods: GET,HEAD,OPTIONS,POST
+      access-control-allow-headers: Access-Control-Allow-Headers, Origin,Accept, X-Requested-With,
+        Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers
+      date: Wed, 25 Nov 2020 16:37:13 GMT
+      content-length: '1134'
     body:
       encoding: UTF-8
       file: no
@@ -31,10 +34,12 @@ http_interactions:
         of some Diptera.  ","ShortTitle":"The anatomy of the mouth-parts and of the
         sucking apparatus of some Diptera.","SortTitle":"anatomy of the mouth-parts
         and of the sucking apparatus of","CallNumber":"QL538 .D58","PublisherPlace":"Boston,","PublisherName":"A.
-        Williams \u0026 co.,","PublicationDate":"1881.","Doi":"10.5962/bhl.title.1726","TitleUrl":"https://www.biodiversitylibrary.org/bibliography/1726","Authors":[{"AuthorID":"1970","Name":"Dimmock,
-        George,","Role":"Main Entry -- Personal Name (MARC 100)","Dates":"1852-"}],"Subjects":[{"SubjectText":"Diptera"}],"Identifiers":[{"IdentifierName":"DLC","IdentifierValue":"08023002"},{"IdentifierName":"OCLC","IdentifierValue":"2992225"}],"Variants":[],"Notes":[{"NoteText":"Vita.","NoteSequence":"1","NoteTypeName":"General"},{"NoteText":"Inaug.-diss.--Leipzig.","NoteSequence":"2","NoteTypeName":"Dissertation"}]}]}'
-  recorded_at: 2020-01-29 00:18:02 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.0
+        Williams \u0026 co.,","PublicationDate":"1881.","Doi":"10.5962/bhl.title.1726","TitleUrl":"https://www.biodiversitylibrary.org/bibliography/1726","CreationDate":"2008/01/18
+        08:47:16","Authors":[{"AuthorID":"1970","Name":"Dimmock, George,","Role":"Main
+        Entry -- Personal Name (MARC 100)","Dates":"1852-"}],"Subjects":[{"SubjectText":"Diptera","CreationDate":"2008/01/25
+        11:35:31"}],"Identifiers":[{"IdentifierName":"DLC","IdentifierValue":"08023002"},{"IdentifierName":"OCLC","IdentifierValue":"2992225"}],"Variants":[],"Notes":[{"NoteText":"Vita.","NoteSequence":"1","NoteTypeName":"General"},{"NoteText":"Inaug.-diss.--Leipzig.","NoteSequence":"2","NoteTypeName":"Dissertation"}]}]}'
+  recorded_at: 2020-11-25 16:37:14 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
 - request:
     method: get
     uri: https://www.biodiversitylibrary.org/api3?op=GetTitleMetadata&apikey=<<bhl_key>>&format=xml&id=1726&items=FALSE
@@ -42,7 +47,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      User-Agent: libcurl/7.73.0 r-curl/4.3 crul/1.0.0
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -56,11 +61,14 @@ http_interactions:
       content-type: text/xml; charset=utf-8
       content-encoding: gzip
       vary: Accept-Encoding
-      access-control-allow-origin: '*'
-      x-server-name: BHL1
+      x-server-name: BHL2
       content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
-      date: Wed, 29 Jan 2020 00:18:00 GMT
-      content-length: '881'
+      access-control-allow-origin: '*'
+      access-control-allow-methods: GET,HEAD,OPTIONS,POST
+      access-control-allow-headers: Access-Control-Allow-Headers, Origin,Accept, X-Requested-With,
+        Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers
+      date: Wed, 25 Nov 2020 16:37:13 GMT
+      content-length: '923'
     body:
       encoding: UTF-8
       file: no
@@ -72,11 +80,13 @@ http_interactions:
         the mouth-parts and of the sucking apparatus of some Diptera.</ShortTitle><SortTitle>anatomy
         of the mouth-parts and of the sucking apparatus of</SortTitle><CallNumber>QL538
         .D58</CallNumber><PublisherPlace>Boston,</PublisherPlace><PublisherName>A.
-        Williams &amp; co.,</PublisherName><PublicationDate>1881.</PublicationDate><Doi>10.5962/bhl.title.1726</Doi><TitleUrl>https://www.biodiversitylibrary.org/bibliography/1726</TitleUrl><Authors><Author><AuthorID>1970</AuthorID><Name>Dimmock,
-        George,</Name><Role>Main Entry -- Personal Name (MARC 100)</Role><Dates>1852-</Dates></Author></Authors><Subjects><Subject><SubjectText>Diptera</SubjectText></Subject></Subjects><Identifiers><Identifier><IdentifierName>DLC</IdentifierName><IdentifierValue>08023002</IdentifierValue></Identifier><Identifier><IdentifierName>OCLC</IdentifierName><IdentifierValue>2992225</IdentifierValue></Identifier></Identifiers><Variants
+        Williams &amp; co.,</PublisherName><PublicationDate>1881.</PublicationDate><Doi>10.5962/bhl.title.1726</Doi><TitleUrl>https://www.biodiversitylibrary.org/bibliography/1726</TitleUrl><CreationDate>2008/01/18
+        08:47:16</CreationDate><Authors><Author><AuthorID>1970</AuthorID><Name>Dimmock,
+        George,</Name><Role>Main Entry -- Personal Name (MARC 100)</Role><Dates>1852-</Dates></Author></Authors><Subjects><Subject><SubjectText>Diptera</SubjectText><CreationDate>2008/01/25
+        11:35:31</CreationDate></Subject></Subjects><Identifiers><Identifier><IdentifierName>DLC</IdentifierName><IdentifierValue>08023002</IdentifierValue></Identifier><Identifier><IdentifierName>OCLC</IdentifierName><IdentifierValue>2992225</IdentifierValue></Identifier></Identifiers><Variants
         /><Notes><TitleNote><NoteText>Vita.</NoteText><NoteSequence>1</NoteSequence><NoteTypeName>General</NoteTypeName></TitleNote><TitleNote><NoteText>Inaug.-diss.--Leipzig.</NoteText><NoteSequence>2</NoteSequence><NoteTypeName>Dissertation</NoteTypeName></TitleNote></Notes></Title></Result></Response>"
-  recorded_at: 2020-01-29 00:18:02 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.0
+  recorded_at: 2020-11-25 16:37:14 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
 - request:
     method: get
     uri: https://www.biodiversitylibrary.org/api3?op=GetTitleMetadata&apikey=<<bhl_key>>&format=json&id=1726&items=FALSE
@@ -84,7 +94,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      User-Agent: libcurl/7.73.0 r-curl/4.3 crul/1.0.0
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -96,13 +106,14 @@ http_interactions:
       status: HTTP/1.1 200 OK
       cache-control: private
       content-type: application/json; charset=utf-8
-      access-control-allow-origin: '*'
-      x-server-name: BHL1
+      x-server-name: BHL2
       content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
-      date: Wed, 29 Jan 2020 00:18:01 GMT
-      content-length: '1060'
-      set-cookie: TS010ecf5c=01a3504f4cf803f3923a403495bddf002a40ffa8f4765d11e5c60ee5c24cf3825967079f3ea105714c76eac8cde156768281038705;
-        Path=/; Secure; HTTPOnly
+      access-control-allow-origin: '*'
+      access-control-allow-methods: GET,HEAD,OPTIONS,POST
+      access-control-allow-headers: Access-Control-Allow-Headers, Origin,Accept, X-Requested-With,
+        Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers
+      date: Wed, 25 Nov 2020 16:37:13 GMT
+      content-length: '1134'
     body:
       encoding: UTF-8
       file: no
@@ -111,43 +122,9 @@ http_interactions:
         of some Diptera.  ","ShortTitle":"The anatomy of the mouth-parts and of the
         sucking apparatus of some Diptera.","SortTitle":"anatomy of the mouth-parts
         and of the sucking apparatus of","CallNumber":"QL538 .D58","PublisherPlace":"Boston,","PublisherName":"A.
-        Williams \u0026 co.,","PublicationDate":"1881.","Doi":"10.5962/bhl.title.1726","TitleUrl":"https://www.biodiversitylibrary.org/bibliography/1726","Authors":[{"AuthorID":"1970","Name":"Dimmock,
-        George,","Role":"Main Entry -- Personal Name (MARC 100)","Dates":"1852-"}],"Subjects":[{"SubjectText":"Diptera"}],"Identifiers":[{"IdentifierName":"DLC","IdentifierValue":"08023002"},{"IdentifierName":"OCLC","IdentifierValue":"2992225"}],"Variants":[],"Notes":[{"NoteText":"Vita.","NoteSequence":"1","NoteTypeName":"General"},{"NoteText":"Inaug.-diss.--Leipzig.","NoteSequence":"2","NoteTypeName":"Dissertation"}]}]}'
-  recorded_at: 2020-01-29 00:18:02 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.0
-- request:
-    method: get
-    uri: https://www.biodiversitylibrary.org/api3?op=GetTitleMetadata&apikey=<<bhl_key>>&format=json&id=1726&items=FALSE
-    body:
-      encoding: ''
-      string: ''
-    headers:
-      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
-      Accept-Encoding: gzip, deflate
-      Accept: application/json, text/xml, application/xml, */*
-  response:
-    status:
-      status_code: '200'
-      message: OK
-      explanation: Request fulfilled, document follows
-    headers:
-      status: HTTP/1.1 200 OK
-      cache-control: private
-      content-type: application/json; charset=utf-8
-      access-control-allow-origin: '*'
-      x-server-name: BHL1
-      content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
-      date: Wed, 29 Jan 2020 00:18:01 GMT
-      content-length: '1060'
-    body:
-      encoding: UTF-8
-      file: no
-      string: '{"Status":"ok","ErrorMessage":"","Result":[{"TitleID":1726,"Genre":"Monograph/Item","MaterialType":"Published
-        material","FullTitle":"The anatomy of the mouth-parts and of the sucking apparatus
-        of some Diptera.  ","ShortTitle":"The anatomy of the mouth-parts and of the
-        sucking apparatus of some Diptera.","SortTitle":"anatomy of the mouth-parts
-        and of the sucking apparatus of","CallNumber":"QL538 .D58","PublisherPlace":"Boston,","PublisherName":"A.
-        Williams \u0026 co.,","PublicationDate":"1881.","Doi":"10.5962/bhl.title.1726","TitleUrl":"https://www.biodiversitylibrary.org/bibliography/1726","Authors":[{"AuthorID":"1970","Name":"Dimmock,
-        George,","Role":"Main Entry -- Personal Name (MARC 100)","Dates":"1852-"}],"Subjects":[{"SubjectText":"Diptera"}],"Identifiers":[{"IdentifierName":"DLC","IdentifierValue":"08023002"},{"IdentifierName":"OCLC","IdentifierValue":"2992225"}],"Variants":[],"Notes":[{"NoteText":"Vita.","NoteSequence":"1","NoteTypeName":"General"},{"NoteText":"Inaug.-diss.--Leipzig.","NoteSequence":"2","NoteTypeName":"Dissertation"}]}]}'
-  recorded_at: 2020-01-29 00:18:02 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.0
+        Williams \u0026 co.,","PublicationDate":"1881.","Doi":"10.5962/bhl.title.1726","TitleUrl":"https://www.biodiversitylibrary.org/bibliography/1726","CreationDate":"2008/01/18
+        08:47:16","Authors":[{"AuthorID":"1970","Name":"Dimmock, George,","Role":"Main
+        Entry -- Personal Name (MARC 100)","Dates":"1852-"}],"Subjects":[{"SubjectText":"Diptera","CreationDate":"2008/01/25
+        11:35:31"}],"Identifiers":[{"IdentifierName":"DLC","IdentifierValue":"08023002"},{"IdentifierName":"OCLC","IdentifierValue":"2992225"}],"Variants":[],"Notes":[{"NoteText":"Vita.","NoteSequence":"1","NoteTypeName":"General"},{"NoteText":"Inaug.-diss.--Leipzig.","NoteSequence":"2","NoteTypeName":"Dissertation"}]}]}'
+  recorded_at: 2020-11-25 16:37:14 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0

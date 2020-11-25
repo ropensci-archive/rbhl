@@ -6,7 +6,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      User-Agent: libcurl/7.73.0 r-curl/4.3 crul/1.0.0
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -18,10 +18,13 @@ http_interactions:
       status: HTTP/1.1 200 OK
       cache-control: private
       content-type: application/json; charset=utf-8
-      access-control-allow-origin: '*'
-      x-server-name: BHL1
+      x-server-name: BHL2
       content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
-      date: Wed, 29 Jan 2020 00:11:32 GMT
+      access-control-allow-origin: '*'
+      access-control-allow-methods: GET,HEAD,OPTIONS,POST
+      access-control-allow-headers: Access-Control-Allow-Headers, Origin,Accept, X-Requested-With,
+        Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers
+      date: Wed, 25 Nov 2020 16:37:07 GMT
       content-length: '751'
     body:
       encoding: UTF-8
@@ -33,8 +36,8 @@ http_interactions:
         George","CreatorUrl":"https://www.biodiversitylibrary.org/creator/189021"},{"AuthorID":"1970","Name":"Dimmock,
         George,","Dates":"1852-","CreatorUrl":"https://www.biodiversitylibrary.org/creator/1970"},{"AuthorID":"8126","Name":"Dimmock,
         George,","Dates":"1852-1930","CreatorUrl":"https://www.biodiversitylibrary.org/creator/8126"}]}'
-  recorded_at: 2020-01-29 00:11:35 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.0
+  recorded_at: 2020-11-25 16:37:07 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
 - request:
     method: get
     uri: https://www.biodiversitylibrary.org/api3?op=AuthorSearch&authorname=dimmock&apikey=<<bhl_key>>&format=json
@@ -42,7 +45,7 @@ http_interactions:
       encoding: ''
       string: ''
     headers:
-      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
+      User-Agent: libcurl/7.73.0 r-curl/4.3 crul/1.0.0
       Accept-Encoding: gzip, deflate
       Accept: application/json, text/xml, application/xml, */*
   response:
@@ -54,48 +57,13 @@ http_interactions:
       status: HTTP/1.1 200 OK
       cache-control: private
       content-type: application/json; charset=utf-8
-      access-control-allow-origin: '*'
-      x-server-name: BHL1
+      x-server-name: BHL2
       content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
-      date: Wed, 29 Jan 2020 00:11:33 GMT
-      content-length: '751'
-      set-cookie: TS010ecf5c=01a3504f4cfbc3a359f81a814d6ec3421be2df3b9ec2c40468c8622e5a3eee1ae61624097538102f67aa04ac5af689842d05905170;
-        Path=/; Secure; HTTPOnly
-    body:
-      encoding: UTF-8
-      file: no
-      string: '{"Status":"ok","ErrorMessage":"","Result":[{"AuthorID":"189035","Name":"Dimmock,
-        Anna Katherina","CreatorUrl":"https://www.biodiversitylibrary.org/creator/189035"},{"AuthorID":"59023","Name":"Dimmock,
-        G","CreatorUrl":"https://www.biodiversitylibrary.org/creator/59023"},{"AuthorID":"189042","Name":"Dimmock,
-        Geo ","CreatorUrl":"https://www.biodiversitylibrary.org/creator/189042"},{"AuthorID":"189021","Name":"Dimmock,
-        George","CreatorUrl":"https://www.biodiversitylibrary.org/creator/189021"},{"AuthorID":"1970","Name":"Dimmock,
-        George,","Dates":"1852-","CreatorUrl":"https://www.biodiversitylibrary.org/creator/1970"},{"AuthorID":"8126","Name":"Dimmock,
-        George,","Dates":"1852-1930","CreatorUrl":"https://www.biodiversitylibrary.org/creator/8126"}]}'
-  recorded_at: 2020-01-29 00:11:35 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.0
-- request:
-    method: get
-    uri: https://www.biodiversitylibrary.org/api3?op=AuthorSearch&authorname=dimmock&apikey=<<bhl_key>>&format=json
-    body:
-      encoding: ''
-      string: ''
-    headers:
-      User-Agent: libcurl/7.54.0 r-curl/4.3 crul/0.9.0
-      Accept-Encoding: gzip, deflate
-      Accept: application/json, text/xml, application/xml, */*
-  response:
-    status:
-      status_code: '200'
-      message: OK
-      explanation: Request fulfilled, document follows
-    headers:
-      status: HTTP/1.1 200 OK
-      cache-control: private
-      content-type: application/json; charset=utf-8
       access-control-allow-origin: '*'
-      x-server-name: BHL1
-      content-security-policy: frame-ancestors 'self' http://*.societanaturalistinapoli.it;
-      date: Wed, 29 Jan 2020 00:11:33 GMT
+      access-control-allow-methods: GET,HEAD,OPTIONS,POST
+      access-control-allow-headers: Access-Control-Allow-Headers, Origin,Accept, X-Requested-With,
+        Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers
+      date: Wed, 25 Nov 2020 16:37:07 GMT
       content-length: '751'
     body:
       encoding: UTF-8
@@ -107,5 +75,5 @@ http_interactions:
         George","CreatorUrl":"https://www.biodiversitylibrary.org/creator/189021"},{"AuthorID":"1970","Name":"Dimmock,
         George,","Dates":"1852-","CreatorUrl":"https://www.biodiversitylibrary.org/creator/1970"},{"AuthorID":"8126","Name":"Dimmock,
         George,","Dates":"1852-1930","CreatorUrl":"https://www.biodiversitylibrary.org/creator/8126"}]}'
-  recorded_at: 2020-01-29 00:11:35 GMT
-  recorded_with: vcr/0.4.0, webmockr/0.5.0
+  recorded_at: 2020-11-25 16:37:07 GMT
+  recorded_with: vcr/0.5.4, webmockr/0.7.0
