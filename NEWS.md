@@ -1,3 +1,11 @@
+rbhl 0.9.2
+===============
+
+### MINOR IMPROVEMENTS
+
+* vignette fix
+
+
 rbhl 0.9.0
 ===============
 
