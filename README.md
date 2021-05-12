@@ -6,7 +6,7 @@ rbhl
 [![cran checks](https://cranchecks.info/badges/worst/rbhl)](https://cranchecks.info/pkgs/rbhl)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R-check](https://github.com/ropensci/rbhl/workflows/R-check/badge.svg)](https://github.com/ropensci/rbhl/actions?query=workflow%3AR-check)
-[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/rbhl?color=2ECC71)](https://github.com/metacran/cranlogs.app)
+[![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/rbhl?color=2ECC71)](https://github.com/r-hub/cranlogs.app)
 [![cran version](https://www.r-pkg.org/badges/version/rbhl)](https://cran.r-project.org/package=rbhl)
 [![codecov.io](https://codecov.io/github/ropensci/rbhl/coverage.svg?branch=master)](https://codecov.io/github/ropensci/rbhl?branch=master)
 
@@ -115,10 +115,10 @@ bhl_gettitlemetadata(1726, items = TRUE, as = "list")$Result[[1]]$Items
 ```r
 bhl_publicationsearch('cocos island costa rica birds')
 #> # A tibble: 2 x 17
-#>   BHLType FoundIn Volume Authors PartUrl PartID Genre Title ContainerTitle
-#>   <chr>   <chr>   <chr>  <list>  <chr>   <chr>  <chr> <chr> <chr>         
-#> 1 Part    Metada… 2      <df[,1… https:… 69838  Arti… Fiel… Proceedings o…
-#> 2 Item    Metada… <NA>   <df[,1… <NA>    <NA>   Book  The … <NA>          
+#>   BHLType FoundIn  Volume Authors  PartUrl  PartID Genre Title   ContainerTitle 
+#>   <chr>   <chr>    <chr>  <list>   <chr>    <chr>  <chr> <chr>   <chr>          
+#> 1 Part    Metadata 2      <df[,1]… https:/… 69838  Arti… Field … Proceedings of…
+#> 2 Item    Metadata <NA>   <df[,1]… <NA>     <NA>   Book  The bi… <NA>           
 #> # … with 8 more variables: Series <chr>, Date <chr>, PageRange <chr>,
 #> #   ItemID <chr>, TitleID <chr>, ExternalUrl <chr>, ItemUrl <chr>,
 #> #   TitleUrl <chr>
@@ -151,5 +151,3 @@ bhl_getlanguages()
 * License: MIT
 * Get citation information for `rbhl` in R doing `citation(package = 'rbhl')`
 * Please note that this package is released with a [Contributor Code of Conduct](https://ropensci.org/code-of-conduct/). By contributing to this project, you agree to abide by its terms.
-
-[![rofooter](https://ropensci.org/public_images/github_footer.png)](https://ropensci.org)
