@@ -18,6 +18,6 @@ it every time you run a search.
 See \link{rbhl-defunct} for defunct functions.
 }
 \author{
-Scott Chamberlain \email{myrmecocystus@gmail.com}
+Scott Chamberlain
 }
 \keyword{package}
